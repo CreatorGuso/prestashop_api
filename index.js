@@ -1,6 +1,7 @@
 const express = require("express");
 const axios = require("axios");
-
+const xml2js = require('xml2js');
+const parser = new xml2js.Parser({ explicitArray: false });
 const app = express();
 const port = 3099;
 
@@ -135,16 +136,82 @@ app.get("/api/customers", async (req, res) => {
 
 
 // Endpoint para obtener las órdenes desde PrestaShop
+// app.get("/api/orders", async (req, res) => {
+//   try {
+//     const response = await axios.get(
+//       "https://ZBR3Q8MEZ3KC16C7Z5CMYYD9V1VFCT3T@www.kukyflor.com/api/orders",
+//       {
+//         params: {
+//           display:
+//             "all",
+//           output_format: "XML",
+//           limit: 5,
+//         },
+//         headers: {
+//           Authorization: "ZBR3Q8MEZ3KC16C7Z5CMYYD9V1VFCT3T",
+//         },
+//       }
+//     );
+
+//     res.json(response.data);
+//   } catch (error) {
+//     console.error(error);
+//     res
+//       .status(500)
+//       .json({ error: "Error al obtener los pedidos de PrestaShop" });
+//   }
+// });
+
+// app.get("/api/orders", async (req, res) => {
+//   try {
+//     const response = await axios.get(
+//       "https://ZBR3Q8MEZ3KC16C7Z5CMYYD9V1VFCT3T@www.kukyflor.com/api/orders",
+//       {
+//         params: {
+//           display: "full",
+//           output_format: "XML",
+//         },
+//         headers: {
+//           Authorization: "ZBR3Q8MEZ3KC16C7Z5CMYYD9V1VFCT3T",
+//         },
+//       }
+//     );
+
+//     // Parsear la respuesta XML
+//     parser.parseString(response.data, (err, result) => {
+//       if (err) {
+//         console.error(err);
+//         return res.status(500).json({ error: "Error al parsear la respuesta XML" });
+//       }
+
+//       // Extraer los elementos <order>
+//       const orders = result.prestashop.orders.order;
+
+//       // Limitar la cantidad de órdenes
+//       const limit = 5;
+//       const limitedOrders = orders.slice(0, limit);
+
+//       res.json(limitedOrders);
+//     });
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).json({ error: "Error al obtener los pedidos de PrestaShop" });
+//   }
+// });
+
 app.get("/api/orders", async (req, res) => {
   try {
+    const page = req.query.page || 1; // Obtener el número de página de la consulta
+    const pageSize = req.query.pageSize || 10; // Obtener el tamaño de la página de la consulta
+
     const response = await axios.get(
       "https://ZBR3Q8MEZ3KC16C7Z5CMYYD9V1VFCT3T@www.kukyflor.com/api/orders",
       {
         params: {
-          display:
-            "all",
+          display: "full",
           output_format: "XML",
-          limit: 5,
+          page: page,
+          limit: pageSize,
         },
         headers: {
           Authorization: "ZBR3Q8MEZ3KC16C7Z5CMYYD9V1VFCT3T",
@@ -152,14 +219,60 @@ app.get("/api/orders", async (req, res) => {
       }
     );
 
-    res.json(response.data);
+    // Parsear la respuesta XML
+    parser.parseString(response.data, (err, result) => {
+      if (err) {
+        console.error(err);
+        return res.status(500).json({ error: "Error al parsear la respuesta XML" });
+      }
+
+      // Extraer los elementos <order>
+      const orders = result.prestashop.orders.order;
+
+      res.json(orders);
+    });
   } catch (error) {
     console.error(error);
-    res
-      .status(500)
-      .json({ error: "Error al obtener los pedidos de PrestaShop" });
+    res.status(500).json({ error: "Error al obtener los pedidos de PrestaShop" });
   }
 });
+
+
+app.get("/api/orders/:id", async (req, res) => {
+  const orderId = req.params.id;
+
+  try {
+    const response = await axios.get(
+      `https://ZBR3Q8MEZ3KC16C7Z5CMYYD9V1VFCT3T@www.kukyflor.com/api/orders/${orderId}`,
+      {
+        params: {
+          output_format: "XML",
+        },
+        headers: {
+          Authorization: "ZBR3Q8MEZ3KC16C7Z5CMYYD9V1VFCT3T",
+        },
+      }
+    );
+
+    // Parsear la respuesta XML
+    parser.parseString(response.data, (err, result) => {
+      if (err) {
+        console.error(err);
+        return res.status(500).json({ error: "Error al parsear la respuesta XML" });
+      }
+
+      // Extraer la orden con el ID especificado
+      const order = result.prestashop.order;
+
+      res.json(order);
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Error al obtener la orden de PrestaShop" });
+  }
+});
+
+
 
 // Inicia el servidor
 app.listen(port, () => {

@@ -1,4 +1,7 @@
 // const express = require("express");
+const fs = require('fs');
+const path = require('path');
+
 const axios = require("axios");
 const xml2js = require("xml2js");
 const parser = new xml2js.Parser({ explicitArray: false });
@@ -341,18 +344,67 @@ const config = {
 //   }
 // });
 
+// async function ApiOrders() {
+//   try {
+//     // Obtener el valor máximo de la base de datos
+//     // const maxWebID = await BuscarOrdenMaxima();
+
+//     const response = await axios.get(
+//       "https://ZBR3Q8MEZ3KC16C7Z5CMYYD9V1VFCT3T@www.kukyflor.com/api/orders",
+//       {
+//         params: {
+//           display: "full",
+//           output_format: "XML",
+//           limit: 50, // Obtener siempre los últimos 20 pedidos
+//           sort: "[id_DESC]", // Ordenar por ID de forma descendente (los últimos primero)
+//         },
+//         headers: {
+//           Authorization: "ZBR3Q8MEZ3KC16C7Z5CMYYD9V1VFCT3T",
+//         },
+//       }
+//     );
+
+//     // Parsear la respuesta XML
+//     const result = await new Promise((resolve, reject) => {
+//       parser.parseString(response.data, (err, result) => {
+//         if (err) {
+//           reject(err);
+//         } else {
+//           resolve(result);
+//         }
+//       });
+//     });
+
+//     // Extraer los elementos <order>
+//     const orders = result.prestashop.orders.order;
+
+//     // Filtrar solo las órdenes con WebID mayor al máximo de la base de datos
+//     const ordersInfo = orders
+//       // .filter(order => parseInt(order.id) > maxWebID)
+//       .map(order => ({
+//         Orden: order.id,
+//         PersoneriaID: order.id_customer,
+//         FechadeOrden: order.date_upd,
+//         // Resto de las propiedades...
+//       }));
+
+//     return ordersInfo;
+//   } catch (error) {
+//     console.error(error);
+//     throw new Error("Error al obtener los pedidos de PrestaShop");
+//   }
+// }
+
+
 async function ApiOrders() {
   try {
-    // Obtener el valor máximo de la base de datos
-    const maxWebID = await BuscarOrdenMaxima();
-
     const response = await axios.get(
       "https://ZBR3Q8MEZ3KC16C7Z5CMYYD9V1VFCT3T@www.kukyflor.com/api/orders",
       {
         params: {
           display: "full",
           output_format: "XML",
-          limit: 200, // Obtener siempre los últimos 20 pedidos
+          limit: 100, // Obtener siempre los últimos 20 pedidos
           sort: "[id_DESC]", // Ordenar por ID de forma descendente (los últimos primero)
         },
         headers: {
@@ -372,17 +424,28 @@ async function ApiOrders() {
       });
     });
 
-    // Extraer los elementos <order>
-    const orders = result.prestashop.orders.order;
+    const fechaActual = new Date();
+    const dia = fechaActual.getDate() < 10 ? '0' + fechaActual.getDate() : fechaActual.getDate();
+    const mes = (fechaActual.getMonth() + 1) < 10 ? '0' + (fechaActual.getMonth() + 1) : (fechaActual.getMonth() + 1);
+    const fechaFormateada = fechaActual.getFullYear() + '-' + mes + '-' + dia;
+    
+    // Extraer los elementos <order> y filtrar por fecha de hoy
+    const orders = result.prestashop.orders.order.filter(order => {
+      const orderDate = new Date(order.date_upd);
+      const orderDia = orderDate.getDate() < 10 ? '0' + orderDate.getDate() : orderDate.getDate();
+      const orderMes = (orderDate.getMonth() + 1) < 10 ? '0' + (orderDate.getMonth() + 1) : (orderDate.getMonth() + 1);
+      const orderFechaFormateada = orderDate.getFullYear() + '-' + orderMes + '-' + orderDia;
+      return orderFechaFormateada === fechaFormateada;
+    });
+    
 
-    // Filtrar solo las órdenes con WebID mayor al máximo de la base de datos
-    const ordersInfo = orders
-      .filter(order => parseInt(order.id) > maxWebID)
-      .map(order => ({
-        Orden: order.id,
-        PersoneriaID: order.id_customer,
-        // Resto de las propiedades...
-      }));
+    // Mapear las órdenes filtradas
+    const ordersInfo = orders.map(order => ({
+      Orden: order.id,
+      PersoneriaID: order.id_customer,
+      FechadeOrden: order.date_upd,
+      // Resto de las propiedades...
+    }));
 
     return ordersInfo;
   } catch (error) {
@@ -1467,7 +1530,7 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
     console.log("Esta es la OficinaAlmacen :", variablesSesion.OficinaAlmacenID)
     console.log("Este es mi newPedidoID para el procedimiento:: ", newPedidoID);
     request3.input('PedidoID', sql.Int, newPedidoID);
-    request3.input('tipoDocID', sql.Decimal(9, 5), 103.00048);
+    request3.input('tipoDocID', sql.Decimal(9, 5), seriePedido);
 
     await request3.query(query2);
 
@@ -1640,7 +1703,6 @@ async function procesarOrdenPrestashop() {
     const ordenes = await ApiOrders();
     const ordersInfo = ordenes;
     console.log("Datos de las órdenes:", ordersInfo);
-
     for (let i = 0; i < ordersInfo.length; i++) {
       const orden = ordersInfo[i].Orden;
       const resultadoOrdenes = await BuscarOrden(orden);
@@ -1671,18 +1733,36 @@ async function procesarOrdenPrestashop() {
           } else {
             console.log("El cliente si tiene DNI");
             console.log("este es el DNI", DatosDeOrden.SerieDePedido.company);
-            cliente = await buscarClientePorDNI(DatosDeOrden.SerieDePedido.company);
-            if (cliente === null) {
-              const razonSocial = await buscarRazonSocialPorDNIRUC(DatosDeOrden.SerieDePedido.company);
-              const resultadoCreacion = await crearCliente(razonSocial);
-              if (resultadoCreacion.success) {
-                console.log("El cliente se creó correctamente");
-              } else {
-                console.log("El cliente no se creó");
-              }
+            // Se verifica que si o si tenga 8 y 11.
+            if (DatosDeOrden.SerieDePedido.company.length === 8 || DatosDeOrden.SerieDePedido.company.length === 11) {
+              console.log("Paso verificacion de DNI o RUC");
               cliente = await buscarClientePorDNI(DatosDeOrden.SerieDePedido.company);
+              if (cliente === null) {
+                const razonSocial = await buscarRazonSocialPorDNIRUC(DatosDeOrden.SerieDePedido.company);
+                const resultadoCreacion = await crearCliente(razonSocial);
+                if (resultadoCreacion.success) {
+                  console.log("El cliente se creó correctamente");
+                } else {
+                  console.log("El cliente no se creó");
+                }
+                cliente = await buscarClientePorDNI(DatosDeOrden.SerieDePedido.company);
+                if (cliente != null) {
+                  // Procedemos con la creacion del pedido
+                  const pedidoCreado = await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID);
+                  console.log(pedidoCreado);
+                }
+              }else{
+                  const pedidoCreado = await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID);
+                  console.log(pedidoCreado);
+              }
+            } else {
+              console.log("El numero de identidad no cumple con los requisitos");
+              console.log("DNI fallido se creara con Cliente Ventas Dia");
+              cliente = await buscarClientePorDNI('00000001');
+              console.log(cliente);
               if (cliente != null) {
                 // Procedemos con la creacion del pedido
+                console.log("Creamos el pedido");
                 const pedidoCreado = await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID);
                 console.log(pedidoCreado);
               }
@@ -1793,6 +1873,7 @@ async function UltimaPlanillaCaja() {
     const result = await request.query(`SELECT TOP 1 * FROM PlanillaCajaDetalle
                                         WHERE OficinaAlmacenID = 17
                                         ORDER BY PlanillaID DESC;`);
+    // console.log(result);
     if (result.recordset.length === 0) {
       return null; 
     }
@@ -1805,7 +1886,41 @@ async function UltimaPlanillaCaja() {
   }
 }
 
-
+async function UpdatePlanilla(EmpresaID,oficinaAlmacenID,PlanillaID,nuevoEstado) {
+  let pool;
+  let result;
+  let error = '';
+  try {
+      pool = await sql.connect(config);
+      const query = `
+          UPDATE [dbo].[PlanillaCaja]
+          SET 
+              [Estado] = @nuevoEstado,
+              [FechaModificacion] = GETDATE()
+          WHERE 
+              [EmpresaID] = @Empresa AND
+              [OficinaAlmacenID] = @oficinaAlmacenID AND
+              [PlanillaID] = @PlanillaID
+      `;
+      const request = pool.request();
+      request.input('Empresa', sql.Int, EmpresaID);
+      request.input('oficinaAlmacenID', sql.Decimal(6,3), oficinaAlmacenID);
+      request.input('PlanillaID', sql.Int,PlanillaID);
+      request.input('nuevoEstado', sql.Int, nuevoEstado);
+      result = await request.query(query);
+      console.log(result);
+  } catch (err) {
+      error = err;
+  } finally {
+      if (pool) {
+          pool.close();
+      }
+  }
+  return {
+      result,
+      error
+  };
+};
 
 // async function Inicializador() {
 //   console.log('Inicializando...');
@@ -1854,6 +1969,22 @@ async function obtenerSeriePlanilla(orden) {
 }
 
 async function Inicializador() {
+  // const logFilePath = path.join(__dirname, 'logs.txt');
+  // const logStream = fs.createWriteStream(logFilePath, { flags: 'a' });
+
+  // const originalConsoleLog = console.log;
+  // console.log = function (...args) {
+  //   const now = new Date();
+  //   const dateString = now.toISOString().replace('T', ' ').replace('Z', '');
+  //   args.forEach(arg => {
+  //     if (typeof arg === 'object') {
+  //       logStream.write(`${dateString} - ${JSON.stringify(arg, null, 2)}\n`);
+  //     } else {
+  //       logStream.write(`${dateString} - ${arg}\n`);
+  //     }
+  //   });
+  //   originalConsoleLog(...args);
+  // };
   console.log('Inicializando...');
   console.log('Ejecutando procedimiento');
 
@@ -1886,9 +2017,12 @@ async function Inicializador() {
       console.log("Se cierra planilla de Ayer");
       const ordenCierre = orden0.find(elemento => elemento.estado === 'S' || elemento.estado === 'N');
       const SeriePlanilla = await obtenerSeriePlanilla(ordenCierre);
+      console.log('Esta es la serie',SeriePlanilla);
       const ulimaPlanilla = await UltimaPlanillaCaja();
       if (ulimaPlanilla) {
-        await CierreCaja(variablesSesion.OficinaAlmacenID, variablesSesion.UsuarioID, SeriePlanilla, ulimaPlanilla.PlanillaID, ulimaPlanilla.FechaCreacion);
+        console.log("Procedemos a cerrar la planilla de caja con estado N o S");
+        // await CierreCaja(variablesSesion.OficinaAlmacenID, variablesSesion.UsuarioID, SeriePlanilla, ulimaPlanilla.PlanillaID, ulimaPlanilla.FechaCreacion);
+        await UpdatePlanilla(variablesSesion.EmpresaID,variablesSesion.OficinaAlmacenID,ulimaPlanilla.PlanillaID,2)
       } else {
         console.log("No se encontró ninguna planilla de caja.");
       }      

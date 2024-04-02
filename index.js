@@ -1,4 +1,5 @@
 // const express = require("express");
+// const readline = require('readline');
 const fs = require('fs');
 const path = require('path');
 
@@ -2037,6 +2038,15 @@ Inicializador();
 
 
 
+// const rl = readline.createInterface({
+//   input: process.stdin,
+//   output: process.stdout
+// });
+
+// rl.question('Presiona Enter para salir...', () => {
+//   rl.close();
+// });
+
 
 
 // Media  Hora.
@@ -2077,3 +2087,5 @@ Inicializador();
 // app.listen(port, () => {
 //   console.log(`Servidor escuchando en http://localhost:${port}`);
 // });
+
+

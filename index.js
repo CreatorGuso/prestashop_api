@@ -1326,7 +1326,9 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
     request.input('MonedaID', sql.Decimal(9, 5), 102.00001);
     request.input('ListaPrecioID', sql.Decimal(9, 5), 108.00001);
     request.input('TipoEntrega', sql.Int, 2);
-    request.input('FechaEntrega', sql.Date, new Date(paramsOrden.Pedido.ddw_order_date.split(" ")[0]));
+    request.input('FechaEntrega', sql.DateTime, paramsOrden.Pedido.ddw_order_date); //new Date(paramsOrden.Pedido.ddw_order_date.split(" ")[0])
+    request.input('FechaCreacion', sql.DateTime, paramsOrden.Pedido.date_add);
+    request.input('FechaEdicion', sql.DateTime, paramsOrden.Pedido.date_upd);
     request.input('Fecha', sql.DateTime, paramsOrden.Pedido.date_add);
     request.input('DireccionEntrega', sql.VarChar, paramsOrden.DireccionEntrega.direccion_1);
     request.input('OficinaAlmacenEntregaID', sql.Decimal(6, 3), 1);
@@ -1337,7 +1339,39 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
     request.input('MotivoID', sql.Decimal(9, 5), 190.00062);
     request.input('CondicionVtaID', sql.Decimal(9, 5), 113.00001);
     request.input('DeliveryTipoID', sql.Decimal(9, 5), 193.00001);
-    request.input('DeliveryTurnoID', sql.Decimal(9, 5), 192.00002);
+
+    function obtenerTurno(ddw_order_time) {
+      // Dividir el valor de ddw_order_time para obtener la hora de inicio y fin del turno
+      let [inicio, fin] = ddw_order_time.split(' - ');
+      inicio = parseInt(inicio.split(':')[0]);
+      fin = parseInt(fin.split(':')[0]);
+  
+      // Definir los horarios de inicio y fin de cada turno , Ojo deberia ser automatico segun tablaempresa
+      const turnos = [
+          { numero: '192.00002', inicio: 9, fin: 14 },
+          { numero: '192.00003', inicio: 14, fin: 18 },
+          { numero: '192.00005', inicio: 17, fin: 20 }
+      ];
+  
+      // Calcular la distancia al turno más cercano
+      let distanciaMinima = Number.MAX_SAFE_INTEGER;
+      let turnoCercano = 'No se encontró un turno válido';
+  
+      for (let turno of turnos) {
+          let distanciaInicio = Math.abs(inicio - turno.inicio);
+          let distanciaFin = Math.abs(fin - turno.fin);
+          let distancia = distanciaInicio + distanciaFin;
+  
+          if (distancia < distanciaMinima) {
+              distanciaMinima = distancia;
+              turnoCercano = turno.numero;
+          }
+      }
+      // Retornar el turno más cercano
+      return turnoCercano;
+  }
+
+    request.input('DeliveryTurnoID', sql.Decimal(9, 5), obtenerTurno(paramsOrden.Pedido.ddw_order_time)); //192.00002 iba por defecto
     request.input('TipoDocID', sql.Decimal(9, 5), seriePedido);
     request.input('UsuarioID', sql.Int, variablesSesion.UsuarioID);
     request.input('Vendedor', sql.Int, variablesSesion.UsuarioID);

@@ -1333,7 +1333,7 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
     request.input('DireccionEntrega', sql.VarChar, paramsOrden.DireccionEntrega.direccion_1);
     request.input('OficinaAlmacenEntregaID', sql.Decimal(6, 3), 1);
     request.input('Referencia', sql.VarChar, paramsOrden.Pedido.gift_message);
-    request.input('Observaciones', sql.VarChar, paramsOrden.DireccionEntrega.Referencia);
+    request.input('Observaciones', sql.VarChar, paramsOrden.DireccionEntrega.Referencia + ' , Entro en el siguiente rando de hora ' + paramsOrden.Pedido.ddw_order_time);
     request.input('Contacto', sql.VarChar, paramsOrden.DireccionEntrega.PesonaEntrega);
     request.input('Contactotelefono', sql.VarChar, paramsOrden.DireccionEntrega.Telefono);
     request.input('MotivoID', sql.Decimal(9, 5), 190.00062);
@@ -1558,7 +1558,7 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
     console.log("Ejecutamos el procedimiento de facturacion");
 
     const query2 = `
-            EXEC spPyOPedidoGeneraComprobante 1, @OficinaAlmacenID, @PedidoID, @tipoDocID;`;
+            EXEC spPyOPedidoGeneraComprobante 1, @OficinaAlmacenID, @PedidoID, @tipoDocID.'E';`;
 
     const request3 = pool.request();
     request3.input('OficinaAlmacenID', sql.Decimal(6, 3), variablesSesion.OficinaAlmacenID);

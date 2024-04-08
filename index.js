@@ -443,10 +443,11 @@ async function ApiOrders() {
     // Mapear las órdenes filtradas
     const ordersInfo = orders.map(order => ({
       Orden: order.id,
+      OrdenDeRegistro: parseInt(order.id),
       PersoneriaID: order.id_customer,
       FechadeOrden: order.date_upd,
       // Resto de las propiedades...
-    }));
+    })).sort((a, b) => a.OrdenDeRegistro - b.OrdenDeRegistro);
 
     return ordersInfo;
   } catch (error) {
@@ -1280,13 +1281,13 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
     pool = await sql.connect(config);
 
     //Obtenemos el maximo valor de nuestro Pedido para uno nuevo
-    const query_count2 = `
-      SELECT COALESCE(MAX(NumeroPedido), 0) + 1 AS IDPedido
-      FROM VentaPedidoCabecera;`;
+    // const query_count2 = `
+    //   SELECT COALESCE(MAX(NumeroPedido), 0) + 1 AS IDPedido
+    //   FROM VentaPedidoCabecera;`;
 
-    const result_count = await pool.request().query(query_count2);
-    nuevoIDpedido = result_count.recordset[0].IDPedido;
-    console.log(nuevoIDpedido);
+    // const result_count = await pool.request().query(query_count2);
+    // nuevoIDpedido = result_count.recordset[0].IDPedido;
+    // console.log(nuevoIDpedido);
 
 
     var seriePedido = 0;
@@ -1301,14 +1302,15 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
     }
     //Extraccion de numero de serie // --> F-B Serie o boleta
     const queryDocRelativo = `
-      SELECT SerieDoc
+      SELECT *
       FROM documentocorrelativo 
       WHERE EmpresaID = ${parseFloat(variablesSesion.EmpresaID)} 
       AND OficinaAlmacenID = ${parseFloat(variablesSesion.OficinaAlmacenID)} 
-      AND TipoDocID = ${parseFloat(seriePedido)};`;
+      AND TipoDocID = 103.00048 `;
 
     const result_Serie = await pool.request().query(queryDocRelativo);
     const SerieCorrelativo = result_Serie.recordset[0].SerieDoc;
+    let ConsecutivoActual = result_Serie.recordset[0].Consecutivo;
 
     const query = `
       INSERT INTO VentaPedidoCabecera
@@ -1319,7 +1321,7 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
 
     const request = pool.request();
     request.input('OficinaAlmacenID', sql.Decimal(6, 3), variablesSesion.OficinaAlmacenID);
-    request.input('NumeroPedido', sql.Int, nuevoIDpedido);
+    request.input('NumeroPedido', sql.Int, (parseInt(ConsecutivoActual) + 1));
     request.input('SerieCorrelativo', sql.VarChar, SerieCorrelativo);
     request.input('PersoneriaID', sql.Int, ParamsPersona.PersoneriaID);
     request.input('DireccionID', sql.Int, 1);
@@ -1554,6 +1556,19 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
     } else {
       console.log("No entra al if");
     }
+
+    const queryConsecutivoCorrelativo = `
+          UPDATE documentoCorrelativo
+          SET Consecutivo = @Consecutivo
+          WHERE EmpresaID = @Empresa
+          AND OficinaAlmacenID = @OficinaAlmacenID
+          AND TipoDocID = 103.00048;`;
+
+          const requestConsecutivo = pool.request();
+          requestConsecutivo.input('Empresa', sql.Int, variablesSesion.EmpresaID);
+          requestConsecutivo.input('OficinaAlmacenID', sql.Decimal(6, 3), variablesSesion.UsuarioOficina);
+          requestConsecutivo.input('Consecutivo', sql.Int, parseInt(ConsecutivoActual) + 1));
+    result = await requestConsecutivo.query(queryConsecutivoCorrelativo);
 
     console.log("Ejecutamos el procedimiento de facturacion");
 

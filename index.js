@@ -1290,7 +1290,7 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
     // console.log(nuevoIDpedido);
 
 
-    var seriePedido = 0;
+    var seriePedido = 103.00003;
     const partes = paramsOrden.SerieDePedido.id_adress_Entrega.split("-");
     // Obtener la primera parte que corresponde al tipo de serie
     const tipoSerie = partes[0];
@@ -1312,12 +1312,26 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
     const SerieCorrelativo = result_Serie.recordset[0].SerieDoc;
     let ConsecutivoActual = result_Serie.recordset[0].Consecutivo;
 
+    const queryConsecutivoCorrelativo = `
+          UPDATE documentoCorrelativo
+          SET Consecutivo = @Consecutivo
+          WHERE EmpresaID = @Empresa
+          AND OficinaAlmacenID = @OficinaAlmacenID
+          AND TipoDocID = 103.00048;`;
+
+          const requestConsecutivo = pool.request();
+          requestConsecutivo.input('Empresa', sql.Int, variablesSesion.EmpresaID);
+          requestConsecutivo.input('OficinaAlmacenID', sql.Decimal(6, 3), variablesSesion.OficinaAlmacenID);
+          requestConsecutivo.input('Consecutivo', sql.Int, (parseInt(ConsecutivoActual) + 1));
+    result = await requestConsecutivo.query(queryConsecutivoCorrelativo);
+
+
     const query = `
-      INSERT INTO VentaPedidoCabecera
-        (EmpresaID, OficinaAlmacenID, SeriePedido, NumeroPedido, PersoneriaID, DireccionID, VendedorID, CondicionVtaID, MonedaID, ListaPrecioID, Fecha, TipoEntrega, FechaEntrega, DireccionEntrega, OficinaAlmacenEntregaID, Referencia, Observaciones, Cliente, Contacto, Contactotelefono, MotivoID, DeliveryTipoID, DeliveryTurnoID, TipoDocID, ValorPedido, PrecioPedido, TipoCambio, Estado, UsuarioID, FechaCreacion, FechaModificacion, TipoVenta, Gratuita, PlanillaID, ConvenioID, WebID)
-        VALUES
-        (1, @OficinaAlmacenID, @SerieCorrelativo, @NumeroPedido, @PersoneriaID, @DireccionID, @Vendedor, @CondicionVtaID, @MonedaID, @ListaPrecioID, @Fecha, @TipoEntrega, @FechaEntrega, @DireccionEntrega, @OficinaAlmacenEntregaID, @Referencia, @Observaciones, '', @Contacto, @Contactotelefono, @MotivoID, @DeliveryTipoID, @DeliveryTurnoID, @TipoDocID, @ValorPedido, @PrecioPedido, 0.00000, '1', @UsuarioID, @FechaEntrega, @FechaEntrega, @TipoVenta, @HabilitarFecha, @IDPlanilla, @ConvenioID, @WebID);
-      SELECT SCOPE_IDENTITY() AS LastInsertedID;`;
+    INSERT INTO VentaPedidoCabecera
+    (EmpresaID, OficinaAlmacenID, SeriePedido, NumeroPedido, PersoneriaID, DireccionID, VendedorID, CondicionVtaID, MonedaID, ListaPrecioID, Fecha, TipoEntrega, FechaEntrega, DireccionEntrega, OficinaAlmacenEntregaID, Referencia, Observaciones, Cliente, Contacto, Contactotelefono, MotivoID, DeliveryTipoID, DeliveryTurnoID, TipoDocID, ValorPedido, PrecioPedido, TipoCambio, Estado, UsuarioID, FechaCreacion, FechaModificacion, TipoVenta, Gratuita, PlanillaID, ConvenioID, WebID)
+    VALUES
+    (1, @OficinaAlmacenID, @SerieCorrelativo, @NumeroPedido, @PersoneriaID, @DireccionID, @Vendedor, @CondicionVtaID, @MonedaID, @ListaPrecioID, CONVERT(datetime,@Fecha, 120), @TipoEntrega, CONVERT(datetime,@FechaEntrega, 120) , @DireccionEntrega, @OficinaAlmacenEntregaID, @Referencia, @Observaciones, '', @Contacto, @Contactotelefono, @MotivoID, @DeliveryTipoID, @DeliveryTurnoID, @TipoDocID, @ValorPedido, @PrecioPedido, 0.00000, '1', @UsuarioID, CONVERT(datetime,@FechaCreacion, 120), CONVERT(datetime,@FechaEdicion, 120), @TipoVenta, @HabilitarFecha, @IDPlanilla, @ConvenioID, @WebID);
+  SELECT SCOPE_IDENTITY() AS LastInsertedID;`;
 
     const request = pool.request();
     request.input('OficinaAlmacenID', sql.Decimal(6, 3), variablesSesion.OficinaAlmacenID);
@@ -1328,10 +1342,10 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
     request.input('MonedaID', sql.Decimal(9, 5), 102.00001);
     request.input('ListaPrecioID', sql.Decimal(9, 5), 108.00001);
     request.input('TipoEntrega', sql.Int, 2);
-    request.input('FechaEntrega', sql.DateTime, paramsOrden.Pedido.ddw_order_date); //new Date(paramsOrden.Pedido.ddw_order_date.split(" ")[0])
-    request.input('FechaCreacion', sql.DateTime, paramsOrden.Pedido.date_add);
-    request.input('FechaEdicion', sql.DateTime, paramsOrden.Pedido.date_upd);
-    request.input('Fecha', sql.DateTime, paramsOrden.Pedido.date_add);
+    request.input('FechaEntrega', sql.VarChar, paramsOrden.Pedido.ddw_order_date); //new Date(paramsOrden.Pedido.ddw_order_date.split(" ")[0])
+    request.input('FechaCreacion', sql.VarChar, paramsOrden.Pedido.date_add);
+    request.input('FechaEdicion', sql.VarChar, paramsOrden.Pedido.date_upd);
+    request.input('Fecha', sql.VarChar, paramsOrden.Pedido.date_add);
     request.input('DireccionEntrega', sql.VarChar, paramsOrden.DireccionEntrega.direccion_1);
     request.input('OficinaAlmacenEntregaID', sql.Decimal(6, 3), 1);
     request.input('Referencia', sql.VarChar, paramsOrden.Pedido.gift_message);
@@ -1557,28 +1571,18 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
       console.log("No entra al if");
     }
 
-    const queryConsecutivoCorrelativo = `
-          UPDATE documentoCorrelativo
-          SET Consecutivo = @Consecutivo
-          WHERE EmpresaID = @Empresa
-          AND OficinaAlmacenID = @OficinaAlmacenID
-          AND TipoDocID = 103.00048;`;
 
-          const requestConsecutivo = pool.request();
-          requestConsecutivo.input('Empresa', sql.Int, variablesSesion.EmpresaID);
-          requestConsecutivo.input('OficinaAlmacenID', sql.Decimal(6, 3), variablesSesion.UsuarioOficina);
-          requestConsecutivo.input('Consecutivo', sql.Int, parseInt(ConsecutivoActual) + 1));
-    result = await requestConsecutivo.query(queryConsecutivoCorrelativo);
 
     console.log("Ejecutamos el procedimiento de facturacion");
 
     const query2 = `
-            EXEC spPyOPedidoGeneraComprobante 1, @OficinaAlmacenID, @PedidoID, @tipoDocID.'E';`;
+            EXEC spPyOPedidoGeneraComprobante 1, @OficinaAlmacenID, @PedidoID, @tipoDocID,'E';`;
 
     const request3 = pool.request();
     request3.input('OficinaAlmacenID', sql.Decimal(6, 3), variablesSesion.OficinaAlmacenID);
     console.log("Esta es la OficinaAlmacen :", variablesSesion.OficinaAlmacenID)
     console.log("Este es mi newPedidoID para el procedimiento:: ", newPedidoID);
+    console.log("Esta es la serie del pedido",seriePedido);
     request3.input('PedidoID', sql.Int, newPedidoID);
     request3.input('tipoDocID', sql.Decimal(9, 5), seriePedido);
 
@@ -2019,22 +2023,22 @@ async function obtenerSeriePlanilla(orden) {
 }
 
 async function Inicializador() {
-  // const logFilePath = path.join(__dirname, 'logs.txt');
-  // const logStream = fs.createWriteStream(logFilePath, { flags: 'a' });
+  const logFilePath = path.join(__dirname, 'logs.txt');
+  const logStream = fs.createWriteStream(logFilePath, { flags: 'a' });
 
-  // const originalConsoleLog = console.log;
-  // console.log = function (...args) {
-  //   const now = new Date();
-  //   const dateString = now.toISOString().replace('T', ' ').replace('Z', '');
-  //   args.forEach(arg => {
-  //     if (typeof arg === 'object') {
-  //       logStream.write(`${dateString} - ${JSON.stringify(arg, null, 2)}\n`);
-  //     } else {
-  //       logStream.write(`${dateString} - ${arg}\n`);
-  //     }
-  //   });
-  //   originalConsoleLog(...args);
-  // };
+  const originalConsoleLog = console.log;
+  console.log = function (...args) {
+    const now = new Date();
+    const dateString = now.toISOString().replace('T', ' ').replace('Z', '');
+    args.forEach(arg => {
+      if (typeof arg === 'object') {
+        logStream.write(`${dateString} - ${JSON.stringify(arg, null, 2)}\n`);
+      } else {
+        logStream.write(`${dateString} - ${arg}\n`);
+      }
+    });
+    originalConsoleLog(...args);
+  };
   console.log('Inicializando...');
   console.log('Ejecutando procedimiento');
 

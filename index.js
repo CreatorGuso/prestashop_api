@@ -553,7 +553,7 @@ const variablesSesion = {
   OficinaAlmacenID: 17,
 };
 
-const PlanillaID = '834';
+let PlanillaID = '';
 
 
 // async function createPedido(paramsOrden, ParamsPersona, variablesSesion, PlanillaID) {
@@ -1412,6 +1412,7 @@ async function Inicializador() {
     const planillaID = ordenPlanilla.planillaID;
     const SeriePlanilla = await obtenerSeriePlanilla(ordenPlanilla);
     console.log("Esta es la planilla", planillaID);
+    PlanillaID = planillaID;
     console.log(await procesarOrdenPrestashop());
   } else {
     console.log("no se tiene una planilla habilitada");

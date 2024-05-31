@@ -81,32 +81,77 @@ async function ApiOrders() {
 }
 
 
+// async function HistorialOrden(orderId) {
+//   try {
+//     const response = await axios.get(
+//       `https://ZBR3Q8MEZ3KC16C7Z5CMYYD9V1VFCT3T@www.kukyflor.com/api/order_histories/${orderId}`
+//     );
+
+//     var EstadoHistorial = {};
+//     // Parsear la respuesta XML
+//     parser.parseString(response.data, (err, result) => {
+//       if (err) {
+//         console.error(err);
+//         throw new Error("Error al parsear la respuesta XML");
+//       }
+//       const order = result.prestashop.order_history;
+//       // Crear un nuevo objeto JSON con la data de las URLs
+//       EstadoHistorial = {
+//         estadodeOrden : order.id_order_state._,
+//       };
+//     });
+//     return EstadoHistorial;
+//   } catch (error) {
+//     console.error(error);
+//     throw new Error("Error al obtener el historial de la orden");
+//   }
+// }
+
 async function HistorialOrden(orderId) {
   try {
-    const response = await axios.get(
-      `https://ZBR3Q8MEZ3KC16C7Z5CMYYD9V1VFCT3T@www.kukyflor.com/api/order_histories/${orderId}`
+    // Primera llamada a la API para obtener el id del historial de la orden
+    const response1 = await axios.get(
+      `https://www.kukyflor.com/api/order_histories?filter[id_order]=[${orderId}]&ws_key=ZBR3Q8MEZ3KC16C7Z5CMYYD9V1VFCT3T`
     );
 
-    var EstadoHistorial = {};
+    var EstadoHistorial = {}
+
+    var Estado;
     // Parsear la respuesta XML
-    parser.parseString(response.data, (err, result) => {
+    parser.parseString(response1.data, (err, result) => {
       if (err) {
         console.error(err);
-        throw new Error("Error al parsear la respuesta XML");
+        throw new Error("Error al parsear la respuesta XML HistorialOrden1");
       }
-      const order = result.prestashop.order_history;
-      // Crear un nuevo objeto JSON con la data de las URLs
+      const order = result.prestashop.order_histories.order_history;
+      // console.log(result.prestashop.order_histories.order_history);
+      const orderHistoryId = order.reduce((maxId, history) => {
+        const id = parseInt(history.$.id, 10);
+        return id > maxId ? id : maxId;
+      }, 0);
+      // console.log('Historial de order',orderHistoryId);
+      Estado = orderHistoryId;
+    });
+
+    const response2 = await axios.get(`https://www.kukyflor.com/api/order_histories/${Estado}?ws_key=ZBR3Q8MEZ3KC16C7Z5CMYYD9V1VFCT3T`);
+
+    // Parsear la respuesta XML
+    parser.parseString(response2.data, (err, result) => {
+      if (err) {
+        console.error(err);
+        throw new Error("Error al parsear la respuesta XML HistorialOrden2");
+      }
       EstadoHistorial = {
-        estadodeOrden : order.id_order_state._,
+        estadodeOrden: result.prestashop.order_history.id_order_state._ ,
       };
     });
+
     return EstadoHistorial;
   } catch (error) {
     console.error(error);
     throw new Error("Error al obtener el historial de la orden");
   }
 }
-
 
 async function BuscarORdenPorID(orderId) {
   try {
@@ -442,7 +487,7 @@ async function buscarRazonSocialPorDNIRUC(numero) {
 }
 
 async function crearCliente(params) {
-  console.log("Estos son mis parametros de lciente",params);
+  // console.log("Estos son mis parametros de lciente",params);
   let pool;
   let transaction;
   try {
@@ -966,12 +1011,12 @@ async function createPedido(paramsOrden,ParamsPersona, variablesSesion, Planilla
 
       result = await request.query(query);
       newPedidoID = result.recordset[0].LastInsertedID;
-      console.log("Este es mi pedido Id ::::::::::::::::::::::::", newPedidoID);
+      // console.log("Este es mi pedido Id ::::::::::::::::::::::::", newPedidoID);
       // console.log(params);
       let ConsecutivoProducto = 0;
 
       const orderRows = paramsOrden.Pedido.productos.order_rows.order_row;
-      console.log("Estos son mis productos",orderRows);
+      // console.log("Estos son mis productos",orderRows);
       let cantidadProductos;
       if (Array.isArray(orderRows)) {
         cantidadProductos = orderRows.length;
@@ -980,7 +1025,7 @@ async function createPedido(paramsOrden,ParamsPersona, variablesSesion, Planilla
       }
 
       for (let i = 0; i < cantidadProductos; i++) {
-        console.log("Entramos al procedimiento de agregar productos");
+        // console.log("Entramos al procedimiento de agregar productos");
         let producto;
         if (Array.isArray(orderRows)) {
           producto = orderRows[i];
@@ -988,7 +1033,7 @@ async function createPedido(paramsOrden,ParamsPersona, variablesSesion, Planilla
           // Si orderRows no es un array, asumimos que es un objeto con un solo elemento
           producto = orderRows;
         }
-        console.log(producto); // Muestra el producto actual para verificar
+        // console.log(producto); // Muestra el producto actual para verificar
 
         const requestPrecio = pool.request();
         const productoERP = `
@@ -999,8 +1044,8 @@ async function createPedido(paramsOrden,ParamsPersona, variablesSesion, Planilla
 
         requestPrecio.transaction = transaction;
         requestPrecio.input('CodigoAlterno', sql.VarChar, referenciaPura);
-        console.log("Este es el producto referencia");
-        console.log(producto.product_reference);
+        // console.log("Este es el producto referencia");
+        // console.log(producto.product_reference);
         const resultPrecio = await requestPrecio.query(productoERP);
 
         // const precioProducto = resultPrecio.recordset[0].Contado;
@@ -1043,8 +1088,8 @@ async function createPedido(paramsOrden,ParamsPersona, variablesSesion, Planilla
         requestPrecioDelivery.transaction = transaction;
         requestPrecioDelivery.input('CodigoAlterno', sql.VarChar, paramsOrden.IDEntrega_Direccion.id);
         const resultPrecioDelivery = await requestPrecioDelivery.query(productoERPDelivery);
-        console.log("Este es el resultado de mi Delivery");
-        console.log(resultPrecioDelivery);
+        // console.log("Este es el resultado de mi Delivery");
+        // console.log(resultPrecioDelivery);
         // const precioProductoDelivery = resultPrecioDelivery.recordset[0].Contado;
         const ProductoIDDelivery = resultPrecioDelivery.recordset[0].ProductoID;
         const UMContenidoIDDelivery = resultPrecioDelivery.recordset[0].UMUnitarioID;
@@ -1080,17 +1125,17 @@ async function createPedido(paramsOrden,ParamsPersona, variablesSesion, Planilla
 
       // Insertar información de TablaEmpresa
         const requestMPago = pool.request();
-        console.log(paramsOrden.Pedido);
-        console.log("Este es mi modulo", paramsOrden.Pedido['módulo']);
+        // console.log(paramsOrden.Pedido);
+        // console.log("Este es mi modulo", paramsOrden.Pedido['módulo']);
         const queryMPago = `
                 SELECT * FROM TablaEmpresa WHERE Abreviatura = @referencia;`;
         requestMPago.transaction = transaction;
         requestMPago.input('referencia', sql.VarChar, paramsOrden.Pedido['módulo']);
         const resultMPago = await requestMPago.query(queryMPago);
-        console.log("Este es mi resul medio pago");
-        console.log(resultMPago);
+        // console.log("Este es mi resul medio pago");
+        // console.log(resultMPago);
         if (resultMPago.recordset.length > 0) {
-          console.log("Entramos al registro del medio de pago");
+          // console.log("Entramos al registro del medio de pago");
           const tablaEmpresaInfo = resultMPago.recordset[0];
           const request4 = pool.request();
           const query4 = `
@@ -1116,15 +1161,15 @@ async function createPedido(paramsOrden,ParamsPersona, variablesSesion, Planilla
       
 
       // Procediiento de facturacion de pedido
-          console.log("Ejecutamos el procedimiento de facturacion");
+          // console.log("Ejecutamos el procedimiento de facturacion");
 
           const query2 = `
           EXEC spPyOPedidoGeneraComprobante @Empresa, @OficinaAlmacenID, @PedidoID, @tipoDocID,'E';`;
           const request3 = pool.request();
           request3.input('Empresa', sql.Int, variablesSesion.EmpresaID);
           request3.input('OficinaAlmacenID', sql.Decimal(6, 3), variablesSesion.OficinaAlmacenID);
-          console.log("Esta es la OficinaAlmacen :", variablesSesion.OficinaAlmacenID)
-          console.log("Este es mi newPedidoID para el procedimiento:: ", newPedidoID);
+          // console.log("Esta es la OficinaAlmacen :", variablesSesion.OficinaAlmacenID)
+          // console.log("Este es mi newPedidoID para el procedimiento:: ", newPedidoID);
           request3.input('PedidoID', sql.Int, newPedidoID);
           request3.input('tipoDocID', sql.Decimal(9, 5), seriePedido);
           result = await request3.query(query2);
@@ -1152,69 +1197,69 @@ async function procesarOrdenPrestashop() {
     // const ordenes = await axios.get("http://localhost:3099/api/orders");
     const ordenes = await ApiOrders();
     const ordersInfo = ordenes;
-    console.log("Datos de las órdenes:", ordersInfo);
+    // console.log("Datos de las órdenes:", ordersInfo);
     for (let i = 0; i < ordersInfo.length; i++) {
       const orden = ordersInfo[i].Orden;
       const resultadoOrdenes = await BuscarOrden(orden);
       if (resultadoOrdenes) {
-        console.log(`Orden ${orden} encontrada:`, resultadoOrdenes);
+        // console.log(`Orden ${orden} encontrada:`, resultadoOrdenes);
       } else {
-        console.log(`Orden ${orden} no encontrada`);
+        // console.log(`Orden ${orden} no encontrada`);
         // const ordenPorID = await axios.get(`http://localhost:3099/api/orders/${orden}`);
         const ordenPorID = await BuscarORdenPorID(orden);
-        console.log(ordenPorID);
+        // console.log(ordenPorID);
         var DatosDeOrden = ordenPorID;
         const EstadoOrden = await HistorialOrden(orden); 
-        console.log(EstadoOrden);
+        // console.log(EstadoOrden);
         const VerificacionEstado = EstadoOrden.estadodeOrden;
         if (VerificacionEstado == '5' || VerificacionEstado == '2' || VerificacionEstado == '14') {
-          console.log("Entramos al if");
+          // console.log("Entramos al if");
           let cliente = null;
           if (DatosDeOrden.SerieDePedido.company == '') {
-            console.log("el cliente no tiene DNI");
+            // console.log("el cliente no tiene DNI");
             cliente = await buscarClientePorDNI('00000001');
-            console.log(cliente);
+            // console.log(cliente);
             if (cliente != null) {
               // Procedemos con la creacion del pedido
-              console.log("Creamos el pedido");
+              // console.log("Creamos el pedido");
               const pedidoCreado = await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID);
-              console.log(pedidoCreado);
+              // console.log(pedidoCreado);
             }
           } else {
-            console.log("El cliente si tiene DNI");
-            console.log("este es el DNI", DatosDeOrden.SerieDePedido.company);
+            // console.log("El cliente si tiene DNI");
+            // console.log("este es el DNI", DatosDeOrden.SerieDePedido.company);
             // Se verifica que si o si tenga 8 y 11.
             if (DatosDeOrden.SerieDePedido.company.length === 8 || DatosDeOrden.SerieDePedido.company.length === 11) {
-              console.log("Paso verificacion de DNI o RUC");
+              // console.log("Paso verificacion de DNI o RUC");
               cliente = await buscarClientePorDNI(DatosDeOrden.SerieDePedido.company);
               if (cliente === null) {
                 const razonSocial = await buscarRazonSocialPorDNIRUC(DatosDeOrden.SerieDePedido.company);
                 const resultadoCreacion = await crearCliente(razonSocial);
                 if (resultadoCreacion.success) {
-                  console.log("El cliente se creó correctamente");
+                  // console.log("El cliente se creó correctamente");
                 } else {
-                  console.log("El cliente no se creó");
+                  // console.log("El cliente no se creó");
                 }
                 cliente = await buscarClientePorDNI(DatosDeOrden.SerieDePedido.company);
                 if (cliente != null) {
                   // Procedemos con la creacion del pedido
                   const pedidoCreado = await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID);
-                  console.log(pedidoCreado);
+                  // console.log(pedidoCreado);
                 }
               }else{
                   const pedidoCreado = await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID);
-                  console.log(pedidoCreado);
+                  // console.log(pedidoCreado);
               }
             } else {
-              console.log("El numero de identidad no cumple con los requisitos");
-              console.log("DNI fallido se creara con Cliente Ventas Dia");
+              // console.log("El numero de identidad no cumple con los requisitos");
+              // console.log("DNI fallido se creara con Cliente Ventas Dia");
               cliente = await buscarClientePorDNI('00000001');
-              console.log(cliente);
+              // console.log(cliente);
               if (cliente != null) {
                 // Procedemos con la creacion del pedido
-                console.log("Creamos el pedido");
+                // console.log("Creamos el pedido");
                 const pedidoCreado = await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID);
-                console.log(pedidoCreado);
+                // console.log(pedidoCreado);
               }
             }
           }
@@ -1358,9 +1403,10 @@ async function UpdatePlanilla(EmpresaID,oficinaAlmacenID,PlanillaID,nuevoEstado)
       request.input('PlanillaID', sql.Int,PlanillaID);
       request.input('nuevoEstado', sql.Int, nuevoEstado);
       result = await request.query(query);
-      console.log(result);
+      // console.log(result);
   } catch (err) {
       error = err;
+      console.log("UpdatePlanilla",error);
   } finally {
       if (pool) {
           pool.close();
@@ -1411,30 +1457,30 @@ async function Inicializador() {
     const ordenPlanilla = orden0.find(elemento => elemento.estado === '3');
     const planillaID = ordenPlanilla.planillaID;
     const SeriePlanilla = await obtenerSeriePlanilla(ordenPlanilla);
-    console.log("Esta es la planilla", planillaID);
+    // console.log("Esta es la planilla", planillaID);
     PlanillaID = planillaID;
     console.log(await procesarOrdenPrestashop());
   } else {
     console.log("no se tiene una planilla habilitada");
 
     if (orden0.some(elemento => elemento.estado === '9')) {
-      console.log("La planilla esta para apertura");
+      // console.log("La planilla esta para apertura");
       const ordenApertura = orden0.find(elemento => elemento.estado === '9');
       const SeriePlanilla = await obtenerSeriePlanilla(ordenApertura);
       await AperturaCaja(variablesSesion.OficinaAlmacenID, variablesSesion.UsuarioID, SeriePlanilla, fechaFormateada);
       await Inicializador();
     } else if (orden0.some(elemento => elemento.estado === 'S') || orden0.some(elemento => elemento.estado === 'N')) {
-      console.log("Se cierra planilla de Ayer");
+      // console.log("Se cierra planilla de Ayer");
       const ordenCierre = orden0.find(elemento => elemento.estado === 'S' || elemento.estado === 'N');
       const SeriePlanilla = await obtenerSeriePlanilla(ordenCierre);
-      console.log('Esta es la serie',SeriePlanilla);
+      // console.log('Esta es la serie',SeriePlanilla);
       const ulimaPlanilla = await UltimaPlanillaCaja();
       if (ulimaPlanilla) {
-        console.log("Procedemos a cerrar la planilla de caja con estado N o S");
+        // console.log("Procedemos a cerrar la planilla de caja con estado N o S");
         // await CierreCaja(variablesSesion.OficinaAlmacenID, variablesSesion.UsuarioID, SeriePlanilla, ulimaPlanilla.PlanillaID, ulimaPlanilla.FechaCreacion);
         await UpdatePlanilla(variablesSesion.EmpresaID,variablesSesion.OficinaAlmacenID,ulimaPlanilla.PlanillaID,2)
       } else {
-        console.log("No se encontró ninguna planilla de caja.");
+        // console.log("No se encontró ninguna planilla de caja.");
       }      
       await Inicializador();
     }

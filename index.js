@@ -29,7 +29,7 @@ async function ApiOrders() {
         params: {
           display: "full",
           output_format: "XML",
-          limit: 300, // Obtener siempre los últimos 200 pedidos
+          limit: 200, // Obtener siempre los últimos 200 pedidos
           sort: "[id_DESC]", // Ordenar por ID de forma descendente (los últimos primero)
         },
         headers: {

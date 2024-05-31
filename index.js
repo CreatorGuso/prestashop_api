@@ -29,7 +29,7 @@ async function ApiOrders() {
         params: {
           display: "full",
           output_format: "XML",
-          limit: 100, // Obtener siempre los últimos 20 pedidos
+          limit: 300, // Obtener siempre los últimos 200 pedidos
           sort: "[id_DESC]", // Ordenar por ID de forma descendente (los últimos primero)
         },
         headers: {
@@ -53,7 +53,7 @@ async function ApiOrders() {
     const dia = fechaActual.getDate() < 10 ? '0' + fechaActual.getDate() : fechaActual.getDate();
     const mes = (fechaActual.getMonth() + 1) < 10 ? '0' + (fechaActual.getMonth() + 1) : (fechaActual.getMonth() + 1);
     const fechaFormateada = fechaActual.getFullYear() + '-' + mes + '-' + dia;
-    
+
     // Extraer los elementos <order> y filtrar por fecha de hoy
     const orders = result.prestashop.orders.order.filter(order => {
       const orderDate = new Date(order.date_upd);
@@ -62,7 +62,7 @@ async function ApiOrders() {
       const orderFechaFormateada = orderDate.getFullYear() + '-' + orderMes + '-' + orderDia;
       return orderFechaFormateada === fechaFormateada;
     });
-    
+
 
     // Mapear las órdenes filtradas
     const ordersInfo = orders.map(order => ({
@@ -142,7 +142,7 @@ async function HistorialOrden(orderId) {
         throw new Error("Error al parsear la respuesta XML HistorialOrden2");
       }
       EstadoHistorial = {
-        estadodeOrden: result.prestashop.order_history.id_order_state._ ,
+        estadodeOrden: result.prestashop.order_history.id_order_state._,
       };
     });
 
@@ -602,65 +602,63 @@ let PlanillaID = '';
 
 
 // async function createPedido(paramsOrden, ParamsPersona, variablesSesion, PlanillaID) {
-//   console.log("Entramos al modelo de pedidos");
 //   let pool, result, error = '';
-//   let nuevoIDpedido = 0;
+//   let newPedidoID = 0;
+//   let transaction;
+
 //   try {
 //     pool = await sql.connect(config);
+//     // transaction = await pool.Transaction();
+//     transaction = new sql.Transaction(pool);
 
-//     //Obtenemos el maximo valor de nuestro Pedido para uno nuevo
-//     // const query_count2 = `
-//     //   SELECT COALESCE(MAX(NumeroPedido), 0) + 1 AS IDPedido
-//     //   FROM VentaPedidoCabecera;`;
-
-//     // const result_count = await pool.request().query(query_count2);
-//     // nuevoIDpedido = result_count.recordset[0].IDPedido;
-//     // console.log(nuevoIDpedido);
-
-//     var seriePedido = 103.00003;
+//     await transaction.begin();
 //     const partes = paramsOrden.SerieDePedido.id_adress_Entrega.split("-");
 //     // Obtener la primera parte que corresponde al tipo de serie
 //     const tipoSerie = partes[0];
 
+//     var seriePedido = 103.00003;
 //     if (tipoSerie == 'BO') {
 //       seriePedido = 103.00003;
 //     } else if (tipoSerie == 'FA') {
 //       seriePedido = 103.00001;
 //     }
-//     //Extraccion de numero de serie // --> F-B Serie o boleta
-//     const queryDocRelativo = `
-//       SELECT *
-//       FROM documentocorrelativo 
-//       WHERE EmpresaID = ${parseFloat(variablesSesion.EmpresaID)} 
-//       AND OficinaAlmacenID = ${parseFloat(variablesSesion.OficinaAlmacenID)} 
-//       AND TipoDocID = 103.00048 `;
 
-//     const result_Serie = await pool.request().query(queryDocRelativo);
-//     const SerieCorrelativo = result_Serie.recordset[0].SerieDoc;
+//     //Extraccion de numero de serie
+//     const queryDocRelativo = `
+//           select * from documentocorrelativo where EmpresaID = ${parseFloat(variablesSesion.EmpresaID)}
+//           and OficinaAlmacenID = ${parseFloat(variablesSesion.OficinaAlmacenID)}
+//           and TipoDocID = 103.00048 ;`;
+//     const request9 = pool.request();
+//     request9.transaction = transaction;
+//     result_Serie = await request9.query(queryDocRelativo);
+//     let SerieCorrelativo = result_Serie.recordset[0].SerieDoc;
 //     let ConsecutivoActual = result_Serie.recordset[0].Consecutivo;
 
 //     const queryConsecutivoCorrelativo = `
-//           UPDATE documentoCorrelativo
-//           SET Consecutivo = @Consecutivo
-//           WHERE EmpresaID = @Empresa
-//           AND OficinaAlmacenID = @OficinaAlmacenID
-//           AND TipoDocID = 103.00048;`;
+//         UPDATE documentoCorrelativo
+//         SET Consecutivo = @Consecutivo
+//         WHERE EmpresaID = @Empresa
+//         AND OficinaAlmacenID = @OficinaAlmacenID
+//         AND TipoDocID = 103.00048 ;`;
 
-//           const requestConsecutivo = pool.request();
-//           requestConsecutivo.input('Empresa', sql.Int, variablesSesion.EmpresaID);
-//           requestConsecutivo.input('OficinaAlmacenID', sql.Decimal(6, 3), variablesSesion.OficinaAlmacenID);
-//           requestConsecutivo.input('Consecutivo', sql.Int, (parseInt(ConsecutivoActual) + 1));
+//     const requestConsecutivo = pool.request();
+//     requestConsecutivo.transaction = transaction;
+//     requestConsecutivo.input('Empresa', sql.Int, variablesSesion.EmpresaID);
+//     requestConsecutivo.input('OficinaAlmacenID', sql.Decimal(6, 3), variablesSesion.OficinaAlmacenID);
+//     console.log("Este es el consecutivo actual", (parseInt(ConsecutivoActual) + 1));
+//     requestConsecutivo.input('Consecutivo', sql.Int, (parseInt(ConsecutivoActual) + 1));
 //     result = await requestConsecutivo.query(queryConsecutivoCorrelativo);
 
-
 //     const query = `
-//     INSERT INTO VentaPedidoCabecera
-//     (EmpresaID, OficinaAlmacenID, SeriePedido, NumeroPedido, PersoneriaID, DireccionID, VendedorID, CondicionVtaID, MonedaID, ListaPrecioID, Fecha, TipoEntrega, FechaEntrega, DireccionEntrega, OficinaAlmacenEntregaID, Referencia, Observaciones, Cliente, Contacto, Contactotelefono, MotivoID, DeliveryTipoID, DeliveryTurnoID, TipoDocID, ValorPedido, PrecioPedido, TipoCambio, Estado, UsuarioID, FechaCreacion, FechaModificacion, TipoVenta, Gratuita, PlanillaID, ConvenioID, WebID)
-//     VALUES
-//     (1, @OficinaAlmacenID, @SerieCorrelativo, @NumeroPedido, @PersoneriaID, @DireccionID, @Vendedor, @CondicionVtaID, @MonedaID, @ListaPrecioID, CONVERT(datetime,@Fecha, 120), @TipoEntrega, CONVERT(datetime,@FechaEntrega, 120) , @DireccionEntrega, @OficinaAlmacenEntregaID, @Referencia, @Observaciones, '', @Contacto, @Contactotelefono, @MotivoID, @DeliveryTipoID, @DeliveryTurnoID, @TipoDocID, @ValorPedido, @PrecioPedido, 0.00000, '1', @UsuarioID, CONVERT(datetime,@FechaCreacion, 120), CONVERT(datetime,@FechaEdicion, 120), @TipoVenta, @HabilitarFecha, @IDPlanilla, @ConvenioID, @WebID);
-//   SELECT SCOPE_IDENTITY() AS LastInsertedID;`;
+//       INSERT INTO VentaPedidoCabecera
+//         (EmpresaID, OficinaAlmacenID, SeriePedido, NumeroPedido, PersoneriaID, DireccionID, VendedorID, CondicionVtaID, MonedaID, ListaPrecioID, Fecha, TipoEntrega, FechaEntrega, DireccionEntrega, OficinaAlmacenEntregaID, Referencia, Observaciones, Cliente, Contacto, Contactotelefono, MotivoID, DeliveryTipoID, DeliveryTurnoID, TipoDocID, ValorPedido, PrecioPedido, TipoCambio, Estado, UsuarioID, FechaCreacion, FechaModificacion, TipoVenta, Gratuita, PlanillaID, ConvenioID, WebID)
+//         VALUES
+//         (1, @OficinaAlmacenID, @SerieCorrelativo, @NumeroPedido, @PersoneriaID, @DireccionID, @Vendedor, @CondicionVtaID, @MonedaID, @ListaPrecioID, CONVERT(datetime,@Fecha, 120), @TipoEntrega, CONVERT(datetime,@FechaEntrega, 120) , @DireccionEntrega, @OficinaAlmacenEntregaID, @Referencia, @Observaciones, '', @Contacto, @Contactotelefono, @MotivoID, @DeliveryTipoID, @DeliveryTurnoID, @TipoDocID, @ValorPedido, @PrecioPedido, 0.00000, '1', @UsuarioID, CONVERT(datetime,@FechaCreacion, 120), CONVERT(datetime,@FechaEdicion, 120), @TipoVenta, @HabilitarFecha, @IDPlanilla, @ConvenioID, @WebID);
+//       SELECT SCOPE_IDENTITY() AS LastInsertedID;
+//       `;
 
 //     const request = pool.request();
+//     request.transaction = transaction;
 //     request.input('OficinaAlmacenID', sql.Decimal(6, 3), variablesSesion.OficinaAlmacenID);
 //     request.input('NumeroPedido', sql.Int, (parseInt(ConsecutivoActual) + 1));
 //     request.input('SerieCorrelativo', sql.VarChar, SerieCorrelativo);
@@ -669,10 +667,10 @@ let PlanillaID = '';
 //     request.input('MonedaID', sql.Decimal(9, 5), 102.00001);
 //     request.input('ListaPrecioID', sql.Decimal(9, 5), 108.00001);
 //     request.input('TipoEntrega', sql.Int, 2);
-//     request.input('FechaEntrega', sql.VarChar, paramsOrden.Pedido.ddw_order_date); //new Date(paramsOrden.Pedido.ddw_order_date.split(" ")[0])
-//     request.input('FechaCreacion', sql.VarChar, paramsOrden.Pedido.date_add);
-//     request.input('FechaEdicion', sql.VarChar, paramsOrden.Pedido.date_upd);
-//     request.input('Fecha', sql.VarChar, paramsOrden.Pedido.date_add);
+//     request.input('FechaEntrega', sql.NVarChar, paramsOrden.Pedido.ddw_order_date);
+//     request.input('FechaCreacion', sql.NVarChar, paramsOrden.Pedido.date_add);
+//     request.input('FechaEdicion', sql.NVarChar, paramsOrden.Pedido.date_upd);
+//     request.input('Fecha', sql.NVarChar, paramsOrden.Pedido.date_add);
 //     request.input('DireccionEntrega', sql.VarChar, paramsOrden.DireccionEntrega.direccion_1);
 //     request.input('OficinaAlmacenEntregaID', sql.Decimal(6, 3), 1);
 //     request.input('Referencia', sql.VarChar, paramsOrden.Pedido.gift_message);
@@ -684,35 +682,33 @@ let PlanillaID = '';
 //     request.input('DeliveryTipoID', sql.Decimal(9, 5), 193.00001);
 
 //     function obtenerTurno(ddw_order_time) {
-//       // Dividir el valor de ddw_order_time para obtener la hora de inicio y fin del turno
 //       let [inicio, fin] = ddw_order_time.split(' - ');
 //       inicio = parseInt(inicio.split(':')[0]);
 //       fin = parseInt(fin.split(':')[0]);
-  
-//       // Definir los horarios de inicio y fin de cada turno , Ojo deberia ser automatico segun tablaempresa
+
 //       const turnos = [
-//           { numero: '192.00002', inicio: 9, fin: 14 },
-//           { numero: '192.00003', inicio: 14, fin: 18 },
-//           { numero: '192.00005', inicio: 17, fin: 20 }
+//         { numero: '192.00002', inicio: 9, fin: 14 },
+//         { numero: '192.00003', inicio: 14, fin: 18 },
+//         { numero: '192.00005', inicio: 17, fin: 20 }
 //       ];
-  
+
 //       // Calcular la distancia al turno más cercano
 //       let distanciaMinima = Number.MAX_SAFE_INTEGER;
 //       let turnoCercano = 'No se encontró un turno válido';
-  
+
 //       for (let turno of turnos) {
-//           let distanciaInicio = Math.abs(inicio - turno.inicio);
-//           let distanciaFin = Math.abs(fin - turno.fin);
-//           let distancia = distanciaInicio + distanciaFin;
-  
-//           if (distancia < distanciaMinima) {
-//               distanciaMinima = distancia;
-//               turnoCercano = turno.numero;
-//           }
+//         let distanciaInicio = Math.abs(inicio - turno.inicio);
+//         let distanciaFin = Math.abs(fin - turno.fin);
+//         let distancia = distanciaInicio + distanciaFin;
+
+//         if (distancia < distanciaMinima) {
+//           distanciaMinima = distancia;
+//           turnoCercano = turno.numero;
+//         }
 //       }
 //       // Retornar el turno más cercano
 //       return turnoCercano;
-//   }
+//     }
 
 //     request.input('DeliveryTurnoID', sql.Decimal(9, 5), obtenerTurno(paramsOrden.Pedido.ddw_order_time)); //192.00002 iba por defecto
 //     request.input('TipoDocID', sql.Decimal(9, 5), seriePedido);
@@ -727,12 +723,13 @@ let PlanillaID = '';
 //     request.input('PrecioPedido', sql.Decimal(9, 5), paramsOrden.Pedido.total_paid);
 
 //     result = await request.query(query);
-//     const newPedidoID = result.recordset[0].LastInsertedID;
-//     console.log("Este es mi pedido Id ::::::::::::::::::::::::", newPedidoID);
-
+//     newPedidoID = result.recordset[0].LastInsertedID;
+//     // console.log("Este es mi pedido Id ::::::::::::::::::::::::", newPedidoID);
+//     // console.log(params);
 //     let ConsecutivoProducto = 0;
-//     const orderRows = paramsOrden.Pedido.productos.order_rows.order_row;
 
+//     const orderRows = paramsOrden.Pedido.productos.order_rows.order_row;
+//     // console.log("Estos son mis productos",orderRows);
 //     let cantidadProductos;
 //     if (Array.isArray(orderRows)) {
 //       cantidadProductos = orderRows.length;
@@ -741,8 +738,7 @@ let PlanillaID = '';
 //     }
 
 //     for (let i = 0; i < cantidadProductos; i++) {
-//       console.log("Entramos al procedimiento de agregar productos");
-
+//       // console.log("Entramos al procedimiento de agregar productos");
 //       let producto;
 //       if (Array.isArray(orderRows)) {
 //         producto = orderRows[i];
@@ -750,104 +746,118 @@ let PlanillaID = '';
 //         // Si orderRows no es un array, asumimos que es un objeto con un solo elemento
 //         producto = orderRows;
 //       }
-//       console.log(producto); // Muestra el producto actual para verificar
+//       // console.log(producto); // Muestra el producto actual para verificar
 
 //       const requestPrecio = pool.request();
-//       const precioQuery = `
-//         SELECT PP.* 
-//         FROM ProductoPrecio PP
-//         LEFT JOIN Producto P ON PP.ProductoID = P.ProductoID
-//         WHERE P.CodigoAlterno = @CodigoAlterno;`;
-
-//       const referenciaPura = producto.product_reference.includes('-D')
-//         ? producto.product_reference.split('-D')[0]
+//       const productoERP = `
+//         select * from producto WHERE CodigoAlterno = @CodigoAlterno;`;
+//       const referenciaPura = producto.product_reference.includes('-')
+//         ? producto.product_reference.split('-')[0]
 //         : producto.product_reference;
-//       // Sin -D
+
+//       requestPrecio.transaction = transaction;
 //       requestPrecio.input('CodigoAlterno', sql.VarChar, referenciaPura);
-//       console.log("Este es el producto referencia");
-//       console.log(producto.product_reference);
-//       const resultPrecio = await requestPrecio.query(precioQuery);
-//       const precioProducto = resultPrecio.recordset[0].Contado;
+//       // console.log("Este es el producto referencia");
+//       // console.log(producto.product_reference);
+//       const resultPrecio = await requestPrecio.query(productoERP);
+
+//       // const precioProducto = resultPrecio.recordset[0].Contado;
 //       const ProductoID = resultPrecio.recordset[0].ProductoID;
-//       const UMContenidoID = resultPrecio.recordset[0].UMContenidoID;
+//       const UMContenidoID = resultPrecio.recordset[0].UMUnitarioID;
+
+//       // if (resultPrecio.recordset.length === 0) {
+//       //   console.log("Se cancela el proceso no se encontro producto");
+//       //   await transaction.rollback();
+//       // } 
 
 //       const request2 = pool.request();
 //       const query1 = `
-//     INSERT INTO VentaPedidoDetalle
-//       (EmpresaID, OficinaAlmacenID, PedidoID, Consecutivo, ProductoID, cantidad, valorunitario, preciounitario, PorcentajeDescuento, descuento, FechaEntrega, UMUnitarioID, observaciones, Estado, UsuarioID, FechaCreacion, FechaModificacion)
-//       VALUES
-//       (1, @OficinaAlmacenID,
-//         @PedidoID, @Consecutivo, @ProductoID, @cantidad, 0.0, @preciounitario, 0.0, @descuento, @FechaEntrega, @UMUnitarioID, '', 1, @UsuarioID, @FechaEntrega, @FechaEntrega);`;
+//           INSERT INTO VentaPedidoDetalle
+//             (EmpresaID, OficinaAlmacenID, PedidoID, Consecutivo, ProductoID, cantidad, valorunitario, preciounitario, PorcentajeDescuento, descuento, FechaEntrega, UMUnitarioID, observaciones, Estado, UsuarioID, FechaCreacion, FechaModificacion)
+//             VALUES
+//             (1, @OficinaAlmacenID,
+//           @PedidoID, @Consecutivo, @ProductoID, @cantidad, 0.0, @preciounitario, 0.0, @descuento, @FechaEntrega, @UMUnitarioID, '', 1, @UsuarioID, CONVERT(datetime,@FechaCreacion, 120), CONVERT(datetime,@FechaEdicion, 120));`;
 
+//       request2.transaction = transaction;
 //       request2.input('OficinaAlmacenID', sql.Decimal(6, 3), variablesSesion.OficinaAlmacenID);
 //       request2.input('PedidoID', sql.Int, newPedidoID);
 //       request2.input('Consecutivo', sql.Int, i + 1);
 //       ConsecutivoProducto = i + 1;
 //       request2.input('ProductoID', sql.Int, ProductoID);
 //       request2.input('cantidad', sql.Decimal(12, 4), producto.product_quantity);
-//       request2.input('preciounitario', sql.Decimal(18, 9), precioProducto);
+//       request2.input('preciounitario', sql.Decimal(18, 9), producto.unit_price_tax_incl);
 //       request2.input('descuento', sql.Decimal(18, 9), 0.00);
-//       request2.input('FechaEntrega', sql.Date, new Date(paramsOrden.Pedido.ddw_order_date.split(" ")[0]));
+//       request2.input('FechaEntrega', sql.NVarChar, paramsOrden.Pedido.ddw_order_date);
+//       request2.input('FechaCreacion', sql.NVarChar, paramsOrden.Pedido.date_add);
+//       request2.input('FechaEdicion', sql.NVarChar, paramsOrden.Pedido.date_upd);
 //       request2.input('UMUnitarioID', sql.Decimal(9, 5), UMContenidoID);
 //       request2.input('UsuarioID', sql.Int, variablesSesion.UsuarioID);
 //       await request2.query(query1);
 //     }
-
 //     // Insertar el delivery como producto
 //     const requestPrecioDelivery = pool.request();
-//     const precioQueryDelivery = `
-//             SELECT PP.*
-//             FROM ProductoPrecio PP
-//             LEFT JOIN Producto P ON PP.ProductoID = P.ProductoID
-//             WHERE P.CodigoAlterno = @CodigoAlterno;`;
-
+//     const productoERPDelivery = `
+//         select * from producto WHERE CodigoAlterno = @CodigoAlterno;`;
+//     requestPrecioDelivery.transaction = transaction;
 //     requestPrecioDelivery.input('CodigoAlterno', sql.VarChar, paramsOrden.IDEntrega_Direccion.id);
-//     const resultPrecioDelivery = await requestPrecioDelivery.query(precioQueryDelivery);
-//     console.log("Este es el resultado de mi Delivery");
-//     console.log(resultPrecioDelivery);
-//     const precioProductoDelivery = resultPrecioDelivery.recordset[0].Contado;
+//     const resultPrecioDelivery = await requestPrecioDelivery.query(productoERPDelivery);
+//     // console.log("Este es el resultado de mi Delivery");
+//     // console.log(resultPrecioDelivery);
+//     // const precioProductoDelivery = resultPrecioDelivery.recordset[0].Contado;
 //     const ProductoIDDelivery = resultPrecioDelivery.recordset[0].ProductoID;
-//     const UMContenidoIDDelivery = resultPrecioDelivery.recordset[0].UMContenidoID;
+//     const UMContenidoIDDelivery = resultPrecioDelivery.recordset[0].UMUnitarioID;
+
+//     // if (resultPrecioDelivery.recordset.length === 0) {
+//     //   console.log("Se cancela el proceso no se encontro delivery");
+//     //   await transaction.rollback();
+//     // } 
 
 //     const request5 = pool.request();
 //     const query5 = `
-//             INSERT INTO VentaPedidoDetalle
-//               (EmpresaID, OficinaAlmacenID, PedidoID, Consecutivo, ProductoID, cantidad, valorunitario, preciounitario, PorcentajeDescuento, descuento, FechaEntrega, UMUnitarioID, observaciones, Estado, UsuarioID, FechaCreacion, FechaModificacion)
-//               VALUES
-//               (1, @OficinaAlmacenID, @PedidoID, @Consecutivo, @ProductoID, @cantidad, 0.0, @preciounitario, 0.0, @descuento, @FechaEntrega, @UMUnitarioID, '', 1, @UsuarioID, GETDATE(), GETDATE());`;
+//                 INSERT INTO VentaPedidoDetalle
+//                   (EmpresaID, OficinaAlmacenID, PedidoID, Consecutivo, ProductoID, cantidad, valorunitario, preciounitario, PorcentajeDescuento, descuento, FechaEntrega, UMUnitarioID, observaciones, Estado, UsuarioID, FechaCreacion, FechaModificacion)
+//                   VALUES
+//                   (1, @OficinaAlmacenID, @PedidoID, @Consecutivo, @ProductoID, @cantidad, 0.0, @preciounitario, 0.0, @descuento, CONVERT(datetime,@FechaEntrega, 120), @UMUnitarioID, '', 1, @UsuarioID, CONVERT(datetime,@FechaCreacion, 120), CONVERT(datetime,@FechaEdicion, 120));`;
 
+//     request5.transaction = transaction;
 //     request5.input('OficinaAlmacenID', sql.Decimal(6, 3), variablesSesion.OficinaAlmacenID);
 //     request5.input('PedidoID', sql.Int, newPedidoID);
 //     request5.input('Consecutivo', sql.Int, ConsecutivoProducto + 1);
 //     request5.input('ProductoID', sql.Int, ProductoIDDelivery);
 //     request5.input('cantidad', sql.Decimal(12, 4), 1);
-//     request5.input('preciounitario', sql.Decimal(18, 9), precioProductoDelivery);
+//     request5.input('preciounitario', sql.Decimal(18, 9), paramsOrden.Pedido.total_shipping);
 //     request5.input('descuento', sql.Decimal(18, 9), 0.00);
-//     request5.input('FechaEntrega', sql.Date, new Date(paramsOrden.Pedido.ddw_order_date.split(" ")[0]));
+//     request5.input('FechaEntrega', sql.NVarChar, paramsOrden.Pedido.ddw_order_date);
+//     request5.input('FechaCreacion', sql.NVarChar, paramsOrden.Pedido.date_add);
+//     request5.input('FechaEdicion', sql.NVarChar, paramsOrden.Pedido.date_upd);
 //     request5.input('UMUnitarioID', sql.Decimal(9, 5), UMContenidoIDDelivery);
 //     request5.input('UsuarioID', sql.Int, variablesSesion.UsuarioID);
 //     await request5.query(query5);
 
+//     // Fin de insersion de el Delivery como producto
+
 //     // Insertar información de TablaEmpresa
 //     const requestMPago = pool.request();
-//     console.log(paramsOrden.Pedido);
-//     console.log("Este es mi modulo", paramsOrden.Pedido['módulo']);
+//     // console.log(paramsOrden.Pedido);
+//     // console.log("Este es mi modulo", paramsOrden.Pedido['módulo']);
 //     const queryMPago = `
-//             SELECT * FROM TablaEmpresa WHERE Abreviatura = @referencia;`;
+//                 SELECT * FROM TablaEmpresa WHERE Abreviatura = @referencia;`;
+//     requestMPago.transaction = transaction;
 //     requestMPago.input('referencia', sql.VarChar, paramsOrden.Pedido['módulo']);
 //     const resultMPago = await requestMPago.query(queryMPago);
-//     console.log("Este es mi resul medio pago");
-//     console.log(resultMPago);
+//     // console.log("Este es mi resul medio pago");
+//     // console.log(resultMPago);
 //     if (resultMPago.recordset.length > 0) {
-//       console.log("Entramos al registro del medio de pago");
+//       // console.log("Entramos al registro del medio de pago");
 //       const tablaEmpresaInfo = resultMPago.recordset[0];
 //       const request4 = pool.request();
 //       const query4 = `
-//               INSERT INTO VentaPedidoPago
-//                 (EmpresaID, OficinaAlmacenID, PedidoID, FormaPagoID, MontoPago, UsuarioID, FechaCreacion, FechaModificacion, NroOperacion, PlanillaID)
-//                 VALUES
-//                 (1, @OficinaAlmacenID, @PedidoID, @FormaPagoID, @MontoPago, @UsuarioID, GETDATE(), GETDATE(), @NroOperacion, @PlanillaID);`;
+//                   INSERT INTO VentaPedidoPago
+//                     (EmpresaID, OficinaAlmacenID, PedidoID, FormaPagoID, MontoPago, UsuarioID, FechaCreacion, FechaModificacion, NroOperacion, PlanillaID)
+//                     VALUES
+//                     (1, @OficinaAlmacenID, @PedidoID, @FormaPagoID, @MontoPago, @UsuarioID, GETDATE(), GETDATE(), @NroOperacion, @PlanillaID);`;
 
+//       request4.transaction = transaction;
 //       request4.input('OficinaAlmacenID', sql.Decimal(6, 3), variablesSesion.OficinaAlmacenID);
 //       request4.input('PedidoID', sql.Int, newPedidoID);
 //       request4.input('FormaPagoID', sql.Decimal(9, 5), tablaEmpresaInfo.CodigoID);
@@ -857,27 +867,29 @@ let PlanillaID = '';
 //       request4.input('PlanillaID', sql.NVarChar, PlanillaID);
 //       await request4.query(query4);
 //     } else {
-//       console.log("No entra al if");
+//       console.log("No entra al if y no se agregaron los medios de pago");
 //     }
 
+//     // Fin de Insertar los medios de pago
 
 
-//     console.log("Ejecutamos el procedimiento de facturacion");
+//     // Procediiento de facturacion de pedido
+//     // console.log("Ejecutamos el procedimiento de facturacion");
 
 //     const query2 = `
-//             EXEC spPyOPedidoGeneraComprobante 1, @OficinaAlmacenID, @PedidoID, @tipoDocID,'E';`;
-
+//           EXEC spPyOPedidoGeneraComprobante @Empresa, @OficinaAlmacenID, @PedidoID, @tipoDocID,'E';`;
 //     const request3 = pool.request();
+//     request3.input('Empresa', sql.Int, variablesSesion.EmpresaID);
 //     request3.input('OficinaAlmacenID', sql.Decimal(6, 3), variablesSesion.OficinaAlmacenID);
-//     console.log("Esta es la OficinaAlmacen :", variablesSesion.OficinaAlmacenID)
-//     console.log("Este es mi newPedidoID para el procedimiento:: ", newPedidoID);
-//     console.log("Esta es la serie del pedido",seriePedido);
+//     // console.log("Esta es la OficinaAlmacen :", variablesSesion.OficinaAlmacenID)
+//     // console.log("Este es mi newPedidoID para el procedimiento:: ", newPedidoID);
 //     request3.input('PedidoID', sql.Int, newPedidoID);
 //     request3.input('tipoDocID', sql.Decimal(9, 5), seriePedido);
-
-//     await request3.query(query2);
-
+//     result = await request3.query(query2);
+//     //Fin de ejecucion de procedimiento de facturacion 
+//     await transaction.commit();
 //   } catch (err) {
+//     await transaction.rollback();
 //     error = err.toString();
 //   } finally {
 //     if (pool) {
@@ -888,55 +900,59 @@ let PlanillaID = '';
 //     result,
 //     error
 //   };
-// }
+// };
 
-async function createPedido(paramsOrden,ParamsPersona, variablesSesion, PlanillaID) {
+async function createPedido(paramsOrden, ParamsPersona, variablesSesion, PlanillaID) {
   let pool, result, error = '';
   let newPedidoID = 0;
   let transaction;
 
   try {
-      pool = await sql.connect(config);
-      transaction = await pool.transaction();
-      await transaction.begin();
-      const partes = paramsOrden.SerieDePedido.id_adress_Entrega.split("-");
-      // Obtener la primera parte que corresponde al tipo de serie
-      const tipoSerie = partes[0];
+    pool = await sql.connect(config);
+    // transaction = await pool.Transaction();
+    transaction = new sql.Transaction(pool);
 
-      var seriePedido = 103.00003;
-      if (tipoSerie == 'BO') {
-        seriePedido = 103.00003;
-      } else if (tipoSerie == 'FA') {
-        seriePedido = 103.00001;
-      }
+    await transaction.begin();
+    const partes = paramsOrden.SerieDePedido.id_adress_Entrega.split("-");
+    // Obtener la primera parte que corresponde al tipo de serie
+    const tipoSerie = partes[0];
 
-      //Extraccion de numero de serie
-      const queryDocRelativo = `
+    var seriePedido = 103.00003;
+    if (tipoSerie == 'BO') {
+      seriePedido = 103.00003;
+    } else if (tipoSerie == 'FA') {
+      seriePedido = 103.00001;
+    }
+
+    //Extraccion de numero de serie
+    const queryDocRelativo = `
           select * from documentocorrelativo where EmpresaID = ${parseFloat(variablesSesion.EmpresaID)}
           and OficinaAlmacenID = ${parseFloat(variablesSesion.OficinaAlmacenID)}
           and TipoDocID = 103.00048 ;`;
-      const request9 = pool.request();
-      request9.transaction = transaction;
-      result_Serie = await request9.query(queryDocRelativo);
-      let SerieCorrelativo = result_Serie.recordset[0].SerieDoc;
-      let ConsecutivoActual = result_Serie.recordset[0].Consecutivo;
+    // const request9 = pool.request();
+    const request9 = new sql.Request(transaction);
+    // request9.transaction = transaction;
+    result_Serie = await request9.query(queryDocRelativo);
+    let SerieCorrelativo = result_Serie.recordset[0].SerieDoc;
+    let ConsecutivoActual = result_Serie.recordset[0].Consecutivo;
 
-      const queryConsecutivoCorrelativo = `
+    const queryConsecutivoCorrelativo = `
         UPDATE documentoCorrelativo
         SET Consecutivo = @Consecutivo
         WHERE EmpresaID = @Empresa
         AND OficinaAlmacenID = @OficinaAlmacenID
         AND TipoDocID = 103.00048 ;`;
 
-        const requestConsecutivo = pool.request();
-        requestConsecutivo.transaction = transaction;
-        requestConsecutivo.input('Empresa', sql.Int, variablesSesion.EmpresaID);
-        requestConsecutivo.input('OficinaAlmacenID', sql.Decimal(6, 3), variablesSesion.OficinaAlmacenID);
-        console.log("Este es el consecutivo actual",(parseInt(ConsecutivoActual) + 1));
-        requestConsecutivo.input('Consecutivo',sql.Int, (parseInt(ConsecutivoActual) + 1));
-      result = await requestConsecutivo.query(queryConsecutivoCorrelativo);
+    // const requestConsecutivo = pool.request();
+    const requestConsecutivo = new sql.Request(transaction);
+    // requestConsecutivo.transaction = transaction;
+    requestConsecutivo.input('Empresa', sql.Int, variablesSesion.EmpresaID);
+    requestConsecutivo.input('OficinaAlmacenID', sql.Decimal(6, 3), variablesSesion.OficinaAlmacenID);
+    // console.log("Este es el consecutivo actual", (parseInt(ConsecutivoActual) + 1));
+    requestConsecutivo.input('Consecutivo', sql.Int, (parseInt(ConsecutivoActual) + 1));
+    result = await requestConsecutivo.query(queryConsecutivoCorrelativo);
 
-      const query = `
+    const query = `
       INSERT INTO VentaPedidoCabecera
         (EmpresaID, OficinaAlmacenID, SeriePedido, NumeroPedido, PersoneriaID, DireccionID, VendedorID, CondicionVtaID, MonedaID, ListaPrecioID, Fecha, TipoEntrega, FechaEntrega, DireccionEntrega, OficinaAlmacenEntregaID, Referencia, Observaciones, Cliente, Contacto, Contactotelefono, MotivoID, DeliveryTipoID, DeliveryTurnoID, TipoDocID, ValorPedido, PrecioPedido, TipoCambio, Estado, UsuarioID, FechaCreacion, FechaModificacion, TipoVenta, Gratuita, PlanillaID, ConvenioID, WebID)
         VALUES
@@ -944,251 +960,261 @@ async function createPedido(paramsOrden,ParamsPersona, variablesSesion, Planilla
       SELECT SCOPE_IDENTITY() AS LastInsertedID;
       `;
 
-      const request = pool.request();
-      request.transaction = transaction;
-      request.input('OficinaAlmacenID', sql.Decimal(6, 3), variablesSesion.OficinaAlmacenID);
-      request.input('NumeroPedido', sql.Int, (parseInt(ConsecutivoActual) + 1 ));
-      request.input('SerieCorrelativo', sql.VarChar, SerieCorrelativo);
-      request.input('PersoneriaID', sql.Int, ParamsPersona.PersoneriaID);
-      request.input('DireccionID', sql.Int, 1);
-      request.input('MonedaID', sql.Decimal(9, 5), 102.00001);
-      request.input('ListaPrecioID', sql.Decimal(9, 5), 108.00001);
-      request.input('TipoEntrega', sql.Int, 2);
-      request.input('FechaEntrega', sql.NVarChar, paramsOrden.Pedido.ddw_order_date); 
-      request.input('FechaCreacion', sql.NVarChar, paramsOrden.Pedido.date_add);
-      request.input('FechaEdicion', sql.NVarChar, paramsOrden.Pedido.date_upd);
-      request.input('Fecha', sql.NVarChar, paramsOrden.Pedido.date_add);
-      request.input('DireccionEntrega', sql.VarChar, paramsOrden.DireccionEntrega.direccion_1);
-      request.input('OficinaAlmacenEntregaID', sql.Decimal(6, 3), 1);
-      request.input('Referencia', sql.VarChar, paramsOrden.Pedido.gift_message);
-      request.input('Observaciones', sql.VarChar, paramsOrden.DireccionEntrega.Referencia + ' , Entro en el siguiente rando de hora ' + paramsOrden.Pedido.ddw_order_time);
-      request.input('Contacto', sql.VarChar, paramsOrden.DireccionEntrega.PesonaEntrega);
-      request.input('Contactotelefono', sql.VarChar, paramsOrden.DireccionEntrega.Telefono);
-      request.input('MotivoID', sql.Decimal(9, 5), 190.00062);
-      request.input('CondicionVtaID', sql.Decimal(9, 5), 113.00001);
-      request.input('DeliveryTipoID', sql.Decimal(9, 5), 193.00001);
-  
-      function obtenerTurno(ddw_order_time) {
-        let [inicio, fin] = ddw_order_time.split(' - ');
-        inicio = parseInt(inicio.split(':')[0]);
-        fin = parseInt(fin.split(':')[0]);
+    // const request = pool.request();
+    const request = new sql.Request(transaction);
+    // request.transaction = transaction;
+    request.input('OficinaAlmacenID', sql.Decimal(6, 3), variablesSesion.OficinaAlmacenID);
+    request.input('NumeroPedido', sql.Int, (parseInt(ConsecutivoActual) + 1));
+    request.input('SerieCorrelativo', sql.VarChar, SerieCorrelativo);
+    request.input('PersoneriaID', sql.Int, ParamsPersona.PersoneriaID);
+    request.input('DireccionID', sql.Int, 1);
+    request.input('MonedaID', sql.Decimal(9, 5), 102.00001);
+    request.input('ListaPrecioID', sql.Decimal(9, 5), 108.00001);
+    request.input('TipoEntrega', sql.Int, 2);
+    request.input('FechaEntrega', sql.NVarChar, paramsOrden.Pedido.ddw_order_date);
+    request.input('FechaCreacion', sql.NVarChar, paramsOrden.Pedido.date_add);
+    request.input('FechaEdicion', sql.NVarChar, paramsOrden.Pedido.date_upd);
+    request.input('Fecha', sql.NVarChar, paramsOrden.Pedido.date_add);
+    request.input('DireccionEntrega', sql.VarChar, paramsOrden.DireccionEntrega.direccion_1);
+    request.input('OficinaAlmacenEntregaID', sql.Decimal(6, 3), 1);
+    request.input('Referencia', sql.VarChar, paramsOrden.Pedido.gift_message);
+    request.input('Observaciones', sql.VarChar, paramsOrden.DireccionEntrega.Referencia + ' , Entro en el siguiente rando de hora ' + paramsOrden.Pedido.ddw_order_time);
+    request.input('Contacto', sql.VarChar, paramsOrden.DireccionEntrega.PesonaEntrega);
+    request.input('Contactotelefono', sql.VarChar, paramsOrden.DireccionEntrega.Telefono);
+    request.input('MotivoID', sql.Decimal(9, 5), 190.00062);
+    request.input('CondicionVtaID', sql.Decimal(9, 5), 113.00001);
+    request.input('DeliveryTipoID', sql.Decimal(9, 5), 193.00001);
 
-        const turnos = [
-            { numero: '192.00002', inicio: 9, fin: 14 },
-            { numero: '192.00003', inicio: 14, fin: 18 },
-            { numero: '192.00005', inicio: 17, fin: 20 }
-          ];
-      
-          // Calcular la distancia al turno más cercano
-          let distanciaMinima = Number.MAX_SAFE_INTEGER;
-          let turnoCercano = 'No se encontró un turno válido';
-      
-          for (let turno of turnos) {
-              let distanciaInicio = Math.abs(inicio - turno.inicio);
-              let distanciaFin = Math.abs(fin - turno.fin);
-              let distancia = distanciaInicio + distanciaFin;
-      
-              if (distancia < distanciaMinima) {
-                  distanciaMinima = distancia;
-                  turnoCercano = turno.numero;
-              }
-          }
-          // Retornar el turno más cercano
-          return turnoCercano;
-      }
-  
-      request.input('DeliveryTurnoID', sql.Decimal(9, 5), obtenerTurno(paramsOrden.Pedido.ddw_order_time)); //192.00002 iba por defecto
-      request.input('TipoDocID', sql.Decimal(9, 5), seriePedido);
-      request.input('UsuarioID', sql.Int, variablesSesion.UsuarioID);
-      request.input('Vendedor', sql.Int, variablesSesion.UsuarioID);
-      request.input('TipoVenta', sql.Int, 0);
-      request.input('HabilitarFecha', sql.Int, 0);
-      request.input('IDPlanilla', sql.NVarChar, PlanillaID);
-      request.input('ConvenioID', sql.Decimal(9, 5), 902.00001);
-      request.input('WebID', sql.Int, paramsOrden.Pedido.id);
-      request.input('ValorPedido', sql.Decimal(9, 5), paramsOrden.Pedido.total_paid);
-      request.input('PrecioPedido', sql.Decimal(9, 5), paramsOrden.Pedido.total_paid);
+    function obtenerTurno(ddw_order_time) {
+      let [inicio, fin] = ddw_order_time.split(' - ');
+      inicio = parseInt(inicio.split(':')[0]);
+      fin = parseInt(fin.split(':')[0]);
 
-      result = await request.query(query);
-      newPedidoID = result.recordset[0].LastInsertedID;
-      // console.log("Este es mi pedido Id ::::::::::::::::::::::::", newPedidoID);
-      // console.log(params);
-      let ConsecutivoProducto = 0;
+      const turnos = [
+        { numero: '192.00002', inicio: 9, fin: 14 },
+        { numero: '192.00003', inicio: 14, fin: 18 },
+        { numero: '192.00005', inicio: 17, fin: 20 }
+      ];
 
-      const orderRows = paramsOrden.Pedido.productos.order_rows.order_row;
-      // console.log("Estos son mis productos",orderRows);
-      let cantidadProductos;
-      if (Array.isArray(orderRows)) {
-        cantidadProductos = orderRows.length;
-      } else {
-        cantidadProductos = 1;
-      }
+      // Calcular la distancia al turno más cercano
+      let distanciaMinima = Number.MAX_SAFE_INTEGER;
+      let turnoCercano = 'No se encontró un turno válido';
 
-      for (let i = 0; i < cantidadProductos; i++) {
-        // console.log("Entramos al procedimiento de agregar productos");
-        let producto;
-        if (Array.isArray(orderRows)) {
-          producto = orderRows[i];
-        } else {
-          // Si orderRows no es un array, asumimos que es un objeto con un solo elemento
-          producto = orderRows;
+      for (let turno of turnos) {
+        let distanciaInicio = Math.abs(inicio - turno.inicio);
+        let distanciaFin = Math.abs(fin - turno.fin);
+        let distancia = distanciaInicio + distanciaFin;
+
+        if (distancia < distanciaMinima) {
+          distanciaMinima = distancia;
+          turnoCercano = turno.numero;
         }
-        // console.log(producto); // Muestra el producto actual para verificar
+      }
+      // Retornar el turno más cercano
+      return turnoCercano;
+    }
 
-        const requestPrecio = pool.request();
-        const productoERP = `
+    request.input('DeliveryTurnoID', sql.Decimal(9, 5), obtenerTurno(paramsOrden.Pedido.ddw_order_time)); //192.00002 iba por defecto
+    request.input('TipoDocID', sql.Decimal(9, 5), seriePedido);
+    request.input('UsuarioID', sql.Int, variablesSesion.UsuarioID);
+    request.input('Vendedor', sql.Int, variablesSesion.UsuarioID);
+    request.input('TipoVenta', sql.Int, 0);
+    request.input('HabilitarFecha', sql.Int, 0);
+    request.input('IDPlanilla', sql.NVarChar, PlanillaID);
+    request.input('ConvenioID', sql.Decimal(9, 5), 902.00001);
+    request.input('WebID', sql.Int, paramsOrden.Pedido.id);
+    request.input('ValorPedido', sql.Decimal(9, 5), paramsOrden.Pedido.total_paid);
+    request.input('PrecioPedido', sql.Decimal(9, 5), paramsOrden.Pedido.total_paid);
+
+    result = await request.query(query);
+    newPedidoID = result.recordset[0].LastInsertedID;
+    // console.log("Este es mi pedido Id ::::::::::::::::::::::::", newPedidoID);
+    // console.log(params);
+    let ConsecutivoProducto = 0;
+
+    const orderRows = paramsOrden.Pedido.productos.order_rows.order_row;
+    // console.log("Estos son mis productos",orderRows);
+    let cantidadProductos;
+    if (Array.isArray(orderRows)) {
+      cantidadProductos = orderRows.length;
+    } else {
+      cantidadProductos = 1;
+    }
+
+    for (let i = 0; i < cantidadProductos; i++) {
+      // console.log("Entramos al procedimiento de agregar productos");
+      let producto;
+      if (Array.isArray(orderRows)) {
+        producto = orderRows[i];
+      } else {
+        // Si orderRows no es un array, asumimos que es un objeto con un solo elemento
+        producto = orderRows;
+      }
+      // console.log(producto); // Muestra el producto actual para verificar
+
+      // const requestPrecio = pool.request();
+      const requestPrecio = new sql.Request(transaction);
+      const productoERP = `
         select * from producto WHERE CodigoAlterno = @CodigoAlterno;`;
-        const referenciaPura = producto.product_reference.includes('-')
-          ? producto.product_reference.split('-')[0]
-          : producto.product_reference;
+      const referenciaPura = producto.product_reference.includes('-')
+        ? producto.product_reference.split('-')[0]
+        : producto.product_reference;
 
-        requestPrecio.transaction = transaction;
-        requestPrecio.input('CodigoAlterno', sql.VarChar, referenciaPura);
-        // console.log("Este es el producto referencia");
-        // console.log(producto.product_reference);
-        const resultPrecio = await requestPrecio.query(productoERP);
+      // requestPrecio.transaction = transaction;
+      requestPrecio.input('CodigoAlterno', sql.VarChar, referenciaPura);
+      // console.log("Este es el producto referencia");
+      // console.log(producto.product_reference);
+      const resultPrecio = await requestPrecio.query(productoERP);
 
-        // const precioProducto = resultPrecio.recordset[0].Contado;
-        const ProductoID = resultPrecio.recordset[0].ProductoID;
-        const UMContenidoID = resultPrecio.recordset[0].UMUnitarioID;
+      // const precioProducto = resultPrecio.recordset[0].Contado;
+      const ProductoID = resultPrecio.recordset[0].ProductoID;
+      const UMContenidoID = resultPrecio.recordset[0].UMUnitarioID;
 
-        // if (resultPrecio.recordset.length === 0) {
-        //   console.log("Se cancela el proceso no se encontro producto");
-        //   await transaction.rollback();
-        // } 
+      // if (resultPrecio.recordset.length === 0) {
+      //   console.log("Se cancela el proceso no se encontro producto");
+      //   await transaction.rollback();
+      // } 
 
-        const request2 = pool.request();
-        const query1 = `
+      // const request2 = pool.request();
+      const request2 = new sql.Request(transaction);
+      const query1 = `
           INSERT INTO VentaPedidoDetalle
             (EmpresaID, OficinaAlmacenID, PedidoID, Consecutivo, ProductoID, cantidad, valorunitario, preciounitario, PorcentajeDescuento, descuento, FechaEntrega, UMUnitarioID, observaciones, Estado, UsuarioID, FechaCreacion, FechaModificacion)
             VALUES
             (1, @OficinaAlmacenID,
           @PedidoID, @Consecutivo, @ProductoID, @cantidad, 0.0, @preciounitario, 0.0, @descuento, @FechaEntrega, @UMUnitarioID, '', 1, @UsuarioID, CONVERT(datetime,@FechaCreacion, 120), CONVERT(datetime,@FechaEdicion, 120));`;
 
-        request2.transaction = transaction;
-        request2.input('OficinaAlmacenID', sql.Decimal(6, 3), variablesSesion.OficinaAlmacenID);
-        request2.input('PedidoID', sql.Int, newPedidoID);
-        request2.input('Consecutivo', sql.Int, i + 1);
-        ConsecutivoProducto = i + 1;
-        request2.input('ProductoID', sql.Int, ProductoID);
-        request2.input('cantidad', sql.Decimal(12, 4), producto.product_quantity);
-        request2.input('preciounitario', sql.Decimal(18, 9), producto.unit_price_tax_incl);
-        request2.input('descuento', sql.Decimal(18, 9), 0.00);
-        request2.input('FechaEntrega', sql.NVarChar, paramsOrden.Pedido.ddw_order_date);
-        request2.input('FechaCreacion', sql.NVarChar, paramsOrden.Pedido.date_add);
-        request2.input('FechaEdicion', sql.NVarChar, paramsOrden.Pedido.date_upd);
-        request2.input('UMUnitarioID', sql.Decimal(9, 5), UMContenidoID);
-        request2.input('UsuarioID', sql.Int, variablesSesion.UsuarioID);
-        await request2.query(query1);
-      }
-      // Insertar el delivery como producto
-        const requestPrecioDelivery = pool.request();
-        const productoERPDelivery = `
+      // request2.transaction = transaction;
+      request2.input('OficinaAlmacenID', sql.Decimal(6, 3), variablesSesion.OficinaAlmacenID);
+      request2.input('PedidoID', sql.Int, newPedidoID);
+      request2.input('Consecutivo', sql.Int, i + 1);
+      ConsecutivoProducto = i + 1;
+      request2.input('ProductoID', sql.Int, ProductoID);
+      request2.input('cantidad', sql.Decimal(12, 4), producto.product_quantity);
+      request2.input('preciounitario', sql.Decimal(18, 9), producto.unit_price_tax_incl);
+      request2.input('descuento', sql.Decimal(18, 9), 0.00);
+      request2.input('FechaEntrega', sql.NVarChar, paramsOrden.Pedido.ddw_order_date);
+      request2.input('FechaCreacion', sql.NVarChar, paramsOrden.Pedido.date_add);
+      request2.input('FechaEdicion', sql.NVarChar, paramsOrden.Pedido.date_upd);
+      request2.input('UMUnitarioID', sql.Decimal(9, 5), UMContenidoID);
+      request2.input('UsuarioID', sql.Int, variablesSesion.UsuarioID);
+      await request2.query(query1);
+    }
+    // Insertar el delivery como producto
+    // const requestPrecioDelivery = pool.request();
+    const requestPrecioDelivery = new sql.Request(transaction);
+    const productoERPDelivery = `
         select * from producto WHERE CodigoAlterno = @CodigoAlterno;`;
-        requestPrecioDelivery.transaction = transaction;
-        requestPrecioDelivery.input('CodigoAlterno', sql.VarChar, paramsOrden.IDEntrega_Direccion.id);
-        const resultPrecioDelivery = await requestPrecioDelivery.query(productoERPDelivery);
-        // console.log("Este es el resultado de mi Delivery");
-        // console.log(resultPrecioDelivery);
-        // const precioProductoDelivery = resultPrecioDelivery.recordset[0].Contado;
-        const ProductoIDDelivery = resultPrecioDelivery.recordset[0].ProductoID;
-        const UMContenidoIDDelivery = resultPrecioDelivery.recordset[0].UMUnitarioID;
+    // requestPrecioDelivery.transaction = transaction;
+    requestPrecioDelivery.input('CodigoAlterno', sql.VarChar, paramsOrden.IDEntrega_Direccion.id);
+    const resultPrecioDelivery = await requestPrecioDelivery.query(productoERPDelivery);
+    // console.log("Este es el resultado de mi Delivery");
+    // console.log(resultPrecioDelivery);
+    // const precioProductoDelivery = resultPrecioDelivery.recordset[0].Contado;
+    const ProductoIDDelivery = resultPrecioDelivery.recordset[0].ProductoID;
+    const UMContenidoIDDelivery = resultPrecioDelivery.recordset[0].UMUnitarioID;
 
-        // if (resultPrecioDelivery.recordset.length === 0) {
-        //   console.log("Se cancela el proceso no se encontro delivery");
-        //   await transaction.rollback();
-        // } 
+    // if (resultPrecioDelivery.recordset.length === 0) {
+    //   console.log("Se cancela el proceso no se encontro delivery");
+    //   await transaction.rollback();
+    // } 
 
-        const request5 = pool.request();
-        const query5 = `
+    // const request5 = pool.request();
+    const request5 = new sql.Request(transaction);;
+    const query5 = `
                 INSERT INTO VentaPedidoDetalle
                   (EmpresaID, OficinaAlmacenID, PedidoID, Consecutivo, ProductoID, cantidad, valorunitario, preciounitario, PorcentajeDescuento, descuento, FechaEntrega, UMUnitarioID, observaciones, Estado, UsuarioID, FechaCreacion, FechaModificacion)
                   VALUES
                   (1, @OficinaAlmacenID, @PedidoID, @Consecutivo, @ProductoID, @cantidad, 0.0, @preciounitario, 0.0, @descuento, CONVERT(datetime,@FechaEntrega, 120), @UMUnitarioID, '', 1, @UsuarioID, CONVERT(datetime,@FechaCreacion, 120), CONVERT(datetime,@FechaEdicion, 120));`;
-        
-        request5.transaction = transaction;
-        request5.input('OficinaAlmacenID', sql.Decimal(6, 3), variablesSesion.OficinaAlmacenID);
-        request5.input('PedidoID', sql.Int, newPedidoID);
-        request5.input('Consecutivo', sql.Int, ConsecutivoProducto + 1);
-        request5.input('ProductoID', sql.Int, ProductoIDDelivery);
-        request5.input('cantidad', sql.Decimal(12, 4), 1);
-        request5.input('preciounitario', sql.Decimal(18, 9), paramsOrden.Pedido.total_shipping);
-        request5.input('descuento', sql.Decimal(18, 9), 0.00);
-        request5.input('FechaEntrega', sql.NVarChar, paramsOrden.Pedido.ddw_order_date);
-        request5.input('FechaCreacion', sql.NVarChar, paramsOrden.Pedido.date_add);
-        request5.input('FechaEdicion', sql.NVarChar, paramsOrden.Pedido.date_upd);
-        request5.input('UMUnitarioID', sql.Decimal(9, 5), UMContenidoIDDelivery);
-        request5.input('UsuarioID', sql.Int, variablesSesion.UsuarioID);
-        await request5.query(query5);
 
-      // Fin de insersion de el Delivery como producto
+    // request5.transaction = transaction;
+    request5.input('OficinaAlmacenID', sql.Decimal(6, 3), variablesSesion.OficinaAlmacenID);
+    request5.input('PedidoID', sql.Int, newPedidoID);
+    request5.input('Consecutivo', sql.Int, ConsecutivoProducto + 1);
+    request5.input('ProductoID', sql.Int, ProductoIDDelivery);
+    request5.input('cantidad', sql.Decimal(12, 4), 1);
+    request5.input('preciounitario', sql.Decimal(18, 9), paramsOrden.Pedido.total_shipping);
+    request5.input('descuento', sql.Decimal(18, 9), 0.00);
+    request5.input('FechaEntrega', sql.NVarChar, paramsOrden.Pedido.ddw_order_date);
+    request5.input('FechaCreacion', sql.NVarChar, paramsOrden.Pedido.date_add);
+    request5.input('FechaEdicion', sql.NVarChar, paramsOrden.Pedido.date_upd);
+    request5.input('UMUnitarioID', sql.Decimal(9, 5), UMContenidoIDDelivery);
+    request5.input('UsuarioID', sql.Int, variablesSesion.UsuarioID);
+    await request5.query(query5);
 
-      // Insertar información de TablaEmpresa
-        const requestMPago = pool.request();
-        // console.log(paramsOrden.Pedido);
-        // console.log("Este es mi modulo", paramsOrden.Pedido['módulo']);
-        const queryMPago = `
+    // Fin de insersion de el Delivery como producto
+
+    // Insertar información de TablaEmpresa
+    const requestMPago = new sql.Request(transaction);
+    // console.log(paramsOrden.Pedido);
+    // console.log("Este es mi modulo", paramsOrden.Pedido['módulo']);
+    const queryMPago = `
                 SELECT * FROM TablaEmpresa WHERE Abreviatura = @referencia;`;
-        requestMPago.transaction = transaction;
-        requestMPago.input('referencia', sql.VarChar, paramsOrden.Pedido['módulo']);
-        const resultMPago = await requestMPago.query(queryMPago);
-        // console.log("Este es mi resul medio pago");
-        // console.log(resultMPago);
-        if (resultMPago.recordset.length > 0) {
-          // console.log("Entramos al registro del medio de pago");
-          const tablaEmpresaInfo = resultMPago.recordset[0];
-          const request4 = pool.request();
-          const query4 = `
+    // requestMPago.transaction = transaction;
+    requestMPago.input('referencia', sql.VarChar, paramsOrden.Pedido['módulo']);
+    const resultMPago = await requestMPago.query(queryMPago);
+    // console.log("Este es mi resul medio pago");
+    // console.log(resultMPago);
+    if (resultMPago.recordset.length > 0) {
+      // console.log("Entramos al registro del medio de pago");
+      const tablaEmpresaInfo = resultMPago.recordset[0];
+      // const request4 = pool.request();
+      const request4 = new sql.Request(transaction);
+      const query4 = `
                   INSERT INTO VentaPedidoPago
                     (EmpresaID, OficinaAlmacenID, PedidoID, FormaPagoID, MontoPago, UsuarioID, FechaCreacion, FechaModificacion, NroOperacion, PlanillaID)
                     VALUES
                     (1, @OficinaAlmacenID, @PedidoID, @FormaPagoID, @MontoPago, @UsuarioID, GETDATE(), GETDATE(), @NroOperacion, @PlanillaID);`;
 
-          request4.transaction = transaction;
-          request4.input('OficinaAlmacenID', sql.Decimal(6, 3), variablesSesion.OficinaAlmacenID);
-          request4.input('PedidoID', sql.Int, newPedidoID);
-          request4.input('FormaPagoID', sql.Decimal(9, 5), tablaEmpresaInfo.CodigoID);
-          request4.input('MontoPago', sql.Decimal(12, 2), paramsOrden.Pedido.total_paid);
-          request4.input('UsuarioID', sql.Int, variablesSesion.UsuarioID);
-          request4.input('NroOperacion', sql.NVarChar, ''); //paramsOrden.Pedido.reference
-          request4.input('PlanillaID', sql.NVarChar, PlanillaID);
-          await request4.query(query4);
-        } else {
-          console.log("No entra al if y no se agregaron los medios de pago");
-        }
+      // request4.transaction = transaction;
+      request4.input('OficinaAlmacenID', sql.Decimal(6, 3), variablesSesion.OficinaAlmacenID);
+      request4.input('PedidoID', sql.Int, newPedidoID);
+      request4.input('FormaPagoID', sql.Decimal(9, 5), tablaEmpresaInfo.CodigoID);
+      request4.input('MontoPago', sql.Decimal(12, 2), paramsOrden.Pedido.total_paid);
+      request4.input('UsuarioID', sql.Int, variablesSesion.UsuarioID);
+      request4.input('NroOperacion', sql.NVarChar, ''); //paramsOrden.Pedido.reference
+      request4.input('PlanillaID', sql.NVarChar, PlanillaID);
+      await request4.query(query4);
+    } else {
+      console.log("No entra al if y no se agregaron los medios de pago");
+    }
 
-      // Fin de Insertar los medios de pago
-      
+    // Fin de Insertar los medios de pago
 
-      // Procediiento de facturacion de pedido
-          // console.log("Ejecutamos el procedimiento de facturacion");
 
-          const query2 = `
+    // Procediiento de facturacion de pedido
+    // console.log("Ejecutamos el procedimiento de facturacion");
+
+    const query2 = `
           EXEC spPyOPedidoGeneraComprobante @Empresa, @OficinaAlmacenID, @PedidoID, @tipoDocID,'E';`;
-          const request3 = pool.request();
-          request3.input('Empresa', sql.Int, variablesSesion.EmpresaID);
-          request3.input('OficinaAlmacenID', sql.Decimal(6, 3), variablesSesion.OficinaAlmacenID);
-          // console.log("Esta es la OficinaAlmacen :", variablesSesion.OficinaAlmacenID)
-          // console.log("Este es mi newPedidoID para el procedimiento:: ", newPedidoID);
-          request3.input('PedidoID', sql.Int, newPedidoID);
-          request3.input('tipoDocID', sql.Decimal(9, 5), seriePedido);
-          result = await request3.query(query2);
-      //Fin de ejecucion de procedimiento de facturacion 
-      await transaction.commit();
+    // const request3 = pool.request();
+    const request3 = new sql.Request(transaction);
+    request3.input('Empresa', sql.Int, variablesSesion.EmpresaID);
+    request3.input('OficinaAlmacenID', sql.Decimal(6, 3), variablesSesion.OficinaAlmacenID);
+    // console.log("Esta es la OficinaAlmacen :", variablesSesion.OficinaAlmacenID)
+    // console.log("Este es mi newPedidoID para el procedimiento:: ", newPedidoID);
+    request3.input('PedidoID', sql.Int, newPedidoID);
+    request3.input('tipoDocID', sql.Decimal(9, 5), seriePedido);
+    result = await request3.query(query2);
+    //Fin de ejecucion de procedimiento de facturacion 
+    await transaction.commit();
+
   } catch (err) {
-      await transaction.rollback();
-      error = err.toString();
+    // await transaction.rollback();
+    // error = err.toString();
+    console.error('Error en la transacción:', err);
+    await transaction.rollback();
+    error = err.toString() + ' - Rollback realizado';
   } finally {
-      if (pool) {
-          pool.close();
-      }
+    if (pool) {
+      pool.close();
+    }
   }
   return {
-      result,
-      error
+    result,
+    error
   };
 };
-
 
 
 async function procesarOrdenPrestashop() {
@@ -1209,7 +1235,7 @@ async function procesarOrdenPrestashop() {
         const ordenPorID = await BuscarORdenPorID(orden);
         // console.log(ordenPorID);
         var DatosDeOrden = ordenPorID;
-        const EstadoOrden = await HistorialOrden(orden); 
+        const EstadoOrden = await HistorialOrden(orden);
         // console.log(EstadoOrden);
         const VerificacionEstado = EstadoOrden.estadodeOrden;
         if (VerificacionEstado == '5' || VerificacionEstado == '2' || VerificacionEstado == '14') {
@@ -1246,9 +1272,9 @@ async function procesarOrdenPrestashop() {
                   const pedidoCreado = await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID);
                   // console.log(pedidoCreado);
                 }
-              }else{
-                  const pedidoCreado = await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID);
-                  // console.log(pedidoCreado);
+              } else {
+                const pedidoCreado = await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID);
+                // console.log(pedidoCreado);
               }
             } else {
               // console.log("El numero de identidad no cumple con los requisitos");
@@ -1304,31 +1330,31 @@ async function verificacionControlCaja(OficinaID, userId) {
   }
 }
 
-async function AperturaCaja(OficinaID, userId, Serie,Fecha) {
+async function AperturaCaja(OficinaID, userId, Serie, Fecha) {
   let pool;
   let result;
   let error = '';
   try {
-      pool = await sql.connect(config);
-      const query = `exec spPyOAperturaCierrePlanilla @empresaid, @oficinaid, @usuarioid, @fecha , @Serie`;
-      const request = pool.request();
-      request.input('empresaid', sql.Int, 1);//por sesion
-      request.input('oficinaid', sql.Int, OficinaID);
-      request.input('usuarioid', sql.Int, userId);
-      request.input('fecha', sql.VarChar, Fecha);
-      request.input('Serie', sql.VarChar, Serie);
-      result = await request.query(query);
+    pool = await sql.connect(config);
+    const query = `exec spPyOAperturaCierrePlanilla @empresaid, @oficinaid, @usuarioid, @fecha , @Serie`;
+    const request = pool.request();
+    request.input('empresaid', sql.Int, 1);//por sesion
+    request.input('oficinaid', sql.Int, OficinaID);
+    request.input('usuarioid', sql.Int, userId);
+    request.input('fecha', sql.VarChar, Fecha);
+    request.input('Serie', sql.VarChar, Serie);
+    result = await request.query(query);
   } catch (err) {
-      error = err;
+    error = err;
   }
   finally {
-      if (pool) {
-          pool.close();
-      }
+    if (pool) {
+      pool.close();
+    }
   }
   return {
-      result,
-      error
+    result,
+    error
   }
 }
 
@@ -1337,27 +1363,27 @@ async function CierreCaja(OficinaID, userId, Serie, IDplantilla, fecha) {
   let result;
   let error = '';
   try {
-      pool = await sql.connect(config);
-      const query = `exec spPyOAperturaCierrePlanilla @empresaid, @oficinaid, @usuarioid, @fecha , @Serie , @IDplantilla`;
-      const request = pool.request();
-      request.input('empresaid', sql.Int, 1);//po sesion 
-      request.input('oficinaid', sql.Int, OficinaID);
-      request.input('usuarioid', sql.Int, userId);
-      request.input('fecha', sql.VarChar, fecha);   //new Date().toISOString().split('T')[0]);
-      request.input('Serie', sql.VarChar, Serie);
-      request.input('IDplantilla', sql.VarChar, IDplantilla);
-      result = await request.query(query);
+    pool = await sql.connect(config);
+    const query = `exec spPyOAperturaCierrePlanilla @empresaid, @oficinaid, @usuarioid, @fecha , @Serie , @IDplantilla`;
+    const request = pool.request();
+    request.input('empresaid', sql.Int, 1);//po sesion 
+    request.input('oficinaid', sql.Int, OficinaID);
+    request.input('usuarioid', sql.Int, userId);
+    request.input('fecha', sql.VarChar, fecha);   //new Date().toISOString().split('T')[0]);
+    request.input('Serie', sql.VarChar, Serie);
+    request.input('IDplantilla', sql.VarChar, IDplantilla);
+    result = await request.query(query);
   } catch (err) {
-      error = err;
+    error = err;
   }
   finally {
-      if (pool) {
-          pool.close();
-      }
+    if (pool) {
+      pool.close();
+    }
   }
   return {
-      result,
-      error
+    result,
+    error
   }
 }
 
@@ -1370,9 +1396,9 @@ async function UltimaPlanillaCaja() {
                                         ORDER BY PlanillaID DESC;`);
     // console.log(result);
     if (result.recordset.length === 0) {
-      return null; 
+      return null;
     }
-    return result.recordset[0]; 
+    return result.recordset[0];
   } catch (error) {
     console.log(error);
     throw error;
@@ -1381,13 +1407,13 @@ async function UltimaPlanillaCaja() {
   }
 }
 
-async function UpdatePlanilla(EmpresaID,oficinaAlmacenID,PlanillaID,nuevoEstado) {
+async function UpdatePlanilla(EmpresaID, oficinaAlmacenID, PlanillaID, nuevoEstado) {
   let pool;
   let result;
   let error = '';
   try {
-      pool = await sql.connect(config);
-      const query = `
+    pool = await sql.connect(config);
+    const query = `
           UPDATE [dbo].[PlanillaCaja]
           SET 
               [Estado] = @nuevoEstado,
@@ -1397,24 +1423,24 @@ async function UpdatePlanilla(EmpresaID,oficinaAlmacenID,PlanillaID,nuevoEstado)
               [OficinaAlmacenID] = @oficinaAlmacenID AND
               [PlanillaID] = @PlanillaID
       `;
-      const request = pool.request();
-      request.input('Empresa', sql.Int, EmpresaID);
-      request.input('oficinaAlmacenID', sql.Decimal(6,3), oficinaAlmacenID);
-      request.input('PlanillaID', sql.Int,PlanillaID);
-      request.input('nuevoEstado', sql.Int, nuevoEstado);
-      result = await request.query(query);
-      // console.log(result);
+    const request = pool.request();
+    request.input('Empresa', sql.Int, EmpresaID);
+    request.input('oficinaAlmacenID', sql.Decimal(6, 3), oficinaAlmacenID);
+    request.input('PlanillaID', sql.Int, PlanillaID);
+    request.input('nuevoEstado', sql.Int, nuevoEstado);
+    result = await request.query(query);
+    // console.log(result);
   } catch (err) {
-      error = err;
-      console.log("UpdatePlanilla",error);
+    error = err;
+    console.log("UpdatePlanilla", error);
   } finally {
-      if (pool) {
-          pool.close();
-      }
+    if (pool) {
+      pool.close();
+    }
   }
   return {
-      result,
-      error
+    result,
+    error
   };
 };
 
@@ -1478,10 +1504,10 @@ async function Inicializador() {
       if (ulimaPlanilla) {
         // console.log("Procedemos a cerrar la planilla de caja con estado N o S");
         // await CierreCaja(variablesSesion.OficinaAlmacenID, variablesSesion.UsuarioID, SeriePlanilla, ulimaPlanilla.PlanillaID, ulimaPlanilla.FechaCreacion);
-        await UpdatePlanilla(variablesSesion.EmpresaID,variablesSesion.OficinaAlmacenID,ulimaPlanilla.PlanillaID,2)
+        await UpdatePlanilla(variablesSesion.EmpresaID, variablesSesion.OficinaAlmacenID, ulimaPlanilla.PlanillaID, 2)
       } else {
         // console.log("No se encontró ninguna planilla de caja.");
-      }      
+      }
       await Inicializador();
     }
   }

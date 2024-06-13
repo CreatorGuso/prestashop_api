@@ -640,7 +640,7 @@ async function crearCliente(params,paramsAPI) {
     if (transaction) {
       await transaction.rollback();
     }
-    // return { success: false, message: `Error al crear el cliente con  DNI :  ${params.numeroDocumento}`, error: error.message };
+    return { success: false, message: `Error al crear el cliente con  DNI :  ${params.numeroDocumento}`, error: error.message };
   } finally {
     if (pool) {
       pool.close();
@@ -1319,7 +1319,7 @@ async function procesarOrdenPrestashop() {
               cliente = await buscarClientePorDNI(DatosDeOrden.SerieDePedido.company);
               if (cliente === null) {
                 const razonSocial = await buscarRazonSocialPorDNIRUC(DatosDeOrden.SerieDePedido.company);
-                console.log(razonSocial);
+                // console.log(razonSocial);
                 const resultadoCreacion = await crearCliente(razonSocial,DatosDeOrden.Customer);
                 if (resultadoCreacion.success) {
                   // console.log("El cliente se creó correctamente");

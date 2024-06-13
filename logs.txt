@@ -385,3 +385,93 @@ TypeError: Cannot read properties of undefined (reading 'ProductoID')
     at async Inicializador (C:\Users\lenovo\Documents\GitHub\prestashop_api\index.js:1634:19)
 2024-06-13 15:26:37.164 - undefined
 2024-06-13 15:26:37.165 - Procedimiento de ordenes completado.
+2024-06-13 15:36:31.345 - Inicializando...
+2024-06-13 15:36:31.347 - Ejecutando procedimiento
+2024-06-13 15:36:33.356 - [
+  {
+    "orden": 0,
+    "nombre": "002-25/2024",
+    "Condicion": "EN PROCESO",
+    "planillaID": "2021",
+    "estado": "3"
+  }
+]
+2024-06-13 15:36:33.360 - Si se tiene una Planilla Habilitada
+2024-06-13 15:36:46.147 - ERROR: Error en la transacción de crear pedido con orden :99685
+2024-06-13 15:36:46.147 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-06-13 15:36:46.147 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\lenovo\Documents\GitHub\prestashop_api\index.js:1127:52)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\lenovo\Documents\GitHub\prestashop_api\index.js:1310:36)
+    at async Inicializador (C:\Users\lenovo\Documents\GitHub\prestashop_api\index.js:1635:19)
+2024-06-13 15:36:57.388 - ERROR: Error en la transacción de crear pedido con orden :99689
+2024-06-13 15:36:57.388 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-06-13 15:36:57.388 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\lenovo\Documents\GitHub\prestashop_api\index.js:1127:52)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\lenovo\Documents\GitHub\prestashop_api\index.js:1310:36)
+    at async Inicializador (C:\Users\lenovo\Documents\GitHub\prestashop_api\index.js:1635:19)
+2024-06-13 15:37:12.643 - ERROR: Error en la transacción de crear pedido con orden :99697
+2024-06-13 15:37:12.643 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-06-13 15:37:12.643 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\lenovo\Documents\GitHub\prestashop_api\index.js:1127:52)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\lenovo\Documents\GitHub\prestashop_api\index.js:1310:36)
+    at async Inicializador (C:\Users\lenovo\Documents\GitHub\prestashop_api\index.js:1635:19)
+2024-06-13 15:37:29.508 - ERROR: Error en la transacción de crear pedido con orden :99705
+2024-06-13 15:37:29.508 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-06-13 15:37:29.508 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\lenovo\Documents\GitHub\prestashop_api\index.js:1127:52)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\lenovo\Documents\GitHub\prestashop_api\index.js:1310:36)
+    at async Inicializador (C:\Users\lenovo\Documents\GitHub\prestashop_api\index.js:1635:19)
+2024-06-13 15:37:41.357 - ERROR: Error en la transacción de crear pedido con orden :99706
+2024-06-13 15:37:41.357 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-06-13 15:37:41.357 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\lenovo\Documents\GitHub\prestashop_api\index.js:1127:52)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\lenovo\Documents\GitHub\prestashop_api\index.js:1310:36)
+    at async Inicializador (C:\Users\lenovo\Documents\GitHub\prestashop_api\index.js:1635:19)
+2024-06-13 15:37:56.189 - {
+  "razonSocial": "PRADA POGGI JOSE PABLO",
+  "tipoDocumento": "6",
+  "numeroDocumento": "10428848239",
+  "estado": "ACTIVO",
+  "condicion": "HABIDO",
+  "direccion": "-",
+  "ubigeo": "-",
+  "viaTipo": "-",
+  "viaNombre": "-",
+  "zonaCodigo": "-",
+  "zonaTipo": "-",
+  "numero": "-",
+  "interior": "-",
+  "lote": "-",
+  "dpto": "-",
+  "manzana": "-",
+  "kilometro": "-",
+  "distrito": "",
+  "provincia": "",
+  "departamento": "",
+  "EsAgenteRetencion": false
+}
+2024-06-13 15:37:58.593 - ERROR: Error al crear el cliente con  DNI :  10428848239
+2024-06-13 15:37:58.593 - ERROR: The INSERT statement conflicted with the FOREIGN KEY constraint "FK_PersoneriaDireccion_UbicacionGeografica". The conflict occurred in database "prueba_kflor", table "dbo.UbicacionGeografica", column 'UbicacionID'.
+2024-06-13 15:37:58.593 - STACK TRACE:
+RequestError: The INSERT statement conflicted with the FOREIGN KEY constraint "FK_PersoneriaDireccion_UbicacionGeografica". The conflict occurred in database "prueba_kflor", table "dbo.UbicacionGeografica", column 'UbicacionID'.
+    at handleError (C:\Users\lenovo\Documents\GitHub\prestashop_api\node_modules\mssql\lib\tedious\request.js:384:15)
+    at Connection.emit (node:events:518:28)
+    at Connection.emit (C:\Users\lenovo\Documents\GitHub\prestashop_api\node_modules\tedious\lib\connection.js:959:18)
+    at RequestTokenHandler.onErrorMessage (C:\Users\lenovo\Documents\GitHub\prestashop_api\node_modules\tedious\lib\token\handler.js:285:21)
+    at Readable.<anonymous> (C:\Users\lenovo\Documents\GitHub\prestashop_api\node_modules\tedious\lib\token\token-stream-parser.js:18:33)
+    at Readable.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushObjectMode (node:internal/streams/readable:536:3)
+    at Readable.push (node:internal/streams/readable:391:5)
+    at nextAsync (node:internal/streams/from:194:22)
+2024-06-13 15:37:58.742 - ERROR: Cannot read properties of undefined (reading 'success')

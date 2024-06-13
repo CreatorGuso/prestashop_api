@@ -13,7 +13,7 @@ const config = {
   user: "kuky",
   password: "Kf123456",
   server: "3.144.237.208",
-  database: "kflor", //prueba_
+  database: "prueba_kflor", //prueba_
   options: {
     encrypt: false, // Si estás utilizando Azure, establece esto en true
   },
@@ -543,7 +543,7 @@ async function buscarRazonSocialPorDNIRUC(numero) {
   }
 }
 
-async function crearCliente(params) {
+async function crearCliente(params,paramsAPI) {
   // console.log("Estos son mis parametros de lciente",params);
   let pool;
   let transaction;
@@ -579,7 +579,7 @@ async function crearCliente(params) {
     request.input('MedioRegistroID', sql.Decimal(9, 5), 900.00001);
     request.input('MedioInformacionID', sql.Decimal(9, 5), 901.00001);
     request.input('Telefonos', sql.NVarChar, '');
-    request.input('Email', sql.NVarChar, '');
+    request.input('Email', sql.NVarChar, paramsAPI.email);
 
     const result = await request.query(query);
     const PersoneriaID = result.recordset[0].LastId;
@@ -636,11 +636,11 @@ async function crearCliente(params) {
     await transaction.commit();
     return { success: true, message: 'Cliente creado exitosamente.' };
   } catch (error) {
-    console.error(error);
+    console.error(`Error al crear el cliente con  DNI :  ${params.numeroDocumento}`, error);
     if (transaction) {
       await transaction.rollback();
     }
-    return { success: false, message: 'Error al crear el cliente.', error: error.message };
+    // return { success: false, message: `Error al crear el cliente con  DNI :  ${params.numeroDocumento}`, error: error.message };
   } finally {
     if (pool) {
       pool.close();
@@ -1319,7 +1319,8 @@ async function procesarOrdenPrestashop() {
               cliente = await buscarClientePorDNI(DatosDeOrden.SerieDePedido.company);
               if (cliente === null) {
                 const razonSocial = await buscarRazonSocialPorDNIRUC(DatosDeOrden.SerieDePedido.company);
-                const resultadoCreacion = await crearCliente(razonSocial);
+                console.log(razonSocial);
+                const resultadoCreacion = await crearCliente(razonSocial,DatosDeOrden.Customer);
                 if (resultadoCreacion.success) {
                   // console.log("El cliente se creó correctamente");
                 } else {
@@ -1614,7 +1615,7 @@ async function Inicializador() {
   console.log('Inicializando...');
   console.log('Ejecutando procedimiento');
 
-  try {
+  // try {
     const controlCaja = await verificacionControlCaja(variablesSesion.OficinaAlmacenID, variablesSesion.UsuarioID);
     const controlCajaData = controlCaja.result.recordset
     const orden0 = controlCajaData.filter(elemento => elemento.orden === 0);
@@ -1658,11 +1659,11 @@ async function Inicializador() {
       }
     }
     console.log('Procedimiento de ordenes completado.');
-  } catch (error) {
-    console.error(error);
-    logStream.write(`${dateString} - ERROR: ${error.toString()}\n`);
-    throw new Error("Error en el proceso de inicialización");
-  }
+  // } catch (error) {
+  //   console.error(error);
+  //   logStream.write(`${dateString} - ERROR: ${error.toString()}\n`);
+  //   throw new Error("Error en el proceso de inicialización");
+  // }
 }
 
 

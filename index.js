@@ -174,6 +174,9 @@ async function HistorialOrden(orderId) {
     });
 
     var estadoEncontrado = false;
+    const fechaComparacion = new Date('2024-07-01T00:00:00Z');
+
+
     if (Estados && Estados.length) {
       for (const estado of Estados) {
         var estadodeOrden = estado.$.id;
@@ -187,7 +190,10 @@ async function HistorialOrden(orderId) {
                 console.error(err);
                 reject(new Error("Error al parsear la respuesta XML HistorialOrden2"));
               }
-              if (result.prestashop.order_history.id_order_state._ === '2') {
+              const estadoOrden = result.prestashop.order_history;
+              const fechaEstado = new Date(estadoOrden.date_add.replace(' ', 'T') + 'Z');
+
+              if (result.prestashop.order_history.id_order_state._ === '2' && fechaEstado >= fechaComparacion) {
                 estadoEncontrado = true;
               }
               resolve();

@@ -1121,7 +1121,7 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
         select * from producto WHERE CodigoAlterno = @CodigoAlterno;`;
       const referenciaPura = producto.product_reference.includes('-')
         ? producto.product_reference.split('-')[0]
-        : producto.product_reference;
+        : producto.product_reference.trim();
 
       // requestPrecio.transaction = transaction;
       requestPrecio.input('CodigoAlterno', sql.VarChar, referenciaPura);

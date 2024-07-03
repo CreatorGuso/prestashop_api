@@ -1013,22 +1013,30 @@ async function procesarOrdenPrestashop() {
             if (DatosDeOrden.SerieDePedido.company.length === 8 || DatosDeOrden.SerieDePedido.company.length === 11) {
               // console.log("Paso verificacion de DNI o RUC");
               cliente = await buscarClientePorDNI(DatosDeOrden.SerieDePedido.company);
+              // console.log("Cliente::::::", cliente );
               if (cliente === null) {
                 const razonSocial = await buscarRazonSocialPorDNIRUC(DatosDeOrden.SerieDePedido.company);
-                // console.log(razonSocial);
-                const resultadoCreacion = await crearCliente(razonSocial,DatosDeOrden.Customer);
-                if (resultadoCreacion.success) {
-                  // console.log("El cliente se creó correctamente");
-                } else {
-                  // console.log("El cliente no se creó");
-                }
-                cliente = await buscarClientePorDNI(DatosDeOrden.SerieDePedido.company);
-                if (cliente != null) {
-                  // Procedemos con la creacion del pedido
+                // console.log("::::::::::::::::",razonSocial);
+                if(razonSocial !== 'Número no encontrado' ){
+                  const resultadoCreacion = await crearCliente(razonSocial,DatosDeOrden.Customer);
+                  // if (resultadoCreacion.success) {
+                  //   // console.log("El cliente se creó correctamente");
+                  // } else {
+                  //   // console.log("El cliente no se creó");
+                  // }
+                  cliente = await buscarClientePorDNI(DatosDeOrden.SerieDePedido.company);
+                  if (cliente != null) {
+                    // Procedemos con la creacion del pedido
+                    const pedidoCreado = await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID);
+                    // console.log(pedidoCreado);
+                  }
+                }else{
+                  // Si no se encontro el DNI de la persona se una la venta del dia.
+                  cliente = await buscarClientePorDNI('00000001');
                   const pedidoCreado = await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID);
-                  // console.log(pedidoCreado);
                 }
               } else {
+                cliente = await buscarClientePorDNI('00000001');
                 const pedidoCreado = await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID);
                 // console.log(pedidoCreado);
               }

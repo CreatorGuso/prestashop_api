@@ -740,7 +740,9 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
     request.input('DeliveryTipoID', sql.Decimal(9, 5), 193.00001);
 
     function obtenerTurno(ddw_order_time) {
-      let [inicio, fin] = ddw_order_time.split(' - ');
+
+      let FechaOrdenada = ddw_order_time.replace(/\s/g, ''); // Eliminar todos los espacios
+      let [inicio, fin] = FechaOrdenada.split('-');
       inicio = parseInt(inicio.split(':')[0]);
       fin = parseInt(fin.split(':')[0]);
 

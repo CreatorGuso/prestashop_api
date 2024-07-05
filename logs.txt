@@ -1,0 +1,304 @@
+2024-07-03 17:33:49.577 - Inicializando...
+2024-07-03 17:33:49.578 - Ejecutando procedimiento
+2024-07-03 17:33:51.204 - Si se tiene una Planilla Habilitada
+2024-07-03 17:34:17.813 - ERROR: Request failed with status code 404
+2024-07-03 17:34:17.813 - STACK TRACE:
+AxiosError: Request failed with status code 404
+    at settle (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\node_modules\axios\dist\node\axios.cjs:1966:12)
+    at IncomingMessage.handleStreamEnd (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\node_modules\axios\dist\node\axios.cjs:3065:11)
+    at IncomingMessage.emit (node:events:526:35)
+    at endReadableNT (node:internal/streams/readable:1589:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\node_modules\axios\dist\node\axios.cjs:3876:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async buscarRazonSocialPorDNIRUC (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:521:22)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1018:37)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1339:19)
+2024-07-03 17:34:40.743 - undefined
+2024-07-03 17:34:40.743 - Procedimiento de ordenes completado.
+2024-07-03 21:23:09.188 - Inicializando...
+2024-07-03 21:23:09.190 - Ejecutando procedimiento
+2024-07-03 21:23:10.721 - Si se tiene una Planilla Habilitada
+2024-07-03 21:23:30.775 - ERROR: Error en la transacción de crear pedido con orden :99969
+2024-07-03 21:23:30.775 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-07-03 21:23:30.775 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:824:52)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1040:38)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1339:19)
+2024-07-03 21:23:42.373 - ERROR: Error en la transacción de crear pedido con orden :99972
+2024-07-03 21:23:42.373 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-07-03 21:23:42.373 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:824:52)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1006:36)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1339:19)
+2024-07-03 21:23:52.873 - ERROR: Error en la transacción de crear pedido con orden :99976
+2024-07-03 21:23:52.873 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-07-03 21:23:52.873 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:824:52)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1006:36)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1339:19)
+2024-07-03 21:24:00.958 - ERROR: Error en la transacción de crear pedido con orden :99978
+2024-07-03 21:24:00.958 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-07-03 21:24:00.958 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:824:52)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1006:36)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1339:19)
+2024-07-03 21:24:24.540 - ERROR: Error en la transacción de crear pedido con orden :99981
+2024-07-03 21:24:24.540 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-07-03 21:24:24.540 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:824:52)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1006:36)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1339:19)
+2024-07-03 21:24:42.129 - ERROR: Error en la transacción de crear pedido con orden :99983
+2024-07-03 21:24:42.129 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-07-03 21:24:42.129 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:824:52)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1006:36)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1339:19)
+2024-07-03 21:25:03.048 - ERROR: Error en la transacción de crear pedido con orden :99985
+2024-07-03 21:25:03.048 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-07-03 21:25:03.048 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:824:52)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1030:42)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1339:19)
+2024-07-03 21:25:25.675 - undefined
+2024-07-03 21:25:25.676 - Procedimiento de ordenes completado.
+2024-07-03 21:28:14.878 - Inicializando...
+2024-07-03 21:28:14.879 - Ejecutando procedimiento
+2024-07-03 21:28:16.047 - Si se tiene una Planilla Habilitada
+2024-07-03 21:28:52.725 - undefined
+2024-07-03 21:28:52.728 - Procedimiento de ordenes completado.
+2024-07-05 16:28:11.311 - Inicializando...
+2024-07-05 16:28:11.313 - Ejecutando procedimiento
+2024-07-05 16:28:12.508 - no se tiene una planilla habilitada
+2024-07-05 16:28:14.796 - Inicializando...
+2024-07-05 16:28:14.797 - Ejecutando procedimiento
+2024-07-05 16:28:14.796 - Inicializando...
+2024-07-05 16:28:14.797 - Ejecutando procedimiento
+2024-07-05 16:28:15.939 - no se tiene una planilla habilitada
+2024-07-05 16:28:15.939 - no se tiene una planilla habilitada
+2024-07-05 16:28:17.087 - Inicializando...
+2024-07-05 16:28:17.087 - Inicializando...
+2024-07-05 16:28:17.088 - Ejecutando procedimiento
+2024-07-05 16:28:17.088 - Ejecutando procedimiento
+2024-07-05 16:28:17.087 - Inicializando...
+2024-07-05 16:28:17.088 - Ejecutando procedimiento
+2024-07-05 16:28:18.217 - Si se tiene una Planilla Habilitada
+2024-07-05 16:28:18.217 - Si se tiene una Planilla Habilitada
+2024-07-05 16:28:18.217 - Si se tiene una Planilla Habilitada
+2024-07-05 16:28:55.492 - ERROR: Error en la transacción de crear pedido con orden :99998
+2024-07-05 16:28:55.494 - ERROR: Error en la transacción de crear pedido con orden :99998
+2024-07-05 16:28:55.494 - ERROR: Error en la transacción de crear pedido con orden :99998
+2024-07-05 16:28:55.492 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-07-05 16:28:55.494 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-07-05 16:28:55.494 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-07-05 16:28:55.492 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:824:52)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1030:42)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1339:19)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1348:9)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1362:9)
+2024-07-05 16:28:55.494 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:824:52)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1030:42)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1339:19)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1348:9)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1362:9)
+2024-07-05 16:28:55.494 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:824:52)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1030:42)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1339:19)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1348:9)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1362:9)
+2024-07-05 16:29:38.456 - ERROR: Error en la transacción de crear pedido con orden :100007
+2024-07-05 16:29:38.457 - ERROR: Error en la transacción de crear pedido con orden :100007
+2024-07-05 16:29:38.457 - ERROR: Error en la transacción de crear pedido con orden :100007
+2024-07-05 16:29:38.456 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-07-05 16:29:38.456 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:824:52)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1006:36)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1339:19)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1348:9)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1362:9)
+2024-07-05 16:29:38.457 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-07-05 16:29:38.457 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:824:52)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1006:36)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1339:19)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1348:9)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1362:9)
+2024-07-05 16:29:38.457 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-07-05 16:29:38.457 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:824:52)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1006:36)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1339:19)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1348:9)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1362:9)
+2024-07-05 16:29:52.925 - ERROR: Error en la transacción de crear pedido con orden :100009
+2024-07-05 16:29:52.925 - ERROR: Error en la transacción de crear pedido con orden :100009
+2024-07-05 16:29:52.925 - ERROR: Error en la transacción de crear pedido con orden :100009
+2024-07-05 16:29:52.925 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-07-05 16:29:52.925 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:824:52)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1006:36)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1339:19)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1348:9)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1362:9)
+2024-07-05 16:29:52.925 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-07-05 16:29:52.925 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:824:52)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1006:36)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1339:19)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1348:9)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1362:9)
+2024-07-05 16:29:52.925 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-07-05 16:29:52.925 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:824:52)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1006:36)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1339:19)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1348:9)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1362:9)
+2024-07-05 16:30:37.373 - ERROR: Error en la transacción de crear pedido con orden :100014
+2024-07-05 16:30:37.374 - ERROR: Error en la transacción de crear pedido con orden :100014
+2024-07-05 16:30:37.374 - ERROR: Error en la transacción de crear pedido con orden :100014
+2024-07-05 16:30:37.373 - ERROR: Cannot read properties of undefined (reading 'split')
+2024-07-05 16:30:37.373 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'split')
+    at obtenerTurno (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:745:26)
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:771:57)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1006:36)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1339:19)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1348:9)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1362:9)
+2024-07-05 16:30:37.374 - ERROR: Cannot read properties of undefined (reading 'split')
+2024-07-05 16:30:37.374 - ERROR: Cannot read properties of undefined (reading 'split')
+2024-07-05 16:30:37.374 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'split')
+    at obtenerTurno (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:745:26)
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:771:57)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1006:36)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1339:19)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1348:9)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1362:9)
+2024-07-05 16:30:37.374 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'split')
+    at obtenerTurno (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:745:26)
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:771:57)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1006:36)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1339:19)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1348:9)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1362:9)
+2024-07-05 16:30:37.492 - undefined
+2024-07-05 16:30:37.492 - undefined
+2024-07-05 16:30:37.492 - undefined
+2024-07-05 16:30:37.494 - Procedimiento de ordenes completado.
+2024-07-05 16:30:37.495 - Procedimiento de ordenes completado.
+2024-07-05 16:30:37.495 - Procedimiento de ordenes completado.
+2024-07-05 16:30:37.494 - Procedimiento de ordenes completado.
+2024-07-05 16:30:37.494 - Procedimiento de ordenes completado.
+2024-07-05 16:30:37.495 - Procedimiento de ordenes completado.
+2024-07-05 16:30:37.495 - Procedimiento de ordenes completado.
+2024-07-05 16:30:37.495 - Procedimiento de ordenes completado.
+2024-07-05 16:30:37.495 - Procedimiento de ordenes completado.
+2024-07-05 16:39:30.868 - Inicializando...
+2024-07-05 16:39:30.869 - Ejecutando procedimiento
+2024-07-05 16:39:32.029 - Si se tiene una Planilla Habilitada
+2024-07-05 16:39:50.915 - ERROR: Error en la transacción de crear pedido con orden :99998
+2024-07-05 16:39:50.915 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-07-05 16:39:50.915 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:824:52)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1040:38)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1339:19)
+2024-07-05 16:40:02.355 - ERROR: Error en la transacción de crear pedido con orden :100007
+2024-07-05 16:40:02.355 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-07-05 16:40:02.355 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:824:52)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1006:36)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1339:19)
+2024-07-05 16:40:13.361 - ERROR: Error en la transacción de crear pedido con orden :100009
+2024-07-05 16:40:13.361 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-07-05 16:40:13.361 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:824:52)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1006:36)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1339:19)
+2024-07-05 16:40:28.317 - ERROR: Error en la transacción de crear pedido con orden :100014
+2024-07-05 16:40:28.317 - ERROR: Cannot read properties of undefined (reading 'split')
+2024-07-05 16:40:28.317 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'split')
+    at obtenerTurno (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:745:26)
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:771:57)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1006:36)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1339:19)
+2024-07-05 16:40:28.432 - undefined
+2024-07-05 16:40:28.433 - Procedimiento de ordenes completado.
+2024-07-05 16:40:49.076 - Inicializando...
+2024-07-05 16:40:49.078 - Ejecutando procedimiento
+2024-07-05 16:40:50.265 - Si se tiene una Planilla Habilitada
+2024-07-05 16:41:09.540 - ERROR: Error en la transacción de crear pedido con orden :99998
+2024-07-05 16:41:09.540 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-07-05 16:41:09.540 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:824:52)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1040:38)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1339:19)
+2024-07-05 16:41:21.619 - ERROR: Error en la transacción de crear pedido con orden :100007
+2024-07-05 16:41:21.619 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-07-05 16:41:21.619 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:824:52)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1006:36)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1339:19)
+2024-07-05 16:41:30.111 - ERROR: Error en la transacción de crear pedido con orden :100009
+2024-07-05 16:41:30.111 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-07-05 16:41:30.111 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:824:52)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1006:36)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1339:19)
+2024-07-05 16:41:45.243 - undefined
+2024-07-05 16:41:45.244 - Procedimiento de ordenes completado.

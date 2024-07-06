@@ -1038,7 +1038,7 @@ async function procesarOrdenPrestashop() {
                   const pedidoCreado = await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID);
                 }
               } else {
-                cliente = await buscarClientePorDNI('00000001');
+                // cliente = await buscarClientePorDNI('00000001');
                 const pedidoCreado = await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID);
                 // console.log(pedidoCreado);
               }

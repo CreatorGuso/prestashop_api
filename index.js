@@ -198,8 +198,8 @@ async function HistorialOrden(orderId) {
                 // console.log("Estado de Order:", estadoOrden);
     
                 const fechaEstado = new Date(estadoOrden.date_add.replace(' ', 'T') + 'Z');
-    
-                if (estadoOrden.id_order_state._ === '2' && fechaEstado >= fechaComparacion) {
+                //&& fechaEstado >= fechaComparacion solo se usara por fechas exactas.
+                if (estadoOrden.id_order_state._ == '2' ) {
                   estadoEncontrado = true;
                 }
                 resolve();

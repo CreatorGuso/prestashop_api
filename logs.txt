@@ -1,0 +1,3321 @@
+2024-07-08 14:35:02.475 - Inicializando...
+2024-07-08 14:35:02.476 - Ejecutando procedimiento
+2024-07-08 14:35:04.091 - no se tiene una planilla habilitada
+2024-07-08 14:35:06.766 - Inicializando...
+2024-07-08 14:35:06.767 - Ejecutando procedimiento
+2024-07-08 14:35:06.766 - Inicializando...
+2024-07-08 14:35:06.767 - Ejecutando procedimiento
+2024-07-08 14:35:08.204 - no se tiene una planilla habilitada
+2024-07-08 14:35:08.204 - no se tiene una planilla habilitada
+2024-07-08 14:35:09.884 - Inicializando...
+2024-07-08 14:35:09.884 - Inicializando...
+2024-07-08 14:35:09.885 - Ejecutando procedimiento
+2024-07-08 14:35:09.885 - Ejecutando procedimiento
+2024-07-08 14:35:09.884 - Inicializando...
+2024-07-08 14:35:09.885 - Ejecutando procedimiento
+2024-07-08 14:35:11.312 - Si se tiene una Planilla Habilitada
+2024-07-08 14:35:11.312 - Si se tiene una Planilla Habilitada
+2024-07-08 14:35:11.312 - Si se tiene una Planilla Habilitada
+2024-07-08 14:35:15.938 - Datos de las órdenes:
+2024-07-08 14:35:15.938 - Datos de las órdenes:
+2024-07-08 14:35:15.938 - Datos de las órdenes:
+2024-07-08 14:35:15.938 - [
+  {
+    "Orden": "100036",
+    "OrdenDeRegistro": 100036,
+    "PersoneriaID": {
+      "_": "3112",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/3112"
+      }
+    },
+    "FechadeOrden": "2024-07-08 08:52:17"
+  },
+  {
+    "Orden": "100041",
+    "OrdenDeRegistro": 100041,
+    "PersoneriaID": {
+      "_": "33704",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/33704"
+      }
+    },
+    "FechadeOrden": "2024-07-08 08:52:16"
+  },
+  {
+    "Orden": "100047",
+    "OrdenDeRegistro": 100047,
+    "PersoneriaID": {
+      "_": "92690",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/92690"
+      }
+    },
+    "FechadeOrden": "2024-07-08 07:58:28"
+  },
+  {
+    "Orden": "100048",
+    "OrdenDeRegistro": 100048,
+    "PersoneriaID": {
+      "_": "49437",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/49437"
+      }
+    },
+    "FechadeOrden": "2024-07-08 08:52:15"
+  },
+  {
+    "Orden": "100049",
+    "OrdenDeRegistro": 100049,
+    "PersoneriaID": {
+      "_": "92692",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/92692"
+      }
+    },
+    "FechadeOrden": "2024-07-08 08:52:14"
+  },
+  {
+    "Orden": "100050",
+    "OrdenDeRegistro": 100050,
+    "PersoneriaID": {
+      "_": "92693",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/92693"
+      }
+    },
+    "FechadeOrden": "2024-07-08 08:52:12"
+  },
+  {
+    "Orden": "100051",
+    "OrdenDeRegistro": 100051,
+    "PersoneriaID": {
+      "_": "29450",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/29450"
+      }
+    },
+    "FechadeOrden": "2024-07-08 08:52:10"
+  },
+  {
+    "Orden": "100052",
+    "OrdenDeRegistro": 100052,
+    "PersoneriaID": {
+      "_": "92695",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/92695"
+      }
+    },
+    "FechadeOrden": "2024-07-08 08:52:09"
+  },
+  {
+    "Orden": "100053",
+    "OrdenDeRegistro": 100053,
+    "PersoneriaID": {
+      "_": "15678",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/15678"
+      }
+    },
+    "FechadeOrden": "2024-07-08 08:52:08"
+  },
+  {
+    "Orden": "100054",
+    "OrdenDeRegistro": 100054,
+    "PersoneriaID": {
+      "_": "85284",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/85284"
+      }
+    },
+    "FechadeOrden": "2024-07-08 08:58:26"
+  }
+]
+2024-07-08 14:35:15.938 - [
+  {
+    "Orden": "100036",
+    "OrdenDeRegistro": 100036,
+    "PersoneriaID": {
+      "_": "3112",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/3112"
+      }
+    },
+    "FechadeOrden": "2024-07-08 08:52:17"
+  },
+  {
+    "Orden": "100041",
+    "OrdenDeRegistro": 100041,
+    "PersoneriaID": {
+      "_": "33704",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/33704"
+      }
+    },
+    "FechadeOrden": "2024-07-08 08:52:16"
+  },
+  {
+    "Orden": "100047",
+    "OrdenDeRegistro": 100047,
+    "PersoneriaID": {
+      "_": "92690",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/92690"
+      }
+    },
+    "FechadeOrden": "2024-07-08 07:58:28"
+  },
+  {
+    "Orden": "100048",
+    "OrdenDeRegistro": 100048,
+    "PersoneriaID": {
+      "_": "49437",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/49437"
+      }
+    },
+    "FechadeOrden": "2024-07-08 08:52:15"
+  },
+  {
+    "Orden": "100049",
+    "OrdenDeRegistro": 100049,
+    "PersoneriaID": {
+      "_": "92692",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/92692"
+      }
+    },
+    "FechadeOrden": "2024-07-08 08:52:14"
+  },
+  {
+    "Orden": "100050",
+    "OrdenDeRegistro": 100050,
+    "PersoneriaID": {
+      "_": "92693",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/92693"
+      }
+    },
+    "FechadeOrden": "2024-07-08 08:52:12"
+  },
+  {
+    "Orden": "100051",
+    "OrdenDeRegistro": 100051,
+    "PersoneriaID": {
+      "_": "29450",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/29450"
+      }
+    },
+    "FechadeOrden": "2024-07-08 08:52:10"
+  },
+  {
+    "Orden": "100052",
+    "OrdenDeRegistro": 100052,
+    "PersoneriaID": {
+      "_": "92695",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/92695"
+      }
+    },
+    "FechadeOrden": "2024-07-08 08:52:09"
+  },
+  {
+    "Orden": "100053",
+    "OrdenDeRegistro": 100053,
+    "PersoneriaID": {
+      "_": "15678",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/15678"
+      }
+    },
+    "FechadeOrden": "2024-07-08 08:52:08"
+  },
+  {
+    "Orden": "100054",
+    "OrdenDeRegistro": 100054,
+    "PersoneriaID": {
+      "_": "85284",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/85284"
+      }
+    },
+    "FechadeOrden": "2024-07-08 08:58:26"
+  }
+]
+2024-07-08 14:35:15.938 - [
+  {
+    "Orden": "100036",
+    "OrdenDeRegistro": 100036,
+    "PersoneriaID": {
+      "_": "3112",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/3112"
+      }
+    },
+    "FechadeOrden": "2024-07-08 08:52:17"
+  },
+  {
+    "Orden": "100041",
+    "OrdenDeRegistro": 100041,
+    "PersoneriaID": {
+      "_": "33704",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/33704"
+      }
+    },
+    "FechadeOrden": "2024-07-08 08:52:16"
+  },
+  {
+    "Orden": "100047",
+    "OrdenDeRegistro": 100047,
+    "PersoneriaID": {
+      "_": "92690",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/92690"
+      }
+    },
+    "FechadeOrden": "2024-07-08 07:58:28"
+  },
+  {
+    "Orden": "100048",
+    "OrdenDeRegistro": 100048,
+    "PersoneriaID": {
+      "_": "49437",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/49437"
+      }
+    },
+    "FechadeOrden": "2024-07-08 08:52:15"
+  },
+  {
+    "Orden": "100049",
+    "OrdenDeRegistro": 100049,
+    "PersoneriaID": {
+      "_": "92692",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/92692"
+      }
+    },
+    "FechadeOrden": "2024-07-08 08:52:14"
+  },
+  {
+    "Orden": "100050",
+    "OrdenDeRegistro": 100050,
+    "PersoneriaID": {
+      "_": "92693",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/92693"
+      }
+    },
+    "FechadeOrden": "2024-07-08 08:52:12"
+  },
+  {
+    "Orden": "100051",
+    "OrdenDeRegistro": 100051,
+    "PersoneriaID": {
+      "_": "29450",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/29450"
+      }
+    },
+    "FechadeOrden": "2024-07-08 08:52:10"
+  },
+  {
+    "Orden": "100052",
+    "OrdenDeRegistro": 100052,
+    "PersoneriaID": {
+      "_": "92695",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/92695"
+      }
+    },
+    "FechadeOrden": "2024-07-08 08:52:09"
+  },
+  {
+    "Orden": "100053",
+    "OrdenDeRegistro": 100053,
+    "PersoneriaID": {
+      "_": "15678",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/15678"
+      }
+    },
+    "FechadeOrden": "2024-07-08 08:52:08"
+  },
+  {
+    "Orden": "100054",
+    "OrdenDeRegistro": 100054,
+    "PersoneriaID": {
+      "_": "85284",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/85284"
+      }
+    },
+    "FechadeOrden": "2024-07-08 08:58:26"
+  }
+]
+2024-07-08 14:35:19.860 - Estados:
+2024-07-08 14:35:19.860 - Estados:
+2024-07-08 14:35:19.860 - Estados:
+2024-07-08 14:35:19.860 - [
+  {
+    "$": {
+      "id": "364944",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/364944"
+    }
+  },
+  {
+    "$": {
+      "id": "364945",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/364945"
+    }
+  },
+  {
+    "$": {
+      "id": "364946",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/364946"
+    }
+  },
+  {
+    "$": {
+      "id": "364947",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/364947"
+    }
+  },
+  {
+    "$": {
+      "id": "364949",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/364949"
+    }
+  },
+  {
+    "$": {
+      "id": "365037",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365037"
+    }
+  }
+]
+2024-07-08 14:35:19.860 - [
+  {
+    "$": {
+      "id": "364944",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/364944"
+    }
+  },
+  {
+    "$": {
+      "id": "364945",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/364945"
+    }
+  },
+  {
+    "$": {
+      "id": "364946",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/364946"
+    }
+  },
+  {
+    "$": {
+      "id": "364947",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/364947"
+    }
+  },
+  {
+    "$": {
+      "id": "364949",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/364949"
+    }
+  },
+  {
+    "$": {
+      "id": "365037",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365037"
+    }
+  }
+]
+2024-07-08 14:35:19.860 - [
+  {
+    "$": {
+      "id": "364944",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/364944"
+    }
+  },
+  {
+    "$": {
+      "id": "364945",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/364945"
+    }
+  },
+  {
+    "$": {
+      "id": "364946",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/364946"
+    }
+  },
+  {
+    "$": {
+      "id": "364947",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/364947"
+    }
+  },
+  {
+    "$": {
+      "id": "364949",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/364949"
+    }
+  },
+  {
+    "$": {
+      "id": "365037",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365037"
+    }
+  }
+]
+2024-07-08 14:35:20.103 - Estado de Order:
+2024-07-08 14:35:20.103 - Estado de Order:
+2024-07-08 14:35:20.103 - Estado de Order:
+2024-07-08 14:35:20.103 - {
+  "id": "364944",
+  "id_employee": "0",
+  "id_order_state": {
+    "_": "3",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/3"
+    }
+  },
+  "id_order": {
+    "_": "100036",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100036"
+    }
+  },
+  "date_add": "2024-07-06 11:51:02"
+}
+2024-07-08 14:35:20.103 - {
+  "id": "364944",
+  "id_employee": "0",
+  "id_order_state": {
+    "_": "3",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/3"
+    }
+  },
+  "id_order": {
+    "_": "100036",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100036"
+    }
+  },
+  "date_add": "2024-07-06 11:51:02"
+}
+2024-07-08 14:35:20.103 - {
+  "id": "364944",
+  "id_employee": "0",
+  "id_order_state": {
+    "_": "3",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/3"
+    }
+  },
+  "id_order": {
+    "_": "100036",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100036"
+    }
+  },
+  "date_add": "2024-07-06 11:51:02"
+}
+2024-07-08 14:35:20.395 - Estado de Order:
+2024-07-08 14:35:20.395 - Estado de Order:
+2024-07-08 14:35:20.395 - Estado de Order:
+2024-07-08 14:35:20.395 - {
+  "id": "364945",
+  "id_employee": "0",
+  "id_order_state": {
+    "_": "6",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/6"
+    }
+  },
+  "id_order": {
+    "_": "100036",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100036"
+    }
+  },
+  "date_add": "2024-07-06 11:53:34"
+}
+2024-07-08 14:35:20.395 - {
+  "id": "364945",
+  "id_employee": "0",
+  "id_order_state": {
+    "_": "6",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/6"
+    }
+  },
+  "id_order": {
+    "_": "100036",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100036"
+    }
+  },
+  "date_add": "2024-07-06 11:53:34"
+}
+2024-07-08 14:35:20.395 - {
+  "id": "364945",
+  "id_employee": "0",
+  "id_order_state": {
+    "_": "6",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/6"
+    }
+  },
+  "id_order": {
+    "_": "100036",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100036"
+    }
+  },
+  "date_add": "2024-07-06 11:53:34"
+}
+2024-07-08 14:35:20.645 - Estado de Order:
+2024-07-08 14:35:20.645 - Estado de Order:
+2024-07-08 14:35:20.645 - Estado de Order:
+2024-07-08 14:35:20.645 - {
+  "id": "364946",
+  "id_employee": "0",
+  "id_order_state": {
+    "_": "6",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/6"
+    }
+  },
+  "id_order": {
+    "_": "100036",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100036"
+    }
+  },
+  "date_add": "2024-07-06 11:55:29"
+}
+2024-07-08 14:35:20.645 - {
+  "id": "364946",
+  "id_employee": "0",
+  "id_order_state": {
+    "_": "6",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/6"
+    }
+  },
+  "id_order": {
+    "_": "100036",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100036"
+    }
+  },
+  "date_add": "2024-07-06 11:55:29"
+}
+2024-07-08 14:35:20.645 - {
+  "id": "364946",
+  "id_employee": "0",
+  "id_order_state": {
+    "_": "6",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/6"
+    }
+  },
+  "id_order": {
+    "_": "100036",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100036"
+    }
+  },
+  "date_add": "2024-07-06 11:55:29"
+}
+2024-07-08 14:35:20.891 - Estado de Order:
+2024-07-08 14:35:20.891 - Estado de Order:
+2024-07-08 14:35:20.891 - Estado de Order:
+2024-07-08 14:35:20.891 - {
+  "id": "364947",
+  "id_employee": "0",
+  "id_order_state": {
+    "_": "2",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/2"
+    }
+  },
+  "id_order": {
+    "_": "100036",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100036"
+    }
+  },
+  "date_add": "2024-07-06 11:57:54"
+}
+2024-07-08 14:35:20.891 - {
+  "id": "364947",
+  "id_employee": "0",
+  "id_order_state": {
+    "_": "2",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/2"
+    }
+  },
+  "id_order": {
+    "_": "100036",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100036"
+    }
+  },
+  "date_add": "2024-07-06 11:57:54"
+}
+2024-07-08 14:35:20.891 - {
+  "id": "364947",
+  "id_employee": "0",
+  "id_order_state": {
+    "_": "2",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/2"
+    }
+  },
+  "id_order": {
+    "_": "100036",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100036"
+    }
+  },
+  "date_add": "2024-07-06 11:57:54"
+}
+2024-07-08 14:35:21.137 - Estado de Order:
+2024-07-08 14:35:21.137 - Estado de Order:
+2024-07-08 14:35:21.137 - Estado de Order:
+2024-07-08 14:35:21.137 - {
+  "id": "364949",
+  "id_employee": {
+    "_": "82",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/employees/82"
+    }
+  },
+  "id_order_state": {
+    "_": "14",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/14"
+    }
+  },
+  "id_order": {
+    "_": "100036",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100036"
+    }
+  },
+  "date_add": "2024-07-06 12:19:01"
+}
+2024-07-08 14:35:21.137 - {
+  "id": "364949",
+  "id_employee": {
+    "_": "82",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/employees/82"
+    }
+  },
+  "id_order_state": {
+    "_": "14",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/14"
+    }
+  },
+  "id_order": {
+    "_": "100036",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100036"
+    }
+  },
+  "date_add": "2024-07-06 12:19:01"
+}
+2024-07-08 14:35:21.137 - {
+  "id": "364949",
+  "id_employee": {
+    "_": "82",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/employees/82"
+    }
+  },
+  "id_order_state": {
+    "_": "14",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/14"
+    }
+  },
+  "id_order": {
+    "_": "100036",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100036"
+    }
+  },
+  "date_add": "2024-07-06 12:19:01"
+}
+2024-07-08 14:35:21.398 - Estado de Order:
+2024-07-08 14:35:21.398 - Estado de Order:
+2024-07-08 14:35:21.398 - Estado de Order:
+2024-07-08 14:35:21.398 - {
+  "id": "365037",
+  "id_employee": {
+    "_": "82",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/employees/82"
+    }
+  },
+  "id_order_state": {
+    "_": "4",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/4"
+    }
+  },
+  "id_order": {
+    "_": "100036",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100036"
+    }
+  },
+  "date_add": "2024-07-08 08:52:17"
+}
+2024-07-08 14:35:21.398 - {
+  "id": "365037",
+  "id_employee": {
+    "_": "82",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/employees/82"
+    }
+  },
+  "id_order_state": {
+    "_": "4",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/4"
+    }
+  },
+  "id_order": {
+    "_": "100036",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100036"
+    }
+  },
+  "date_add": "2024-07-08 08:52:17"
+}
+2024-07-08 14:35:21.398 - {
+  "id": "365037",
+  "id_employee": {
+    "_": "82",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/employees/82"
+    }
+  },
+  "id_order_state": {
+    "_": "4",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/4"
+    }
+  },
+  "id_order": {
+    "_": "100036",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100036"
+    }
+  },
+  "date_add": "2024-07-08 08:52:17"
+}
+2024-07-08 14:35:29.599 - Estados:
+2024-07-08 14:35:29.599 - Estados:
+2024-07-08 14:35:29.599 - Estados:
+2024-07-08 14:35:29.599 - [
+  {
+    "$": {
+      "id": "364982",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/364982"
+    }
+  },
+  {
+    "$": {
+      "id": "364983",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/364983"
+    }
+  },
+  {
+    "$": {
+      "id": "364986",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/364986"
+    }
+  },
+  {
+    "$": {
+      "id": "365036",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365036"
+    }
+  }
+]
+2024-07-08 14:35:29.599 - [
+  {
+    "$": {
+      "id": "364982",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/364982"
+    }
+  },
+  {
+    "$": {
+      "id": "364983",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/364983"
+    }
+  },
+  {
+    "$": {
+      "id": "364986",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/364986"
+    }
+  },
+  {
+    "$": {
+      "id": "365036",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365036"
+    }
+  }
+]
+2024-07-08 14:35:29.599 - [
+  {
+    "$": {
+      "id": "364982",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/364982"
+    }
+  },
+  {
+    "$": {
+      "id": "364983",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/364983"
+    }
+  },
+  {
+    "$": {
+      "id": "364986",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/364986"
+    }
+  },
+  {
+    "$": {
+      "id": "365036",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365036"
+    }
+  }
+]
+2024-07-08 14:35:29.836 - Estado de Order:
+2024-07-08 14:35:29.836 - Estado de Order:
+2024-07-08 14:35:29.836 - Estado de Order:
+2024-07-08 14:35:29.836 - {
+  "id": "364982",
+  "id_employee": "0",
+  "id_order_state": {
+    "_": "3",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/3"
+    }
+  },
+  "id_order": {
+    "_": "100041",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100041"
+    }
+  },
+  "date_add": "2024-07-07 00:22:53"
+}
+2024-07-08 14:35:29.836 - {
+  "id": "364982",
+  "id_employee": "0",
+  "id_order_state": {
+    "_": "3",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/3"
+    }
+  },
+  "id_order": {
+    "_": "100041",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100041"
+    }
+  },
+  "date_add": "2024-07-07 00:22:53"
+}
+2024-07-08 14:35:29.836 - {
+  "id": "364982",
+  "id_employee": "0",
+  "id_order_state": {
+    "_": "3",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/3"
+    }
+  },
+  "id_order": {
+    "_": "100041",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100041"
+    }
+  },
+  "date_add": "2024-07-07 00:22:53"
+}
+2024-07-08 14:35:30.086 - Estado de Order:
+2024-07-08 14:35:30.086 - Estado de Order:
+2024-07-08 14:35:30.087 - Estado de Order:
+2024-07-08 14:35:30.086 - {
+  "id": "364983",
+  "id_employee": "0",
+  "id_order_state": {
+    "_": "2",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/2"
+    }
+  },
+  "id_order": {
+    "_": "100041",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100041"
+    }
+  },
+  "date_add": "2024-07-07 00:23:47"
+}
+2024-07-08 14:35:30.087 - {
+  "id": "364983",
+  "id_employee": "0",
+  "id_order_state": {
+    "_": "2",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/2"
+    }
+  },
+  "id_order": {
+    "_": "100041",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100041"
+    }
+  },
+  "date_add": "2024-07-07 00:23:47"
+}
+2024-07-08 14:35:30.086 - {
+  "id": "364983",
+  "id_employee": "0",
+  "id_order_state": {
+    "_": "2",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/2"
+    }
+  },
+  "id_order": {
+    "_": "100041",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100041"
+    }
+  },
+  "date_add": "2024-07-07 00:23:47"
+}
+2024-07-08 14:35:30.324 - Estado de Order:
+2024-07-08 14:35:30.324 - Estado de Order:
+2024-07-08 14:35:30.324 - Estado de Order:
+2024-07-08 14:35:30.324 - {
+  "id": "364986",
+  "id_employee": {
+    "_": "73",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/employees/73"
+    }
+  },
+  "id_order_state": {
+    "_": "14",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/14"
+    }
+  },
+  "id_order": {
+    "_": "100041",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100041"
+    }
+  },
+  "date_add": "2024-07-07 10:11:16"
+}
+2024-07-08 14:35:30.324 - {
+  "id": "364986",
+  "id_employee": {
+    "_": "73",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/employees/73"
+    }
+  },
+  "id_order_state": {
+    "_": "14",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/14"
+    }
+  },
+  "id_order": {
+    "_": "100041",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100041"
+    }
+  },
+  "date_add": "2024-07-07 10:11:16"
+}
+2024-07-08 14:35:30.324 - {
+  "id": "364986",
+  "id_employee": {
+    "_": "73",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/employees/73"
+    }
+  },
+  "id_order_state": {
+    "_": "14",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/14"
+    }
+  },
+  "id_order": {
+    "_": "100041",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100041"
+    }
+  },
+  "date_add": "2024-07-07 10:11:16"
+}
+2024-07-08 14:35:30.562 - Estado de Order:
+2024-07-08 14:35:30.562 - Estado de Order:
+2024-07-08 14:35:30.562 - Estado de Order:
+2024-07-08 14:35:30.562 - {
+  "id": "365036",
+  "id_employee": {
+    "_": "82",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/employees/82"
+    }
+  },
+  "id_order_state": {
+    "_": "4",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/4"
+    }
+  },
+  "id_order": {
+    "_": "100041",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100041"
+    }
+  },
+  "date_add": "2024-07-08 08:52:16"
+}
+2024-07-08 14:35:30.562 - {
+  "id": "365036",
+  "id_employee": {
+    "_": "82",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/employees/82"
+    }
+  },
+  "id_order_state": {
+    "_": "4",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/4"
+    }
+  },
+  "id_order": {
+    "_": "100041",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100041"
+    }
+  },
+  "date_add": "2024-07-08 08:52:16"
+}
+2024-07-08 14:35:30.562 - {
+  "id": "365036",
+  "id_employee": {
+    "_": "82",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/employees/82"
+    }
+  },
+  "id_order_state": {
+    "_": "4",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/4"
+    }
+  },
+  "id_order": {
+    "_": "100041",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100041"
+    }
+  },
+  "date_add": "2024-07-08 08:52:16"
+}
+2024-07-08 14:35:39.237 - Estados:
+2024-07-08 14:35:39.237 - Estados:
+2024-07-08 14:35:39.237 - Estados:
+2024-07-08 14:35:39.237 - [
+  {
+    "$": {
+      "id": "365012",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365012"
+    }
+  },
+  {
+    "$": {
+      "id": "365025",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365025"
+    }
+  }
+]
+2024-07-08 14:35:39.237 - [
+  {
+    "$": {
+      "id": "365012",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365012"
+    }
+  },
+  {
+    "$": {
+      "id": "365025",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365025"
+    }
+  }
+]
+2024-07-08 14:35:39.237 - [
+  {
+    "$": {
+      "id": "365012",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365012"
+    }
+  },
+  {
+    "$": {
+      "id": "365025",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365025"
+    }
+  }
+]
+2024-07-08 14:35:39.495 - Estado de Order:
+2024-07-08 14:35:39.495 - Estado de Order:
+2024-07-08 14:35:39.495 - Estado de Order:
+2024-07-08 14:35:39.495 - {
+  "id": "365012",
+  "id_employee": "0",
+  "id_order_state": {
+    "_": "2",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/2"
+    }
+  },
+  "id_order": {
+    "_": "100047",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100047"
+    }
+  },
+  "date_add": "2024-07-07 21:07:28"
+}
+2024-07-08 14:35:39.495 - {
+  "id": "365012",
+  "id_employee": "0",
+  "id_order_state": {
+    "_": "2",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/2"
+    }
+  },
+  "id_order": {
+    "_": "100047",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100047"
+    }
+  },
+  "date_add": "2024-07-07 21:07:28"
+}
+2024-07-08 14:35:39.495 - {
+  "id": "365012",
+  "id_employee": "0",
+  "id_order_state": {
+    "_": "2",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/2"
+    }
+  },
+  "id_order": {
+    "_": "100047",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100047"
+    }
+  },
+  "date_add": "2024-07-07 21:07:28"
+}
+2024-07-08 14:35:39.776 - Estado de Order:
+2024-07-08 14:35:39.776 - Estado de Order:
+2024-07-08 14:35:39.776 - Estado de Order:
+2024-07-08 14:35:39.776 - {
+  "id": "365025",
+  "id_employee": {
+    "_": "82",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/employees/82"
+    }
+  },
+  "id_order_state": {
+    "_": "14",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/14"
+    }
+  },
+  "id_order": {
+    "_": "100047",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100047"
+    }
+  },
+  "date_add": "2024-07-08 07:58:28"
+}
+2024-07-08 14:35:39.776 - {
+  "id": "365025",
+  "id_employee": {
+    "_": "82",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/employees/82"
+    }
+  },
+  "id_order_state": {
+    "_": "14",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/14"
+    }
+  },
+  "id_order": {
+    "_": "100047",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100047"
+    }
+  },
+  "date_add": "2024-07-08 07:58:28"
+}
+2024-07-08 14:35:39.776 - {
+  "id": "365025",
+  "id_employee": {
+    "_": "82",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/employees/82"
+    }
+  },
+  "id_order_state": {
+    "_": "14",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/14"
+    }
+  },
+  "id_order": {
+    "_": "100047",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100047"
+    }
+  },
+  "date_add": "2024-07-08 07:58:28"
+}
+2024-07-08 14:35:43.360 - ERROR: Error al crear el cliente con  DNI :  10075073696
+2024-07-08 14:35:43.361 - ERROR: Error al crear el cliente con  DNI :  10075073696
+2024-07-08 14:35:43.361 - ERROR: Error al crear el cliente con  DNI :  10075073696
+2024-07-08 14:35:43.360 - ERROR: The INSERT statement conflicted with the FOREIGN KEY constraint "FK_PersoneriaDireccion_UbicacionGeografica". The conflict occurred in database "prueba_kflor", table "dbo.UbicacionGeografica", column 'UbicacionID'.
+2024-07-08 14:35:43.360 - STACK TRACE:
+RequestError: The INSERT statement conflicted with the FOREIGN KEY constraint "FK_PersoneriaDireccion_UbicacionGeografica". The conflict occurred in database "prueba_kflor", table "dbo.UbicacionGeografica", column 'UbicacionID'.
+    at handleError (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\node_modules\mssql\lib\tedious\request.js:384:15)
+    at Connection.emit (node:events:514:28)
+    at Connection.emit (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\node_modules\tedious\lib\connection.js:959:18)
+    at RequestTokenHandler.onErrorMessage (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\node_modules\tedious\lib\token\handler.js:285:21)
+    at Readable.<anonymous> (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\node_modules\tedious\lib\token\token-stream-parser.js:18:33)
+    at Readable.emit (node:events:514:28)
+    at addChunk (node:internal/streams/readable:545:12)
+    at readableAddChunkPushObjectMode (node:internal/streams/readable:521:3)
+    at Readable.push (node:internal/streams/readable:376:5)
+    at next (node:internal/streams/from:98:31)
+2024-07-08 14:35:43.361 - ERROR: The INSERT statement conflicted with the FOREIGN KEY constraint "FK_PersoneriaDireccion_UbicacionGeografica". The conflict occurred in database "prueba_kflor", table "dbo.UbicacionGeografica", column 'UbicacionID'.
+2024-07-08 14:35:43.361 - ERROR: The INSERT statement conflicted with the FOREIGN KEY constraint "FK_PersoneriaDireccion_UbicacionGeografica". The conflict occurred in database "prueba_kflor", table "dbo.UbicacionGeografica", column 'UbicacionID'.
+2024-07-08 14:35:43.361 - STACK TRACE:
+RequestError: The INSERT statement conflicted with the FOREIGN KEY constraint "FK_PersoneriaDireccion_UbicacionGeografica". The conflict occurred in database "prueba_kflor", table "dbo.UbicacionGeografica", column 'UbicacionID'.
+    at handleError (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\node_modules\mssql\lib\tedious\request.js:384:15)
+    at Connection.emit (node:events:514:28)
+    at Connection.emit (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\node_modules\tedious\lib\connection.js:959:18)
+    at RequestTokenHandler.onErrorMessage (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\node_modules\tedious\lib\token\handler.js:285:21)
+    at Readable.<anonymous> (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\node_modules\tedious\lib\token\token-stream-parser.js:18:33)
+    at Readable.emit (node:events:514:28)
+    at addChunk (node:internal/streams/readable:545:12)
+    at readableAddChunkPushObjectMode (node:internal/streams/readable:521:3)
+    at Readable.push (node:internal/streams/readable:376:5)
+    at next (node:internal/streams/from:98:31)
+2024-07-08 14:35:43.361 - STACK TRACE:
+RequestError: The INSERT statement conflicted with the FOREIGN KEY constraint "FK_PersoneriaDireccion_UbicacionGeografica". The conflict occurred in database "prueba_kflor", table "dbo.UbicacionGeografica", column 'UbicacionID'.
+    at handleError (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\node_modules\mssql\lib\tedious\request.js:384:15)
+    at Connection.emit (node:events:514:28)
+    at Connection.emit (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\node_modules\tedious\lib\connection.js:959:18)
+    at RequestTokenHandler.onErrorMessage (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\node_modules\tedious\lib\token\handler.js:285:21)
+    at Readable.<anonymous> (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\node_modules\tedious\lib\token\token-stream-parser.js:18:33)
+    at Readable.emit (node:events:514:28)
+    at addChunk (node:internal/streams/readable:545:12)
+    at readableAddChunkPushObjectMode (node:internal/streams/readable:521:3)
+    at Readable.push (node:internal/streams/readable:376:5)
+    at next (node:internal/streams/from:98:31)
+2024-07-08 14:35:48.718 - Estados:
+2024-07-08 14:35:48.718 - Estados:
+2024-07-08 14:35:48.718 - Estados:
+2024-07-08 14:35:48.718 - [
+  {
+    "$": {
+      "id": "365013",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365013"
+    }
+  },
+  {
+    "$": {
+      "id": "365014",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365014"
+    }
+  },
+  {
+    "$": {
+      "id": "365018",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365018"
+    }
+  },
+  {
+    "$": {
+      "id": "365035",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365035"
+    }
+  }
+]
+2024-07-08 14:35:48.718 - [
+  {
+    "$": {
+      "id": "365013",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365013"
+    }
+  },
+  {
+    "$": {
+      "id": "365014",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365014"
+    }
+  },
+  {
+    "$": {
+      "id": "365018",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365018"
+    }
+  },
+  {
+    "$": {
+      "id": "365035",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365035"
+    }
+  }
+]
+2024-07-08 14:35:48.718 - [
+  {
+    "$": {
+      "id": "365013",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365013"
+    }
+  },
+  {
+    "$": {
+      "id": "365014",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365014"
+    }
+  },
+  {
+    "$": {
+      "id": "365018",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365018"
+    }
+  },
+  {
+    "$": {
+      "id": "365035",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365035"
+    }
+  }
+]
+2024-07-08 14:35:48.960 - Estado de Order:
+2024-07-08 14:35:48.960 - Estado de Order:
+2024-07-08 14:35:48.960 - Estado de Order:
+2024-07-08 14:35:48.960 - {
+  "id": "365013",
+  "id_employee": "0",
+  "id_order_state": {
+    "_": "3",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/3"
+    }
+  },
+  "id_order": {
+    "_": "100048",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100048"
+    }
+  },
+  "date_add": "2024-07-07 23:03:24"
+}
+2024-07-08 14:35:48.960 - {
+  "id": "365013",
+  "id_employee": "0",
+  "id_order_state": {
+    "_": "3",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/3"
+    }
+  },
+  "id_order": {
+    "_": "100048",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100048"
+    }
+  },
+  "date_add": "2024-07-07 23:03:24"
+}
+2024-07-08 14:35:48.960 - {
+  "id": "365013",
+  "id_employee": "0",
+  "id_order_state": {
+    "_": "3",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/3"
+    }
+  },
+  "id_order": {
+    "_": "100048",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100048"
+    }
+  },
+  "date_add": "2024-07-07 23:03:24"
+}
+2024-07-08 14:35:49.192 - Estado de Order:
+2024-07-08 14:35:49.192 - Estado de Order:
+2024-07-08 14:35:49.192 - Estado de Order:
+2024-07-08 14:35:49.192 - {
+  "id": "365014",
+  "id_employee": "0",
+  "id_order_state": {
+    "_": "2",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/2"
+    }
+  },
+  "id_order": {
+    "_": "100048",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100048"
+    }
+  },
+  "date_add": "2024-07-07 23:04:30"
+}
+2024-07-08 14:35:49.192 - {
+  "id": "365014",
+  "id_employee": "0",
+  "id_order_state": {
+    "_": "2",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/2"
+    }
+  },
+  "id_order": {
+    "_": "100048",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100048"
+    }
+  },
+  "date_add": "2024-07-07 23:04:30"
+}
+2024-07-08 14:35:49.192 - {
+  "id": "365014",
+  "id_employee": "0",
+  "id_order_state": {
+    "_": "2",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/2"
+    }
+  },
+  "id_order": {
+    "_": "100048",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100048"
+    }
+  },
+  "date_add": "2024-07-07 23:04:30"
+}
+2024-07-08 14:35:49.424 - Estado de Order:
+2024-07-08 14:35:49.424 - Estado de Order:
+2024-07-08 14:35:49.424 - Estado de Order:
+2024-07-08 14:35:49.424 - {
+  "id": "365018",
+  "id_employee": {
+    "_": "82",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/employees/82"
+    }
+  },
+  "id_order_state": {
+    "_": "14",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/14"
+    }
+  },
+  "id_order": {
+    "_": "100048",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100048"
+    }
+  },
+  "date_add": "2024-07-08 06:44:24"
+}
+2024-07-08 14:35:49.424 - {
+  "id": "365018",
+  "id_employee": {
+    "_": "82",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/employees/82"
+    }
+  },
+  "id_order_state": {
+    "_": "14",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/14"
+    }
+  },
+  "id_order": {
+    "_": "100048",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100048"
+    }
+  },
+  "date_add": "2024-07-08 06:44:24"
+}
+2024-07-08 14:35:49.424 - {
+  "id": "365018",
+  "id_employee": {
+    "_": "82",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/employees/82"
+    }
+  },
+  "id_order_state": {
+    "_": "14",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/14"
+    }
+  },
+  "id_order": {
+    "_": "100048",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100048"
+    }
+  },
+  "date_add": "2024-07-08 06:44:24"
+}
+2024-07-08 14:35:49.664 - Estado de Order:
+2024-07-08 14:35:49.664 - Estado de Order:
+2024-07-08 14:35:49.664 - Estado de Order:
+2024-07-08 14:35:49.664 - {
+  "id": "365035",
+  "id_employee": {
+    "_": "82",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/employees/82"
+    }
+  },
+  "id_order_state": {
+    "_": "4",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/4"
+    }
+  },
+  "id_order": {
+    "_": "100048",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100048"
+    }
+  },
+  "date_add": "2024-07-08 08:52:15"
+}
+2024-07-08 14:35:49.664 - {
+  "id": "365035",
+  "id_employee": {
+    "_": "82",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/employees/82"
+    }
+  },
+  "id_order_state": {
+    "_": "4",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/4"
+    }
+  },
+  "id_order": {
+    "_": "100048",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100048"
+    }
+  },
+  "date_add": "2024-07-08 08:52:15"
+}
+2024-07-08 14:35:49.664 - {
+  "id": "365035",
+  "id_employee": {
+    "_": "82",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/employees/82"
+    }
+  },
+  "id_order_state": {
+    "_": "4",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/4"
+    }
+  },
+  "id_order": {
+    "_": "100048",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100048"
+    }
+  },
+  "date_add": "2024-07-08 08:52:15"
+}
+2024-07-08 14:35:57.826 - Estados:
+2024-07-08 14:35:57.826 - Estados:
+2024-07-08 14:35:57.826 - Estados:
+2024-07-08 14:35:57.826 - [
+  {
+    "$": {
+      "id": "365015",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365015"
+    }
+  },
+  {
+    "$": {
+      "id": "365020",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365020"
+    }
+  },
+  {
+    "$": {
+      "id": "365034",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365034"
+    }
+  }
+]
+2024-07-08 14:35:57.826 - [
+  {
+    "$": {
+      "id": "365015",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365015"
+    }
+  },
+  {
+    "$": {
+      "id": "365020",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365020"
+    }
+  },
+  {
+    "$": {
+      "id": "365034",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365034"
+    }
+  }
+]
+2024-07-08 14:35:57.826 - [
+  {
+    "$": {
+      "id": "365015",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365015"
+    }
+  },
+  {
+    "$": {
+      "id": "365020",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365020"
+    }
+  },
+  {
+    "$": {
+      "id": "365034",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365034"
+    }
+  }
+]
+2024-07-08 14:35:58.066 - Estado de Order:
+2024-07-08 14:35:58.066 - Estado de Order:
+2024-07-08 14:35:58.066 - Estado de Order:
+2024-07-08 14:35:58.066 - {
+  "id": "365015",
+  "id_employee": "0",
+  "id_order_state": {
+    "_": "2",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/2"
+    }
+  },
+  "id_order": {
+    "_": "100049",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100049"
+    }
+  },
+  "date_add": "2024-07-08 05:56:10"
+}
+2024-07-08 14:35:58.066 - {
+  "id": "365015",
+  "id_employee": "0",
+  "id_order_state": {
+    "_": "2",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/2"
+    }
+  },
+  "id_order": {
+    "_": "100049",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100049"
+    }
+  },
+  "date_add": "2024-07-08 05:56:10"
+}
+2024-07-08 14:35:58.066 - {
+  "id": "365015",
+  "id_employee": "0",
+  "id_order_state": {
+    "_": "2",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/2"
+    }
+  },
+  "id_order": {
+    "_": "100049",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100049"
+    }
+  },
+  "date_add": "2024-07-08 05:56:10"
+}
+2024-07-08 14:35:58.321 - Estado de Order:
+2024-07-08 14:35:58.321 - Estado de Order:
+2024-07-08 14:35:58.322 - Estado de Order:
+2024-07-08 14:35:58.321 - {
+  "id": "365020",
+  "id_employee": {
+    "_": "82",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/employees/82"
+    }
+  },
+  "id_order_state": {
+    "_": "14",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/14"
+    }
+  },
+  "id_order": {
+    "_": "100049",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100049"
+    }
+  },
+  "date_add": "2024-07-08 06:59:52"
+}
+2024-07-08 14:35:58.322 - {
+  "id": "365020",
+  "id_employee": {
+    "_": "82",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/employees/82"
+    }
+  },
+  "id_order_state": {
+    "_": "14",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/14"
+    }
+  },
+  "id_order": {
+    "_": "100049",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100049"
+    }
+  },
+  "date_add": "2024-07-08 06:59:52"
+}
+2024-07-08 14:35:58.321 - {
+  "id": "365020",
+  "id_employee": {
+    "_": "82",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/employees/82"
+    }
+  },
+  "id_order_state": {
+    "_": "14",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/14"
+    }
+  },
+  "id_order": {
+    "_": "100049",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100049"
+    }
+  },
+  "date_add": "2024-07-08 06:59:52"
+}
+2024-07-08 14:35:58.559 - Estado de Order:
+2024-07-08 14:35:58.560 - Estado de Order:
+2024-07-08 14:35:58.560 - Estado de Order:
+2024-07-08 14:35:58.559 - {
+  "id": "365034",
+  "id_employee": {
+    "_": "82",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/employees/82"
+    }
+  },
+  "id_order_state": {
+    "_": "4",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/4"
+    }
+  },
+  "id_order": {
+    "_": "100049",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100049"
+    }
+  },
+  "date_add": "2024-07-08 08:52:14"
+}
+2024-07-08 14:35:58.560 - {
+  "id": "365034",
+  "id_employee": {
+    "_": "82",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/employees/82"
+    }
+  },
+  "id_order_state": {
+    "_": "4",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/4"
+    }
+  },
+  "id_order": {
+    "_": "100049",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100049"
+    }
+  },
+  "date_add": "2024-07-08 08:52:14"
+}
+2024-07-08 14:35:58.560 - {
+  "id": "365034",
+  "id_employee": {
+    "_": "82",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/employees/82"
+    }
+  },
+  "id_order_state": {
+    "_": "4",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/4"
+    }
+  },
+  "id_order": {
+    "_": "100049",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100049"
+    }
+  },
+  "date_add": "2024-07-08 08:52:14"
+}
+2024-07-08 14:36:02.139 - ERROR: Error en la transacción de crear pedido con orden :100049
+2024-07-08 14:36:02.140 - ERROR: Error en la transacción de crear pedido con orden :100049
+2024-07-08 14:36:02.140 - ERROR: Error en la transacción de crear pedido con orden :100049
+2024-07-08 14:36:02.139 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-07-08 14:36:02.139 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:826:52)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1008:36)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1341:19)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1350:9)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1364:9)
+2024-07-08 14:36:02.140 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-07-08 14:36:02.140 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:826:52)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1008:36)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1341:19)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1350:9)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1364:9)
+2024-07-08 14:36:02.140 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-07-08 14:36:02.140 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:826:52)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1008:36)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1341:19)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1350:9)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1364:9)
+2024-07-08 14:36:07.222 - Estados:
+2024-07-08 14:36:07.222 - Estados:
+2024-07-08 14:36:07.222 - Estados:
+2024-07-08 14:36:07.222 - [
+  {
+    "$": {
+      "id": "365016",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365016"
+    }
+  },
+  {
+    "$": {
+      "id": "365022",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365022"
+    }
+  },
+  {
+    "$": {
+      "id": "365033",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365033"
+    }
+  }
+]
+2024-07-08 14:36:07.222 - [
+  {
+    "$": {
+      "id": "365016",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365016"
+    }
+  },
+  {
+    "$": {
+      "id": "365022",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365022"
+    }
+  },
+  {
+    "$": {
+      "id": "365033",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365033"
+    }
+  }
+]
+2024-07-08 14:36:07.222 - [
+  {
+    "$": {
+      "id": "365016",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365016"
+    }
+  },
+  {
+    "$": {
+      "id": "365022",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365022"
+    }
+  },
+  {
+    "$": {
+      "id": "365033",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365033"
+    }
+  }
+]
+2024-07-08 14:36:07.498 - Estado de Order:
+2024-07-08 14:36:07.499 - Estado de Order:
+2024-07-08 14:36:07.499 - Estado de Order:
+2024-07-08 14:36:07.498 - {
+  "id": "365016",
+  "id_employee": "0",
+  "id_order_state": {
+    "_": "2",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/2"
+    }
+  },
+  "id_order": {
+    "_": "100050",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100050"
+    }
+  },
+  "date_add": "2024-07-08 06:20:52"
+}
+2024-07-08 14:36:07.499 - {
+  "id": "365016",
+  "id_employee": "0",
+  "id_order_state": {
+    "_": "2",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/2"
+    }
+  },
+  "id_order": {
+    "_": "100050",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100050"
+    }
+  },
+  "date_add": "2024-07-08 06:20:52"
+}
+2024-07-08 14:36:07.499 - {
+  "id": "365016",
+  "id_employee": "0",
+  "id_order_state": {
+    "_": "2",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/2"
+    }
+  },
+  "id_order": {
+    "_": "100050",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100050"
+    }
+  },
+  "date_add": "2024-07-08 06:20:52"
+}
+2024-07-08 14:36:07.776 - Estado de Order:
+2024-07-08 14:36:07.776 - Estado de Order:
+2024-07-08 14:36:07.776 - Estado de Order:
+2024-07-08 14:36:07.776 - {
+  "id": "365022",
+  "id_employee": {
+    "_": "82",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/employees/82"
+    }
+  },
+  "id_order_state": {
+    "_": "14",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/14"
+    }
+  },
+  "id_order": {
+    "_": "100050",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100050"
+    }
+  },
+  "date_add": "2024-07-08 07:03:51"
+}
+2024-07-08 14:36:07.776 - {
+  "id": "365022",
+  "id_employee": {
+    "_": "82",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/employees/82"
+    }
+  },
+  "id_order_state": {
+    "_": "14",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/14"
+    }
+  },
+  "id_order": {
+    "_": "100050",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100050"
+    }
+  },
+  "date_add": "2024-07-08 07:03:51"
+}
+2024-07-08 14:36:07.776 - {
+  "id": "365022",
+  "id_employee": {
+    "_": "82",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/employees/82"
+    }
+  },
+  "id_order_state": {
+    "_": "14",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/14"
+    }
+  },
+  "id_order": {
+    "_": "100050",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100050"
+    }
+  },
+  "date_add": "2024-07-08 07:03:51"
+}
+2024-07-08 14:36:08.091 - Estado de Order:
+2024-07-08 14:36:08.091 - Estado de Order:
+2024-07-08 14:36:08.091 - Estado de Order:
+2024-07-08 14:36:08.091 - {
+  "id": "365033",
+  "id_employee": {
+    "_": "82",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/employees/82"
+    }
+  },
+  "id_order_state": {
+    "_": "4",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/4"
+    }
+  },
+  "id_order": {
+    "_": "100050",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100050"
+    }
+  },
+  "date_add": "2024-07-08 08:52:12"
+}
+2024-07-08 14:36:08.091 - {
+  "id": "365033",
+  "id_employee": {
+    "_": "82",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/employees/82"
+    }
+  },
+  "id_order_state": {
+    "_": "4",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/4"
+    }
+  },
+  "id_order": {
+    "_": "100050",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100050"
+    }
+  },
+  "date_add": "2024-07-08 08:52:12"
+}
+2024-07-08 14:36:08.091 - {
+  "id": "365033",
+  "id_employee": {
+    "_": "82",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/employees/82"
+    }
+  },
+  "id_order_state": {
+    "_": "4",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/4"
+    }
+  },
+  "id_order": {
+    "_": "100050",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100050"
+    }
+  },
+  "date_add": "2024-07-08 08:52:12"
+}
+2024-07-08 14:36:16.071 - Estados:
+2024-07-08 14:36:16.072 - Estados:
+2024-07-08 14:36:16.072 - Estados:
+2024-07-08 14:36:16.072 - [
+  {
+    "$": {
+      "id": "365017",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365017"
+    }
+  },
+  {
+    "$": {
+      "id": "365023",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365023"
+    }
+  },
+  {
+    "$": {
+      "id": "365032",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365032"
+    }
+  }
+]
+2024-07-08 14:36:16.071 - [
+  {
+    "$": {
+      "id": "365017",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365017"
+    }
+  },
+  {
+    "$": {
+      "id": "365023",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365023"
+    }
+  },
+  {
+    "$": {
+      "id": "365032",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365032"
+    }
+  }
+]
+2024-07-08 14:36:16.072 - [
+  {
+    "$": {
+      "id": "365017",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365017"
+    }
+  },
+  {
+    "$": {
+      "id": "365023",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365023"
+    }
+  },
+  {
+    "$": {
+      "id": "365032",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365032"
+    }
+  }
+]
+2024-07-08 14:36:16.392 - Estado de Order:
+2024-07-08 14:36:16.392 - Estado de Order:
+2024-07-08 14:36:16.392 - Estado de Order:
+2024-07-08 14:36:16.392 - {
+  "id": "365017",
+  "id_employee": "0",
+  "id_order_state": {
+    "_": "2",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/2"
+    }
+  },
+  "id_order": {
+    "_": "100051",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100051"
+    }
+  },
+  "date_add": "2024-07-08 06:22:53"
+}
+2024-07-08 14:36:16.392 - {
+  "id": "365017",
+  "id_employee": "0",
+  "id_order_state": {
+    "_": "2",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/2"
+    }
+  },
+  "id_order": {
+    "_": "100051",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100051"
+    }
+  },
+  "date_add": "2024-07-08 06:22:53"
+}
+2024-07-08 14:36:16.392 - {
+  "id": "365017",
+  "id_employee": "0",
+  "id_order_state": {
+    "_": "2",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/2"
+    }
+  },
+  "id_order": {
+    "_": "100051",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100051"
+    }
+  },
+  "date_add": "2024-07-08 06:22:53"
+}
+2024-07-08 14:36:16.620 - Estado de Order:
+2024-07-08 14:36:16.621 - Estado de Order:
+2024-07-08 14:36:16.621 - Estado de Order:
+2024-07-08 14:36:16.620 - {
+  "id": "365023",
+  "id_employee": {
+    "_": "82",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/employees/82"
+    }
+  },
+  "id_order_state": {
+    "_": "14",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/14"
+    }
+  },
+  "id_order": {
+    "_": "100051",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100051"
+    }
+  },
+  "date_add": "2024-07-08 07:05:28"
+}
+2024-07-08 14:36:16.621 - {
+  "id": "365023",
+  "id_employee": {
+    "_": "82",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/employees/82"
+    }
+  },
+  "id_order_state": {
+    "_": "14",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/14"
+    }
+  },
+  "id_order": {
+    "_": "100051",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100051"
+    }
+  },
+  "date_add": "2024-07-08 07:05:28"
+}
+2024-07-08 14:36:16.621 - {
+  "id": "365023",
+  "id_employee": {
+    "_": "82",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/employees/82"
+    }
+  },
+  "id_order_state": {
+    "_": "14",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/14"
+    }
+  },
+  "id_order": {
+    "_": "100051",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100051"
+    }
+  },
+  "date_add": "2024-07-08 07:05:28"
+}
+2024-07-08 14:36:16.862 - Estado de Order:
+2024-07-08 14:36:16.862 - Estado de Order:
+2024-07-08 14:36:16.862 - Estado de Order:
+2024-07-08 14:36:16.862 - {
+  "id": "365032",
+  "id_employee": {
+    "_": "82",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/employees/82"
+    }
+  },
+  "id_order_state": {
+    "_": "4",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/4"
+    }
+  },
+  "id_order": {
+    "_": "100051",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100051"
+    }
+  },
+  "date_add": "2024-07-08 08:52:10"
+}
+2024-07-08 14:36:16.862 - {
+  "id": "365032",
+  "id_employee": {
+    "_": "82",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/employees/82"
+    }
+  },
+  "id_order_state": {
+    "_": "4",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/4"
+    }
+  },
+  "id_order": {
+    "_": "100051",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100051"
+    }
+  },
+  "date_add": "2024-07-08 08:52:10"
+}
+2024-07-08 14:36:16.862 - {
+  "id": "365032",
+  "id_employee": {
+    "_": "82",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/employees/82"
+    }
+  },
+  "id_order_state": {
+    "_": "4",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/4"
+    }
+  },
+  "id_order": {
+    "_": "100051",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100051"
+    }
+  },
+  "date_add": "2024-07-08 08:52:10"
+}
+2024-07-08 14:36:25.141 - Estados:
+2024-07-08 14:36:25.141 - Estados:
+2024-07-08 14:36:25.141 - Estados:
+2024-07-08 14:36:25.141 - [
+  {
+    "$": {
+      "id": "365019",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365019"
+    }
+  },
+  {
+    "$": {
+      "id": "365021",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365021"
+    }
+  },
+  {
+    "$": {
+      "id": "365024",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365024"
+    }
+  },
+  {
+    "$": {
+      "id": "365031",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365031"
+    }
+  }
+]
+2024-07-08 14:36:25.141 - [
+  {
+    "$": {
+      "id": "365019",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365019"
+    }
+  },
+  {
+    "$": {
+      "id": "365021",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365021"
+    }
+  },
+  {
+    "$": {
+      "id": "365024",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365024"
+    }
+  },
+  {
+    "$": {
+      "id": "365031",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365031"
+    }
+  }
+]
+2024-07-08 14:36:25.141 - [
+  {
+    "$": {
+      "id": "365019",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365019"
+    }
+  },
+  {
+    "$": {
+      "id": "365021",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365021"
+    }
+  },
+  {
+    "$": {
+      "id": "365024",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365024"
+    }
+  },
+  {
+    "$": {
+      "id": "365031",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365031"
+    }
+  }
+]
+2024-07-08 14:36:25.454 - Estado de Order:
+2024-07-08 14:36:25.454 - Estado de Order:
+2024-07-08 14:36:25.454 - Estado de Order:
+2024-07-08 14:36:25.454 - {
+  "id": "365019",
+  "id_employee": "0",
+  "id_order_state": {
+    "_": "3",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/3"
+    }
+  },
+  "id_order": {
+    "_": "100052",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100052"
+    }
+  },
+  "date_add": "2024-07-08 06:59:04"
+}
+2024-07-08 14:36:25.454 - {
+  "id": "365019",
+  "id_employee": "0",
+  "id_order_state": {
+    "_": "3",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/3"
+    }
+  },
+  "id_order": {
+    "_": "100052",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100052"
+    }
+  },
+  "date_add": "2024-07-08 06:59:04"
+}
+2024-07-08 14:36:25.454 - {
+  "id": "365019",
+  "id_employee": "0",
+  "id_order_state": {
+    "_": "3",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/3"
+    }
+  },
+  "id_order": {
+    "_": "100052",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100052"
+    }
+  },
+  "date_add": "2024-07-08 06:59:04"
+}
+2024-07-08 14:36:25.738 - Estado de Order:
+2024-07-08 14:36:25.738 - Estado de Order:
+2024-07-08 14:36:25.738 - Estado de Order:
+2024-07-08 14:36:25.738 - {
+  "id": "365021",
+  "id_employee": "0",
+  "id_order_state": {
+    "_": "2",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/2"
+    }
+  },
+  "id_order": {
+    "_": "100052",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100052"
+    }
+  },
+  "date_add": "2024-07-08 07:02:06"
+}
+2024-07-08 14:36:25.738 - {
+  "id": "365021",
+  "id_employee": "0",
+  "id_order_state": {
+    "_": "2",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/2"
+    }
+  },
+  "id_order": {
+    "_": "100052",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100052"
+    }
+  },
+  "date_add": "2024-07-08 07:02:06"
+}
+2024-07-08 14:36:25.738 - {
+  "id": "365021",
+  "id_employee": "0",
+  "id_order_state": {
+    "_": "2",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/2"
+    }
+  },
+  "id_order": {
+    "_": "100052",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100052"
+    }
+  },
+  "date_add": "2024-07-08 07:02:06"
+}
+2024-07-08 14:36:26.012 - Estado de Order:
+2024-07-08 14:36:26.012 - Estado de Order:
+2024-07-08 14:36:26.013 - Estado de Order:
+2024-07-08 14:36:26.012 - {
+  "id": "365024",
+  "id_employee": {
+    "_": "82",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/employees/82"
+    }
+  },
+  "id_order_state": {
+    "_": "14",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/14"
+    }
+  },
+  "id_order": {
+    "_": "100052",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100052"
+    }
+  },
+  "date_add": "2024-07-08 07:19:46"
+}
+2024-07-08 14:36:26.013 - {
+  "id": "365024",
+  "id_employee": {
+    "_": "82",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/employees/82"
+    }
+  },
+  "id_order_state": {
+    "_": "14",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/14"
+    }
+  },
+  "id_order": {
+    "_": "100052",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100052"
+    }
+  },
+  "date_add": "2024-07-08 07:19:46"
+}
+2024-07-08 14:36:26.012 - {
+  "id": "365024",
+  "id_employee": {
+    "_": "82",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/employees/82"
+    }
+  },
+  "id_order_state": {
+    "_": "14",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/14"
+    }
+  },
+  "id_order": {
+    "_": "100052",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100052"
+    }
+  },
+  "date_add": "2024-07-08 07:19:46"
+}
+2024-07-08 14:36:26.332 - Estado de Order:
+2024-07-08 14:36:26.332 - Estado de Order:
+2024-07-08 14:36:26.333 - Estado de Order:
+2024-07-08 14:36:26.332 - {
+  "id": "365031",
+  "id_employee": {
+    "_": "82",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/employees/82"
+    }
+  },
+  "id_order_state": {
+    "_": "4",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/4"
+    }
+  },
+  "id_order": {
+    "_": "100052",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100052"
+    }
+  },
+  "date_add": "2024-07-08 08:52:09"
+}
+2024-07-08 14:36:26.332 - {
+  "id": "365031",
+  "id_employee": {
+    "_": "82",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/employees/82"
+    }
+  },
+  "id_order_state": {
+    "_": "4",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/4"
+    }
+  },
+  "id_order": {
+    "_": "100052",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100052"
+    }
+  },
+  "date_add": "2024-07-08 08:52:09"
+}
+2024-07-08 14:36:26.333 - {
+  "id": "365031",
+  "id_employee": {
+    "_": "82",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/employees/82"
+    }
+  },
+  "id_order_state": {
+    "_": "4",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/4"
+    }
+  },
+  "id_order": {
+    "_": "100052",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100052"
+    }
+  },
+  "date_add": "2024-07-08 08:52:09"
+}
+2024-07-08 14:36:34.563 - Estados:
+2024-07-08 14:36:34.563 - Estados:
+2024-07-08 14:36:34.563 - Estados:
+2024-07-08 14:36:34.563 - [
+  {
+    "$": {
+      "id": "365026",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365026"
+    }
+  },
+  {
+    "$": {
+      "id": "365027",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365027"
+    }
+  },
+  {
+    "$": {
+      "id": "365028",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365028"
+    }
+  },
+  {
+    "$": {
+      "id": "365030",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365030"
+    }
+  }
+]
+2024-07-08 14:36:34.563 - [
+  {
+    "$": {
+      "id": "365026",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365026"
+    }
+  },
+  {
+    "$": {
+      "id": "365027",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365027"
+    }
+  },
+  {
+    "$": {
+      "id": "365028",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365028"
+    }
+  },
+  {
+    "$": {
+      "id": "365030",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365030"
+    }
+  }
+]
+2024-07-08 14:36:34.563 - [
+  {
+    "$": {
+      "id": "365026",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365026"
+    }
+  },
+  {
+    "$": {
+      "id": "365027",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365027"
+    }
+  },
+  {
+    "$": {
+      "id": "365028",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365028"
+    }
+  },
+  {
+    "$": {
+      "id": "365030",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365030"
+    }
+  }
+]
+2024-07-08 14:36:34.810 - Estado de Order:
+2024-07-08 14:36:34.811 - Estado de Order:
+2024-07-08 14:36:34.811 - Estado de Order:
+2024-07-08 14:36:34.810 - {
+  "id": "365026",
+  "id_employee": "0",
+  "id_order_state": {
+    "_": "3",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/3"
+    }
+  },
+  "id_order": {
+    "_": "100053",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100053"
+    }
+  },
+  "date_add": "2024-07-08 08:25:41"
+}
+2024-07-08 14:36:34.811 - {
+  "id": "365026",
+  "id_employee": "0",
+  "id_order_state": {
+    "_": "3",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/3"
+    }
+  },
+  "id_order": {
+    "_": "100053",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100053"
+    }
+  },
+  "date_add": "2024-07-08 08:25:41"
+}
+2024-07-08 14:36:34.811 - {
+  "id": "365026",
+  "id_employee": "0",
+  "id_order_state": {
+    "_": "3",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/3"
+    }
+  },
+  "id_order": {
+    "_": "100053",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100053"
+    }
+  },
+  "date_add": "2024-07-08 08:25:41"
+}
+2024-07-08 14:36:35.046 - Estado de Order:
+2024-07-08 14:36:35.046 - Estado de Order:
+2024-07-08 14:36:35.046 - Estado de Order:
+2024-07-08 14:36:35.046 - {
+  "id": "365027",
+  "id_employee": "0",
+  "id_order_state": {
+    "_": "2",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/2"
+    }
+  },
+  "id_order": {
+    "_": "100053",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100053"
+    }
+  },
+  "date_add": "2024-07-08 08:27:06"
+}
+2024-07-08 14:36:35.046 - {
+  "id": "365027",
+  "id_employee": "0",
+  "id_order_state": {
+    "_": "2",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/2"
+    }
+  },
+  "id_order": {
+    "_": "100053",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100053"
+    }
+  },
+  "date_add": "2024-07-08 08:27:06"
+}
+2024-07-08 14:36:35.046 - {
+  "id": "365027",
+  "id_employee": "0",
+  "id_order_state": {
+    "_": "2",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/2"
+    }
+  },
+  "id_order": {
+    "_": "100053",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100053"
+    }
+  },
+  "date_add": "2024-07-08 08:27:06"
+}
+2024-07-08 14:36:35.279 - Estado de Order:
+2024-07-08 14:36:35.280 - Estado de Order:
+2024-07-08 14:36:35.280 - Estado de Order:
+2024-07-08 14:36:35.279 - {
+  "id": "365028",
+  "id_employee": {
+    "_": "82",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/employees/82"
+    }
+  },
+  "id_order_state": {
+    "_": "14",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/14"
+    }
+  },
+  "id_order": {
+    "_": "100053",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100053"
+    }
+  },
+  "date_add": "2024-07-08 08:35:15"
+}
+2024-07-08 14:36:35.280 - {
+  "id": "365028",
+  "id_employee": {
+    "_": "82",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/employees/82"
+    }
+  },
+  "id_order_state": {
+    "_": "14",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/14"
+    }
+  },
+  "id_order": {
+    "_": "100053",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100053"
+    }
+  },
+  "date_add": "2024-07-08 08:35:15"
+}
+2024-07-08 14:36:35.280 - {
+  "id": "365028",
+  "id_employee": {
+    "_": "82",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/employees/82"
+    }
+  },
+  "id_order_state": {
+    "_": "14",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/14"
+    }
+  },
+  "id_order": {
+    "_": "100053",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100053"
+    }
+  },
+  "date_add": "2024-07-08 08:35:15"
+}
+2024-07-08 14:36:35.511 - Estado de Order:
+2024-07-08 14:36:35.511 - Estado de Order:
+2024-07-08 14:36:35.511 - Estado de Order:
+2024-07-08 14:36:35.511 - {
+  "id": "365030",
+  "id_employee": {
+    "_": "82",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/employees/82"
+    }
+  },
+  "id_order_state": {
+    "_": "4",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/4"
+    }
+  },
+  "id_order": {
+    "_": "100053",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100053"
+    }
+  },
+  "date_add": "2024-07-08 08:52:08"
+}
+2024-07-08 14:36:35.511 - {
+  "id": "365030",
+  "id_employee": {
+    "_": "82",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/employees/82"
+    }
+  },
+  "id_order_state": {
+    "_": "4",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/4"
+    }
+  },
+  "id_order": {
+    "_": "100053",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100053"
+    }
+  },
+  "date_add": "2024-07-08 08:52:08"
+}
+2024-07-08 14:36:35.511 - {
+  "id": "365030",
+  "id_employee": {
+    "_": "82",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/employees/82"
+    }
+  },
+  "id_order_state": {
+    "_": "4",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/4"
+    }
+  },
+  "id_order": {
+    "_": "100053",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100053"
+    }
+  },
+  "date_add": "2024-07-08 08:52:08"
+}
+2024-07-08 14:36:43.764 - Estados:
+2024-07-08 14:36:43.764 - Estados:
+2024-07-08 14:36:43.764 - Estados:
+2024-07-08 14:36:43.764 - [
+  {
+    "$": {
+      "id": "365029",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365029"
+    }
+  },
+  {
+    "$": {
+      "id": "365038",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365038"
+    }
+  }
+]
+2024-07-08 14:36:43.764 - [
+  {
+    "$": {
+      "id": "365029",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365029"
+    }
+  },
+  {
+    "$": {
+      "id": "365038",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365038"
+    }
+  }
+]
+2024-07-08 14:36:43.764 - [
+  {
+    "$": {
+      "id": "365029",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365029"
+    }
+  },
+  {
+    "$": {
+      "id": "365038",
+      "xlink:href": "https://www.kukyflor.com/api/order_histories/365038"
+    }
+  }
+]
+2024-07-08 14:36:43.999 - Estado de Order:
+2024-07-08 14:36:43.999 - Estado de Order:
+2024-07-08 14:36:43.999 - Estado de Order:
+2024-07-08 14:36:43.999 - {
+  "id": "365029",
+  "id_employee": "0",
+  "id_order_state": {
+    "_": "2",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/2"
+    }
+  },
+  "id_order": {
+    "_": "100054",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100054"
+    }
+  },
+  "date_add": "2024-07-08 08:41:02"
+}
+2024-07-08 14:36:43.999 - {
+  "id": "365029",
+  "id_employee": "0",
+  "id_order_state": {
+    "_": "2",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/2"
+    }
+  },
+  "id_order": {
+    "_": "100054",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100054"
+    }
+  },
+  "date_add": "2024-07-08 08:41:02"
+}
+2024-07-08 14:36:43.999 - {
+  "id": "365029",
+  "id_employee": "0",
+  "id_order_state": {
+    "_": "2",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/2"
+    }
+  },
+  "id_order": {
+    "_": "100054",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100054"
+    }
+  },
+  "date_add": "2024-07-08 08:41:02"
+}
+2024-07-08 14:36:44.236 - Estado de Order:
+2024-07-08 14:36:44.236 - Estado de Order:
+2024-07-08 14:36:44.236 - Estado de Order:
+2024-07-08 14:36:44.236 - {
+  "id": "365038",
+  "id_employee": {
+    "_": "82",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/employees/82"
+    }
+  },
+  "id_order_state": {
+    "_": "14",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/14"
+    }
+  },
+  "id_order": {
+    "_": "100054",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100054"
+    }
+  },
+  "date_add": "2024-07-08 08:58:26"
+}
+2024-07-08 14:36:44.236 - {
+  "id": "365038",
+  "id_employee": {
+    "_": "82",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/employees/82"
+    }
+  },
+  "id_order_state": {
+    "_": "14",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/14"
+    }
+  },
+  "id_order": {
+    "_": "100054",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100054"
+    }
+  },
+  "date_add": "2024-07-08 08:58:26"
+}
+2024-07-08 14:36:44.236 - {
+  "id": "365038",
+  "id_employee": {
+    "_": "82",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/employees/82"
+    }
+  },
+  "id_order_state": {
+    "_": "14",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/order_states/14"
+    }
+  },
+  "id_order": {
+    "_": "100054",
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/orders/100054"
+    }
+  },
+  "date_add": "2024-07-08 08:58:26"
+}
+2024-07-08 14:36:52.263 - undefined
+2024-07-08 14:36:52.263 - undefined
+2024-07-08 14:36:52.263 - undefined
+2024-07-08 14:36:52.264 - Procedimiento de ordenes completado.
+2024-07-08 14:36:52.265 - Procedimiento de ordenes completado.
+2024-07-08 14:36:52.265 - Procedimiento de ordenes completado.
+2024-07-08 14:36:52.264 - Procedimiento de ordenes completado.
+2024-07-08 14:36:52.265 - Procedimiento de ordenes completado.
+2024-07-08 14:36:52.265 - Procedimiento de ordenes completado.
+2024-07-08 14:36:52.264 - Procedimiento de ordenes completado.
+2024-07-08 14:36:52.265 - Procedimiento de ordenes completado.
+2024-07-08 14:36:52.266 - Procedimiento de ordenes completado.

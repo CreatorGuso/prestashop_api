@@ -21,6 +21,66 @@ const config = {
 
 
 
+// async function ApiOrders() {
+//   try {
+//     const response = await axios.get(
+//       "https://ZBR3Q8MEZ3KC16C7Z5CMYYD9V1VFCT3T@www.kukyflor.com/api/orders",
+//       {
+//         params: {
+//           display: "full",
+//           output_format: "XML",
+//           limit: 200, // Obtener siempre los últimos 200 pedidos
+//           sort: "[id_DESC]", // Ordenar por ID de forma descendente (los últimos primero)
+//         },
+//         headers: {
+//           Authorization: "ZBR3Q8MEZ3KC16C7Z5CMYYD9V1VFCT3T",
+//         },
+//       }
+//     );
+
+//     // Parsear la respuesta XML
+//     const result = await new Promise((resolve, reject) => {
+//       parser.parseString(response.data, (err, result) => {
+//         if (err) {
+//           reject(err);
+//         } else {
+//           resolve(result);
+//         }
+//       });
+//     });
+
+//     const fechaActual = new Date();
+//     const dia = fechaActual.getDate() < 10 ? '0' + fechaActual.getDate() : fechaActual.getDate();
+//     const mes = (fechaActual.getMonth() + 1) < 10 ? '0' + (fechaActual.getMonth() + 1) : (fechaActual.getMonth() + 1);
+//     const fechaFormateada = fechaActual.getFullYear() + '-' + mes + '-' + dia;
+
+//     // Extraer los elementos <order> y filtrar por fecha de hoy
+//     const orders = result.prestashop.orders.order.filter(order => {
+//       const orderDate = new Date(order.date_upd);
+//       const orderDia = orderDate.getDate() < 10 ? '0' + orderDate.getDate() : orderDate.getDate();
+//       const orderMes = (orderDate.getMonth() + 1) < 10 ? '0' + (orderDate.getMonth() + 1) : (orderDate.getMonth() + 1);
+//       const orderFechaFormateada = orderDate.getFullYear() + '-' + orderMes + '-' + orderDia;
+//       return orderFechaFormateada === fechaFormateada;
+//     });
+
+
+//     // Mapear las órdenes filtradas
+//     const ordersInfo = orders.map(order => ({
+//       Orden: order.id,
+//       OrdenDeRegistro: parseInt(order.id),
+//       PersoneriaID: order.id_customer,
+//       FechadeOrden: order.date_upd,
+//       // Resto de las propiedades...
+//     })).sort((a, b) => a.OrdenDeRegistro - b.OrdenDeRegistro);
+
+//     return ordersInfo;
+//   } catch (error) {
+//     console.error(error);
+//     throw new Error("Error al obtener los pedidos de PrestaShop");
+//   }
+// }
+
+
 async function ApiOrders() {
   try {
     const response = await axios.get(
@@ -54,15 +114,26 @@ async function ApiOrders() {
     const mes = (fechaActual.getMonth() + 1) < 10 ? '0' + (fechaActual.getMonth() + 1) : (fechaActual.getMonth() + 1);
     const fechaFormateada = fechaActual.getFullYear() + '-' + mes + '-' + dia;
 
-    // Extraer los elementos <order> y filtrar por fecha de hoy
+    // Obtener la fecha del día anterior
+    const fechaAnterior = new Date(fechaActual);
+    fechaAnterior.setDate(fechaAnterior.getDate() - 1);
+    const diaAnterior = fechaAnterior.getDate() < 10 ? '0' + fechaAnterior.getDate() : fechaAnterior.getDate();
+    const mesAnterior = (fechaAnterior.getMonth() + 1) < 10 ? '0' + (fechaAnterior.getMonth() + 1) : (fechaAnterior.getMonth() + 1);
+    const fechaFormateadaAnterior = fechaAnterior.getFullYear() + '-' + mesAnterior + '-' + diaAnterior;
+
+    // Obtener la hora actual
+    const horaActual = fechaActual.getHours();
+    // const horaActual = 0;
+    // console.log("Hora actual", horaActual);
+
+    // Filtrar órdenes por la fecha de hoy y, si es la primera hora del día, también por la fecha de ayer
     const orders = result.prestashop.orders.order.filter(order => {
       const orderDate = new Date(order.date_upd);
       const orderDia = orderDate.getDate() < 10 ? '0' + orderDate.getDate() : orderDate.getDate();
       const orderMes = (orderDate.getMonth() + 1) < 10 ? '0' + (orderDate.getMonth() + 1) : (orderDate.getMonth() + 1);
       const orderFechaFormateada = orderDate.getFullYear() + '-' + orderMes + '-' + orderDia;
-      return orderFechaFormateada === fechaFormateada;
+      return orderFechaFormateada === fechaFormateada || (horaActual === 0 && orderFechaFormateada === fechaFormateadaAnterior);
     });
-
 
     // Mapear las órdenes filtradas
     const ordersInfo = orders.map(order => ({
@@ -70,9 +141,9 @@ async function ApiOrders() {
       OrdenDeRegistro: parseInt(order.id),
       PersoneriaID: order.id_customer,
       FechadeOrden: order.date_upd,
-      // Resto de las propiedades...
     })).sort((a, b) => a.OrdenDeRegistro - b.OrdenDeRegistro);
 
+    // console.log("ordenes",ordersInfo);
     return ordersInfo;
   } catch (error) {
     console.error(error);
@@ -184,6 +255,7 @@ async function HistorialOrden(orderId) {
       for (let i = 0; i < Estados.length; i++) {
         const estado = Estados[i];
         var estadodeOrden = estado.$.id;
+        console.log("Este es el estado de orden",estadodeOrden);
         try {
           const response2 = await axios.get(`https://www.kukyflor.com/api/order_histories/${estadodeOrden}?ws_key=ZBR3Q8MEZ3KC16C7Z5CMYYD9V1VFCT3T`);
     

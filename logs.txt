@@ -3319,3 +3319,691 @@ TypeError: Cannot read properties of undefined (reading 'ProductoID')
 2024-07-08 14:36:52.264 - Procedimiento de ordenes completado.
 2024-07-08 14:36:52.265 - Procedimiento de ordenes completado.
 2024-07-08 14:36:52.266 - Procedimiento de ordenes completado.
+2024-07-09 14:06:54.175 - Inicializando...
+2024-07-09 14:06:54.177 - Ejecutando procedimiento
+2024-07-09 14:06:56.020 - no se tiene una planilla habilitada
+2024-07-09 14:06:58.689 - Inicializando...
+2024-07-09 14:06:58.690 - Ejecutando procedimiento
+2024-07-09 14:06:58.689 - Inicializando...
+2024-07-09 14:06:58.690 - Ejecutando procedimiento
+2024-07-09 14:07:00.582 - no se tiene una planilla habilitada
+2024-07-09 14:07:00.583 - no se tiene una planilla habilitada
+2024-07-09 14:07:02.785 - Inicializando...
+2024-07-09 14:07:02.785 - Inicializando...
+2024-07-09 14:07:02.786 - Ejecutando procedimiento
+2024-07-09 14:07:02.786 - Ejecutando procedimiento
+2024-07-09 14:07:02.785 - Inicializando...
+2024-07-09 14:07:02.786 - Ejecutando procedimiento
+2024-07-09 14:07:04.243 - Si se tiene una Planilla Habilitada
+2024-07-09 14:07:04.243 - Si se tiene una Planilla Habilitada
+2024-07-09 14:07:04.243 - Si se tiene una Planilla Habilitada
+2024-07-09 14:07:37.859 - ERROR: Error al crear el cliente con  DNI :  10075073696
+2024-07-09 14:07:37.864 - ERROR: Error al crear el cliente con  DNI :  10075073696
+2024-07-09 14:07:37.864 - ERROR: Error al crear el cliente con  DNI :  10075073696
+2024-07-09 14:07:37.859 - ERROR: The INSERT statement conflicted with the FOREIGN KEY constraint "FK_PersoneriaDireccion_UbicacionGeografica". The conflict occurred in database "prueba_kflor", table "dbo.UbicacionGeografica", column 'UbicacionID'.
+2024-07-09 14:07:37.859 - STACK TRACE:
+RequestError: The INSERT statement conflicted with the FOREIGN KEY constraint "FK_PersoneriaDireccion_UbicacionGeografica". The conflict occurred in database "prueba_kflor", table "dbo.UbicacionGeografica", column 'UbicacionID'.
+    at handleError (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\node_modules\mssql\lib\tedious\request.js:384:15)
+    at Connection.emit (node:events:514:28)
+    at Connection.emit (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\node_modules\tedious\lib\connection.js:959:18)
+    at RequestTokenHandler.onErrorMessage (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\node_modules\tedious\lib\token\handler.js:285:21)
+    at Readable.<anonymous> (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\node_modules\tedious\lib\token\token-stream-parser.js:18:33)
+    at Readable.emit (node:events:514:28)
+    at addChunk (node:internal/streams/readable:545:12)
+    at readableAddChunkPushObjectMode (node:internal/streams/readable:521:3)
+    at Readable.push (node:internal/streams/readable:376:5)
+    at next (node:internal/streams/from:98:31)
+2024-07-09 14:07:37.864 - ERROR: The INSERT statement conflicted with the FOREIGN KEY constraint "FK_PersoneriaDireccion_UbicacionGeografica". The conflict occurred in database "prueba_kflor", table "dbo.UbicacionGeografica", column 'UbicacionID'.
+2024-07-09 14:07:37.864 - STACK TRACE:
+RequestError: The INSERT statement conflicted with the FOREIGN KEY constraint "FK_PersoneriaDireccion_UbicacionGeografica". The conflict occurred in database "prueba_kflor", table "dbo.UbicacionGeografica", column 'UbicacionID'.
+    at handleError (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\node_modules\mssql\lib\tedious\request.js:384:15)
+    at Connection.emit (node:events:514:28)
+    at Connection.emit (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\node_modules\tedious\lib\connection.js:959:18)
+    at RequestTokenHandler.onErrorMessage (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\node_modules\tedious\lib\token\handler.js:285:21)
+    at Readable.<anonymous> (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\node_modules\tedious\lib\token\token-stream-parser.js:18:33)
+    at Readable.emit (node:events:514:28)
+    at addChunk (node:internal/streams/readable:545:12)
+    at readableAddChunkPushObjectMode (node:internal/streams/readable:521:3)
+    at Readable.push (node:internal/streams/readable:376:5)
+    at next (node:internal/streams/from:98:31)
+2024-07-09 14:07:37.864 - ERROR: The INSERT statement conflicted with the FOREIGN KEY constraint "FK_PersoneriaDireccion_UbicacionGeografica". The conflict occurred in database "prueba_kflor", table "dbo.UbicacionGeografica", column 'UbicacionID'.
+2024-07-09 14:07:37.864 - STACK TRACE:
+RequestError: The INSERT statement conflicted with the FOREIGN KEY constraint "FK_PersoneriaDireccion_UbicacionGeografica". The conflict occurred in database "prueba_kflor", table "dbo.UbicacionGeografica", column 'UbicacionID'.
+    at handleError (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\node_modules\mssql\lib\tedious\request.js:384:15)
+    at Connection.emit (node:events:514:28)
+    at Connection.emit (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\node_modules\tedious\lib\connection.js:959:18)
+    at RequestTokenHandler.onErrorMessage (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\node_modules\tedious\lib\token\handler.js:285:21)
+    at Readable.<anonymous> (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\node_modules\tedious\lib\token\token-stream-parser.js:18:33)
+    at Readable.emit (node:events:514:28)
+    at addChunk (node:internal/streams/readable:545:12)
+    at readableAddChunkPushObjectMode (node:internal/streams/readable:521:3)
+    at Readable.push (node:internal/streams/readable:376:5)
+    at next (node:internal/streams/from:98:31)
+2024-07-09 14:07:48.124 - ERROR: Error en la transacción de crear pedido con orden :100049
+2024-07-09 14:07:48.125 - ERROR: Error en la transacción de crear pedido con orden :100049
+2024-07-09 14:07:48.125 - ERROR: Error en la transacción de crear pedido con orden :100049
+2024-07-09 14:07:48.124 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-07-09 14:07:48.124 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:827:52)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1009:36)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1342:19)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1351:9)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1365:9)
+2024-07-09 14:07:48.125 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-07-09 14:07:48.125 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:827:52)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1009:36)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1342:19)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1351:9)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1365:9)
+2024-07-09 14:07:48.125 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-07-09 14:07:48.125 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:827:52)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1009:36)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1342:19)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1351:9)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1365:9)
+2024-07-09 14:09:55.647 - undefined
+2024-07-09 14:09:55.647 - undefined
+2024-07-09 14:09:55.647 - undefined
+2024-07-09 14:09:55.648 - Procedimiento de ordenes completado.
+2024-07-09 14:09:55.649 - Procedimiento de ordenes completado.
+2024-07-09 14:09:55.650 - Procedimiento de ordenes completado.
+2024-07-09 14:09:55.648 - Procedimiento de ordenes completado.
+2024-07-09 14:09:55.649 - Procedimiento de ordenes completado.
+2024-07-09 14:09:55.650 - Procedimiento de ordenes completado.
+2024-07-09 14:09:55.648 - Procedimiento de ordenes completado.
+2024-07-09 14:09:55.649 - Procedimiento de ordenes completado.
+2024-07-09 14:09:55.650 - Procedimiento de ordenes completado.
+2024-07-09 14:15:01.835 - Inicializando...
+2024-07-09 14:15:01.836 - Ejecutando procedimiento
+2024-07-09 14:15:03.357 - Si se tiene una Planilla Habilitada
+2024-07-09 14:15:25.491 - ERROR: Error en la transacción de crear pedido con orden :100049
+2024-07-09 14:15:25.491 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-07-09 14:15:25.491 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:827:52)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1009:36)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1342:19)
+2024-07-09 14:16:00.033 - undefined
+2024-07-09 14:16:00.034 - Procedimiento de ordenes completado.
+2024-07-09 15:07:43.507 - Inicializando...
+2024-07-09 15:07:43.509 - Ejecutando procedimiento
+2024-07-09 15:07:44.711 - Si se tiene una Planilla Habilitada
+2024-07-09 15:08:18.327 - undefined
+2024-07-09 15:08:18.328 - Procedimiento de ordenes completado.
+2024-07-09 15:18:40.638 - Inicializando...
+2024-07-09 15:18:40.639 - Ejecutando procedimiento
+2024-07-09 15:18:41.816 - Si se tiene una Planilla Habilitada
+2024-07-09 15:18:44.129 - Hora actual
+2024-07-09 15:18:44.129 - 10
+2024-07-09 15:18:44.130 - ordenes
+2024-07-09 15:18:44.130 - [
+  {
+    "Orden": "100021",
+    "OrdenDeRegistro": 100021,
+    "PersoneriaID": {
+      "_": "69703",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/69703"
+      }
+    },
+    "FechadeOrden": "2024-07-09 09:15:58"
+  },
+  {
+    "Orden": "100045",
+    "OrdenDeRegistro": 100045,
+    "PersoneriaID": {
+      "_": "14594",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/14594"
+      }
+    },
+    "FechadeOrden": "2024-07-09 09:16:46"
+  },
+  {
+    "Orden": "100055",
+    "OrdenDeRegistro": 100055,
+    "PersoneriaID": {
+      "_": "92699",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/92699"
+      }
+    },
+    "FechadeOrden": "2024-07-09 09:17:34"
+  },
+  {
+    "Orden": "100056",
+    "OrdenDeRegistro": 100056,
+    "PersoneriaID": {
+      "_": "69675",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/69675"
+      }
+    },
+    "FechadeOrden": "2024-07-09 09:18:39"
+  },
+  {
+    "Orden": "100057",
+    "OrdenDeRegistro": 100057,
+    "PersoneriaID": {
+      "_": "92701",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/92701"
+      }
+    },
+    "FechadeOrden": "2024-07-09 09:19:49"
+  },
+  {
+    "Orden": "100065",
+    "OrdenDeRegistro": 100065,
+    "PersoneriaID": {
+      "_": "92705",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/92705"
+      }
+    },
+    "FechadeOrden": "2024-07-09 09:20:34"
+  },
+  {
+    "Orden": "100067",
+    "OrdenDeRegistro": 100067,
+    "PersoneriaID": {
+      "_": "38575",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/38575"
+      }
+    },
+    "FechadeOrden": "2024-07-09 07:57:51"
+  },
+  {
+    "Orden": "100068",
+    "OrdenDeRegistro": 100068,
+    "PersoneriaID": {
+      "_": "92715",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/92715"
+      }
+    },
+    "FechadeOrden": "2024-07-09 09:21:28"
+  },
+  {
+    "Orden": "100069",
+    "OrdenDeRegistro": 100069,
+    "PersoneriaID": {
+      "_": "68861",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/68861"
+      }
+    },
+    "FechadeOrden": "2024-07-09 07:57:10"
+  },
+  {
+    "Orden": "100070",
+    "OrdenDeRegistro": 100070,
+    "PersoneriaID": {
+      "_": "92695",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/92695"
+      }
+    },
+    "FechadeOrden": "2024-07-09 09:58:14"
+  },
+  {
+    "Orden": "100071",
+    "OrdenDeRegistro": 100071,
+    "PersoneriaID": {
+      "_": "20115",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/20115"
+      }
+    },
+    "FechadeOrden": "2024-07-09 07:27:03"
+  },
+  {
+    "Orden": "100072",
+    "OrdenDeRegistro": 100072,
+    "PersoneriaID": {
+      "_": "31024",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/31024"
+      }
+    },
+    "FechadeOrden": "2024-07-09 10:14:34"
+  },
+  {
+    "Orden": "100073",
+    "OrdenDeRegistro": 100073,
+    "PersoneriaID": {
+      "_": "92726",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/92726"
+      }
+    },
+    "FechadeOrden": "2024-07-09 10:15:40"
+  },
+  {
+    "Orden": "100074",
+    "OrdenDeRegistro": 100074,
+    "PersoneriaID": {
+      "_": "76620",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/76620"
+      }
+    },
+    "FechadeOrden": "2024-07-09 10:18:29"
+  }
+]
+2024-07-09 15:19:21.722 - undefined
+2024-07-09 15:19:21.723 - Procedimiento de ordenes completado.
+2024-07-09 15:19:24.032 - Inicializando...
+2024-07-09 15:19:24.034 - Ejecutando procedimiento
+2024-07-09 15:19:25.282 - Si se tiene una Planilla Habilitada
+2024-07-09 15:19:28.288 - Hora actual
+2024-07-09 15:19:28.288 - 0
+2024-07-09 15:19:28.289 - ordenes
+2024-07-09 15:19:28.289 - [
+  {
+    "Orden": "100021",
+    "OrdenDeRegistro": 100021,
+    "PersoneriaID": {
+      "_": "69703",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/69703"
+      }
+    },
+    "FechadeOrden": "2024-07-09 09:15:58"
+  },
+  {
+    "Orden": "100036",
+    "OrdenDeRegistro": 100036,
+    "PersoneriaID": {
+      "_": "3112",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/3112"
+      }
+    },
+    "FechadeOrden": "2024-07-08 14:13:33"
+  },
+  {
+    "Orden": "100041",
+    "OrdenDeRegistro": 100041,
+    "PersoneriaID": {
+      "_": "33704",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/33704"
+      }
+    },
+    "FechadeOrden": "2024-07-08 14:13:32"
+  },
+  {
+    "Orden": "100044",
+    "OrdenDeRegistro": 100044,
+    "PersoneriaID": {
+      "_": "92686",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/92686"
+      }
+    },
+    "FechadeOrden": "2024-07-08 14:14:09"
+  },
+  {
+    "Orden": "100045",
+    "OrdenDeRegistro": 100045,
+    "PersoneriaID": {
+      "_": "14594",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/14594"
+      }
+    },
+    "FechadeOrden": "2024-07-09 09:16:46"
+  },
+  {
+    "Orden": "100047",
+    "OrdenDeRegistro": 100047,
+    "PersoneriaID": {
+      "_": "92690",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/92690"
+      }
+    },
+    "FechadeOrden": "2024-07-08 07:58:28"
+  },
+  {
+    "Orden": "100048",
+    "OrdenDeRegistro": 100048,
+    "PersoneriaID": {
+      "_": "49437",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/49437"
+      }
+    },
+    "FechadeOrden": "2024-07-08 14:13:32"
+  },
+  {
+    "Orden": "100049",
+    "OrdenDeRegistro": 100049,
+    "PersoneriaID": {
+      "_": "92692",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/92692"
+      }
+    },
+    "FechadeOrden": "2024-07-08 14:13:32"
+  },
+  {
+    "Orden": "100050",
+    "OrdenDeRegistro": 100050,
+    "PersoneriaID": {
+      "_": "92693",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/92693"
+      }
+    },
+    "FechadeOrden": "2024-07-08 14:13:31"
+  },
+  {
+    "Orden": "100051",
+    "OrdenDeRegistro": 100051,
+    "PersoneriaID": {
+      "_": "29450",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/29450"
+      }
+    },
+    "FechadeOrden": "2024-07-08 14:13:31"
+  },
+  {
+    "Orden": "100052",
+    "OrdenDeRegistro": 100052,
+    "PersoneriaID": {
+      "_": "92695",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/92695"
+      }
+    },
+    "FechadeOrden": "2024-07-08 14:13:31"
+  },
+  {
+    "Orden": "100053",
+    "OrdenDeRegistro": 100053,
+    "PersoneriaID": {
+      "_": "15678",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/15678"
+      }
+    },
+    "FechadeOrden": "2024-07-08 14:13:30"
+  },
+  {
+    "Orden": "100054",
+    "OrdenDeRegistro": 100054,
+    "PersoneriaID": {
+      "_": "85284",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/85284"
+      }
+    },
+    "FechadeOrden": "2024-07-08 14:13:30"
+  },
+  {
+    "Orden": "100055",
+    "OrdenDeRegistro": 100055,
+    "PersoneriaID": {
+      "_": "92699",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/92699"
+      }
+    },
+    "FechadeOrden": "2024-07-09 09:17:34"
+  },
+  {
+    "Orden": "100056",
+    "OrdenDeRegistro": 100056,
+    "PersoneriaID": {
+      "_": "69675",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/69675"
+      }
+    },
+    "FechadeOrden": "2024-07-09 09:18:39"
+  },
+  {
+    "Orden": "100057",
+    "OrdenDeRegistro": 100057,
+    "PersoneriaID": {
+      "_": "92701",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/92701"
+      }
+    },
+    "FechadeOrden": "2024-07-09 09:19:49"
+  },
+  {
+    "Orden": "100058",
+    "OrdenDeRegistro": 100058,
+    "PersoneriaID": {
+      "_": "70080",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/70080"
+      }
+    },
+    "FechadeOrden": "2024-07-08 14:16:04"
+  },
+  {
+    "Orden": "100059",
+    "OrdenDeRegistro": 100059,
+    "PersoneriaID": {
+      "_": "2083",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/2083"
+      }
+    },
+    "FechadeOrden": "2024-07-08 12:32:16"
+  },
+  {
+    "Orden": "100060",
+    "OrdenDeRegistro": 100060,
+    "PersoneriaID": {
+      "_": "92703",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/92703"
+      }
+    },
+    "FechadeOrden": "2024-07-08 14:16:44"
+  },
+  {
+    "Orden": "100061",
+    "OrdenDeRegistro": 100061,
+    "PersoneriaID": {
+      "_": "92264",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/92264"
+      }
+    },
+    "FechadeOrden": "2024-07-08 14:17:16"
+  },
+  {
+    "Orden": "100062",
+    "OrdenDeRegistro": 100062,
+    "PersoneriaID": {
+      "_": "92264",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/92264"
+      }
+    },
+    "FechadeOrden": "2024-07-08 14:17:58"
+  },
+  {
+    "Orden": "100063",
+    "OrdenDeRegistro": 100063,
+    "PersoneriaID": {
+      "_": "92705",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/92705"
+      }
+    },
+    "FechadeOrden": "2024-07-08 14:12:26"
+  },
+  {
+    "Orden": "100064",
+    "OrdenDeRegistro": 100064,
+    "PersoneriaID": {
+      "_": "92706",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/92706"
+      }
+    },
+    "FechadeOrden": "2024-07-08 14:18:31"
+  },
+  {
+    "Orden": "100065",
+    "OrdenDeRegistro": 100065,
+    "PersoneriaID": {
+      "_": "92705",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/92705"
+      }
+    },
+    "FechadeOrden": "2024-07-09 09:20:34"
+  },
+  {
+    "Orden": "100066",
+    "OrdenDeRegistro": 100066,
+    "PersoneriaID": {
+      "_": "92711",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/92711"
+      }
+    },
+    "FechadeOrden": "2024-07-08 16:19:47"
+  },
+  {
+    "Orden": "100067",
+    "OrdenDeRegistro": 100067,
+    "PersoneriaID": {
+      "_": "38575",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/38575"
+      }
+    },
+    "FechadeOrden": "2024-07-09 07:57:51"
+  },
+  {
+    "Orden": "100068",
+    "OrdenDeRegistro": 100068,
+    "PersoneriaID": {
+      "_": "92715",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/92715"
+      }
+    },
+    "FechadeOrden": "2024-07-09 09:21:28"
+  },
+  {
+    "Orden": "100069",
+    "OrdenDeRegistro": 100069,
+    "PersoneriaID": {
+      "_": "68861",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/68861"
+      }
+    },
+    "FechadeOrden": "2024-07-09 07:57:10"
+  },
+  {
+    "Orden": "100070",
+    "OrdenDeRegistro": 100070,
+    "PersoneriaID": {
+      "_": "92695",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/92695"
+      }
+    },
+    "FechadeOrden": "2024-07-09 09:58:14"
+  },
+  {
+    "Orden": "100071",
+    "OrdenDeRegistro": 100071,
+    "PersoneriaID": {
+      "_": "20115",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/20115"
+      }
+    },
+    "FechadeOrden": "2024-07-09 07:27:03"
+  },
+  {
+    "Orden": "100072",
+    "OrdenDeRegistro": 100072,
+    "PersoneriaID": {
+      "_": "31024",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/31024"
+      }
+    },
+    "FechadeOrden": "2024-07-09 10:14:34"
+  },
+  {
+    "Orden": "100073",
+    "OrdenDeRegistro": 100073,
+    "PersoneriaID": {
+      "_": "92726",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/92726"
+      }
+    },
+    "FechadeOrden": "2024-07-09 10:15:40"
+  },
+  {
+    "Orden": "100074",
+    "OrdenDeRegistro": 100074,
+    "PersoneriaID": {
+      "_": "76620",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/76620"
+      }
+    },
+    "FechadeOrden": "2024-07-09 10:18:29"
+  }
+]
+2024-07-09 15:19:41.568 - ERROR: Error al crear el cliente con  DNI :  10075073696
+2024-07-09 15:19:41.568 - ERROR: The INSERT statement conflicted with the FOREIGN KEY constraint "FK_PersoneriaDireccion_UbicacionGeografica". The conflict occurred in database "prueba_kflor", table "dbo.UbicacionGeografica", column 'UbicacionID'.
+2024-07-09 15:19:41.568 - STACK TRACE:
+RequestError: The INSERT statement conflicted with the FOREIGN KEY constraint "FK_PersoneriaDireccion_UbicacionGeografica". The conflict occurred in database "prueba_kflor", table "dbo.UbicacionGeografica", column 'UbicacionID'.
+    at handleError (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\node_modules\mssql\lib\tedious\request.js:384:15)
+    at Connection.emit (node:events:514:28)
+    at Connection.emit (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\node_modules\tedious\lib\connection.js:959:18)
+    at RequestTokenHandler.onErrorMessage (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\node_modules\tedious\lib\token\handler.js:285:21)
+    at Readable.<anonymous> (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\node_modules\tedious\lib\token\token-stream-parser.js:18:33)
+    at Readable.emit (node:events:514:28)
+    at addChunk (node:internal/streams/readable:545:12)
+    at readableAddChunkPushObjectMode (node:internal/streams/readable:521:3)
+    at Readable.push (node:internal/streams/readable:376:5)
+    at next (node:internal/streams/from:98:31)
+2024-07-09 15:19:51.463 - ERROR: Error en la transacción de crear pedido con orden :100049
+2024-07-09 15:19:51.463 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-07-09 15:19:51.463 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:897:52)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1079:36)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1412:19)
+2024-07-09 15:26:54.463 - Inicializando...
+2024-07-09 15:26:54.464 - Ejecutando procedimiento
+2024-07-09 15:26:55.643 - Si se tiene una Planilla Habilitada
+2024-07-09 15:27:14.177 - Este es el estado de orden
+2024-07-09 15:27:14.177 - 365094
+2024-07-09 15:27:20.380 - Este es el estado de orden
+2024-07-09 15:27:20.380 - 365109
+2024-07-09 15:27:20.656 - Este es el estado de orden
+2024-07-09 15:27:20.656 - 365110
+2024-07-09 15:27:27.628 - undefined
+2024-07-09 15:27:27.630 - Procedimiento de ordenes completado.

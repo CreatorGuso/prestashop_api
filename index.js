@@ -390,6 +390,7 @@ async function BuscarORdenPorID(orderId) {
         direccion_1: direccionEntrega.address.address1,
         city: direccionEntrega.address.city,
         Referencia: direccionEntrega.address.address2,
+        phone_mobile: direccionEntrega.address.phone_mobile,
         PesonaEntrega: direccionEntrega.address.firstname + ' ' + direccionEntrega.address.lastname,
         Telefono: direccionEntrega.address.phone,
       };
@@ -802,12 +803,12 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
     request.input('DireccionEntrega', sql.VarChar, paramsOrden.DireccionEntrega.direccion_1);
     request.input('OficinaAlmacenEntregaID', sql.Decimal(6, 3), 1);
     request.input('Referencia', sql.VarChar, paramsOrden.Pedido.gift_message);
-    request.input('Observaciones', sql.VarChar, paramsOrden.DireccionEntrega.direccion_1 + ', ' + paramsOrden.DireccionEntrega.Referencia + ', '+ paramsOrden.DireccionEntrega.city + ' , Entro en el siguiente rando de hora ' + paramsOrden.Pedido.ddw_order_time);
+    request.input('Observaciones', sql.VarChar, paramsOrden.DireccionEntrega.Referencia + ', '+ paramsOrden.DireccionEntrega.city + ' , Entro en el siguiente rando de hora ' + paramsOrden.Pedido.ddw_order_time);
     request.input('Contacto', sql.VarChar, paramsOrden.DireccionEntrega.PesonaEntrega);
     // lastname: customer.customer.lastname,
     // firstname: customer.customer.firstname,
     request.input('Cliente', sql.VarChar, paramsOrden.Customer.firstname + ' ' + paramsOrden.Customer.lastname); //Tecnicamente estaria bien
-    request.input('Contactotelefono', sql.VarChar, paramsOrden.DireccionEntrega.Telefono);
+    request.input('Contactotelefono', sql.VarChar, paramsOrden.DireccionEntrega.Telefono + ' - '+ paramsOrden.DireccionEntrega.phone_mobile);
     request.input('MotivoID', sql.Decimal(9, 5), 190.00062);
     request.input('CondicionVtaID', sql.Decimal(9, 5), 113.00001);
     request.input('DeliveryTipoID', sql.Decimal(9, 5), 193.00001);

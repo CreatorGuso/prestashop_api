@@ -255,7 +255,7 @@ async function HistorialOrden(orderId) {
       for (let i = 0; i < Estados.length; i++) {
         const estado = Estados[i];
         var estadodeOrden = estado.$.id;
-        console.log("Este es el estado de orden",estadodeOrden);
+        // console.log("Este es el estado de orden",estadodeOrden);
         try {
           const response2 = await axios.get(`https://www.kukyflor.com/api/order_histories/${estadodeOrden}?ws_key=ZBR3Q8MEZ3KC16C7Z5CMYYD9V1VFCT3T`);
     
@@ -388,6 +388,7 @@ async function BuscarORdenPorID(orderId) {
         id_adress_Entrega: direccionEntrega.address.id,
         id_direccion: direccionEntrega.address.id_state._,
         direccion_1: direccionEntrega.address.address1,
+        city: direccionEntrega.address.city,
         Referencia: direccionEntrega.address.address2,
         PesonaEntrega: direccionEntrega.address.firstname + ' ' + direccionEntrega.address.lastname,
         Telefono: direccionEntrega.address.phone,
@@ -602,7 +603,7 @@ async function buscarRazonSocialPorDNIRUC(numero) {
       return resultado;
     }
   } catch (error) {
-    console.error(error);
+    console.error("Error Numero de documento: "+ numero  + ' ::: '+error);
     return 'Número no encontrado';
   }
 }
@@ -801,7 +802,7 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
     request.input('DireccionEntrega', sql.VarChar, paramsOrden.DireccionEntrega.direccion_1);
     request.input('OficinaAlmacenEntregaID', sql.Decimal(6, 3), 1);
     request.input('Referencia', sql.VarChar, paramsOrden.Pedido.gift_message);
-    request.input('Observaciones', sql.VarChar, paramsOrden.DireccionEntrega.Referencia + ' , Entro en el siguiente rando de hora ' + paramsOrden.Pedido.ddw_order_time);
+    request.input('Observaciones', sql.VarChar, paramsOrden.DireccionEntrega.direccion_1 + ', ' + paramsOrden.DireccionEntrega.Referencia + ', '+ paramsOrden.DireccionEntrega.city + ' , Entro en el siguiente rando de hora ' + paramsOrden.Pedido.ddw_order_time);
     request.input('Contacto', sql.VarChar, paramsOrden.DireccionEntrega.PesonaEntrega);
     // lastname: customer.customer.lastname,
     // firstname: customer.customer.firstname,

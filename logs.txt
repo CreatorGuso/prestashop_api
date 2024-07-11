@@ -4007,3 +4007,228 @@ TypeError: Cannot read properties of undefined (reading 'ProductoID')
 2024-07-09 15:27:20.656 - 365110
 2024-07-09 15:27:27.628 - undefined
 2024-07-09 15:27:27.630 - Procedimiento de ordenes completado.
+2024-07-11 14:21:46.480 - Inicializando...
+2024-07-11 14:21:46.482 - Ejecutando procedimiento
+2024-07-11 14:21:48.024 - no se tiene una planilla habilitada
+2024-07-11 14:21:50.734 - Inicializando...
+2024-07-11 14:21:50.734 - Ejecutando procedimiento
+2024-07-11 14:21:50.734 - Inicializando...
+2024-07-11 14:21:50.734 - Ejecutando procedimiento
+2024-07-11 14:21:52.183 - no se tiene una planilla habilitada
+2024-07-11 14:21:52.183 - no se tiene una planilla habilitada
+2024-07-11 14:21:53.882 - Inicializando...
+2024-07-11 14:21:53.882 - Inicializando...
+2024-07-11 14:21:53.882 - Ejecutando procedimiento
+2024-07-11 14:21:53.882 - Ejecutando procedimiento
+2024-07-11 14:21:53.881 - Inicializando...
+2024-07-11 14:21:53.882 - Ejecutando procedimiento
+2024-07-11 14:21:55.307 - Si se tiene una Planilla Habilitada
+2024-07-11 14:21:55.307 - Si se tiene una Planilla Habilitada
+2024-07-11 14:21:55.307 - Si se tiene una Planilla Habilitada
+2024-07-11 14:22:01.420 - Este es el estado de orden
+2024-07-11 14:22:01.420 - Este es el estado de orden
+2024-07-11 14:22:01.420 - Este es el estado de orden
+2024-07-11 14:22:01.420 - 365246
+2024-07-11 14:22:01.420 - 365246
+2024-07-11 14:22:01.420 - 365246
+2024-07-11 14:22:01.699 - Este es el estado de orden
+2024-07-11 14:22:01.700 - Este es el estado de orden
+2024-07-11 14:22:01.700 - Este es el estado de orden
+2024-07-11 14:22:01.700 - 365258
+2024-07-11 14:22:01.700 - 365258
+2024-07-11 14:22:01.699 - 365258
+2024-07-11 14:22:05.315 - ERROR: Error en la transacción de crear pedido con orden :100102
+2024-07-11 14:22:05.316 - ERROR: Error en la transacción de crear pedido con orden :100102
+2024-07-11 14:22:05.316 - ERROR: Error en la transacción de crear pedido con orden :100102
+2024-07-11 14:22:05.316 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-07-11 14:22:05.316 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-07-11 14:22:05.315 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-07-11 14:22:05.316 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:898:52)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1080:36)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1413:19)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1422:9)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1436:9)
+2024-07-11 14:22:05.315 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:898:52)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1080:36)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1413:19)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1422:9)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1436:9)
+2024-07-11 14:22:05.316 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:898:52)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1080:36)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1413:19)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1422:9)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1436:9)
+2024-07-11 14:22:08.943 - Este es el estado de orden
+2024-07-11 14:22:08.943 - Este es el estado de orden
+2024-07-11 14:22:08.943 - Este es el estado de orden
+2024-07-11 14:22:08.943 - 365247
+2024-07-11 14:22:08.943 - 365247
+2024-07-11 14:22:08.943 - 365247
+2024-07-11 14:22:09.175 - Este es el estado de orden
+2024-07-11 14:22:09.175 - Este es el estado de orden
+2024-07-11 14:22:09.175 - Este es el estado de orden
+2024-07-11 14:22:09.175 - 365254
+2024-07-11 14:22:09.175 - 365254
+2024-07-11 14:22:09.175 - 365254
+2024-07-11 14:22:21.175 - Este es el estado de orden
+2024-07-11 14:22:21.175 - Este es el estado de orden
+2024-07-11 14:22:21.175 - Este es el estado de orden
+2024-07-11 14:22:21.175 - 365248
+2024-07-11 14:22:21.175 - 365248
+2024-07-11 14:22:21.175 - 365248
+2024-07-11 14:22:21.417 - Este es el estado de orden
+2024-07-11 14:22:21.417 - Este es el estado de orden
+2024-07-11 14:22:21.417 - Este es el estado de orden
+2024-07-11 14:22:21.417 - 365249
+2024-07-11 14:22:21.417 - 365249
+2024-07-11 14:22:21.417 - 365249
+2024-07-11 14:22:21.686 - Este es el estado de orden
+2024-07-11 14:22:21.686 - Este es el estado de orden
+2024-07-11 14:22:21.686 - Este es el estado de orden
+2024-07-11 14:22:21.686 - 365255
+2024-07-11 14:22:21.686 - 365255
+2024-07-11 14:22:21.686 - 365255
+2024-07-11 14:22:30.056 - Este es el estado de orden
+2024-07-11 14:22:30.056 - Este es el estado de orden
+2024-07-11 14:22:30.056 - Este es el estado de orden
+2024-07-11 14:22:30.056 - 365250
+2024-07-11 14:22:30.056 - 365250
+2024-07-11 14:22:30.056 - 365250
+2024-07-11 14:22:30.278 - Este es el estado de orden
+2024-07-11 14:22:30.278 - Este es el estado de orden
+2024-07-11 14:22:30.278 - Este es el estado de orden
+2024-07-11 14:22:30.278 - 365251
+2024-07-11 14:22:30.278 - 365251
+2024-07-11 14:22:30.278 - 365251
+2024-07-11 14:22:30.505 - Este es el estado de orden
+2024-07-11 14:22:30.505 - Este es el estado de orden
+2024-07-11 14:22:30.505 - Este es el estado de orden
+2024-07-11 14:22:30.505 - 365263
+2024-07-11 14:22:30.505 - 365263
+2024-07-11 14:22:30.505 - 365263
+2024-07-11 14:22:39.339 - Este es el estado de orden
+2024-07-11 14:22:39.339 - Este es el estado de orden
+2024-07-11 14:22:39.339 - Este es el estado de orden
+2024-07-11 14:22:39.339 - 365252
+2024-07-11 14:22:39.339 - 365252
+2024-07-11 14:22:39.339 - 365252
+2024-07-11 14:22:39.601 - Este es el estado de orden
+2024-07-11 14:22:39.601 - Este es el estado de orden
+2024-07-11 14:22:39.601 - Este es el estado de orden
+2024-07-11 14:22:39.601 - 365253
+2024-07-11 14:22:39.601 - 365253
+2024-07-11 14:22:39.601 - 365253
+2024-07-11 14:22:39.838 - Este es el estado de orden
+2024-07-11 14:22:39.838 - Este es el estado de orden
+2024-07-11 14:22:39.838 - Este es el estado de orden
+2024-07-11 14:22:39.838 - 365256
+2024-07-11 14:22:39.838 - 365256
+2024-07-11 14:22:39.838 - 365256
+2024-07-11 14:22:48.203 - Este es el estado de orden
+2024-07-11 14:22:48.203 - Este es el estado de orden
+2024-07-11 14:22:48.203 - Este es el estado de orden
+2024-07-11 14:22:48.203 - 365257
+2024-07-11 14:22:48.203 - 365257
+2024-07-11 14:22:48.203 - 365257
+2024-07-11 14:22:48.424 - Este es el estado de orden
+2024-07-11 14:22:48.424 - Este es el estado de orden
+2024-07-11 14:22:48.424 - Este es el estado de orden
+2024-07-11 14:22:48.424 - 365260
+2024-07-11 14:22:48.424 - 365260
+2024-07-11 14:22:48.424 - 365260
+2024-07-11 14:23:00.573 - Este es el estado de orden
+2024-07-11 14:23:00.573 - Este es el estado de orden
+2024-07-11 14:23:00.573 - Este es el estado de orden
+2024-07-11 14:23:00.573 - 365259
+2024-07-11 14:23:00.573 - 365259
+2024-07-11 14:23:00.573 - 365259
+2024-07-11 14:23:00.859 - Este es el estado de orden
+2024-07-11 14:23:00.860 - Este es el estado de orden
+2024-07-11 14:23:00.860 - Este es el estado de orden
+2024-07-11 14:23:00.859 - 365261
+2024-07-11 14:23:00.860 - 365261
+2024-07-11 14:23:00.860 - 365261
+2024-07-11 14:23:13.129 - Este es el estado de orden
+2024-07-11 14:23:13.129 - Este es el estado de orden
+2024-07-11 14:23:13.129 - Este es el estado de orden
+2024-07-11 14:23:13.129 - 365262
+2024-07-11 14:23:13.129 - 365262
+2024-07-11 14:23:13.129 - 365262
+2024-07-11 14:23:13.369 - Este es el estado de orden
+2024-07-11 14:23:13.369 - Este es el estado de orden
+2024-07-11 14:23:13.369 - Este es el estado de orden
+2024-07-11 14:23:13.369 - 365264
+2024-07-11 14:23:13.369 - 365264
+2024-07-11 14:23:13.369 - 365264
+2024-07-11 14:23:13.634 - Este es el estado de orden
+2024-07-11 14:23:13.634 - Este es el estado de orden
+2024-07-11 14:23:13.634 - Este es el estado de orden
+2024-07-11 14:23:13.634 - 365265
+2024-07-11 14:23:13.634 - 365265
+2024-07-11 14:23:13.634 - 365265
+2024-07-11 14:23:13.885 - Este es el estado de orden
+2024-07-11 14:23:13.885 - Este es el estado de orden
+2024-07-11 14:23:13.885 - Este es el estado de orden
+2024-07-11 14:23:13.885 - 365266
+2024-07-11 14:23:13.885 - 365266
+2024-07-11 14:23:13.885 - 365266
+2024-07-11 14:23:22.133 - undefined
+2024-07-11 14:23:22.133 - undefined
+2024-07-11 14:23:22.133 - undefined
+2024-07-11 14:23:22.133 - Procedimiento de ordenes completado.
+2024-07-11 14:23:22.134 - Procedimiento de ordenes completado.
+2024-07-11 14:23:22.134 - Procedimiento de ordenes completado.
+2024-07-11 14:23:22.133 - Procedimiento de ordenes completado.
+2024-07-11 14:23:22.133 - Procedimiento de ordenes completado.
+2024-07-11 14:23:22.134 - Procedimiento de ordenes completado.
+2024-07-11 14:23:22.134 - Procedimiento de ordenes completado.
+2024-07-11 14:23:22.134 - Procedimiento de ordenes completado.
+2024-07-11 14:23:22.134 - Procedimiento de ordenes completado.
+2024-07-11 15:46:40.033 - Inicializando...
+2024-07-11 15:46:40.034 - Ejecutando procedimiento
+2024-07-11 15:46:41.355 - Si se tiene una Planilla Habilitada
+2024-07-11 15:47:10.526 - ERROR: Request failed with status code 422
+2024-07-11 15:47:10.526 - STACK TRACE:
+AxiosError: Request failed with status code 422
+    at settle (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\node_modules\axios\dist\node\axios.cjs:1966:12)
+    at IncomingMessage.handleStreamEnd (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\node_modules\axios\dist\node\axios.cjs:3065:11)
+    at IncomingMessage.emit (node:events:526:35)
+    at endReadableNT (node:internal/streams/readable:1589:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\node_modules\axios\dist\node\axios.cjs:3876:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async buscarRazonSocialPorDNIRUC (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:594:22)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1093:37)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1414:19)
+2024-07-11 15:47:33.113 - ERROR: Error en la transacción de crear pedido con orden :100102
+2024-07-11 15:47:33.113 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-07-11 15:47:33.113 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:899:52)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1081:36)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1414:19)
+2024-07-11 15:48:07.920 - undefined
+2024-07-11 15:48:07.920 - Procedimiento de ordenes completado.
+2024-07-11 15:50:55.995 - Inicializando...
+2024-07-11 15:50:55.996 - Ejecutando procedimiento
+2024-07-11 15:50:57.242 - Si se tiene una Planilla Habilitada
+2024-07-11 15:51:12.524 - ERROR: Error en la transacción de crear pedido con orden :100102
+2024-07-11 15:51:12.524 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-07-11 15:51:12.524 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:899:52)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1081:36)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1414:19)
+2024-07-11 15:51:26.780 - undefined
+2024-07-11 15:51:26.780 - Procedimiento de ordenes completado.

@@ -21,66 +21,6 @@ const config = {
 
 
 
-// async function ApiOrders() {
-//   try {
-//     const response = await axios.get(
-//       "https://ZBR3Q8MEZ3KC16C7Z5CMYYD9V1VFCT3T@www.kukyflor.com/api/orders",
-//       {
-//         params: {
-//           display: "full",
-//           output_format: "XML",
-//           limit: 200, // Obtener siempre los últimos 200 pedidos
-//           sort: "[id_DESC]", // Ordenar por ID de forma descendente (los últimos primero)
-//         },
-//         headers: {
-//           Authorization: "ZBR3Q8MEZ3KC16C7Z5CMYYD9V1VFCT3T",
-//         },
-//       }
-//     );
-
-//     // Parsear la respuesta XML
-//     const result = await new Promise((resolve, reject) => {
-//       parser.parseString(response.data, (err, result) => {
-//         if (err) {
-//           reject(err);
-//         } else {
-//           resolve(result);
-//         }
-//       });
-//     });
-
-//     const fechaActual = new Date();
-//     const dia = fechaActual.getDate() < 10 ? '0' + fechaActual.getDate() : fechaActual.getDate();
-//     const mes = (fechaActual.getMonth() + 1) < 10 ? '0' + (fechaActual.getMonth() + 1) : (fechaActual.getMonth() + 1);
-//     const fechaFormateada = fechaActual.getFullYear() + '-' + mes + '-' + dia;
-
-//     // Extraer los elementos <order> y filtrar por fecha de hoy
-//     const orders = result.prestashop.orders.order.filter(order => {
-//       const orderDate = new Date(order.date_upd);
-//       const orderDia = orderDate.getDate() < 10 ? '0' + orderDate.getDate() : orderDate.getDate();
-//       const orderMes = (orderDate.getMonth() + 1) < 10 ? '0' + (orderDate.getMonth() + 1) : (orderDate.getMonth() + 1);
-//       const orderFechaFormateada = orderDate.getFullYear() + '-' + orderMes + '-' + orderDia;
-//       return orderFechaFormateada === fechaFormateada;
-//     });
-
-
-//     // Mapear las órdenes filtradas
-//     const ordersInfo = orders.map(order => ({
-//       Orden: order.id,
-//       OrdenDeRegistro: parseInt(order.id),
-//       PersoneriaID: order.id_customer,
-//       FechadeOrden: order.date_upd,
-//       // Resto de las propiedades...
-//     })).sort((a, b) => a.OrdenDeRegistro - b.OrdenDeRegistro);
-
-//     return ordersInfo;
-//   } catch (error) {
-//     console.error(error);
-//     throw new Error("Error al obtener los pedidos de PrestaShop");
-//   }
-// }
-
-
 async function ApiOrders() {
   try {
     const response = await axios.get(
@@ -779,9 +719,10 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
 
     const query = `
       INSERT INTO VentaPedidoCabecera
-        (EmpresaID, OficinaAlmacenID, SeriePedido, NumeroPedido, PersoneriaID, DireccionID, VendedorID, CondicionVtaID, MonedaID, ListaPrecioID, Fecha, TipoEntrega, FechaEntrega, DireccionEntrega, OficinaAlmacenEntregaID, Referencia, Observaciones, Cliente, Contacto, Contactotelefono, MotivoID, DeliveryTipoID, DeliveryTurnoID, TipoDocID, ValorPedido, PrecioPedido, TipoCambio, Estado, UsuarioID, FechaCreacion, FechaModificacion, TipoVenta, Gratuita, PlanillaID, ConvenioID, WebID)
+        (EmpresaID, OficinaAlmacenID, SeriePedido, NumeroPedido, PersoneriaID, DireccionID, VendedorID, CondicionVtaID, MonedaID, ListaPrecioID, Fecha, TipoEntrega, FechaEntrega, DireccionEntrega, OficinaAlmacenEntregaID, Referencia, Observaciones, Cliente, Contacto, Contactotelefono, MotivoID, DeliveryTipoID, DeliveryTurnoID, TipoDocID, ValorPedido, PrecioPedido, TipoCambio, Estado, UsuarioID, FechaCreacion, FechaModificacion, TipoVenta, Gratuita, PlanillaID, ConvenioID, WebID,TookanID
+              ,email)
         VALUES
-        (1, @OficinaAlmacenID, @SerieCorrelativo, @NumeroPedido, @PersoneriaID, @DireccionID, @Vendedor, @CondicionVtaID, @MonedaID, @ListaPrecioID, CONVERT(datetime,@Fecha, 120), @TipoEntrega, CONVERT(datetime,@FechaEntrega, 120) , @DireccionEntrega, @OficinaAlmacenEntregaID, @Referencia, @Observaciones, @Cliente, @Contacto, @Contactotelefono, @MotivoID, @DeliveryTipoID, @DeliveryTurnoID, @TipoDocID, @ValorPedido, @PrecioPedido, 0.00000, '1', @UsuarioID, CONVERT(datetime,@FechaCreacion, 120), CONVERT(datetime,@FechaEdicion, 120), @TipoVenta, @HabilitarFecha, @IDPlanilla, @ConvenioID, @WebID);
+        (1, @OficinaAlmacenID, @SerieCorrelativo, @NumeroPedido, @PersoneriaID, @DireccionID, @Vendedor, @CondicionVtaID, @MonedaID, @ListaPrecioID, CONVERT(datetime,@Fecha, 120), @TipoEntrega, CONVERT(datetime,@FechaEntrega, 120) , @DireccionEntrega, @OficinaAlmacenEntregaID, @Referencia, @Observaciones, @Cliente, @Contacto, @Contactotelefono, @MotivoID, @DeliveryTipoID, @DeliveryTurnoID, @TipoDocID, @ValorPedido, @PrecioPedido, 0.00000, '1', @UsuarioID, CONVERT(datetime,@FechaCreacion, 120), CONVERT(datetime,@FechaEdicion, 120), @TipoVenta, @HabilitarFecha, @IDPlanilla, @ConvenioID, @WebID, null ,@Email);
       SELECT SCOPE_IDENTITY() AS LastInsertedID;
       `;
 
@@ -812,6 +753,7 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
     request.input('MotivoID', sql.Decimal(9, 5), 190.00062);
     request.input('CondicionVtaID', sql.Decimal(9, 5), 113.00001);
     request.input('DeliveryTipoID', sql.Decimal(9, 5), 193.00001);
+    request.input('Email', sql.NVarChar, paramsOrden.Customer.email);
 
     function obtenerTurno(ddw_order_time) {
 

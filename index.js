@@ -13,7 +13,7 @@ const config = {
   user: "kuky",
   password: "Kf123456",
   server: "3.144.237.208",
-  database: "kflor", //prueba_
+  database: "prueba_kflor", //prueba_
   options: {
     encrypt: false, // Si estás utilizando Azure, establece esto en true
   },
@@ -748,12 +748,13 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
     request.input('Contacto', sql.VarChar, paramsOrden.DireccionEntrega.PesonaEntrega);
     // lastname: customer.customer.lastname,
     // firstname: customer.customer.firstname,
-    request.input('Cliente', sql.VarChar, paramsOrden.Customer.firstname + ' ' + paramsOrden.Customer.lastname); //Tecnicamente estaria bien
+    request.input('Cliente', sql.VarChar, ParamsPersona.Estado == '2' ? paramsOrden.Customer.firstname + ' ' + paramsOrden.Customer.lastname : ''); // si existe ya no se escribe nada 
     request.input('Contactotelefono', sql.VarChar, paramsOrden.DireccionEntrega.Telefono + ' - '+ paramsOrden.DireccionEntrega.phone_mobile);
     request.input('MotivoID', sql.Decimal(9, 5), 190.00062);
     request.input('CondicionVtaID', sql.Decimal(9, 5), 113.00001);
     request.input('DeliveryTipoID', sql.Decimal(9, 5), 193.00001);
-    request.input('Email', sql.NVarChar, paramsOrden.Customer.email);
+
+    request.input('Email', sql.NVarChar, ParamsPersona.Estado == '2' ?  paramsOrden.Customer.email : '' ); // si la persona no tiene correo entoncs pasa el del cliente prestashop 
 
     function obtenerTurno(ddw_order_time) {
 

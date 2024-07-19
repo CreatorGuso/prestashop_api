@@ -13,7 +13,7 @@ const config = {
   user: "kuky",
   password: "Kf123456",
   server: "3.144.237.208",
-  database: "prueba_kflor", //prueba_
+  database: "kflor", //prueba_
   options: {
     encrypt: false, // Si estás utilizando Azure, establece esto en true
   },
@@ -72,7 +72,7 @@ async function ApiOrders() {
       const orderDia = orderDate.getDate() < 10 ? '0' + orderDate.getDate() : orderDate.getDate();
       const orderMes = (orderDate.getMonth() + 1) < 10 ? '0' + (orderDate.getMonth() + 1) : (orderDate.getMonth() + 1);
       const orderFechaFormateada = orderDate.getFullYear() + '-' + orderMes + '-' + orderDia;
-      return orderFechaFormateada === fechaFormateada || (horaActual === 0 && orderFechaFormateada === fechaFormateadaAnterior);
+      return orderFechaFormateada === fechaFormateada || (horaActual === 20 && orderFechaFormateada === fechaFormateadaAnterior);
     });
 
     // Mapear las órdenes filtradas

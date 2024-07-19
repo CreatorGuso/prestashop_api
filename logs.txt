@@ -28,3 +28,59 @@
 2024-07-13 17:23:35.359 - Procedimiento de ordenes completado.
 2024-07-13 17:23:35.359 - Procedimiento de ordenes completado.
 2024-07-13 17:23:35.359 - Procedimiento de ordenes completado.
+2024-07-17 15:51:45.938 - Inicializando...
+2024-07-17 15:51:45.940 - Ejecutando procedimiento
+2024-07-17 15:51:47.683 - no se tiene una planilla habilitada
+2024-07-17 15:51:50.546 - Inicializando...
+2024-07-17 15:51:50.547 - Ejecutando procedimiento
+2024-07-17 15:51:50.546 - Inicializando...
+2024-07-17 15:51:50.547 - Ejecutando procedimiento
+2024-07-17 15:51:52.029 - no se tiene una planilla habilitada
+2024-07-17 15:51:52.029 - no se tiene una planilla habilitada
+2024-07-17 15:51:53.840 - Inicializando...
+2024-07-17 15:51:53.840 - Inicializando...
+2024-07-17 15:51:53.841 - Ejecutando procedimiento
+2024-07-17 15:51:53.841 - Ejecutando procedimiento
+2024-07-17 15:51:53.840 - Inicializando...
+2024-07-17 15:51:53.841 - Ejecutando procedimiento
+2024-07-17 15:51:55.313 - Si se tiene una Planilla Habilitada
+2024-07-17 15:51:55.313 - Si se tiene una Planilla Habilitada
+2024-07-17 15:51:55.313 - Si se tiene una Planilla Habilitada
+2024-07-17 15:53:43.018 - undefined
+2024-07-17 15:53:43.018 - undefined
+2024-07-17 15:53:43.018 - undefined
+2024-07-17 15:53:43.019 - Procedimiento de ordenes completado.
+2024-07-17 15:53:43.019 - Procedimiento de ordenes completado.
+2024-07-17 15:53:43.019 - Procedimiento de ordenes completado.
+2024-07-17 15:53:43.019 - Procedimiento de ordenes completado.
+2024-07-17 15:53:43.019 - Procedimiento de ordenes completado.
+2024-07-17 15:53:43.019 - Procedimiento de ordenes completado.
+2024-07-17 15:53:43.019 - Procedimiento de ordenes completado.
+2024-07-17 15:53:43.019 - Procedimiento de ordenes completado.
+2024-07-17 15:53:43.019 - Procedimiento de ordenes completado.
+2024-07-17 16:03:01.741 - Inicializando...
+2024-07-17 16:03:01.742 - Ejecutando procedimiento
+2024-07-17 16:03:03.107 - Si se tiene una Planilla Habilitada
+2024-07-17 16:03:08.054 - ERROR: fechaActual is not defined
+2024-07-17 17:08:02.920 - Inicializando...
+2024-07-17 17:08:02.921 - Ejecutando procedimiento
+2024-07-17 17:08:04.141 - Si se tiene una Planilla Habilitada
+2024-07-17 17:08:08.819 - ERROR: fechaActual is not defined
+2024-07-17 17:08:29.764 - Inicializando...
+2024-07-17 17:08:29.766 - Ejecutando procedimiento
+2024-07-17 17:08:31.011 - Si se tiene una Planilla Habilitada
+2024-07-17 17:09:30.198 - ERROR: Error en la transacción de crear pedido con orden :100187
+2024-07-17 17:09:30.198 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-07-17 17:09:30.198 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:844:52)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1050:42)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\Cap Arquitectos\prestashop_api\index.js:1359:19)
+2024-07-17 17:09:30.316 - undefined
+2024-07-17 17:09:30.317 - Procedimiento de ordenes completado.
+2024-07-17 17:43:25.070 - Inicializando...
+2024-07-17 17:43:25.071 - Ejecutando procedimiento
+2024-07-17 17:43:26.346 - Si se tiene una Planilla Habilitada
+2024-07-17 17:44:13.467 - undefined
+2024-07-17 17:44:13.467 - Procedimiento de ordenes completado.

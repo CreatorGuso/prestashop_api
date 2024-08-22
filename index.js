@@ -622,7 +622,7 @@ async function crearCliente(params,paramsAPI) {
       request2.input('PersoneriaID', sql.Int, PersoneriaID);
       request2.input('DireccionID', sql.Int, 1);
       request2.input('PaisID', sql.Decimal(9, 5), 204.00193);
-      request2.input('UbicacionID', sql.NVarChar, params.ubigeo); // '000000'
+      request2.input('UbicacionID', sql.NVarChar, params.ubigeo == '-' ? '000000' : params.ubigeo); // '000000'
       request2.input('ViaID', sql.Decimal, 135.00000);
       request2.input('NombreVia', sql.NVarChar, '');
       request2.input('NumeroVia', sql.NVarChar, '');

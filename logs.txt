@@ -5200,3 +5200,239 @@ RequestError: The INSERT statement conflicted with the FOREIGN KEY constraint "F
 }
 2024-08-22 18:06:28.805 - undefined
 2024-08-22 18:06:28.805 - Procedimiento de ordenes completado.
+2024-08-26 15:04:08.428 - Inicializando...
+2024-08-26 15:04:08.430 - Ejecutando procedimiento
+2024-08-26 15:04:10.049 - Si se tiene una Planilla Habilitada
+2024-08-26 15:04:12.979 - Datos de las órdenes:
+2024-08-26 15:04:12.979 - [
+  {
+    "Orden": "100729",
+    "OrdenDeRegistro": 100729,
+    "PersoneriaID": {
+      "_": "93779",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/93779"
+      }
+    },
+    "FechadeOrden": "2024-08-26 09:30:31"
+  },
+  {
+    "Orden": "100732",
+    "OrdenDeRegistro": 100732,
+    "PersoneriaID": {
+      "_": "93781",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/93781"
+      }
+    },
+    "FechadeOrden": "2024-08-26 06:55:40"
+  },
+  {
+    "Orden": "100733",
+    "OrdenDeRegistro": 100733,
+    "PersoneriaID": {
+      "_": "93789",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/93789"
+      }
+    },
+    "FechadeOrden": "2024-08-26 07:04:50"
+  },
+  {
+    "Orden": "100734",
+    "OrdenDeRegistro": 100734,
+    "PersoneriaID": {
+      "_": "93790",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/93790"
+      }
+    },
+    "FechadeOrden": "2024-08-26 07:24:40"
+  },
+  {
+    "Orden": "100735",
+    "OrdenDeRegistro": 100735,
+    "PersoneriaID": {
+      "_": "93790",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/93790"
+      }
+    },
+    "FechadeOrden": "2024-08-26 09:30:30"
+  },
+  {
+    "Orden": "100736",
+    "OrdenDeRegistro": 100736,
+    "PersoneriaID": {
+      "_": "31357",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/31357"
+      }
+    },
+    "FechadeOrden": "2024-08-26 01:38:42"
+  },
+  {
+    "Orden": "100737",
+    "OrdenDeRegistro": 100737,
+    "PersoneriaID": {
+      "_": "31357",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/31357"
+      }
+    },
+    "FechadeOrden": "2024-08-26 09:30:29"
+  },
+  {
+    "Orden": "100738",
+    "OrdenDeRegistro": 100738,
+    "PersoneriaID": {
+      "_": "93791",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/93791"
+      }
+    },
+    "FechadeOrden": "2024-08-26 09:30:28"
+  }
+]
+2024-08-26 15:04:14.442 - Orden 100729 encontrada:
+2024-08-26 15:04:14.442 - {
+  "EmpresaID": 1,
+  "OficinaAlmacenID": 17,
+  "PedidoID": "43023",
+  "SeriePedido": "P002",
+  "NumeroPedido": 1791,
+  "PersoneriaID": "2515",
+  "DireccionID": 1,
+  "VendedorID": 58,
+  "CondicionVtaID": 113.00001,
+  "MonedaID": 102.00001,
+  "ListaPrecioID": 108.00001,
+  "Fecha": "2024-08-25T14:29:37.000Z",
+  "TipoEntrega": 2,
+  "FechaEntrega": "2024-08-26T00:00:00.000Z",
+  "DireccionEntrega": "Av. César Canevaro 979, Lince 15073",
+  "OficinaAlmacenEntregaID": 1,
+  "Referencia": "¡Espero que hayas tenido un cumpleaños maravilloso!, quería desearte todo lo mejor para el año que comienza. Que este nuevo año te traiga muchas alegrías, éxitos y momentos especiales. ¡Feliz cumpleaños Andreita! ",
+  "Observaciones": "OL servicios generales SAC,  -  , Entro en el siguiente rando de hora 09:00 - 14:00",
+  "Cliente": "Yimmy  Rojas",
+  "Contacto": "Erika Andrea Lucía Yovera Saucedo",
+  "ContactoTelefono": "986948210 - ",
+  "MotivoID": 190.00062,
+  "DeliveryTipoID": 193.00001,
+  "DeliveryTurnoID": 192.00002,
+  "TipoDocID": 103.00003,
+  "ValorPedido": 100,
+  "PrecioPedido": 100,
+  "TipoCambio": 0,
+  "Estado": "2",
+  "UsuarioID": 58,
+  "FechaCreacion": "2024-08-25T14:29:37.000Z",
+  "FechaModificacion": "2024-08-25T14:29:37.000Z",
+  "TipoVenta": 0,
+  "Gratuita": 0,
+  "PlanillaID": "5009097",
+  "ConvenioID": 902.00001,
+  "WebID": 100729,
+  "TookanID": "P002-1791",
+  "Email": "ycru.1990@gmail.com"
+}
+2024-08-26 15:04:15.879 - Orden 100732 encontrada:
+2024-08-26 15:04:15.879 - {
+  "EmpresaID": 1,
+  "OficinaAlmacenID": 17,
+  "PedidoID": "43063",
+  "SeriePedido": "P002",
+  "NumeroPedido": 1797,
+  "PersoneriaID": "2515",
+  "DireccionID": 1,
+  "VendedorID": 58,
+  "CondicionVtaID": 113.00001,
+  "MonedaID": 102.00001,
+  "ListaPrecioID": 108.00001,
+  "Fecha": "2024-08-25T23:11:27.000Z",
+  "TipoEntrega": 2,
+  "FechaEntrega": "2024-08-27T00:00:00.000Z",
+  "DireccionEntrega": "Junín 235 rinconada del lago la Molina",
+  "OficinaAlmacenEntregaID": 1,
+  "Referencia": "Feliz cumpleaños Tía Berthita\r\nTe quiero mucho\r\n\r\nCon mucho cariño \r\nDelfi ",
+  "Observaciones": "A 2 cuadras del parque Kasba. A 5 minutos de Molicentro,  -  , Entro en el siguiente rando de hora 09:00 - 14:00",
+  "Cliente": "Milagros  Chacón ",
+  "Contacto": "Milagros  Chacón ",
+  "ContactoTelefono": "966776958 - ",
+  "MotivoID": 190.00062,
+  "DeliveryTipoID": 193.00001,
+  "DeliveryTurnoID": 192.00002,
+  "TipoDocID": 103.00003,
+  "ValorPedido": 147,
+  "PrecioPedido": 147,
+  "TipoCambio": 0,
+  "Estado": "2",
+  "UsuarioID": 58,
+  "FechaCreacion": "2024-08-25T23:11:27.000Z",
+  "FechaModificacion": "2024-08-25T23:11:27.000Z",
+  "TipoVenta": 0,
+  "Gratuita": 0,
+  "PlanillaID": "5009097",
+  "ConvenioID": 902.00001,
+  "WebID": 100732,
+  "TookanID": "P002-1797",
+  "Email": "milagroschrubio@gmail.com"
+}
+2024-08-26 15:04:17.315 - Orden 100733 no encontrada
+2024-08-26 15:04:23.488 - ERROR: Error en la transacción de crear pedido con orden :100733
+2024-08-26 15:04:23.488 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-08-26 15:04:23.488 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:843:52)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1059:38)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1358:19)
+2024-08-26 15:04:25.010 - Orden 100734 no encontrada
+2024-08-26 15:04:29.279 - Orden 100735 encontrada:
+2024-08-26 15:04:29.279 - {
+  "EmpresaID": 1,
+  "OficinaAlmacenID": 17,
+  "PedidoID": "43078",
+  "SeriePedido": "P002",
+  "NumeroPedido": 1798,
+  "PersoneriaID": "2515",
+  "DireccionID": 1,
+  "VendedorID": 58,
+  "CondicionVtaID": 113.00001,
+  "MonedaID": 102.00001,
+  "ListaPrecioID": 108.00001,
+  "Fecha": "2024-08-26T01:14:32.000Z",
+  "TipoEntrega": 2,
+  "FechaEntrega": "2024-08-26T00:00:00.000Z",
+  "DireccionEntrega": "Telares 299, Ate 15012, Perú",
+  "OficinaAlmacenEntregaID": 1,
+  "Referencia": "Para mi gordita con mucho cariño. Te quiero mucho amor.\r\n\r\nAri",
+  "Observaciones": "Empresa Dresden en Ate ,  -  , Entro en el siguiente rando de hora 09:00 - 14:00",
+  "Cliente": "Ari Strusberg Benavides",
+  "Contacto": "Joselyn Castillo Gutierrez",
+  "ContactoTelefono": "953714234 - ",
+  "MotivoID": 190.00062,
+  "DeliveryTipoID": 193.00001,
+  "DeliveryTurnoID": 192.00002,
+  "TipoDocID": 103.00003,
+  "ValorPedido": 205,
+  "PrecioPedido": 205,
+  "TipoCambio": 0,
+  "Estado": "2",
+  "UsuarioID": 58,
+  "FechaCreacion": "2024-08-26T01:14:32.000Z",
+  "FechaModificacion": "2024-08-26T01:14:32.000Z",
+  "TipoVenta": 0,
+  "Gratuita": 0,
+  "PlanillaID": "5009196",
+  "ConvenioID": 902.00001,
+  "WebID": 100735,
+  "TookanID": "P002-1798",
+  "Email": "aristrusberg@gmail.com"
+}
+2024-08-26 15:04:30.695 - Orden 100736 no encontrada
+2024-08-26 15:04:35.206 - Orden 100737 no encontrada
+2024-08-26 15:04:44.253 - Orden 100738 no encontrada
+2024-08-26 15:04:49.337 - ERROR: Error Numero de documento: 41591323 ::: AxiosError: Request failed with status code 429
+2024-08-26 15:04:53.718 - undefined
+2024-08-26 15:04:53.718 - Procedimiento de ordenes completado.

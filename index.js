@@ -13,7 +13,7 @@ const config = {
   user: "kuky",
   password: "Kf123456",
   server: "3.144.237.208",
-  database: "kflor", //prueba_
+  database: "prueba_kflor", //prueba_
   options: {
     encrypt: false, // Si estás utilizando Azure, establece esto en true
   },
@@ -996,14 +996,14 @@ async function procesarOrdenPrestashop() {
     // const ordenes = await axios.get("http://localhost:3099/api/orders");
     const ordenes = await ApiOrders();
     const ordersInfo = ordenes;
-    // console.log("Datos de las órdenes:", ordersInfo);
+    console.log("Datos de las órdenes:", ordersInfo);
     for (let i = 0; i < ordersInfo.length; i++) {
       const orden = ordersInfo[i].Orden;
       const resultadoOrdenes = await BuscarOrden(orden);
       if (resultadoOrdenes) {
-        // console.log(`Orden ${orden} encontrada:`, resultadoOrdenes);
+        console.log(`Orden ${orden} encontrada:`, resultadoOrdenes);
       } else {
-        // console.log(`Orden ${orden} no encontrada`);
+        console.log(`Orden ${orden} no encontrada`);
         // const ordenPorID = await axios.get(`http://localhost:3099/api/orders/${orden}`);
         const ordenPorID = await BuscarORdenPorID(orden);
         // console.log(ordenPorID);

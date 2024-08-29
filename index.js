@@ -13,7 +13,7 @@ const config = {
   user: "kuky",
   password: "Kf123456",
   server: "3.144.237.208",
-  database: "prueba_kflor", //prueba_
+  database: "kflor", //prueba_
   options: {
     encrypt: false, // Si estás utilizando Azure, establece esto en true
   },
@@ -220,7 +220,9 @@ async function HistorialOrden(orderId) {
           });
         } catch (error) {
           console.error(error);
-          throw new Error("Error al obtener el estado de la orden");
+          console.error("Error al obtener el estado de la orden");
+          // throw new Error("Error al obtener el estado de la orden");
+          return null;
         }
       }
     }
@@ -229,7 +231,9 @@ async function HistorialOrden(orderId) {
     return estadoFinal;
   } catch (error) {
     console.error(error);
-    throw new Error("Error al obtener el historial de la orden");
+    console.error("Error al obtener el historial de la orden");
+    // throw new Error("Error al obtener el historial de la orden");
+    return null;
   }
 }
 
@@ -335,7 +339,8 @@ async function BuscarORdenPorID(orderId) {
         Telefono: direccionEntrega.address.phone,
       };
     });
-
+    //prueba de variable
+    // console.log("Esta variable llega como undefined :::::::::::::::::::::::::>",DireccionEntrega.id_direccion);
     // Obtencion de Direccion
     const responseDireccionOrden = await axios.get(
       `https://ZBR3Q8MEZ3KC16C7Z5CMYYD9V1VFCT3T@www.kukyflor.com/api/states/${DireccionEntrega.id_direccion}`
@@ -464,7 +469,8 @@ async function BuscarORdenPorID(orderId) {
 
   } catch (error) {
     console.error(error);
-    throw new Error("Error al obtener la orden de PrestaShop");
+    // throw new Error("Error al obtener la orden de PrestaShop");
+    return null;
   }
 }
 
@@ -990,96 +996,172 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
   };
 };
 
+// async function procesarOrdenPrestashop() {
+//   try {
+//     // Obtener las últimas 100 órdenes
+//     // const ordenes = await axios.get("http://localhost:3099/api/orders");
+//     const ordenes = await ApiOrders();
+//     const ordersInfo = ordenes;
+//     console.log("Datos de las órdenes:", ordersInfo);
+//     for (let i = 0; i < ordersInfo.length; i++) {
+//       const orden = ordersInfo[i].Orden;
+//       const resultadoOrdenes = await BuscarOrden(orden);
+//       if (resultadoOrdenes) {
+//         console.log(`Orden ${orden} encontrada:`, resultadoOrdenes);
+//       } else {
+//         console.log(`Orden ${orden} no encontrada`);
+//         // const ordenPorID = await axios.get(`http://localhost:3099/api/orders/${orden}`);
+//         const ordenPorID = await BuscarORdenPorID(orden);
+//         // console.log(ordenPorID);
+//         var DatosDeOrden = ordenPorID;
+//         const EstadoOrden = await HistorialOrden(orden);
+//         // console.log(EstadoOrden);
+//         const VerificacionEstado = EstadoOrden;
+//         // Si es 2 entra si es 0 no entra para estados pasamos al siguiente entraba 5 o 14
+//         if (VerificacionEstado == '2') {
+//           // console.log("Entramos al if");
+//           var cliente = null;
+//           if (DatosDeOrden.SerieDePedido.company == '') {
+//             // console.log("el cliente no tiene DNI");
+//             cliente = await buscarClientePorDNI('00000001');
+//             // console.log(cliente);
+//             if (cliente != null) {
+//               // Procedemos con la creacion del pedido
+//               // console.log("Creamos el pedido");
+//               const pedidoCreado = await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID);
+//               // console.log(pedidoCreado);
+//             }
+//           } else {
+//             // console.log("El cliente si tiene DNI");
+//             // console.log("este es el DNI", DatosDeOrden.SerieDePedido.company);
+//             // Se verifica que si o si tenga 8 y 11.
+//             if (DatosDeOrden.SerieDePedido.company.length === 8 || DatosDeOrden.SerieDePedido.company.length === 11) {
+//               // console.log("Paso verificacion de DNI o RUC");
+//               cliente = await buscarClientePorDNI(DatosDeOrden.SerieDePedido.company);
+//               // console.log("Cliente::::::", cliente );
+//               if (cliente === null) {
+//                 const razonSocial = await buscarRazonSocialPorDNIRUC(DatosDeOrden.SerieDePedido.company);
+//                 // console.log("::::::::::::::::",razonSocial);
+//                 if(razonSocial !== 'Número no encontrado' ){
+//                   const resultadoCreacion = await crearCliente(razonSocial,DatosDeOrden.Customer);
+//                   // if (resultadoCreacion.success) {
+//                   //   // console.log("El cliente se creó correctamente");
+//                   // } else {
+//                   //   // console.log("El cliente no se creó");
+//                   // }
+//                   cliente = await buscarClientePorDNI(DatosDeOrden.SerieDePedido.company);
+//                   if (cliente != null) {
+//                     // Procedemos con la creacion del pedido
+//                     const pedidoCreado = await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID);
+//                     // console.log(pedidoCreado);
+//                   }
+//                 }else{
+//                   // Si no se encontro el DNI de la persona se una la venta del dia.
+//                   cliente = await buscarClientePorDNI('00000001');
+//                   const pedidoCreado = await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID);
+//                 }
+//               } else {
+//                 // cliente = await buscarClientePorDNI('00000001');
+//                 const pedidoCreado = await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID);
+//                 // console.log(pedidoCreado);
+//               }
+//             } else {
+//               // console.log("El numero de identidad no cumple con los requisitos");
+//               // console.log("DNI fallido se creara con Cliente Ventas Dia");
+//               cliente = await buscarClientePorDNI('00000001');
+//               // console.log(cliente);
+//               if (cliente != null) {
+//                 // Procedemos con la creacion del pedido
+//                 // console.log("Creamos el pedido");
+//                 const pedidoCreado = await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID);
+//                 // console.log(pedidoCreado);
+//               }
+//             }
+//           }
+//         }
+//       }
+//     }
+//   } catch (error) {
+//     console.error(error);
+//     throw error;
+//   }
+// }
+
 async function procesarOrdenPrestashop() {
   try {
-    // Obtener las últimas 100 órdenes
-    // const ordenes = await axios.get("http://localhost:3099/api/orders");
     const ordenes = await ApiOrders();
     const ordersInfo = ordenes;
-    console.log("Datos de las órdenes:", ordersInfo);
+    // console.log("Datos de las órdenes:", ordersInfo);
+
     for (let i = 0; i < ordersInfo.length; i++) {
       const orden = ordersInfo[i].Orden;
-      const resultadoOrdenes = await BuscarOrden(orden);
+      let resultadoOrdenes;
+
+      try {
+        resultadoOrdenes = await BuscarOrden(orden);
+      } catch (error) {
+        console.error(`Error al buscar la orden ${orden}:`, error);
+        continue; // Continua con la siguiente orden en caso de error
+      }
+
       if (resultadoOrdenes) {
-        console.log(`Orden ${orden} encontrada:`, resultadoOrdenes);
+        // console.log(`Orden ${orden} encontrada:`, resultadoOrdenes);
       } else {
-        console.log(`Orden ${orden} no encontrada`);
-        // const ordenPorID = await axios.get(`http://localhost:3099/api/orders/${orden}`);
-        const ordenPorID = await BuscarORdenPorID(orden);
-        // console.log(ordenPorID);
-        var DatosDeOrden = ordenPorID;
-        const EstadoOrden = await HistorialOrden(orden);
-        // console.log(EstadoOrden);
-        const VerificacionEstado = EstadoOrden;
-        // Si es 2 entra si es 0 no entra para estados pasamos al siguiente entraba 5 o 14
-        if (VerificacionEstado == '2') {
-          // console.log("Entramos al if");
-          var cliente = null;
-          if (DatosDeOrden.SerieDePedido.company == '') {
-            // console.log("el cliente no tiene DNI");
-            cliente = await buscarClientePorDNI('00000001');
-            // console.log(cliente);
-            if (cliente != null) {
-              // Procedemos con la creacion del pedido
-              // console.log("Creamos el pedido");
-              const pedidoCreado = await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID);
-              // console.log(pedidoCreado);
-            }
-          } else {
-            // console.log("El cliente si tiene DNI");
-            // console.log("este es el DNI", DatosDeOrden.SerieDePedido.company);
-            // Se verifica que si o si tenga 8 y 11.
-            if (DatosDeOrden.SerieDePedido.company.length === 8 || DatosDeOrden.SerieDePedido.company.length === 11) {
-              // console.log("Paso verificacion de DNI o RUC");
-              cliente = await buscarClientePorDNI(DatosDeOrden.SerieDePedido.company);
-              // console.log("Cliente::::::", cliente );
-              if (cliente === null) {
-                const razonSocial = await buscarRazonSocialPorDNIRUC(DatosDeOrden.SerieDePedido.company);
-                // console.log("::::::::::::::::",razonSocial);
-                if(razonSocial !== 'Número no encontrado' ){
-                  const resultadoCreacion = await crearCliente(razonSocial,DatosDeOrden.Customer);
-                  // if (resultadoCreacion.success) {
-                  //   // console.log("El cliente se creó correctamente");
-                  // } else {
-                  //   // console.log("El cliente no se creó");
-                  // }
-                  cliente = await buscarClientePorDNI(DatosDeOrden.SerieDePedido.company);
-                  if (cliente != null) {
-                    // Procedemos con la creacion del pedido
-                    const pedidoCreado = await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID);
-                    // console.log(pedidoCreado);
-                  }
-                }else{
-                  // Si no se encontro el DNI de la persona se una la venta del dia.
-                  cliente = await buscarClientePorDNI('00000001');
-                  const pedidoCreado = await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID);
-                }
-              } else {
-                // cliente = await buscarClientePorDNI('00000001');
-                const pedidoCreado = await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID);
-                // console.log(pedidoCreado);
+        // console.log(`Orden ${orden} no encontrada`);
+        let DatosDeOrden;
+
+        try {
+          DatosDeOrden = await BuscarORdenPorID(orden);
+        } catch (error) {
+          console.error(`Error al buscar la orden por ID ${orden}:`, error);
+          continue; // Continua con la siguiente orden en caso de error
+        }
+
+        if (DatosDeOrden) {
+          const EstadoOrden = await HistorialOrden(orden);
+          const VerificacionEstado = EstadoOrden;
+
+          if (VerificacionEstado == '2') {
+            let cliente = null;
+
+            if (DatosDeOrden.SerieDePedido.company === '') {
+              cliente = await buscarClientePorDNI('00000001');
+              if (cliente) {
+                await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID);
               }
             } else {
-              // console.log("El numero de identidad no cumple con los requisitos");
-              // console.log("DNI fallido se creara con Cliente Ventas Dia");
-              cliente = await buscarClientePorDNI('00000001');
-              // console.log(cliente);
-              if (cliente != null) {
-                // Procedemos con la creacion del pedido
-                // console.log("Creamos el pedido");
-                const pedidoCreado = await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID);
-                // console.log(pedidoCreado);
+              if (DatosDeOrden.SerieDePedido.company.length === 8 || DatosDeOrden.SerieDePedido.company.length === 11) {
+                cliente = await buscarClientePorDNI(DatosDeOrden.SerieDePedido.company);
+                if (cliente === null) {
+                  const razonSocial = await buscarRazonSocialPorDNIRUC(DatosDeOrden.SerieDePedido.company);
+                  if (razonSocial !== 'Número no encontrado') {
+                    await crearCliente(razonSocial, DatosDeOrden.Customer);
+                    cliente = await buscarClientePorDNI(DatosDeOrden.SerieDePedido.company);
+                  } else {
+                    cliente = await buscarClientePorDNI('00000001');
+                  }
+                }
+                if (cliente) {
+                  await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID);
+                }
+              } else {
+                cliente = await buscarClientePorDNI('00000001');
+                if (cliente) {
+                  await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID);
+                }
               }
             }
           }
+        } else {
+          console.log(`No se pudo obtener la información de la orden ${orden}`);
         }
       }
     }
   } catch (error) {
-    console.error(error);
-    throw error;
+    console.error("Error en el procesamiento de órdenes:", error);
   }
 }
+
 
 
 async function verificacionControlCaja(OficinaID, userId) {

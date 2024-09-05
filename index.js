@@ -1124,7 +1124,7 @@ async function procesarOrdenPrestashop() {
           if (VerificacionEstado == '2') {
             let cliente = null;
 
-            if (DatosDeOrden.SerieDePedido.company === '') {
+            if (DatosDeOrden.SerieDePedido.company === '' || DatosDeOrden.SerieDePedido.company == '00000000' || DatosDeOrden.SerieDePedido.company == '00000000000') {
               cliente = await buscarClientePorDNI('00000001');
               if (cliente) {
                 await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID);

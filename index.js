@@ -73,6 +73,7 @@ async function ApiOrders() {
       const orderMes = (orderDate.getMonth() + 1) < 10 ? '0' + (orderDate.getMonth() + 1) : (orderDate.getMonth() + 1);
       const orderFechaFormateada = orderDate.getFullYear() + '-' + orderMes + '-' + orderDia;
       return orderFechaFormateada === fechaFormateada || (horaActual === 20 && orderFechaFormateada === fechaFormateadaAnterior);
+      // return orderFechaFormateada === fechaFormateadaAnterior || (horaActual === 20 && orderFechaFormateada === fechaFormateadaAnterior); 
     });
 
     // Mapear las órdenes filtradas
@@ -90,78 +91,6 @@ async function ApiOrders() {
     throw new Error("Error al obtener los pedidos de PrestaShop");
   }
 }
-
-
-// async function HistorialOrden(orderId) {
-//   try {
-//     // Primera llamada a la API para obtener el id del historial de la orden
-//     const response1 = await axios.get(
-//       `https://www.kukyflor.com/api/order_histories?filter[id_order]=[${orderId}]&ws_key=ZBR3Q8MEZ3KC16C7Z5CMYYD9V1VFCT3T`
-//     );
-
-//     var Estados = [];
-//     // Parsear la respuesta XML
-//     await new Promise((resolve, reject) => {
-//       parser.parseString(response1.data, (err, result) => {
-//         if (err) {
-//           console.error(err);
-//           reject(new Error("Error al parsear la respuesta XML HistorialOrden1"));
-//         }
-//         const order = result.prestashop.order_histories.order_history;
-//         Estados = order;
-//         resolve();
-//       });
-//     });
-
-//     var estadoEncontrado = false;
-//     const fechaComparacion = new Date('2024-07-01T00:00:00Z');
-
-//     console.log("Estadosssss:",Estados);
-
-//     console.log("Estado mayores" , Estados.length);
-//     if (Estados.length > 0) {
-//       // Asegúrate de que 'Estados' sea siempre un array
-//       const estadosArray = Array.isArray(Estados) ? Estados : [Estados];
-    
-//       for (let i = 0; i < estadosArray.length; i++) {
-//         const estado = estadosArray[i];
-//         var estadodeOrden = estado.$.id;
-//         try {
-//           const response2 = await axios.get(`https://www.kukyflor.com/api/order_histories/${estadodeOrden}?ws_key=ZBR3Q8MEZ3KC16C7Z5CMYYD9V1VFCT3T`);
-    
-//           // Parsear la respuesta XML
-//           await new Promise((resolve, reject) => {
-//             parser.parseString(response2.data, (err, result) => {
-//               if (err) {
-//                 console.error(err);
-//                 reject(new Error("Error al parsear la respuesta XML HistorialOrden2"));
-//               } else {
-//                 const estadoOrden = result.prestashop.order_history;
-//                 console.log("Estado de Order::::::", estadoOrden);
-    
-//                 const fechaEstado = new Date(estadoOrden.date_add.replace(' ', 'T') + 'Z');
-    
-//                 if (result.prestashop.order_history.id_order_state._ === '2' && fechaEstado >= fechaComparacion) {
-//                   estadoEncontrado = true;
-//                 }
-//                 resolve();
-//               }
-//             });
-//           });
-//         } catch (error) {
-//           console.error(error);
-//           throw new Error("Error al obtener el estado de la orden");
-//         }
-//       }
-//     }
-
-//     const estadoFinal = estadoEncontrado ? 2 : 0;
-//     return estadoFinal;
-//   } catch (error) {
-//     console.error(error);
-//     throw new Error("Error al obtener el historial de la orden");
-//   }
-// }
 
 async function HistorialOrden(orderId) {
   try {
@@ -198,7 +127,7 @@ async function HistorialOrden(orderId) {
         // console.log("Este es el estado de orden",estadodeOrden);
         try {
           const response2 = await axios.get(`https://www.kukyflor.com/api/order_histories/${estadodeOrden}?ws_key=ZBR3Q8MEZ3KC16C7Z5CMYYD9V1VFCT3T`);
-    
+
           // Parsear la respuesta XML
           await new Promise((resolve, reject) => {
             parser.parseString(response2.data, (err, result) => {
@@ -208,10 +137,10 @@ async function HistorialOrden(orderId) {
               } else {
                 const estadoOrden = result.prestashop.order_history;
                 // console.log("Estado de Order:", estadoOrden);
-    
+
                 const fechaEstado = new Date(estadoOrden.date_add.replace(' ', 'T') + 'Z');
                 //&& fechaEstado >= fechaComparacion solo se usara por fechas exactas.
-                if (estadoOrden.id_order_state._ == '2' ) {
+                if (estadoOrden.id_order_state._ == '2') {
                   estadoEncontrado = true;
                 }
                 resolve();
@@ -236,7 +165,6 @@ async function HistorialOrden(orderId) {
     return null;
   }
 }
-
 
 async function BuscarORdenPorID(orderId) {
   try {
@@ -339,8 +267,7 @@ async function BuscarORdenPorID(orderId) {
         Telefono: direccionEntrega.address.phone,
       };
     });
-    //prueba de variable
-    // console.log("Esta variable llega como undefined :::::::::::::::::::::::::>",DireccionEntrega.id_direccion);
+
     // Obtencion de Direccion
     const responseDireccionOrden = await axios.get(
       `https://ZBR3Q8MEZ3KC16C7Z5CMYYD9V1VFCT3T@www.kukyflor.com/api/states/${DireccionEntrega.id_direccion}`
@@ -454,6 +381,144 @@ async function BuscarORdenPorID(orderId) {
       };
     });
 
+
+    var ProductosOrden;
+
+    function obtenerDetallesOrden(orderId) {
+      // Realizar la petición a la API para obtener los datos de la orden
+      return axios.get(
+        `https://ZBR3Q8MEZ3KC16C7Z5CMYYD9V1VFCT3T@www.kukyflor.com/api/order_details/${orderId}`
+      )
+        .then(responseOrder => {
+          return parser.parseStringPromise(responseOrder.data);
+        })
+        .then(result => {
+          const Producto = result.prestashop.order_detail;
+          return Producto;
+        })
+        .catch(err => {
+          console.error(`Error al obtener o parsear la orden ${orderId}:`, err);
+        });
+    }
+
+    // Extraer el array de order_rows
+    const orderRows = Pedido.productos.order_rows.order_row;
+    const orderIds = orderRows.map(row => row.id);
+    // Crear una promesa que contiene todas las promesas de obtener los detalles de las órdenes
+    const productosPromise = Promise.all(orderIds.map(orderId => obtenerDetallesOrden(orderId)));
+
+    // Manejar la promesa resultante
+    productosPromise
+      .then(productos => {
+        ProductosOrden = productos;
+      })
+      .catch(err => {
+        console.error('Error al procesar las órdenes:', err);
+      });
+
+
+    // Solicitudes para traer convenio. y detalles de orden
+    const order_cart_rules_ID = await axios.get(
+      `https://ZBR3Q8MEZ3KC16C7Z5CMYYD9V1VFCT3T@www.kukyflor.com/api/order_cart_rules/?filter[id_order]=${Pedido.id}` //se pasa el numero de orden 
+    );
+
+    var Id_Order_cart_rules = { id: null }; // Inicializamos con un valor predeterminado
+
+    parser.parseString(order_cart_rules_ID.data, (err, result) => {
+      if (err) {
+        console.error(err);
+      }
+      const Details = result.prestashop;
+
+      if (Details && Details.order_cart_rules && Details.order_cart_rules.order_cart_rule) {
+        Id_Order_cart_rules.id = Details.order_cart_rules.order_cart_rule.$.id;
+      } else {
+        Id_Order_cart_rules.id = [];
+      }
+    });
+
+    // Solicitudes para traer 
+    var cart_rules = {};
+    var OrderDetails_cart_rules = {};
+
+    if (Id_Order_cart_rules.id.length === 0) {
+      // console.log("No se encontraron reglas de carrito para esta orden.");
+      var OrderDetails_cart_rules = null;
+      var cart_rules = null;
+    } else {
+
+      const order_Details_cart_rules = await axios.get(
+        `https://ZBR3Q8MEZ3KC16C7Z5CMYYD9V1VFCT3T@www.kukyflor.com/api/order_cart_rules/${Id_Order_cart_rules.id}`//se pasa el numero de order_card_rule 
+      );
+
+      parser.parseString(order_Details_cart_rules.data, (err, result) => {
+        if (err) {
+          console.error(err);
+          throw new Error("Error al parsear la respuesta XML");
+        }
+        const Details = result.prestashop.order_cart_rule;
+        OrderDetails_cart_rules = {
+          id: Details.id,
+          id_cart_rule: Details.id_cart_rule,
+          id_order_invoice: Details.id_order_invoice,
+          name: Details.name,
+          value: Details.value,
+          value_tax_excl: Details.value_tax_excl,
+          free_shipping: Details.free_shipping,
+          deleted: Details.deleted
+        };
+      });
+
+      // obtenemos el tipo de descuendto en cart_rules 
+      const Details_cart_rules = await axios.get(
+        `https://ZBR3Q8MEZ3KC16C7Z5CMYYD9V1VFCT3T@www.kukyflor.com/api/cart_rules/${OrderDetails_cart_rules.id_cart_rule}`//se pasa el id_cart_rule de OrderDetails_cart_rules
+      );
+
+      parser.parseString(Details_cart_rules.data, (err, result) => {
+        if (err) {
+          console.error(err);
+          throw new Error("Error al parsear la respuesta XML");
+        }
+        const Details = result.prestashop.cart_rule;
+        cart_rules = {
+          id: Details.id,
+          id_customer: Details.id_customer,
+          date_from: Details.date_from,
+          date_to: Details.date_to,
+          description: Details.description,
+          quantity: Details.quantity,
+          quantity_per_user: Details.quantity_per_user,
+          priority: Details.priority,
+          partial_use: Details.partial_use,
+          code: Details.code,
+          minimum_amount: Details.minimum_amount,
+          minimum_amount_tax: Details.minimum_amount_tax,
+          minimum_amount_currency: Details.minimum_amount_currency,
+          minimum_amount_shipping: Details.minimum_amount_shipping,
+          country_restriction: Details.country_restriction,
+          carrier_restriction: Details.carrier_restriction,
+          group_restriction: Details.group_restriction,
+          cart_rule_restriction: Details.cart_rule_restriction,
+          product_restriction: Details.product_restriction,
+          shop_restriction: Details.shop_restriction,
+          free_shipping: Details.free_shipping,
+          reduction_percent: Details.reduction_percent,
+          reduction_amount: Details.reduction_amount,
+          reduction_tax: Details.reduction_tax,
+          reduction_currency: Details.reduction_currency,
+          reduction_product: Details.reduction_product,
+          reduction_exclude_special: Details.reduction_exclude_special,
+          gift_product: Details.gift_product,
+          gift_product_attribute: Details.gift_product_attribute,
+          highlight: Details.highlight,
+          active: Details.active,
+          date_add: Details.date_add,
+          date_upd: Details.date_upd,
+          // name: Details.name
+        };
+      });
+    }
+
     const ArrayCompleto = {
       Estado,
       SerieDePedido,
@@ -462,14 +527,16 @@ async function BuscarORdenPorID(orderId) {
       IDEntrega_Direccion,
       Card,
       Customer,
-      Pedido
+      Pedido,
+      OrderDetails_cart_rules,
+      cart_rules,
+      ProductosOrden
     };
 
     return ArrayCompleto;
 
   } catch (error) {
     console.error(error);
-    // throw new Error("Error al obtener la orden de PrestaShop");
     return null;
   }
 }
@@ -550,12 +617,12 @@ async function buscarRazonSocialPorDNIRUC(numero) {
       return resultado;
     }
   } catch (error) {
-    console.error("Error Numero de documento: "+ numero  + ' ::: '+error);
+    console.error("Error Numero de documento: " + numero + ' ::: ' + error);
     return 'Número no encontrado';
   }
 }
 
-async function crearCliente(params,paramsAPI) {
+async function crearCliente(params, paramsAPI, Convenio ) {
   // console.log("Estos son mis parametros de lciente",params);
   let pool;
   let transaction;
@@ -750,17 +817,17 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
     request.input('DireccionEntrega', sql.VarChar, paramsOrden.DireccionEntrega.direccion_1);
     request.input('OficinaAlmacenEntregaID', sql.Decimal(6, 3), 1);
     request.input('Referencia', sql.VarChar, paramsOrden.Pedido.gift_message);
-    request.input('Observaciones', sql.VarChar, paramsOrden.DireccionEntrega.Referencia + ', '+ paramsOrden.DireccionEntrega.city + ' , Entro en el siguiente rando de hora ' + paramsOrden.Pedido.ddw_order_time);
+    request.input('Observaciones', sql.VarChar, paramsOrden.DireccionEntrega.Referencia + ', ' + paramsOrden.DireccionEntrega.city + ' , Entro en el siguiente rando de hora ' + paramsOrden.Pedido.ddw_order_time);
     request.input('Contacto', sql.VarChar, paramsOrden.DireccionEntrega.PesonaEntrega);
     // lastname: customer.customer.lastname,
     // firstname: customer.customer.firstname,
     request.input('Cliente', sql.VarChar, ParamsPersona.Estado == '2' ? paramsOrden.Customer.firstname + ' ' + paramsOrden.Customer.lastname : ''); // si existe ya no se escribe nada 
-    request.input('Contactotelefono', sql.VarChar, paramsOrden.DireccionEntrega.Telefono + ' - '+ paramsOrden.DireccionEntrega.phone_mobile);
+    request.input('Contactotelefono', sql.VarChar, paramsOrden.DireccionEntrega.Telefono + ' - ' + paramsOrden.DireccionEntrega.phone_mobile);
     request.input('MotivoID', sql.Decimal(9, 5), 190.00062);
     request.input('CondicionVtaID', sql.Decimal(9, 5), 113.00001);
     request.input('DeliveryTipoID', sql.Decimal(9, 5), 193.00001);
 
-    request.input('Email', sql.NVarChar, ParamsPersona.Estado == '2' ?  paramsOrden.Customer.email : '' ); // si la persona no tiene correo entoncs pasa el del cliente prestashop 
+    request.input('Email', sql.NVarChar, ParamsPersona.Estado == '2' ? paramsOrden.Customer.email : ''); // si la persona no tiene correo entoncs pasa el del cliente prestashop 
 
     function obtenerTurno(ddw_order_time) {
 
@@ -996,174 +1063,6 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
   };
 };
 
-// async function procesarOrdenPrestashop() {
-//   try {
-//     // Obtener las últimas 100 órdenes
-//     // const ordenes = await axios.get("http://localhost:3099/api/orders");
-//     const ordenes = await ApiOrders();
-//     const ordersInfo = ordenes;
-//     console.log("Datos de las órdenes:", ordersInfo);
-//     for (let i = 0; i < ordersInfo.length; i++) {
-//       const orden = ordersInfo[i].Orden;
-//       const resultadoOrdenes = await BuscarOrden(orden);
-//       if (resultadoOrdenes) {
-//         console.log(`Orden ${orden} encontrada:`, resultadoOrdenes);
-//       } else {
-//         console.log(`Orden ${orden} no encontrada`);
-//         // const ordenPorID = await axios.get(`http://localhost:3099/api/orders/${orden}`);
-//         const ordenPorID = await BuscarORdenPorID(orden);
-//         // console.log(ordenPorID);
-//         var DatosDeOrden = ordenPorID;
-//         const EstadoOrden = await HistorialOrden(orden);
-//         // console.log(EstadoOrden);
-//         const VerificacionEstado = EstadoOrden;
-//         // Si es 2 entra si es 0 no entra para estados pasamos al siguiente entraba 5 o 14
-//         if (VerificacionEstado == '2') {
-//           // console.log("Entramos al if");
-//           var cliente = null;
-//           if (DatosDeOrden.SerieDePedido.company == '') {
-//             // console.log("el cliente no tiene DNI");
-//             cliente = await buscarClientePorDNI('00000001');
-//             // console.log(cliente);
-//             if (cliente != null) {
-//               // Procedemos con la creacion del pedido
-//               // console.log("Creamos el pedido");
-//               const pedidoCreado = await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID);
-//               // console.log(pedidoCreado);
-//             }
-//           } else {
-//             // console.log("El cliente si tiene DNI");
-//             // console.log("este es el DNI", DatosDeOrden.SerieDePedido.company);
-//             // Se verifica que si o si tenga 8 y 11.
-//             if (DatosDeOrden.SerieDePedido.company.length === 8 || DatosDeOrden.SerieDePedido.company.length === 11) {
-//               // console.log("Paso verificacion de DNI o RUC");
-//               cliente = await buscarClientePorDNI(DatosDeOrden.SerieDePedido.company);
-//               // console.log("Cliente::::::", cliente );
-//               if (cliente === null) {
-//                 const razonSocial = await buscarRazonSocialPorDNIRUC(DatosDeOrden.SerieDePedido.company);
-//                 // console.log("::::::::::::::::",razonSocial);
-//                 if(razonSocial !== 'Número no encontrado' ){
-//                   const resultadoCreacion = await crearCliente(razonSocial,DatosDeOrden.Customer);
-//                   // if (resultadoCreacion.success) {
-//                   //   // console.log("El cliente se creó correctamente");
-//                   // } else {
-//                   //   // console.log("El cliente no se creó");
-//                   // }
-//                   cliente = await buscarClientePorDNI(DatosDeOrden.SerieDePedido.company);
-//                   if (cliente != null) {
-//                     // Procedemos con la creacion del pedido
-//                     const pedidoCreado = await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID);
-//                     // console.log(pedidoCreado);
-//                   }
-//                 }else{
-//                   // Si no se encontro el DNI de la persona se una la venta del dia.
-//                   cliente = await buscarClientePorDNI('00000001');
-//                   const pedidoCreado = await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID);
-//                 }
-//               } else {
-//                 // cliente = await buscarClientePorDNI('00000001');
-//                 const pedidoCreado = await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID);
-//                 // console.log(pedidoCreado);
-//               }
-//             } else {
-//               // console.log("El numero de identidad no cumple con los requisitos");
-//               // console.log("DNI fallido se creara con Cliente Ventas Dia");
-//               cliente = await buscarClientePorDNI('00000001');
-//               // console.log(cliente);
-//               if (cliente != null) {
-//                 // Procedemos con la creacion del pedido
-//                 // console.log("Creamos el pedido");
-//                 const pedidoCreado = await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID);
-//                 // console.log(pedidoCreado);
-//               }
-//             }
-//           }
-//         }
-//       }
-//     }
-//   } catch (error) {
-//     console.error(error);
-//     throw error;
-//   }
-// }
-
-async function procesarOrdenPrestashop() {
-  try {
-    const ordenes = await ApiOrders();
-    const ordersInfo = ordenes;
-    // console.log("Datos de las órdenes:", ordersInfo);
-
-    for (let i = 0; i < ordersInfo.length; i++) {
-      const orden = ordersInfo[i].Orden;
-      let resultadoOrdenes;
-
-      try {
-        resultadoOrdenes = await BuscarOrden(orden);
-      } catch (error) {
-        console.error(`Error al buscar la orden ${orden}:`, error);
-        continue; // Continua con la siguiente orden en caso de error
-      }
-
-      if (resultadoOrdenes) {
-        // console.log(`Orden ${orden} encontrada:`, resultadoOrdenes);
-      } else {
-        // console.log(`Orden ${orden} no encontrada`);
-        let DatosDeOrden;
-
-        try {
-          DatosDeOrden = await BuscarORdenPorID(orden);
-        } catch (error) {
-          console.error(`Error al buscar la orden por ID ${orden}:`, error);
-          continue; // Continua con la siguiente orden en caso de error
-        }
-
-        if (DatosDeOrden) {
-          const EstadoOrden = await HistorialOrden(orden);
-          const VerificacionEstado = EstadoOrden;
-
-          if (VerificacionEstado == '2') {
-            let cliente = null;
-
-            if (DatosDeOrden.SerieDePedido.company === '' || DatosDeOrden.SerieDePedido.company == '00000000' || DatosDeOrden.SerieDePedido.company == '00000000000') {
-              cliente = await buscarClientePorDNI('00000001');
-              if (cliente) {
-                await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID);
-              }
-            } else {
-              if (DatosDeOrden.SerieDePedido.company.length === 8 || DatosDeOrden.SerieDePedido.company.length === 11) {
-                cliente = await buscarClientePorDNI(DatosDeOrden.SerieDePedido.company);
-                if (cliente === null) {
-                  const razonSocial = await buscarRazonSocialPorDNIRUC(DatosDeOrden.SerieDePedido.company);
-                  if (razonSocial !== 'Número no encontrado') {
-                    await crearCliente(razonSocial, DatosDeOrden.Customer);
-                    cliente = await buscarClientePorDNI(DatosDeOrden.SerieDePedido.company);
-                  } else {
-                    cliente = await buscarClientePorDNI('00000001');
-                  }
-                }
-                if (cliente) {
-                  await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID);
-                }
-              } else {
-                cliente = await buscarClientePorDNI('00000001');
-                if (cliente) {
-                  await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID);
-                }
-              }
-            }
-          }
-        } else {
-          console.log(`No se pudo obtener la información de la orden ${orden}`);
-        }
-      }
-    }
-  } catch (error) {
-    console.error("Error en el procesamiento de órdenes:", error);
-  }
-}
-
-
-
 async function verificacionControlCaja(OficinaID, userId) {
   let pool;
   let result;
@@ -1223,6 +1122,7 @@ async function AperturaCaja(OficinaID, userId, Serie, Fecha) {
   }
 }
 
+// No se encuentra en uso el CierreCaja 
 async function CierreCaja(OficinaID, userId, Serie, IDplantilla, fecha) {
   let pool;
   let result;
@@ -1309,75 +1209,84 @@ async function UpdatePlanilla(EmpresaID, oficinaAlmacenID, PlanillaID, nuevoEsta
   };
 };
 
-
 async function obtenerSeriePlanilla(orden) {
   return orden.nombre.split('/')[0].trim().split('-')[0];
 }
 
-// async function Inicializador() {
-//   const logFilePath = path.join(__dirname, 'logs.txt');
-//   const logStream = fs.createWriteStream(logFilePath, { flags: 'a' });
+async function procesarOrdenPrestashop() {
+  try {
+    const ordenes = await ApiOrders();
+    const ordersInfo = ordenes;
+    // console.log("Datos de las órdenes:", ordersInfo);
 
-//   const originalConsoleLog = console.log;
-//   console.log = function (...args) {
-//     const now = new Date();
-//     const dateString = now.toISOString().replace('T', ' ').replace('Z', '');
-//     args.forEach(arg => {
-//       if (typeof arg === 'object') {
-//         logStream.write(`${dateString} - ${JSON.stringify(arg, null, 2)}\n`);
-//       } else {
-//         logStream.write(`${dateString} - ${arg}\n`);
-//       }
-//     });
-//     originalConsoleLog(...args);
-//   };
-//   console.log('Inicializando...');
-//   console.log('Ejecutando procedimiento');
+    for (let i = 0; i < ordersInfo.length; i++) {
+      const orden = ordersInfo[i].Orden;
+      let resultadoOrdenes;
 
-//   const controlCaja = await verificacionControlCaja(variablesSesion.OficinaAlmacenID, variablesSesion.UsuarioID);
-//   const controlCajaData = controlCaja.result.recordset
-//   const orden0 = controlCajaData.filter(elemento => elemento.orden === 0);
-//   const dia = ((new Date()).getDate()) < 10 ? '0' + ((new Date()).getDate()) : ((new Date()).getDate());
-//   const mes = ((new Date()).getMonth() + 1) < 10 ? '0' + ((new Date()).getMonth() + 1) : ((new Date()).getMonth() + 1);
-//   const fechaFormateada = (new Date()).getFullYear() + '-' + mes + '-' + dia;
+      try {
+        resultadoOrdenes = await BuscarOrden(orden);
+      } catch (error) {
+        console.error(`Error al buscar la orden ${orden}:`, error);
+        continue; // Continua con la siguiente orden en caso de error
+      }
 
-//   console.log(orden0);
+      if (resultadoOrdenes) {
+        // console.log(`Orden ${orden} encontrada:`, resultadoOrdenes);
+      } else {
+        // console.log(`Orden ${orden} no encontrada`);
+        let DatosDeOrden;
 
-//   if (orden0.some(elemento => elemento.estado === '3')) {
-//     console.log("Si se tiene una Planilla Habilitada");
-//     const ordenPlanilla = orden0.find(elemento => elemento.estado === '3');
-//     const planillaID = ordenPlanilla.planillaID;
-//     const SeriePlanilla = await obtenerSeriePlanilla(ordenPlanilla);
-//     // console.log("Esta es la planilla", planillaID);
-//     PlanillaID = planillaID;
-//     console.log(await procesarOrdenPrestashop());
-//   } else {
-//     console.log("no se tiene una planilla habilitada");
+        try {
+          DatosDeOrden = await BuscarORdenPorID(orden);
+        } catch (error) {
+          console.error(`Error al buscar la orden por ID ${orden}:`, error);
+          continue; // Continua con la siguiente orden en caso de error
+        }
 
-//     if (orden0.some(elemento => elemento.estado === '9')) {
-//       // console.log("La planilla esta para apertura");
-//       const ordenApertura = orden0.find(elemento => elemento.estado === '9');
-//       const SeriePlanilla = await obtenerSeriePlanilla(ordenApertura);
-//       await AperturaCaja(variablesSesion.OficinaAlmacenID, variablesSesion.UsuarioID, SeriePlanilla, fechaFormateada);
-//       await Inicializador();
-//     } else if (orden0.some(elemento => elemento.estado === 'S') || orden0.some(elemento => elemento.estado === 'N')) {
-//       // console.log("Se cierra planilla de Ayer");
-//       const ordenCierre = orden0.find(elemento => elemento.estado === 'S' || elemento.estado === 'N');
-//       const SeriePlanilla = await obtenerSeriePlanilla(ordenCierre);
-//       // console.log('Esta es la serie',SeriePlanilla);
-//       const ulimaPlanilla = await UltimaPlanillaCaja();
-//       if (ulimaPlanilla) {
-//         // console.log("Procedemos a cerrar la planilla de caja con estado N o S");
-//         // await CierreCaja(variablesSesion.OficinaAlmacenID, variablesSesion.UsuarioID, SeriePlanilla, ulimaPlanilla.PlanillaID, ulimaPlanilla.FechaCreacion);
-//         await UpdatePlanilla(variablesSesion.EmpresaID, variablesSesion.OficinaAlmacenID, ulimaPlanilla.PlanillaID, 2)
-//       } else {
-//         // console.log("No se encontró ninguna planilla de caja.");
-//       }
-//       await Inicializador();
-//     }
-//   }
-//   console.log('Procedimiento de ordenes completado.');
-// }
+        if (DatosDeOrden) {
+          const EstadoOrden = await HistorialOrden(orden);
+          const VerificacionEstado = EstadoOrden;
+
+          if (VerificacionEstado == '2') {
+            let cliente = null;
+            if (DatosDeOrden.SerieDePedido.company === '' || DatosDeOrden.SerieDePedido.company == '00000000' || DatosDeOrden.SerieDePedido.company == '00000000000') {
+              cliente = await buscarClientePorDNI('00000001');
+              if (cliente) {
+                await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID);
+              }
+            } else {
+              if (DatosDeOrden.SerieDePedido.company.length === 8 || DatosDeOrden.SerieDePedido.company.length === 11) {
+                cliente = await buscarClientePorDNI(DatosDeOrden.SerieDePedido.company);
+                if (cliente === null) {
+                  const razonSocial = await buscarRazonSocialPorDNIRUC(DatosDeOrden.SerieDePedido.company);
+                  if (razonSocial !== 'Número no encontrado') {
+                    await crearCliente(razonSocial, DatosDeOrden.Customer , DatosDeOrden.OrderDetails_cart_rules);
+                    cliente = await buscarClientePorDNI(DatosDeOrden.SerieDePedido.company);
+                  } else {
+                    cliente = await buscarClientePorDNI('00000001');
+                  }
+                }
+                if (cliente) {
+                  await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID);
+                }
+              } else {
+                cliente = await buscarClientePorDNI('00000001');
+                if (cliente) {
+                  await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID);
+                }
+              }
+            }
+          }
+        } else {
+          console.log(`No se pudo obtener la información de la orden ${orden}`);
+        }
+      }
+    }
+  } catch (error) {
+    console.error("Error en el procesamiento de órdenes:", error);
+  }
+}
+
 
 async function Inicializador() {
   const logFilePath = path.join(__dirname, 'logs.txt');
@@ -1399,71 +1308,71 @@ async function Inicializador() {
     originalConsoleLog(...args);
   };
 
-    console.error = function (...args) {
-      const now = new Date();
-      const dateString = now.toISOString().replace('T', ' ').replace('Z', '');
-      args.forEach(arg => {
-          if (typeof arg === 'object' && arg instanceof Error) {
-              // Si el argumento es un objeto de tipo Error, captura su mensaje y pila de llamadas
-              logStream.write(`${dateString} - ERROR: ${arg.message}\n`);
-              logStream.write(`${dateString} - STACK TRACE:\n${arg.stack}\n`);
-          } else if (typeof arg === 'object') {
-              logStream.write(`${dateString} - ERROR: ${JSON.stringify(arg, null, 2)}\n`);
-          } else {
-              logStream.write(`${dateString} - ERROR: ${arg}\n`);
-          }
-      });
-      // Llama a la función original de console.error para que el mensaje también se imprima en la consola
-      originalConsoleError(...args);
+  console.error = function (...args) {
+    const now = new Date();
+    const dateString = now.toISOString().replace('T', ' ').replace('Z', '');
+    args.forEach(arg => {
+      if (typeof arg === 'object' && arg instanceof Error) {
+        // Si el argumento es un objeto de tipo Error, captura su mensaje y pila de llamadas
+        logStream.write(`${dateString} - ERROR: ${arg.message}\n`);
+        logStream.write(`${dateString} - STACK TRACE:\n${arg.stack}\n`);
+      } else if (typeof arg === 'object') {
+        logStream.write(`${dateString} - ERROR: ${JSON.stringify(arg, null, 2)}\n`);
+      } else {
+        logStream.write(`${dateString} - ERROR: ${arg}\n`);
+      }
+    });
+    // Llama a la función original de console.error para que el mensaje también se imprima en la consola
+    originalConsoleError(...args);
   };
 
   console.log('Inicializando...');
   console.log('Ejecutando procedimiento');
 
   // try {
-    const controlCaja = await verificacionControlCaja(variablesSesion.OficinaAlmacenID, variablesSesion.UsuarioID);
-    const controlCajaData = controlCaja.result.recordset
-    const orden0 = controlCajaData.filter(elemento => elemento.orden === 0);
-    const dia = ((new Date()).getDate()) < 10 ? '0' + ((new Date()).getDate()) : ((new Date()).getDate());
-    const mes = ((new Date()).getMonth() + 1) < 10 ? '0' + ((new Date()).getMonth() + 1) : ((new Date()).getMonth() + 1);
-    const fechaFormateada = (new Date()).getFullYear() + '-' + mes + '-' + dia;
+  const controlCaja = await verificacionControlCaja(variablesSesion.OficinaAlmacenID, variablesSesion.UsuarioID);
+  const controlCajaData = controlCaja.result.recordset
+  const orden0 = controlCajaData.filter(elemento => elemento.orden === 0);
+  const dia = ((new Date()).getDate()) < 10 ? '0' + ((new Date()).getDate()) : ((new Date()).getDate());
+  const mes = ((new Date()).getMonth() + 1) < 10 ? '0' + ((new Date()).getMonth() + 1) : ((new Date()).getMonth() + 1);
+  const fechaFormateada = (new Date()).getFullYear() + '-' + mes + '-' + dia;
 
-    // console.log(orden0);
+  // console.log(orden0);
 
-    if (orden0.some(elemento => elemento.estado === '3')) {
-      console.log("Si se tiene una Planilla Habilitada");
-      const ordenPlanilla = orden0.find(elemento => elemento.estado === '3');
-      const planillaID = ordenPlanilla.planillaID;
-      const SeriePlanilla = await obtenerSeriePlanilla(ordenPlanilla);
-      // console.log("Esta es la planilla", planillaID);
-      PlanillaID = planillaID;
-      console.log(await procesarOrdenPrestashop());
-    } else {
-      console.log("no se tiene una planilla habilitada");
+  if (orden0.some(elemento => elemento.estado === '3')) {
+    console.log("Si se tiene una Planilla Habilitada");
+    const ordenPlanilla = orden0.find(elemento => elemento.estado === '3');
+    const planillaID = ordenPlanilla.planillaID;
+    const SeriePlanilla = await obtenerSeriePlanilla(ordenPlanilla);
+    // console.log("Esta es la planilla", planillaID);
+    PlanillaID = planillaID;
+    console.log(await procesarOrdenPrestashop());
+  } else {
+    console.log("no se tiene una planilla habilitada");
 
-      if (orden0.some(elemento => elemento.estado === '9')) {
-        // console.log("La planilla esta para apertura");
-        const ordenApertura = orden0.find(elemento => elemento.estado === '9');
-        const SeriePlanilla = await obtenerSeriePlanilla(ordenApertura);
-        await AperturaCaja(variablesSesion.OficinaAlmacenID, variablesSesion.UsuarioID, SeriePlanilla, fechaFormateada);
-        await Inicializador();
-      } else if (orden0.some(elemento => elemento.estado === 'S') || orden0.some(elemento => elemento.estado === 'N')) {
-        // console.log("Se cierra planilla de Ayer");
-        const ordenCierre = orden0.find(elemento => elemento.estado === 'S' || elemento.estado === 'N');
-        const SeriePlanilla = await obtenerSeriePlanilla(ordenCierre);
-        // console.log('Esta es la serie',SeriePlanilla);
-        const ulimaPlanilla = await UltimaPlanillaCaja();
-        if (ulimaPlanilla) {
-          // console.log("Procedemos a cerrar la planilla de caja con estado N o S");
-          // await CierreCaja(variablesSesion.OficinaAlmacenID, variablesSesion.UsuarioID, SeriePlanilla, ulimaPlanilla.PlanillaID, ulimaPlanilla.FechaCreacion);
-          await UpdatePlanilla(variablesSesion.EmpresaID, variablesSesion.OficinaAlmacenID, ulimaPlanilla.PlanillaID, 2)
-        } else {
-          // console.log("No se encontró ninguna planilla de caja.");
-        }
-        await Inicializador();
+    if (orden0.some(elemento => elemento.estado === '9')) {
+      // console.log("La planilla esta para apertura");
+      const ordenApertura = orden0.find(elemento => elemento.estado === '9');
+      const SeriePlanilla = await obtenerSeriePlanilla(ordenApertura);
+      await AperturaCaja(variablesSesion.OficinaAlmacenID, variablesSesion.UsuarioID, SeriePlanilla, fechaFormateada);
+      await Inicializador();
+    } else if (orden0.some(elemento => elemento.estado === 'S') || orden0.some(elemento => elemento.estado === 'N')) {
+      // console.log("Se cierra planilla de Ayer");
+      const ordenCierre = orden0.find(elemento => elemento.estado === 'S' || elemento.estado === 'N');
+      const SeriePlanilla = await obtenerSeriePlanilla(ordenCierre);
+      // console.log('Esta es la serie',SeriePlanilla);
+      const ulimaPlanilla = await UltimaPlanillaCaja();
+      if (ulimaPlanilla) {
+        // console.log("Procedemos a cerrar la planilla de caja con estado N o S");
+        // await CierreCaja(variablesSesion.OficinaAlmacenID, variablesSesion.UsuarioID, SeriePlanilla, ulimaPlanilla.PlanillaID, ulimaPlanilla.FechaCreacion);
+        await UpdatePlanilla(variablesSesion.EmpresaID, variablesSesion.OficinaAlmacenID, ulimaPlanilla.PlanillaID, 2)
+      } else {
+        // console.log("No se encontró ninguna planilla de caja.");
       }
+      await Inicializador();
     }
-    console.log('Procedimiento de ordenes completado.');
+  }
+  console.log('Procedimiento de ordenes completado.');
 }
 
 

@@ -72,8 +72,9 @@ async function ApiOrders() {
       const orderDia = orderDate.getDate() < 10 ? '0' + orderDate.getDate() : orderDate.getDate();
       const orderMes = (orderDate.getMonth() + 1) < 10 ? '0' + (orderDate.getMonth() + 1) : (orderDate.getMonth() + 1);
       const orderFechaFormateada = orderDate.getFullYear() + '-' + orderMes + '-' + orderDia;
-      return orderFechaFormateada === fechaFormateada || (horaActual === 20 && orderFechaFormateada === fechaFormateadaAnterior);
-      // return orderFechaFormateada === fechaFormateadaAnterior || (horaActual === 20 && orderFechaFormateada === fechaFormateadaAnterior); 
+      // return orderFechaFormateada === fechaFormateada || (horaActual === 20 && orderFechaFormateada === fechaFormateadaAnterior); //por horas
+      // return orderFechaFormateada === fechaFormateadaAnterior || (horaActual === 20 && orderFechaFormateada === fechaFormateadaAnterior);
+      return orderFechaFormateada === fechaFormateada || orderFechaFormateada === fechaFormateadaAnterior; // trae por 2 dias 
     });
 
     // Mapear las órdenes filtradas
@@ -166,7 +167,7 @@ async function HistorialOrden(orderId) {
   }
 }
 
-async function BuscarORdenPorID(orderId) {
+async function BuscarOrdenPorID(orderId) {
   try {
     const response = await axios.get(
       `https://ZBR3Q8MEZ3KC16C7Z5CMYYD9V1VFCT3T@www.kukyflor.com/api/orders/${orderId}`
@@ -383,11 +384,12 @@ async function BuscarORdenPorID(orderId) {
 
 
     var ProductosOrden;
+    var ProductosCategoriaOrden;
 
-    function obtenerDetallesOrden(orderId) {
+    function obtenerDetallesOrden(IDproducto) {
       // Realizar la petición a la API para obtener los datos de la orden
       return axios.get(
-        `https://ZBR3Q8MEZ3KC16C7Z5CMYYD9V1VFCT3T@www.kukyflor.com/api/order_details/${orderId}`
+        `https://ZBR3Q8MEZ3KC16C7Z5CMYYD9V1VFCT3T@www.kukyflor.com/api/order_details/${IDproducto}`
       )
         .then(responseOrder => {
           return parser.parseStringPromise(responseOrder.data);
@@ -397,127 +399,168 @@ async function BuscarORdenPorID(orderId) {
           return Producto;
         })
         .catch(err => {
-          console.error(`Error al obtener o parsear la orden ${orderId}:`, err);
+          console.error(`Error al obtener detalles de producto o parsear la orden ${orderId}:`, err);
+        });
+    }
+
+    function obtenerCategoriaOrden(IDproducto) {
+      // Realizar la petición a la API para obtener los datos de la orden
+      return axios.get(
+        `https://ZBR3Q8MEZ3KC16C7Z5CMYYD9V1VFCT3T@www.kukyflor.com/api/products/${IDproducto}`
+      )
+        .then(responseOrder => {
+          return parser.parseStringPromise(responseOrder.data);
+        })
+        .then(result => {
+          const Producto = result.prestashop.product.id_category_default._;
+          return Producto;
+        })
+        .catch(err => {
+          console.error(`Error al obtener las categorias o parsear la orden ${orderId}:`, err);
         });
     }
 
     // Extraer el array de order_rows
     const orderRows = Pedido.productos.order_rows.order_row;
-    const orderIds = orderRows.map(row => row.id);
+    // Manejo de orderRows dependiendo si es un array o un objeto
+    let orderIds;
+    let orderCategorias;
+    if (Array.isArray(orderRows)) {
+      orderIds = orderRows.map(row => row.id);  // Extraer IDs de un array
+      orderCategorias = orderRows.map(row => row.product_id._);  // Extraer IDs de un array
+    } else if (orderRows && typeof orderRows === 'object') {
+      orderIds = [orderRows.id];  // Extraer ID si es un objeto
+      orderCategorias = [orderRows.product_id._];  // Extraer ID si es un objeto
+    } else {
+      orderIds = [];  // Manejar caso donde orderRows es undefined o null
+      orderCategorias = [];  // Manejar caso donde orderRows es undefined o null
+    }
+
     // Crear una promesa que contiene todas las promesas de obtener los detalles de las órdenes
-    const productosPromise = Promise.all(orderIds.map(orderId => obtenerDetallesOrden(orderId)));
+    const [productos, productosCateg] = await Promise.all([
+      Promise.all(orderIds.map(orderId => obtenerDetallesOrden(orderId))),
+      Promise.all(orderCategorias.map(ProductosID => obtenerCategoriaOrden(ProductosID)))
+    ]);
 
-    // Manejar la promesa resultante
-    productosPromise
-      .then(productos => {
-        ProductosOrden = productos;
-      })
-      .catch(err => {
-        console.error('Error al procesar las órdenes:', err);
-      });
+    // Asigna los resultados a las variables
+    ProductosOrden = productos;
+    ProductosCategoriaOrden = productosCateg;
 
-
-    // Solicitudes para traer convenio. y detalles de orden
+    // Solicitudes para traer convenio y detalles de orden
     const order_cart_rules_ID = await axios.get(
-      `https://ZBR3Q8MEZ3KC16C7Z5CMYYD9V1VFCT3T@www.kukyflor.com/api/order_cart_rules/?filter[id_order]=${Pedido.id}` //se pasa el numero de orden 
+      `https://ZBR3Q8MEZ3KC16C7Z5CMYYD9V1VFCT3T@www.kukyflor.com/api/order_cart_rules/?filter[id_order]=${Pedido.id}`
     );
 
-    var Id_Order_cart_rules = { id: null }; // Inicializamos con un valor predeterminado
+    let Id_Order_cart_rules = []; // Inicializamos como un array
 
+    // Manejo de la respuesta
     parser.parseString(order_cart_rules_ID.data, (err, result) => {
       if (err) {
         console.error(err);
+        return; // Salir si hay un error
       }
       const Details = result.prestashop;
 
-      if (Details && Details.order_cart_rules && Details.order_cart_rules.order_cart_rule) {
-        Id_Order_cart_rules.id = Details.order_cart_rules.order_cart_rule.$.id;
-      } else {
-        Id_Order_cart_rules.id = [];
+      if (Details?.order_cart_rules?.order_cart_rule) {
+        // Aseguramos que sea un array
+        const rules = Array.isArray(Details.order_cart_rules.order_cart_rule)
+          ? Details.order_cart_rules.order_cart_rule
+          : [Details.order_cart_rules.order_cart_rule];
+
+        // Extraemos los IDs
+        Id_Order_cart_rules = rules.map(rule => rule.$.id);
       }
     });
 
-    // Solicitudes para traer 
-    var cart_rules = {};
-    var OrderDetails_cart_rules = {};
+    // Solicitudes para traer detalles
+    let OrderDetails_cart_rules = []; // Inicializa como un array
+    let cart_rules = []; // Inicializa como un array
 
-    if (Id_Order_cart_rules.id.length === 0) {
+    if (Id_Order_cart_rules.length === 0) {
       // console.log("No se encontraron reglas de carrito para esta orden.");
-      var OrderDetails_cart_rules = null;
-      var cart_rules = null;
     } else {
+      // Itera sobre cada ID de regla de carrito
+      for (const id of Id_Order_cart_rules) {
+        try {
+          const order_Details_cart_rules = await axios.get(
+            `https://ZBR3Q8MEZ3KC16C7Z5CMYYD9V1VFCT3T@www.kukyflor.com/api/order_cart_rules/${id}`
+          );
 
-      const order_Details_cart_rules = await axios.get(
-        `https://ZBR3Q8MEZ3KC16C7Z5CMYYD9V1VFCT3T@www.kukyflor.com/api/order_cart_rules/${Id_Order_cart_rules.id}`//se pasa el numero de order_card_rule 
-      );
+          const orderRuleDetails = parser.parseStringPromise(order_Details_cart_rules.data); // Usa la versión basada en promesas
 
-      parser.parseString(order_Details_cart_rules.data, (err, result) => {
-        if (err) {
-          console.error(err);
-          throw new Error("Error al parsear la respuesta XML");
+          const Details = await orderRuleDetails;
+
+          OrderDetails_cart_rules.push({
+            id: Details.prestashop.order_cart_rule.id,
+            id_cart_rule: Details.prestashop.order_cart_rule.id_cart_rule,
+            id_order_invoice: Details.prestashop.order_cart_rule.id_order_invoice,
+            name: Details.prestashop.order_cart_rule.name,
+            value: Details.prestashop.order_cart_rule.value,
+            value_tax_excl: Details.prestashop.order_cart_rule.value_tax_excl,
+            free_shipping: Details.prestashop.order_cart_rule.free_shipping,
+            deleted: Details.prestashop.order_cart_rule.deleted,
+          });
+
+          // Obtener tipo de descuento en cart_rules
+          const Details_cart_rules = await axios.get(
+            `https://ZBR3Q8MEZ3KC16C7Z5CMYYD9V1VFCT3T@www.kukyflor.com/api/cart_rules/${OrderDetails_cart_rules[OrderDetails_cart_rules.length - 1].id_cart_rule}`
+          );
+
+          const cartRuleDetails = parser.parseStringPromise(Details_cart_rules.data); // Usa la versión basada en promesas
+
+          const cartRuleData = await cartRuleDetails;
+
+          cart_rules.push({
+            id: cartRuleData.prestashop.cart_rule.id,
+            id_customer: cartRuleData.prestashop.cart_rule.id_customer,
+            date_from: cartRuleData.prestashop.cart_rule.date_from,
+            date_to: cartRuleData.prestashop.cart_rule.date_to,
+            description: cartRuleData.prestashop.cart_rule.description,
+            quantity: cartRuleData.prestashop.cart_rule.quantity,
+            quantity_per_user: cartRuleData.prestashop.cart_rule.quantity_per_user,
+            priority: cartRuleData.prestashop.cart_rule.priority,
+            partial_use: cartRuleData.prestashop.cart_rule.partial_use,
+            code: cartRuleData.prestashop.cart_rule.code,
+            minimum_amount: cartRuleData.prestashop.cart_rule.minimum_amount,
+            minimum_amount_tax: cartRuleData.prestashop.cart_rule.minimum_amount_tax,
+            minimum_amount_currency: cartRuleData.prestashop.cart_rule.minimum_amount_currency,
+            minimum_amount_shipping: cartRuleData.prestashop.cart_rule.minimum_amount_shipping,
+            country_restriction: cartRuleData.prestashop.cart_rule.country_restriction,
+            carrier_restriction: cartRuleData.prestashop.cart_rule.carrier_restriction,
+            group_restriction: cartRuleData.prestashop.cart_rule.group_restriction,
+            cart_rule_restriction: cartRuleData.prestashop.cart_rule.cart_rule_restriction,
+            product_restriction: cartRuleData.prestashop.cart_rule.product_restriction,
+            shop_restriction: cartRuleData.prestashop.cart_rule.shop_restriction,
+            free_shipping: cartRuleData.prestashop.cart_rule.free_shipping,
+            reduction_percent: cartRuleData.prestashop.cart_rule.reduction_percent,
+            reduction_amount: cartRuleData.prestashop.cart_rule.reduction_amount,
+            reduction_tax: cartRuleData.prestashop.cart_rule.reduction_tax,
+            reduction_currency: cartRuleData.prestashop.cart_rule.reduction_currency,
+            reduction_product: cartRuleData.prestashop.cart_rule.reduction_product,
+            reduction_exclude_special: cartRuleData.prestashop.cart_rule.reduction_exclude_special,
+            gift_product: cartRuleData.prestashop.cart_rule.gift_product,
+            gift_product_attribute: cartRuleData.prestashop.cart_rule.gift_product_attribute,
+            highlight: cartRuleData.prestashop.cart_rule.highlight,
+            active: cartRuleData.prestashop.cart_rule.active,
+            date_add: cartRuleData.prestashop.cart_rule.date_add,
+            date_upd: cartRuleData.prestashop.cart_rule.date_upd,
+          });
+        } catch (error) {
+          console.error("Error al procesar la regla de carrito:", error);
         }
-        const Details = result.prestashop.order_cart_rule;
-        OrderDetails_cart_rules = {
-          id: Details.id,
-          id_cart_rule: Details.id_cart_rule,
-          id_order_invoice: Details.id_order_invoice,
-          name: Details.name,
-          value: Details.value,
-          value_tax_excl: Details.value_tax_excl,
-          free_shipping: Details.free_shipping,
-          deleted: Details.deleted
-        };
-      });
-
-      // obtenemos el tipo de descuendto en cart_rules 
-      const Details_cart_rules = await axios.get(
-        `https://ZBR3Q8MEZ3KC16C7Z5CMYYD9V1VFCT3T@www.kukyflor.com/api/cart_rules/${OrderDetails_cart_rules.id_cart_rule}`//se pasa el id_cart_rule de OrderDetails_cart_rules
-      );
-
-      parser.parseString(Details_cart_rules.data, (err, result) => {
-        if (err) {
-          console.error(err);
-          throw new Error("Error al parsear la respuesta XML");
-        }
-        const Details = result.prestashop.cart_rule;
-        cart_rules = {
-          id: Details.id,
-          id_customer: Details.id_customer,
-          date_from: Details.date_from,
-          date_to: Details.date_to,
-          description: Details.description,
-          quantity: Details.quantity,
-          quantity_per_user: Details.quantity_per_user,
-          priority: Details.priority,
-          partial_use: Details.partial_use,
-          code: Details.code,
-          minimum_amount: Details.minimum_amount,
-          minimum_amount_tax: Details.minimum_amount_tax,
-          minimum_amount_currency: Details.minimum_amount_currency,
-          minimum_amount_shipping: Details.minimum_amount_shipping,
-          country_restriction: Details.country_restriction,
-          carrier_restriction: Details.carrier_restriction,
-          group_restriction: Details.group_restriction,
-          cart_rule_restriction: Details.cart_rule_restriction,
-          product_restriction: Details.product_restriction,
-          shop_restriction: Details.shop_restriction,
-          free_shipping: Details.free_shipping,
-          reduction_percent: Details.reduction_percent,
-          reduction_amount: Details.reduction_amount,
-          reduction_tax: Details.reduction_tax,
-          reduction_currency: Details.reduction_currency,
-          reduction_product: Details.reduction_product,
-          reduction_exclude_special: Details.reduction_exclude_special,
-          gift_product: Details.gift_product,
-          gift_product_attribute: Details.gift_product_attribute,
-          highlight: Details.highlight,
-          active: Details.active,
-          date_add: Details.date_add,
-          date_upd: Details.date_upd,
-          // name: Details.name
-        };
-      });
+      }
     }
+
+    // Unave veridicacion para un mejor manejo
+
+    if (OrderDetails_cart_rules.length === 0) {
+      OrderDetails_cart_rules = null;
+    }
+
+    if (cart_rules.length === 0) {
+      cart_rules = null;
+    }
+
 
     const ArrayCompleto = {
       Estado,
@@ -530,7 +573,8 @@ async function BuscarORdenPorID(orderId) {
       Pedido,
       OrderDetails_cart_rules,
       cart_rules,
-      ProductosOrden
+      ProductosOrden,
+      ProductosCategoriaOrden
     };
 
     return ArrayCompleto;
@@ -538,6 +582,59 @@ async function BuscarORdenPorID(orderId) {
   } catch (error) {
     console.error(error);
     return null;
+  }
+}
+
+// async function obtenerCuponesYCategoriaFiltro(idCupon, idCategoria) {
+//   try {
+//     const response = await axios.get(
+//       `https://www.kukyflor.com/devs/json_cupones.php?token=ZBR3Q8MEZ3KC16C7Z5CMYYD9V1VFCT3T`
+//     );
+
+//     const cupones = response.data;
+
+//     // Filtrar cupones por ID
+//     const cuponFiltrado = cupones.filter(cupon => cupon.id_cart_rule == idCupon);
+
+//     // Filtrar categorías en cada cupón
+//     const cuponConCategoriaFiltrada = cuponFiltrado.map(cupon => {
+//       return {
+//         ...cupon,
+//         categories: cupon.categories.filter(cat => cat.id_category == idCategoria)
+//       };
+//     });
+
+//     return JSON.stringify(cuponConCategoriaFiltrada, null, 2);
+//   } catch (err) {
+//     console.error(`Error al obtener o filtrar cupones:`, err);
+//   }
+// }
+async function obtenerCuponesYCategoriaFiltro(idCupon, idCategoria) {
+  try {
+    const response = await axios.get(
+      `https://www.kukyflor.com/devs/json_cupones.php?token=ZBR3Q8MEZ3KC16C7Z5CMYYD9V1VFCT3T`
+    );
+
+    const cupones = response.data;
+
+    // Filtrar cupones por ID
+    const cuponFiltrado = cupones.filter(cupon => cupon.id_cart_rule == idCupon);
+
+    // Filtrar categorías en cada cupón
+    const cuponConCategoriaFiltrada = cuponFiltrado.map(cupon => {
+      const categorias = cupon.categories == 'No hay categorías asociadas'
+        ? 'No hay categorías asociadas'
+        : cupon.categories.filter(cat => cat.id_category == idCategoria);
+
+      return {
+        ...cupon,
+        categories: categorias
+      };
+    });
+
+    return JSON.stringify(cuponConCategoriaFiltrada, null, 2);
+  } catch (err) {
+    console.error(`Error al obtener o filtrar cupones:`, err);
   }
 }
 
@@ -622,14 +719,33 @@ async function buscarRazonSocialPorDNIRUC(numero) {
   }
 }
 
-async function crearCliente(params, paramsAPI, Convenio ) {
+async function crearCliente(params, paramsAPI, Convenio) {
   // console.log("Estos son mis parametros de lciente",params);
   let pool;
   let transaction;
+  let principalID = null;
+  let resultConvenio;
   try {
     pool = await sql.connect(config);
     transaction = new sql.Transaction(pool);
     await transaction.begin();
+    if (Convenio !== null) {
+      const queryFindPrincipalID = `
+        SELECT PrincipalID
+        FROM tablageneral
+        WHERE PrincipalID LIKE '902.%' AND Abreviatura = @Convenio AND Estado = 1;
+        `;
+      const requestConvenio = new sql.Request(transaction);
+      requestConvenio.input('Convenio', sql.NVarChar, Convenio.name);
+      resultConvenio = await requestConvenio.query(queryFindPrincipalID);
+      if (resultConvenio.recordset.length > 0) {
+        principalID = resultConvenio.recordset[0].PrincipalID;
+
+      } else {
+        principalID = null;
+      }
+    }
+
 
     const query = `
           INSERT INTO dbo.Personeria
@@ -654,7 +770,8 @@ async function crearCliente(params, paramsAPI, Convenio ) {
     request.input('Referencia', sql.VarChar, '');
     request.input('Estado', sql.NVarChar, '1');
     request.input('UsuarioID', sql.Int, 1);
-    request.input('ConvenioID', sql.Decimal(9, 5), 902.00001);
+    // request.input('ConvenioID', sql.Decimal(9, 5), 902.00001);
+    request.input('ConvenioID', sql.Decimal(9, 5), principalID == null ? 902.00001 : principalID);
     request.input('MedioRegistroID', sql.Decimal(9, 5), 900.00001);
     request.input('MedioInformacionID', sql.Decimal(9, 5), 901.00001);
     request.input('Telefonos', sql.NVarChar, '');
@@ -819,15 +936,13 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
     request.input('Referencia', sql.VarChar, paramsOrden.Pedido.gift_message);
     request.input('Observaciones', sql.VarChar, paramsOrden.DireccionEntrega.Referencia + ', ' + paramsOrden.DireccionEntrega.city + ' , Entro en el siguiente rando de hora ' + paramsOrden.Pedido.ddw_order_time);
     request.input('Contacto', sql.VarChar, paramsOrden.DireccionEntrega.PesonaEntrega);
-    // lastname: customer.customer.lastname,
-    // firstname: customer.customer.firstname,
     request.input('Cliente', sql.VarChar, ParamsPersona.Estado == '2' ? paramsOrden.Customer.firstname + ' ' + paramsOrden.Customer.lastname : ''); // si existe ya no se escribe nada 
     request.input('Contactotelefono', sql.VarChar, paramsOrden.DireccionEntrega.Telefono + ' - ' + paramsOrden.DireccionEntrega.phone_mobile);
     request.input('MotivoID', sql.Decimal(9, 5), 190.00062);
     request.input('CondicionVtaID', sql.Decimal(9, 5), 113.00001);
     request.input('DeliveryTipoID', sql.Decimal(9, 5), 193.00001);
 
-    request.input('Email', sql.NVarChar, ParamsPersona.Estado == '2' ? paramsOrden.Customer.email : ''); // si la persona no tiene correo entoncs pasa el del cliente prestashop 
+    request.input('Email', sql.NVarChar, ParamsPersona.Estado == '2' ? paramsOrden.Customer.email : ''); // si es 2 significa que es ventasDia y no tiene email pasa el cliente prestashop 
 
     function obtenerTurno(ddw_order_time) {
 
@@ -878,67 +993,81 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
     // console.log(params);
     let ConsecutivoProducto = 0;
 
-    const orderRows = paramsOrden.Pedido.productos.order_rows.order_row;
-    // console.log("Estos son mis productos",orderRows);
-    let cantidadProductos;
-    if (Array.isArray(orderRows)) {
-      cantidadProductos = orderRows.length;
-    } else {
-      cantidadProductos = 1;
-    }
+    for (let i = 0; i < paramsOrden.ProductosOrden.length; i++) {
+      let producto = paramsOrden.ProductosOrden[i];
+      let productoCategoria = paramsOrden.ProductosCategoriaOrden[i];
 
-    for (let i = 0; i < cantidadProductos; i++) {
-      // console.log("Entramos al procedimiento de agregar productos");
-      let producto;
-      if (Array.isArray(orderRows)) {
-        producto = orderRows[i];
-      } else {
-        // Si orderRows no es un array, asumimos que es un objeto con un solo elemento
-        producto = orderRows;
-      }
-      // console.log(producto); // Muestra el producto actual para verificar
-
-      // const requestPrecio = pool.request();
+      // Consulta de producto
       const requestPrecio = new sql.Request(transaction);
-      const productoERP = `
-        select * from producto WHERE CodigoAlterno = @CodigoAlterno;`;
-      const referenciaPura = producto.product_reference.includes('-')
-        ? producto.product_reference.split('-')[0]
-        : producto.product_reference.trim();
-
-      // requestPrecio.transaction = transaction;
+      const productoERP = `SELECT * FROM producto WHERE CodigoAlterno = @CodigoAlterno;`;
+      const referenciaPura = producto.product_reference.trim();
       requestPrecio.input('CodigoAlterno', sql.VarChar, referenciaPura);
-      // console.log("Este es el producto referencia");
-      // console.log(producto.product_reference);
+
       const resultPrecio = await requestPrecio.query(productoERP);
 
-      // const precioProducto = resultPrecio.recordset[0].Contado;
-      const ProductoID = resultPrecio.recordset[0].ProductoID;
-      const UMContenidoID = resultPrecio.recordset[0].UMUnitarioID;
+      const productoData = resultPrecio.recordset[0]; //resultPrecio hace referencia a precio general del producto buscado por referencia
+      const ProductoID = productoData.ProductoID;
+      const UMContenidoID = productoData.UMUnitarioID;
 
-      // if (resultPrecio.recordset.length === 0) {
-      //   console.log("Se cancela el proceso no se encontro producto");
-      //   await transaction.rollback();
-      // } 
-
-      // const request2 = pool.request();
+      // Inserción en VentaPedidoDetalle
       const request2 = new sql.Request(transaction);
       const query1 = `
-          INSERT INTO VentaPedidoDetalle
-            (EmpresaID, OficinaAlmacenID, PedidoID, Consecutivo, ProductoID, cantidad, valorunitario, preciounitario, PorcentajeDescuento, descuento, FechaEntrega, UMUnitarioID, observaciones, Estado, UsuarioID, FechaCreacion, FechaModificacion)
-            VALUES
-            (1, @OficinaAlmacenID,
-          @PedidoID, @Consecutivo, @ProductoID, @cantidad, 0.0, @preciounitario, 0.0, @descuento, @FechaEntrega, @UMUnitarioID, '', 1, @UsuarioID, CONVERT(datetime,@FechaCreacion, 120), CONVERT(datetime,@FechaEdicion, 120));`;
+        INSERT INTO VentaPedidoDetalle
+        (EmpresaID, OficinaAlmacenID, PedidoID, Consecutivo, ProductoID, cantidad, valorunitario, preciounitario, PorcentajeDescuento, descuento, FechaEntrega, UMUnitarioID, observaciones, Estado, UsuarioID, FechaCreacion, FechaModificacion)
+        VALUES
+        (1, @OficinaAlmacenID, @PedidoID, @Consecutivo, @ProductoID, @cantidad, 0.0, @preciounitario, @descuento, 0.0, @FechaEntrega, @UMUnitarioID, '', 1, @UsuarioID, CONVERT(datetime, @FechaCreacion, 120), CONVERT(datetime, @FechaEdicion, 120));
+      `;
 
-      // request2.transaction = transaction;
       request2.input('OficinaAlmacenID', sql.Decimal(6, 3), variablesSesion.OficinaAlmacenID);
       request2.input('PedidoID', sql.Int, newPedidoID);
       request2.input('Consecutivo', sql.Int, i + 1);
       ConsecutivoProducto = i + 1;
       request2.input('ProductoID', sql.Int, ProductoID);
-      request2.input('cantidad', sql.Decimal(12, 4), producto.product_quantity);
-      request2.input('preciounitario', sql.Decimal(18, 9), producto.unit_price_tax_incl);
-      request2.input('descuento', sql.Decimal(18, 9), 0.00);
+      request2.input('cantidad', sql.Decimal(12, 4), parseFloat(producto.product_quantity));
+      request2.input('preciounitario', sql.Decimal(18, 9), parseFloat(producto.unit_price_tax_incl));
+
+      // let PorcentajeDescuento = 0.00; // Valor por defecto
+      // if (paramsOrden.OrderDetails_cart_rules !== null) {
+      //   const cupon = await obtenerCuponesYCategoriaFiltro(paramsOrden.OrderDetails_cart_rules[0].id_cart_rule, productoCategoria);
+      //   const cuponParsed = JSON.parse(cupon);
+      //   console.log("Este es el resultado de el cuponParsed", cuponParsed);
+      //   if (cuponParsed.length > 0) {
+      //     PorcentajeDescuento = parseFloat(cuponParsed[0].reduction_percent);
+      //   } else {
+      //     PorcentajeDescuento = 0.00; // Valor por defecto
+      //   }
+      // }
+
+      let PorcentajeDescuento = 0.00; // Valor por defecto
+
+      if (paramsOrden.OrderDetails_cart_rules !== null) {
+        const cupon = await obtenerCuponesYCategoriaFiltro(paramsOrden.OrderDetails_cart_rules[0].id_cart_rule, productoCategoria);
+        const cuponParsed = JSON.parse(cupon);
+        // console.log("Este es el resultado de el cuponParsed"+"En la orden"+ paramsOrden.Pedido.id + " ", cuponParsed );
+        // console.log("Datos enviados");
+        // console.log(paramsOrden.OrderDetails_cart_rules[0].id_cart_rule);
+        // console.log(productoCategoria);
+        // console.log(":::::::::::::::::::::::::>");
+        if (cuponParsed.length > 0) {
+          const categorias = cuponParsed[0].categories;
+
+          if (typeof categorias === 'string' && categorias === 'No hay categorías asociadas') {
+            // Si hay un cupón pero el mensaje indica que no hay categorías
+            PorcentajeDescuento = parseFloat(cuponParsed[0].reduction_percent);
+          } else if (Array.isArray(categorias) && categorias.length === 0) {
+            // Si hay un cupón pero no tiene categorías
+            PorcentajeDescuento = 0.00; // No se aplica descuento
+          } else {
+            // Si hay un cupón y tiene categorías
+            PorcentajeDescuento = parseFloat(cuponParsed[0].reduction_percent);
+          }
+        } else {
+          // Si no se encuentra el cupón
+          PorcentajeDescuento = 0.00; // Valor por defecto
+        }
+      }
+
+      request2.input('descuento', sql.Decimal(18, 9), PorcentajeDescuento);
       request2.input('FechaEntrega', sql.NVarChar, paramsOrden.Pedido.ddw_order_date);
       request2.input('FechaCreacion', sql.NVarChar, paramsOrden.Pedido.date_add);
       request2.input('FechaEdicion', sql.NVarChar, paramsOrden.Pedido.date_upd);
@@ -946,26 +1075,19 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
       request2.input('UsuarioID', sql.Int, variablesSesion.UsuarioID);
       await request2.query(query1);
     }
+
     // Insertar el delivery como producto
-    // const requestPrecioDelivery = pool.request();
     const requestPrecioDelivery = new sql.Request(transaction);
     const productoERPDelivery = `
         select * from producto WHERE CodigoAlterno = @CodigoAlterno;`;
     // requestPrecioDelivery.transaction = transaction;
     requestPrecioDelivery.input('CodigoAlterno', sql.VarChar, paramsOrden.IDEntrega_Direccion.id);
+
     const resultPrecioDelivery = await requestPrecioDelivery.query(productoERPDelivery);
-    // console.log("Este es el resultado de mi Delivery");
-    // console.log(resultPrecioDelivery);
-    // const precioProductoDelivery = resultPrecioDelivery.recordset[0].Contado;
     const ProductoIDDelivery = resultPrecioDelivery.recordset[0].ProductoID;
     const UMContenidoIDDelivery = resultPrecioDelivery.recordset[0].UMUnitarioID;
 
-    // if (resultPrecioDelivery.recordset.length === 0) {
-    //   console.log("Se cancela el proceso no se encontro delivery");
-    //   await transaction.rollback();
-    // } 
 
-    // const request5 = pool.request();
     const request5 = new sql.Request(transaction);;
     const query5 = `
                 INSERT INTO VentaPedidoDetalle
@@ -1237,13 +1359,14 @@ async function procesarOrdenPrestashop() {
         let DatosDeOrden;
 
         try {
-          DatosDeOrden = await BuscarORdenPorID(orden);
+          DatosDeOrden = await BuscarOrdenPorID(orden);
         } catch (error) {
           console.error(`Error al buscar la orden por ID ${orden}:`, error);
           continue; // Continua con la siguiente orden en caso de error
         }
 
         if (DatosDeOrden) {
+          // console.log("Estos son los datos de orden", DatosDeOrden);
           const EstadoOrden = await HistorialOrden(orden);
           const VerificacionEstado = EstadoOrden;
 
@@ -1260,7 +1383,7 @@ async function procesarOrdenPrestashop() {
                 if (cliente === null) {
                   const razonSocial = await buscarRazonSocialPorDNIRUC(DatosDeOrden.SerieDePedido.company);
                   if (razonSocial !== 'Número no encontrado') {
-                    await crearCliente(razonSocial, DatosDeOrden.Customer , DatosDeOrden.OrderDetails_cart_rules);
+                    await crearCliente(razonSocial, DatosDeOrden.Customer, DatosDeOrden.OrderDetails_cart_rules !== null && DatosDeOrden.OrderDetails_cart_rules.active == 1 ? DatosDeOrden.OrderDetails_cart_rules : null);
                     cliente = await buscarClientePorDNI(DatosDeOrden.SerieDePedido.company);
                   } else {
                     cliente = await buscarClientePorDNI('00000001');

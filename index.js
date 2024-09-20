@@ -872,12 +872,19 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
     // console.log("Orden",paramsOrden.Pedido.id);
     // console.log("Serie enviada",tipoSerie);
     // console.log("-----------------------------");
-    var seriePedido = 103.00003;
-    if (tipoSerie == 'BO') {
-      seriePedido = 103.00003;
-    } else if (tipoSerie == 'FA') {
-      seriePedido = 103.00001;
+    let seriePedido = 103.00003; // Valor por defecto
+
+    if (ParamsPersona.Estado == '1') {
+      if (tipoSerie == 'BO' && ParamsPersona.NroIdentidad.length == 8) {
+        seriePedido = 103.00003; // Boleta
+      } else if (tipoSerie == 'FA' && ParamsPersona.NroIdentidad.length == 11) {
+        seriePedido = 103.00001; // Factura
+      } else {
+        throw new Error('NroIdentidad no válido para el tipo de serie. en la orden ' + paramsOrden.Pedido.id);
+      }
     }
+
+
 
     //Extraccion de numero de serie
     const queryDocRelativo = `
@@ -1000,8 +1007,14 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
       // Consulta de producto
       const requestPrecio = new sql.Request(transaction);
       const productoERP = `SELECT * FROM producto WHERE CodigoAlterno = @CodigoAlterno;`;
+
+      if (!producto.product_reference || producto.product_reference.trim() === '') {
+        throw new Error(`Producto no se podrá buscar en ERP: ProductoID ${producto.ProductoID || 'desconocido'} tiene una referencia vacía o no válida.`);
+      }
+
       const referenciaPura = producto.product_reference.trim();
       requestPrecio.input('CodigoAlterno', sql.VarChar, referenciaPura);
+
 
       const resultPrecio = await requestPrecio.query(productoERP);
 

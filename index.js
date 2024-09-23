@@ -13,7 +13,7 @@ const config = {
   user: "kuky",
   password: "Kf123456",
   server: "3.144.237.208",
-  database: "kflor", //prueba_
+  database: "prueba_kflor", //prueba_
   options: {
     encrypt: false, // Si estás utilizando Azure, establece esto en true
   },
@@ -875,12 +875,8 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
     let seriePedido = 103.00003; // Valor por defecto
 
     if (ParamsPersona.Estado == '1') {
-      if (tipoSerie == 'BO' && ParamsPersona.NroIdentidad.length == 8) {
-        seriePedido = 103.00003; // Boleta
-      } else if (tipoSerie == 'FA' && ParamsPersona.NroIdentidad.length == 11) {
+      if (tipoSerie == 'FA' && ParamsPersona.NroIdentidad.length == 11) {
         seriePedido = 103.00001; // Factura
-      } else {
-        throw new Error('NroIdentidad no válido para el tipo de serie. en la orden ' + paramsOrden.Pedido.id);
       }
     }
 
@@ -919,7 +915,7 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
         (EmpresaID, OficinaAlmacenID, SeriePedido, NumeroPedido, PersoneriaID, DireccionID, VendedorID, CondicionVtaID, MonedaID, ListaPrecioID, Fecha, TipoEntrega, FechaEntrega, DireccionEntrega, OficinaAlmacenEntregaID, Referencia, Observaciones, Cliente, Contacto, Contactotelefono, MotivoID, DeliveryTipoID, DeliveryTurnoID, TipoDocID, ValorPedido, PrecioPedido, TipoCambio, Estado, UsuarioID, FechaCreacion, FechaModificacion, TipoVenta, Gratuita, PlanillaID, ConvenioID, WebID,TookanID
               ,email)
         VALUES
-        (1, @OficinaAlmacenID, @SerieCorrelativo, @NumeroPedido, @PersoneriaID, @DireccionID, @Vendedor, @CondicionVtaID, @MonedaID, @ListaPrecioID, CONVERT(datetime,@Fecha, 120), @TipoEntrega, CONVERT(datetime,@FechaEntrega, 120) , @DireccionEntrega, @OficinaAlmacenEntregaID, @Referencia, @Observaciones, @Cliente, @Contacto, @Contactotelefono, @MotivoID, @DeliveryTipoID, @DeliveryTurnoID, @TipoDocID, @ValorPedido, @PrecioPedido, 0.00000, '1', @UsuarioID, CONVERT(datetime,@FechaCreacion, 120), CONVERT(datetime,@FechaEdicion, 120), @TipoVenta, @HabilitarFecha, @IDPlanilla, @ConvenioID, @WebID, null ,@Email);
+        (1, @OficinaAlmacenID, @SerieCorrelativo, @NumeroPedido, @PersoneriaID, @DireccionID, @Vendedor, @CondicionVtaID, @MonedaID, @ListaPrecioID, CONVERT(datetime,@Fecha, 120), @TipoEntrega, CONVERT(datetime,@FechaEntrega, 120) , @DireccionEntrega, @OficinaAlmacenEntregaID, @Referencia, @Observaciones, @Cliente, @Contacto, @Contactotelefono, @MotivoID, @DeliveryTipoID, @DeliveryTurnoID, @TipoDocID, @ValorPedido, @PrecioPedido, 0.00000, '1', @UsuarioID, GETDATE(), GETDATE(), @TipoVenta, @HabilitarFecha, @IDPlanilla, @ConvenioID, @WebID, null ,@Email);
       SELECT SCOPE_IDENTITY() AS LastInsertedID;
       `;
 
@@ -935,9 +931,9 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
     request.input('ListaPrecioID', sql.Decimal(9, 5), 108.00001);
     request.input('TipoEntrega', sql.Int, 2);
     request.input('FechaEntrega', sql.NVarChar, paramsOrden.Pedido.ddw_order_date);
-    request.input('FechaCreacion', sql.NVarChar, paramsOrden.Pedido.date_add);
-    request.input('FechaEdicion', sql.NVarChar, paramsOrden.Pedido.date_upd);
-    request.input('Fecha', sql.NVarChar, paramsOrden.Pedido.date_add);
+    // request.input('FechaCreacion', sql.NVarChar, ); //paramsOrden.Pedido.date_add parametro anterior CONVERT(datetime,@FechaCreacion, 120)
+    // request.input('FechaEdicion', sql.NVarChar, ); // paramsOrden.Pedido.date_upd parametro anterior CONVERT(datetime,@FechaEdicion, 120)
+    request.input('Fecha', sql.NVarChar, paramsOrden.Pedido.date_add); 
     request.input('DireccionEntrega', sql.VarChar, paramsOrden.DireccionEntrega.direccion_1);
     request.input('OficinaAlmacenEntregaID', sql.Decimal(6, 3), 1);
     request.input('Referencia', sql.VarChar, paramsOrden.Pedido.gift_message);
@@ -1028,7 +1024,7 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
         INSERT INTO VentaPedidoDetalle
         (EmpresaID, OficinaAlmacenID, PedidoID, Consecutivo, ProductoID, cantidad, valorunitario, preciounitario, PorcentajeDescuento, descuento, FechaEntrega, UMUnitarioID, observaciones, Estado, UsuarioID, FechaCreacion, FechaModificacion)
         VALUES
-        (1, @OficinaAlmacenID, @PedidoID, @Consecutivo, @ProductoID, @cantidad, 0.0, @preciounitario, @descuento, 0.0, @FechaEntrega, @UMUnitarioID, '', 1, @UsuarioID, CONVERT(datetime, @FechaCreacion, 120), CONVERT(datetime, @FechaEdicion, 120));
+        (1, @OficinaAlmacenID, @PedidoID, @Consecutivo, @ProductoID, @cantidad, 0.0, @preciounitario, @descuento, 0.0, @FechaEntrega, @UMUnitarioID, '', 1, @UsuarioID, GETDATE(), GETDATE());
       `;
 
       request2.input('OficinaAlmacenID', sql.Decimal(6, 3), variablesSesion.OficinaAlmacenID);
@@ -1039,28 +1035,12 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
       request2.input('cantidad', sql.Decimal(12, 4), parseFloat(producto.product_quantity));
       request2.input('preciounitario', sql.Decimal(18, 9), parseFloat(producto.unit_price_tax_incl));
 
-      // let PorcentajeDescuento = 0.00; // Valor por defecto
-      // if (paramsOrden.OrderDetails_cart_rules !== null) {
-      //   const cupon = await obtenerCuponesYCategoriaFiltro(paramsOrden.OrderDetails_cart_rules[0].id_cart_rule, productoCategoria);
-      //   const cuponParsed = JSON.parse(cupon);
-      //   console.log("Este es el resultado de el cuponParsed", cuponParsed);
-      //   if (cuponParsed.length > 0) {
-      //     PorcentajeDescuento = parseFloat(cuponParsed[0].reduction_percent);
-      //   } else {
-      //     PorcentajeDescuento = 0.00; // Valor por defecto
-      //   }
-      // }
-
       let PorcentajeDescuento = 0.00; // Valor por defecto
 
       if (paramsOrden.OrderDetails_cart_rules !== null) {
         const cupon = await obtenerCuponesYCategoriaFiltro(paramsOrden.OrderDetails_cart_rules[0].id_cart_rule, productoCategoria);
         const cuponParsed = JSON.parse(cupon);
-        // console.log("Este es el resultado de el cuponParsed"+"En la orden"+ paramsOrden.Pedido.id + " ", cuponParsed );
-        // console.log("Datos enviados");
-        // console.log(paramsOrden.OrderDetails_cart_rules[0].id_cart_rule);
-        // console.log(productoCategoria);
-        // console.log(":::::::::::::::::::::::::>");
+
         if (cuponParsed.length > 0) {
           const categorias = cuponParsed[0].categories;
 
@@ -1082,8 +1062,8 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
 
       request2.input('descuento', sql.Decimal(18, 9), PorcentajeDescuento);
       request2.input('FechaEntrega', sql.NVarChar, paramsOrden.Pedido.ddw_order_date);
-      request2.input('FechaCreacion', sql.NVarChar, paramsOrden.Pedido.date_add);
-      request2.input('FechaEdicion', sql.NVarChar, paramsOrden.Pedido.date_upd);
+      // request2.input('FechaCreacion', sql.NVarChar, paramsOrden.Pedido.date_add);
+      // request2.input('FechaEdicion', sql.NVarChar, paramsOrden.Pedido.date_upd);
       request2.input('UMUnitarioID', sql.Decimal(9, 5), UMContenidoID);
       request2.input('UsuarioID', sql.Int, variablesSesion.UsuarioID);
       await request2.query(query1);
@@ -1106,7 +1086,7 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
                 INSERT INTO VentaPedidoDetalle
                   (EmpresaID, OficinaAlmacenID, PedidoID, Consecutivo, ProductoID, cantidad, valorunitario, preciounitario, PorcentajeDescuento, descuento, FechaEntrega, UMUnitarioID, observaciones, Estado, UsuarioID, FechaCreacion, FechaModificacion)
                   VALUES
-                  (1, @OficinaAlmacenID, @PedidoID, @Consecutivo, @ProductoID, @cantidad, 0.0, @preciounitario, 0.0, @descuento, CONVERT(datetime,@FechaEntrega, 120), @UMUnitarioID, '', 1, @UsuarioID, CONVERT(datetime,@FechaCreacion, 120), CONVERT(datetime,@FechaEdicion, 120));`;
+                  (1, @OficinaAlmacenID, @PedidoID, @Consecutivo, @ProductoID, @cantidad, 0.0, @preciounitario, 0.0, @descuento, CONVERT(datetime,@FechaEntrega, 120), @UMUnitarioID, '', 1, @UsuarioID, GETDATE(), GETDATE());`;
 
     // request5.transaction = transaction;
     request5.input('OficinaAlmacenID', sql.Decimal(6, 3), variablesSesion.OficinaAlmacenID);
@@ -1117,8 +1097,8 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
     request5.input('preciounitario', sql.Decimal(18, 9), paramsOrden.Pedido.total_shipping);
     request5.input('descuento', sql.Decimal(18, 9), 0.00);
     request5.input('FechaEntrega', sql.NVarChar, paramsOrden.Pedido.ddw_order_date);
-    request5.input('FechaCreacion', sql.NVarChar, paramsOrden.Pedido.date_add);
-    request5.input('FechaEdicion', sql.NVarChar, paramsOrden.Pedido.date_upd);
+    // request5.input('FechaCreacion', sql.NVarChar, paramsOrden.Pedido.date_add);
+    // request5.input('FechaEdicion', sql.NVarChar, paramsOrden.Pedido.date_upd);
     request5.input('UMUnitarioID', sql.Decimal(9, 5), UMContenidoIDDelivery);
     request5.input('UsuarioID', sql.Int, variablesSesion.UsuarioID);
     await request5.query(query5);
@@ -1462,8 +1442,8 @@ async function Inicializador() {
     originalConsoleError(...args);
   };
 
-  console.log('Inicializando...');
-  console.log('Ejecutando procedimiento');
+  // console.log('Inicializando...');
+  // console.log('Ejecutando procedimiento');
 
   // try {
   const controlCaja = await verificacionControlCaja(variablesSesion.OficinaAlmacenID, variablesSesion.UsuarioID);
@@ -1476,7 +1456,7 @@ async function Inicializador() {
   // console.log(orden0);
 
   if (orden0.some(elemento => elemento.estado === '3')) {
-    console.log("Si se tiene una Planilla Habilitada");
+    // console.log("Si se tiene una Planilla Habilitada");
     const ordenPlanilla = orden0.find(elemento => elemento.estado === '3');
     const planillaID = ordenPlanilla.planillaID;
     const SeriePlanilla = await obtenerSeriePlanilla(ordenPlanilla);
@@ -1484,7 +1464,7 @@ async function Inicializador() {
     PlanillaID = planillaID;
     console.log(await procesarOrdenPrestashop());
   } else {
-    console.log("no se tiene una planilla habilitada");
+    // console.log("no se tiene una planilla habilitada");
 
     if (orden0.some(elemento => elemento.estado === '9')) {
       // console.log("La planilla esta para apertura");
@@ -1508,7 +1488,7 @@ async function Inicializador() {
       await Inicializador();
     }
   }
-  console.log('Procedimiento de ordenes completado.');
+  // console.log('Procedimiento de ordenes completado.');
 }
 
 

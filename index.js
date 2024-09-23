@@ -1332,7 +1332,7 @@ async function procesarOrdenPrestashop() {
   try {
     const ordenes = await ApiOrders();
     const ordersInfo = ordenes;
-    console.log("Datos de las órdenes:", ordersInfo);
+    // console.log("Datos de las órdenes:", ordersInfo);
 
     for (let i = 0; i < ordersInfo.length; i++) {
       const orden = ordersInfo[i].Orden;

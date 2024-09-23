@@ -13,7 +13,7 @@ const config = {
   user: "kuky",
   password: "Kf123456",
   server: "3.144.237.208",
-  database: "prueba_kflor", //prueba_
+  database: "kflor", //prueba_
   options: {
     encrypt: false, // Si estás utilizando Azure, establece esto en true
   },
@@ -1332,7 +1332,7 @@ async function procesarOrdenPrestashop() {
   try {
     const ordenes = await ApiOrders();
     const ordersInfo = ordenes;
-    // console.log("Datos de las órdenes:", ordersInfo);
+    console.log("Datos de las órdenes:", ordersInfo);
 
     for (let i = 0; i < ordersInfo.length; i++) {
       const orden = ordersInfo[i].Orden;

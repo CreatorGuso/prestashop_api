@@ -24339,3 +24339,835 @@ TypeError: Cannot read properties of undefined (reading 'ProductoID')
     at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1386:19)
     at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1465:17)
 2024-09-23 16:09:44.266 - undefined
+2024-09-23 21:05:18.354 - Datos de las órdenes:
+2024-09-23 21:05:18.354 - [
+  {
+    "Orden": "101219",
+    "OrdenDeRegistro": 101219,
+    "PersoneriaID": {
+      "_": "94413",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/94413"
+      }
+    },
+    "FechadeOrden": "2024-09-22 14:07:30"
+  },
+  {
+    "Orden": "101228",
+    "OrdenDeRegistro": 101228,
+    "PersoneriaID": {
+      "_": "59037",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/59037"
+      }
+    },
+    "FechadeOrden": "2024-09-23 09:32:33"
+  },
+  {
+    "Orden": "101233",
+    "OrdenDeRegistro": 101233,
+    "PersoneriaID": {
+      "_": "85757",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/85757"
+      }
+    },
+    "FechadeOrden": "2024-09-22 14:07:30"
+  },
+  {
+    "Orden": "101271",
+    "OrdenDeRegistro": 101271,
+    "PersoneriaID": {
+      "_": "94496",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/94496"
+      }
+    },
+    "FechadeOrden": "2024-09-22 18:32:49"
+  },
+  {
+    "Orden": "101281",
+    "OrdenDeRegistro": 101281,
+    "PersoneriaID": {
+      "_": "94524",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/94524"
+      }
+    },
+    "FechadeOrden": "2024-09-22 17:36:53"
+  },
+  {
+    "Orden": "101290",
+    "OrdenDeRegistro": 101290,
+    "PersoneriaID": {
+      "_": "94538",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/94538"
+      }
+    },
+    "FechadeOrden": "2024-09-23 09:32:32"
+  },
+  {
+    "Orden": "101305",
+    "OrdenDeRegistro": 101305,
+    "PersoneriaID": {
+      "_": "94568",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/94568"
+      }
+    },
+    "FechadeOrden": "2024-09-22 14:07:30"
+  },
+  {
+    "Orden": "101306",
+    "OrdenDeRegistro": 101306,
+    "PersoneriaID": {
+      "_": "94571",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/94571"
+      }
+    },
+    "FechadeOrden": "2024-09-22 17:18:09"
+  },
+  {
+    "Orden": "101308",
+    "OrdenDeRegistro": 101308,
+    "PersoneriaID": {
+      "_": "94585",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/94585"
+      }
+    },
+    "FechadeOrden": "2024-09-23 09:32:31"
+  },
+  {
+    "Orden": "101321",
+    "OrdenDeRegistro": 101321,
+    "PersoneriaID": {
+      "_": "28782",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/28782"
+      }
+    },
+    "FechadeOrden": "2024-09-22 10:06:06"
+  },
+  {
+    "Orden": "101322",
+    "OrdenDeRegistro": 101322,
+    "PersoneriaID": {
+      "_": "94618",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/94618"
+      }
+    },
+    "FechadeOrden": "2024-09-22 14:07:29"
+  },
+  {
+    "Orden": "101333",
+    "OrdenDeRegistro": 101333,
+    "PersoneriaID": {
+      "_": "94631",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/94631"
+      }
+    },
+    "FechadeOrden": "2024-09-22 15:42:52"
+  },
+  {
+    "Orden": "101334",
+    "OrdenDeRegistro": 101334,
+    "PersoneriaID": {
+      "_": "75981",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/75981"
+      }
+    },
+    "FechadeOrden": "2024-09-22 10:01:56"
+  },
+  {
+    "Orden": "101338",
+    "OrdenDeRegistro": 101338,
+    "PersoneriaID": {
+      "_": "94629",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/94629"
+      }
+    },
+    "FechadeOrden": "2024-09-23 09:32:30"
+  },
+  {
+    "Orden": "101339",
+    "OrdenDeRegistro": 101339,
+    "PersoneriaID": {
+      "_": "49318",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/49318"
+      }
+    },
+    "FechadeOrden": "2024-09-22 14:07:29"
+  },
+  {
+    "Orden": "101340",
+    "OrdenDeRegistro": 101340,
+    "PersoneriaID": {
+      "_": "94643",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/94643"
+      }
+    },
+    "FechadeOrden": "2024-09-22 14:07:29"
+  },
+  {
+    "Orden": "101341",
+    "OrdenDeRegistro": 101341,
+    "PersoneriaID": {
+      "_": "94652",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/94652"
+      }
+    },
+    "FechadeOrden": "2024-09-22 14:07:29"
+  },
+  {
+    "Orden": "101342",
+    "OrdenDeRegistro": 101342,
+    "PersoneriaID": {
+      "_": "61776",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/61776"
+      }
+    },
+    "FechadeOrden": "2024-09-22 15:15:05"
+  },
+  {
+    "Orden": "101344",
+    "OrdenDeRegistro": 101344,
+    "PersoneriaID": {
+      "_": "94666",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/94666"
+      }
+    },
+    "FechadeOrden": "2024-09-22 14:07:28"
+  },
+  {
+    "Orden": "101345",
+    "OrdenDeRegistro": 101345,
+    "PersoneriaID": {
+      "_": "68451",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/68451"
+      }
+    },
+    "FechadeOrden": "2024-09-22 14:07:28"
+  },
+  {
+    "Orden": "101346",
+    "OrdenDeRegistro": 101346,
+    "PersoneriaID": {
+      "_": "76111",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/76111"
+      }
+    },
+    "FechadeOrden": "2024-09-22 14:07:28"
+  },
+  {
+    "Orden": "101347",
+    "OrdenDeRegistro": 101347,
+    "PersoneriaID": {
+      "_": "91738",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/91738"
+      }
+    },
+    "FechadeOrden": "2024-09-23 09:32:29"
+  },
+  {
+    "Orden": "101348",
+    "OrdenDeRegistro": 101348,
+    "PersoneriaID": {
+      "_": "51727",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/51727"
+      }
+    },
+    "FechadeOrden": "2024-09-23 09:32:28"
+  },
+  {
+    "Orden": "101349",
+    "OrdenDeRegistro": 101349,
+    "PersoneriaID": {
+      "_": "94130",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/94130"
+      }
+    },
+    "FechadeOrden": "2024-09-22 14:07:28"
+  },
+  {
+    "Orden": "101350",
+    "OrdenDeRegistro": 101350,
+    "PersoneriaID": {
+      "_": "81242",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/81242"
+      }
+    },
+    "FechadeOrden": "2024-09-22 14:07:28"
+  },
+  {
+    "Orden": "101351",
+    "OrdenDeRegistro": 101351,
+    "PersoneriaID": {
+      "_": "71977",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/71977"
+      }
+    },
+    "FechadeOrden": "2024-09-22 14:07:27"
+  },
+  {
+    "Orden": "101352",
+    "OrdenDeRegistro": 101352,
+    "PersoneriaID": {
+      "_": "34291",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/34291"
+      }
+    },
+    "FechadeOrden": "2024-09-22 14:07:27"
+  },
+  {
+    "Orden": "101353",
+    "OrdenDeRegistro": 101353,
+    "PersoneriaID": {
+      "_": "21852",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/21852"
+      }
+    },
+    "FechadeOrden": "2024-09-22 14:07:27"
+  },
+  {
+    "Orden": "101354",
+    "OrdenDeRegistro": 101354,
+    "PersoneriaID": {
+      "_": "89033",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/89033"
+      }
+    },
+    "FechadeOrden": "2024-09-22 14:07:27"
+  },
+  {
+    "Orden": "101355",
+    "OrdenDeRegistro": 101355,
+    "PersoneriaID": {
+      "_": "69983",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/69983"
+      }
+    },
+    "FechadeOrden": "2024-09-22 18:41:41"
+  },
+  {
+    "Orden": "101356",
+    "OrdenDeRegistro": 101356,
+    "PersoneriaID": {
+      "_": "88086",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/88086"
+      }
+    },
+    "FechadeOrden": "2024-09-22 14:07:27"
+  },
+  {
+    "Orden": "101357",
+    "OrdenDeRegistro": 101357,
+    "PersoneriaID": {
+      "_": "14440",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/14440"
+      }
+    },
+    "FechadeOrden": "2024-09-22 14:07:27"
+  },
+  {
+    "Orden": "101358",
+    "OrdenDeRegistro": 101358,
+    "PersoneriaID": {
+      "_": "94760",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/94760"
+      }
+    },
+    "FechadeOrden": "2024-09-22 14:07:26"
+  },
+  {
+    "Orden": "101359",
+    "OrdenDeRegistro": 101359,
+    "PersoneriaID": {
+      "_": "94767",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/94767"
+      }
+    },
+    "FechadeOrden": "2024-09-23 09:32:27"
+  },
+  {
+    "Orden": "101360",
+    "OrdenDeRegistro": 101360,
+    "PersoneriaID": {
+      "_": "14175",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/14175"
+      }
+    },
+    "FechadeOrden": "2024-09-23 07:10:58"
+  },
+  {
+    "Orden": "101361",
+    "OrdenDeRegistro": 101361,
+    "PersoneriaID": {
+      "_": "94769",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/94769"
+      }
+    },
+    "FechadeOrden": "2024-09-22 14:07:26"
+  },
+  {
+    "Orden": "101362",
+    "OrdenDeRegistro": 101362,
+    "PersoneriaID": {
+      "_": "94774",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/94774"
+      }
+    },
+    "FechadeOrden": "2024-09-22 18:07:44"
+  },
+  {
+    "Orden": "101363",
+    "OrdenDeRegistro": 101363,
+    "PersoneriaID": {
+      "_": "94779",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/94779"
+      }
+    },
+    "FechadeOrden": "2024-09-22 18:07:44"
+  },
+  {
+    "Orden": "101364",
+    "OrdenDeRegistro": 101364,
+    "PersoneriaID": {
+      "_": "94781",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/94781"
+      }
+    },
+    "FechadeOrden": "2024-09-23 09:32:26"
+  },
+  {
+    "Orden": "101365",
+    "OrdenDeRegistro": 101365,
+    "PersoneriaID": {
+      "_": "84059",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/84059"
+      }
+    },
+    "FechadeOrden": "2024-09-23 09:32:25"
+  },
+  {
+    "Orden": "101366",
+    "OrdenDeRegistro": 101366,
+    "PersoneriaID": {
+      "_": "94784",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/94784"
+      }
+    },
+    "FechadeOrden": "2024-09-22 18:07:44"
+  },
+  {
+    "Orden": "101367",
+    "OrdenDeRegistro": 101367,
+    "PersoneriaID": {
+      "_": "65069",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/65069"
+      }
+    },
+    "FechadeOrden": "2024-09-23 09:32:24"
+  },
+  {
+    "Orden": "101368",
+    "OrdenDeRegistro": 101368,
+    "PersoneriaID": {
+      "_": "94801",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/94801"
+      }
+    },
+    "FechadeOrden": "2024-09-22 16:07:41"
+  },
+  {
+    "Orden": "101369",
+    "OrdenDeRegistro": 101369,
+    "PersoneriaID": {
+      "_": "94801",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/94801"
+      }
+    },
+    "FechadeOrden": "2024-09-23 09:32:23"
+  },
+  {
+    "Orden": "101370",
+    "OrdenDeRegistro": 101370,
+    "PersoneriaID": {
+      "_": "94816",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/94816"
+      }
+    },
+    "FechadeOrden": "2024-09-23 09:32:22"
+  },
+  {
+    "Orden": "101371",
+    "OrdenDeRegistro": 101371,
+    "PersoneriaID": {
+      "_": "14583",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/14583"
+      }
+    },
+    "FechadeOrden": "2024-09-23 09:32:21"
+  },
+  {
+    "Orden": "101372",
+    "OrdenDeRegistro": 101372,
+    "PersoneriaID": {
+      "_": "94829",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/94829"
+      }
+    },
+    "FechadeOrden": "2024-09-23 09:32:21"
+  },
+  {
+    "Orden": "101373",
+    "OrdenDeRegistro": 101373,
+    "PersoneriaID": {
+      "_": "94833",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/94833"
+      }
+    },
+    "FechadeOrden": "2024-09-23 07:27:11"
+  },
+  {
+    "Orden": "101374",
+    "OrdenDeRegistro": 101374,
+    "PersoneriaID": {
+      "_": "94835",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/94835"
+      }
+    },
+    "FechadeOrden": "2024-09-23 09:32:20"
+  },
+  {
+    "Orden": "101375",
+    "OrdenDeRegistro": 101375,
+    "PersoneriaID": {
+      "_": "94844",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/94844"
+      }
+    },
+    "FechadeOrden": "2024-09-23 07:29:52"
+  },
+  {
+    "Orden": "101376",
+    "OrdenDeRegistro": 101376,
+    "PersoneriaID": {
+      "_": "94848",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/94848"
+      }
+    },
+    "FechadeOrden": "2024-09-23 09:32:19"
+  },
+  {
+    "Orden": "101377",
+    "OrdenDeRegistro": 101377,
+    "PersoneriaID": {
+      "_": "94860",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/94860"
+      }
+    },
+    "FechadeOrden": "2024-09-23 09:32:18"
+  },
+  {
+    "Orden": "101378",
+    "OrdenDeRegistro": 101378,
+    "PersoneriaID": {
+      "_": "62331",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/62331"
+      }
+    },
+    "FechadeOrden": "2024-09-23 10:20:21"
+  },
+  {
+    "Orden": "101379",
+    "OrdenDeRegistro": 101379,
+    "PersoneriaID": {
+      "_": "94825",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/94825"
+      }
+    },
+    "FechadeOrden": "2024-09-23 09:54:52"
+  },
+  {
+    "Orden": "101380",
+    "OrdenDeRegistro": 101380,
+    "PersoneriaID": {
+      "_": "64569",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/64569"
+      }
+    },
+    "FechadeOrden": "2024-09-23 09:53:37"
+  },
+  {
+    "Orden": "101381",
+    "OrdenDeRegistro": 101381,
+    "PersoneriaID": {
+      "_": "17420",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/17420"
+      }
+    },
+    "FechadeOrden": "2024-09-23 11:03:02"
+  },
+  {
+    "Orden": "101382",
+    "OrdenDeRegistro": 101382,
+    "PersoneriaID": {
+      "_": "94870",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/94870"
+      }
+    },
+    "FechadeOrden": "2024-09-23 11:08:55"
+  },
+  {
+    "Orden": "101383",
+    "OrdenDeRegistro": 101383,
+    "PersoneriaID": {
+      "_": "84023",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/84023"
+      }
+    },
+    "FechadeOrden": "2024-09-23 11:39:25"
+  },
+  {
+    "Orden": "101384",
+    "OrdenDeRegistro": 101384,
+    "PersoneriaID": {
+      "_": "8317",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/8317"
+      }
+    },
+    "FechadeOrden": "2024-09-23 13:24:01"
+  },
+  {
+    "Orden": "101385",
+    "OrdenDeRegistro": 101385,
+    "PersoneriaID": {
+      "_": "65001",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/65001"
+      }
+    },
+    "FechadeOrden": "2024-09-23 13:24:28"
+  },
+  {
+    "Orden": "101386",
+    "OrdenDeRegistro": 101386,
+    "PersoneriaID": {
+      "_": "94873",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/94873"
+      }
+    },
+    "FechadeOrden": "2024-09-23 14:55:47"
+  },
+  {
+    "Orden": "101387",
+    "OrdenDeRegistro": 101387,
+    "PersoneriaID": {
+      "_": "94871",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/94871"
+      }
+    },
+    "FechadeOrden": "2024-09-23 15:01:01"
+  },
+  {
+    "Orden": "101388",
+    "OrdenDeRegistro": 101388,
+    "PersoneriaID": {
+      "_": "43147",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/43147"
+      }
+    },
+    "FechadeOrden": "2024-09-23 12:14:21"
+  },
+  {
+    "Orden": "101389",
+    "OrdenDeRegistro": 101389,
+    "PersoneriaID": {
+      "_": "43147",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/43147"
+      }
+    },
+    "FechadeOrden": "2024-09-23 12:19:34"
+  },
+  {
+    "Orden": "101390",
+    "OrdenDeRegistro": 101390,
+    "PersoneriaID": {
+      "_": "94877",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/94877"
+      }
+    },
+    "FechadeOrden": "2024-09-23 13:22:56"
+  },
+  {
+    "Orden": "101391",
+    "OrdenDeRegistro": 101391,
+    "PersoneriaID": {
+      "_": "94888",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/94888"
+      }
+    },
+    "FechadeOrden": "2024-09-23 14:37:53"
+  },
+  {
+    "Orden": "101392",
+    "OrdenDeRegistro": 101392,
+    "PersoneriaID": {
+      "_": "94890",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/94890"
+      }
+    },
+    "FechadeOrden": "2024-09-23 14:40:42"
+  },
+  {
+    "Orden": "101393",
+    "OrdenDeRegistro": 101393,
+    "PersoneriaID": {
+      "_": "35629",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/35629"
+      }
+    },
+    "FechadeOrden": "2024-09-23 14:41:54"
+  }
+]
+2024-09-23 21:05:34.336 - ERROR: Error en la transacción de crear pedido con orden :101290
+2024-09-23 21:05:34.336 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-09-23 21:05:34.336 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1018:39)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1371:17)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1465:17)
+2024-09-23 21:05:45.656 - ERROR: Error en la transacción de crear pedido con orden :101306
+2024-09-23 21:05:45.656 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-09-23 21:05:45.656 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1018:39)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1386:19)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1465:17)
+2024-09-23 21:05:55.100 - ERROR: Error en la transacción de crear pedido con orden :101308
+2024-09-23 21:05:55.100 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-09-23 21:05:55.100 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1018:39)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1386:19)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1465:17)
+2024-09-23 21:06:10.508 - ERROR: Error en la transacción de crear pedido con orden :101338
+2024-09-23 21:06:10.508 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-09-23 21:06:10.508 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1018:39)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1386:19)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1465:17)
+2024-09-23 21:06:29.393 - ERROR: Error en la transacción de crear pedido con orden :101348
+2024-09-23 21:06:29.393 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-09-23 21:06:29.393 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1018:39)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1386:19)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1465:17)
+2024-09-23 21:06:42.036 - ERROR: Error en la transacción de crear pedido con orden :101351
+2024-09-23 21:06:42.036 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-09-23 21:06:42.036 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1018:39)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1371:17)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1465:17)
+2024-09-23 21:06:57.830 - ERROR: Error en la transacción de crear pedido con orden :101356
+2024-09-23 21:06:57.830 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-09-23 21:06:57.830 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1018:39)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1371:17)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1465:17)
+2024-09-23 21:07:18.102 - ERROR: Error en la transacción de crear pedido con orden :101361
+2024-09-23 21:07:18.102 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-09-23 21:07:18.102 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1018:39)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1386:19)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1465:17)
+2024-09-23 21:07:28.286 - ERROR: Error en la transacción de crear pedido con orden :101362
+2024-09-23 21:07:28.286 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-09-23 21:07:28.286 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1018:39)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1386:19)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1465:17)
+2024-09-23 21:08:05.184 - ERROR: Error en la transacción de crear pedido con orden :101382
+2024-09-23 21:08:05.184 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-09-23 21:08:05.184 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1018:39)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1386:19)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1465:17)
+2024-09-23 21:08:28.495 - undefined

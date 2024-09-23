@@ -25171,3 +25171,186 @@ TypeError: Cannot read properties of undefined (reading 'ProductoID')
     at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1386:19)
     at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1465:17)
 2024-09-23 21:08:28.495 - undefined
+2024-09-23 21:13:54.909 - undefined
+2024-09-23 21:20:27.807 - undefined
+2024-09-23 21:24:11.750 - undefined
+2024-09-23 21:34:07.211 - undefined
+2024-09-23 21:41:59.050 - undefined
+2024-09-23 21:46:46.202 - undefined
+2024-09-23 21:49:24.973 - undefined
+2024-09-23 22:04:29.220 - undefined
+2024-09-23 22:53:37.808 - ERROR: Error en la transacción de crear pedido con orden :101290
+2024-09-23 22:53:37.808 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-09-23 22:53:37.808 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1016:39)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1407:17)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1501:17)
+2024-09-23 22:53:56.113 - ERROR: Error en la transacción de crear pedido con orden :101306
+2024-09-23 22:53:56.113 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-09-23 22:53:56.113 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1016:39)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1422:19)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1501:17)
+2024-09-23 22:54:05.975 - ERROR: Error en la transacción de crear pedido con orden :101308
+2024-09-23 22:54:05.975 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-09-23 22:54:05.975 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1016:39)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1422:19)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1501:17)
+2024-09-23 22:54:52.098 - ERROR: Error en la transacción de crear pedido con orden :101338
+2024-09-23 22:54:52.098 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-09-23 22:54:52.098 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1016:39)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1422:19)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1501:17)
+2024-09-23 22:56:26.172 - ERROR: Error en la transacción de crear pedido con orden :101348
+2024-09-23 22:56:26.172 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-09-23 22:56:26.172 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1016:39)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1422:19)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1501:17)
+2024-09-23 22:56:47.159 - Este es el cupon abreviatura 
+2024-09-23 22:56:47.159 - KUKYFLOR1024
+2024-09-23 22:56:47.273 - Este es el convenio activo 
+2024-09-23 22:56:47.273 - null
+2024-09-23 22:56:47.273 - ERROR: Error en la transacción de crear pedido con orden :101350
+2024-09-23 22:56:47.273 - ERROR: No existe Cupon de Descuento en ERP y la orden
+2024-09-23 22:56:47.273 - STACK TRACE:
+Error: No existe Cupon de Descuento en ERP y la orden
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1092:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1422:19)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1501:17)
+2024-09-23 22:56:56.101 - ERROR: Error en la transacción de crear pedido con orden :101351
+2024-09-23 22:56:56.101 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-09-23 22:56:56.101 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1016:39)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1407:17)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1501:17)
+2024-09-23 22:57:44.652 - ERROR: Error en la transacción de crear pedido con orden :101356
+2024-09-23 22:57:44.652 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-09-23 22:57:44.652 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1016:39)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1407:17)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1501:17)
+2024-09-23 22:58:12.254 - ERROR: Error Numero de documento: 02233573 ::: AxiosError: Request failed with status code 404
+2024-09-23 22:58:30.792 - ERROR: Error en la transacción de crear pedido con orden :101361
+2024-09-23 22:58:30.792 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-09-23 22:58:30.792 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1016:39)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1422:19)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1501:17)
+2024-09-23 22:58:39.865 - ERROR: Error en la transacción de crear pedido con orden :101362
+2024-09-23 22:58:39.865 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-09-23 22:58:39.865 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1016:39)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1422:19)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1501:17)
+2024-09-23 23:01:55.304 - ERROR: Error en la transacción de crear pedido con orden :101382
+2024-09-23 23:01:55.304 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-09-23 23:01:55.304 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1016:39)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1422:19)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1501:17)
+2024-09-23 23:03:57.215 - undefined
+2024-09-23 23:08:25.615 - ERROR: Error en la transacción de crear pedido con orden :101290
+2024-09-23 23:08:25.615 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-09-23 23:08:25.615 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1016:39)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1407:17)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1501:17)
+2024-09-23 23:08:34.846 - ERROR: Error en la transacción de crear pedido con orden :101306
+2024-09-23 23:08:34.846 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-09-23 23:08:34.846 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1016:39)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1422:19)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1501:17)
+2024-09-23 23:08:43.191 - ERROR: Error en la transacción de crear pedido con orden :101308
+2024-09-23 23:08:43.191 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-09-23 23:08:43.191 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1016:39)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1422:19)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1501:17)
+2024-09-23 23:08:56.246 - ERROR: Error en la transacción de crear pedido con orden :101338
+2024-09-23 23:08:56.246 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-09-23 23:08:56.246 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1016:39)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1422:19)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1501:17)
+2024-09-23 23:09:14.230 - ERROR: Error en la transacción de crear pedido con orden :101348
+2024-09-23 23:09:14.230 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-09-23 23:09:14.230 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1016:39)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1422:19)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1501:17)
+2024-09-23 23:09:25.490 - ERROR: Error en la transacción de crear pedido con orden :101350
+2024-09-23 23:09:25.490 - ERROR: No existe Cupon de Descuento en ERP y la orden101350
+2024-09-23 23:09:25.490 - STACK TRACE:
+Error: No existe Cupon de Descuento en ERP y la orden101350
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1092:19)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1422:19)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1501:17)
+2024-09-23 23:09:33.770 - ERROR: Error en la transacción de crear pedido con orden :101351
+2024-09-23 23:09:33.770 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-09-23 23:09:33.770 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1016:39)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1407:17)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1501:17)
+2024-09-23 23:10:20.544 - ERROR: Error en la transacción de crear pedido con orden :101356
+2024-09-23 23:10:20.544 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-09-23 23:10:20.544 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1016:39)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1407:17)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1501:17)
+2024-09-23 23:10:45.860 - ERROR: Error Numero de documento: 02233573 ::: AxiosError: Request failed with status code 404
+2024-09-23 23:11:02.398 - ERROR: Error en la transacción de crear pedido con orden :101361
+2024-09-23 23:11:02.398 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-09-23 23:11:02.398 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1016:39)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1422:19)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1501:17)
+2024-09-23 23:11:11.010 - ERROR: Error en la transacción de crear pedido con orden :101362
+2024-09-23 23:11:11.010 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-09-23 23:11:11.010 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1016:39)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1422:19)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1501:17)

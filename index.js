@@ -879,9 +879,7 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
         seriePedido = 103.00001; // Factura
       }
     }
-
-
-
+    
     //Extraccion de numero de serie
     const queryDocRelativo = `
           select * from documentocorrelativo where EmpresaID = ${parseFloat(variablesSesion.EmpresaID)}
@@ -933,7 +931,7 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
     request.input('FechaEntrega', sql.NVarChar, paramsOrden.Pedido.ddw_order_date);
     // request.input('FechaCreacion', sql.NVarChar, ); //paramsOrden.Pedido.date_add parametro anterior CONVERT(datetime,@FechaCreacion, 120)
     // request.input('FechaEdicion', sql.NVarChar, ); // paramsOrden.Pedido.date_upd parametro anterior CONVERT(datetime,@FechaEdicion, 120)
-    request.input('Fecha', sql.NVarChar, paramsOrden.Pedido.date_add); 
+    request.input('Fecha', sql.NVarChar, paramsOrden.Pedido.date_add);
     request.input('DireccionEntrega', sql.VarChar, paramsOrden.DireccionEntrega.direccion_1);
     request.input('OficinaAlmacenEntregaID', sql.Decimal(6, 3), 1);
     request.input('Referencia', sql.VarChar, paramsOrden.Pedido.gift_message);
@@ -1037,6 +1035,28 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
 
       let PorcentajeDescuento = 0.00; // Valor por defecto
 
+      // if (paramsOrden.OrderDetails_cart_rules !== null) {
+      //   const cupon = await obtenerCuponesYCategoriaFiltro(paramsOrden.OrderDetails_cart_rules[0].id_cart_rule, productoCategoria);
+      //   const cuponParsed = JSON.parse(cupon);
+
+      //   if (cuponParsed.length > 0) {
+      //     const categorias = cuponParsed[0].categories;
+
+      //     if (typeof categorias === 'string' && categorias === 'No hay categorías asociadas') {
+      //       // Si hay un cupón pero el mensaje indica que no hay categorías
+      //       PorcentajeDescuento = parseFloat(cuponParsed[0].reduction_percent);
+      //     } else if (Array.isArray(categorias) && categorias.length === 0) {
+      //       // Si hay un cupón pero no tiene categorías
+      //       PorcentajeDescuento = 0.00; // No se aplica descuento
+      //     } else {
+      //       // Si hay un cupón y tiene categorías
+      //       PorcentajeDescuento = parseFloat(cuponParsed[0].reduction_percent);
+      //     }
+      //   } else {
+      //     // Si no se encuentra el cupón
+      //     PorcentajeDescuento = 0.00; // Valor por defecto
+      //   }
+      // }
       if (paramsOrden.OrderDetails_cart_rules !== null) {
         const cupon = await obtenerCuponesYCategoriaFiltro(paramsOrden.OrderDetails_cart_rules[0].id_cart_rule, productoCategoria);
         const cuponParsed = JSON.parse(cupon);
@@ -1044,19 +1064,35 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
         if (cuponParsed.length > 0) {
           const categorias = cuponParsed[0].categories;
 
-          if (typeof categorias === 'string' && categorias === 'No hay categorías asociadas') {
-            // Si hay un cupón pero el mensaje indica que no hay categorías
-            PorcentajeDescuento = parseFloat(cuponParsed[0].reduction_percent);
-          } else if (Array.isArray(categorias) && categorias.length === 0) {
-            // Si hay un cupón pero no tiene categorías
-            PorcentajeDescuento = 0.00; // No se aplica descuento
+          // Consulta adicional para verificar el convenio
+          const requestConvenio = new sql.Request(transaction);
+          const queryConvenio = `select * from tablageneral where Abreviatura = @Convenio and floor(PrincipalID) = '902' `;
+          // console.log("Este es el cupon abreviatura ",cuponParsed[0].name);
+          requestConvenio.input('Convenio', sql.NVarChar,cuponParsed[0].name);
+
+          const resultadoConvenio = await requestConvenio.query(queryConvenio);
+          const convenioActivo = resultadoConvenio.recordset.length > 0 ? resultadoConvenio.recordset[0] : null;
+          // console.log("Este es el convenio activo ",convenioActivo);
+          if (convenioActivo) {
+            const cuponActivo = cuponParsed[0].active === "Activo"; // Verificar si el cupón está activo
+            const nombreCupon = cuponParsed[0].name; // Extraer el nombre del cupón
+
+            if (typeof categorias === 'string' && categorias === 'No hay categorías asociadas') {
+              PorcentajeDescuento = parseFloat(cuponParsed[0].reduction_percent);
+            } else if (Array.isArray(categorias) && categorias.length === 0) {
+              PorcentajeDescuento = 0.00; // No se aplica descuento
+            } else if (cuponActivo) {
+              PorcentajeDescuento = parseFloat(cuponParsed[0].reduction_percent);
+            } else {
+              PorcentajeDescuento = 0.00; // Cupón no activo
+            }
+
+            // console.log(`Nombre del cupón Activo : ${nombreCupon}, Activo: ${cuponActivo}`);
           } else {
-            // Si hay un cupón y tiene categorías
-            PorcentajeDescuento = parseFloat(cuponParsed[0].reduction_percent);
+            throw new Error("No existe Cupon de Descuento en ERP"); // Lanzar error si no hay convenio
           }
         } else {
-          // Si no se encuentra el cupón
-          PorcentajeDescuento = 0.00; // Valor por defecto
+          PorcentajeDescuento = 0.00; // Si no se encuentra el cupón
         }
       }
 

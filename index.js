@@ -320,8 +320,10 @@ async function BuscarOrdenPorID(orderId) {
       // Extraer la orden con el ID especificado
       const SeriedeFacturaEnvoice2 = result.prestashop;
       SerieDePedido = {
+        id_address_invoice: SeriedeFacturaEnvoice2.address.id,
         id_adress_Entrega: SeriedeFacturaEnvoice2.address.alias,
         company: SeriedeFacturaEnvoice2.address.company,
+        phone: SeriedeFacturaEnvoice2.address.phone,
       };
     });
 
@@ -719,33 +721,15 @@ async function buscarRazonSocialPorDNIRUC(numero) {
   }
 }
 
-async function crearCliente(params, paramsAPI, Convenio) {
+async function crearCliente(params, paramsAPI) {
   // console.log("Estos son mis parametros de lciente",params);
   let pool;
   let transaction;
   let principalID = null;
-  let resultConvenio;
   try {
     pool = await sql.connect(config);
     transaction = new sql.Transaction(pool);
     await transaction.begin();
-    if (Convenio !== null) {
-      const queryFindPrincipalID = `
-        SELECT PrincipalID
-        FROM tablageneral
-        WHERE PrincipalID LIKE '902.%' AND Abreviatura = @Convenio AND Estado = 1;
-        `;
-      const requestConvenio = new sql.Request(transaction);
-      requestConvenio.input('Convenio', sql.NVarChar, Convenio.name);
-      resultConvenio = await requestConvenio.query(queryFindPrincipalID);
-      if (resultConvenio.recordset.length > 0) {
-        principalID = resultConvenio.recordset[0].PrincipalID;
-
-      } else {
-        principalID = null;
-      }
-    }
-
 
     const query = `
           INSERT INTO dbo.Personeria
@@ -771,7 +755,8 @@ async function crearCliente(params, paramsAPI, Convenio) {
     request.input('Estado', sql.NVarChar, '1');
     request.input('UsuarioID', sql.Int, 1);
     // request.input('ConvenioID', sql.Decimal(9, 5), 902.00001);
-    request.input('ConvenioID', sql.Decimal(9, 5), principalID == null ? 902.00001 : principalID);
+    // request.input('ConvenioID', sql.Decimal(9, 5), principalID == null ? 902.00001 : principalID);
+    request.input('ConvenioID', sql.Decimal(9, 5), 902.00001 );
     request.input('MedioRegistroID', sql.Decimal(9, 5), 900.00001);
     request.input('MedioInformacionID', sql.Decimal(9, 5), 901.00001);
     request.input('Telefonos', sql.NVarChar, '');
@@ -844,6 +829,79 @@ async function crearCliente(params, paramsAPI, Convenio) {
   }
 }
 
+async function updateCliente(DatosOrden, Cliente) {
+  let pool;
+  let transaction;
+  try {
+    pool = await sql.connect(config);
+    transaction = new sql.Transaction(pool);
+    await transaction.begin();
+
+    // Consulta para obtener el ID del cliente que se va a actualizar
+    const queryFindClienteID = `
+      SELECT PersoneriaID, Email, Telefonos
+      FROM dbo.Personeria
+      WHERE PersoneriaID = @PersoneriaID;
+    `;
+
+    const requestFind = new sql.Request(transaction);
+    requestFind.input('PersoneriaID', sql.Int, Cliente.PersoneriaID);
+    const resultFind = await requestFind.query(queryFindClienteID);
+
+    if (resultFind.recordset.length === 0) {
+      throw new Error('Cliente no encontrado.');
+    }
+
+    const personeriaID = resultFind.recordset[0].PersoneriaID;
+    const currentEmail = resultFind.recordset[0].email;
+    const currentTelefonos = resultFind.recordset[0].Telefonos;
+
+    // Nuevos datos desde DatosOrden
+    const newEmail = DatosOrden.Customer.email;
+    var  newPhone; // Asumiendo que `phone` está en `SerieDePedido` 
+    if(DatosOrden.SerieDePedido.id_address_invoice == DatosOrden.DireccionEntrega.id_adress_Entrega){
+        newPhone = DatosOrden.DireccionEntrega.Telefono || ''
+    }else{
+      newPhone = DatosOrden.SerieDePedido.phone || ''
+    }
+    // Verificar si es necesario actualizar
+    const shouldUpdateEmail = newEmail && newEmail !== currentEmail;
+    const shouldUpdatePhone = newPhone && newPhone !== currentTelefonos;
+
+    if (!shouldUpdateEmail && !shouldUpdatePhone) {
+      return { success: true, message: 'No se requieren actualizaciones.' };
+    }
+
+    // Consulta para actualizar los datos del cliente
+    const queryUpdate = `
+      UPDATE dbo.Personeria
+      SET Email = @Email,
+          Telefonos = @Telefonos 
+      WHERE PersoneriaID = @PersoneriaID;
+    `;
+
+    const requestUpdate = new sql.Request(transaction);
+    requestUpdate.input('Email', sql.NVarChar, shouldUpdateEmail ? newEmail : currentEmail);
+    requestUpdate.input('Telefonos', sql.NVarChar, shouldUpdatePhone ? newPhone : currentTelefonos);
+    requestUpdate.input('PersoneriaID', sql.Int, personeriaID);
+
+    await requestUpdate.query(queryUpdate);
+    await transaction.commit();
+
+    return { success: true, message: 'Cliente actualizado exitosamente.' };
+  } catch (error) {
+    console.error(`Error al actualizar el cliente con DNI: ${Cliente.numeroDocumento} y Orden ${DatosOrden.Pedido.id}`, error);
+    if (transaction) {
+      await transaction.rollback();
+    }
+    return { success: false, message: `Error al actualizar el cliente con DNI: ${Cliente.numeroDocumento} y Orden ${DatosOrden.Pedido.id}`, error: error.message };
+  } finally {
+    if (pool) {
+      pool.close();
+    }
+  }
+}
+
 // Variables necesarias para la creacion de pedidos
 const variablesSesion = {
   EmpresaID: 1,
@@ -854,11 +912,12 @@ const variablesSesion = {
 let PlanillaID = '';
 
 
-async function createPedido(paramsOrden, ParamsPersona, variablesSesion, PlanillaID) {
+async function createPedido(paramsOrden, ParamsPersona, variablesSesion, PlanillaID, Convenio) {
   let pool, result, error = '';
   let newPedidoID = 0;
   let transaction;
-
+  let resultConvenio;
+  let principalID = null;
   try {
     pool = await sql.connect(config);
     // transaction = await pool.Transaction();
@@ -879,7 +938,24 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
         seriePedido = 103.00001; // Factura
       }
     }
-    
+
+    if (Convenio !== null) {
+      const queryFindPrincipalID = `
+        SELECT PrincipalID
+        FROM tablageneral
+        WHERE PrincipalID LIKE '902.%' AND Abreviatura = @Convenio AND Estado = 1;
+        `;
+      const requestConvenio = new sql.Request(transaction);
+      requestConvenio.input('Convenio', sql.NVarChar, Convenio.name);
+      resultConvenio = await requestConvenio.query(queryFindPrincipalID);
+      if (resultConvenio.recordset.length > 0) {
+        principalID = resultConvenio.recordset[0].PrincipalID;
+
+      } else {
+        principalID = null;
+      }
+    }
+
     //Extraccion de numero de serie
     const queryDocRelativo = `
           select * from documentocorrelativo where EmpresaID = ${parseFloat(variablesSesion.EmpresaID)}
@@ -983,7 +1059,8 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
     request.input('TipoVenta', sql.Int, 0);
     request.input('HabilitarFecha', sql.Int, 0);
     request.input('IDPlanilla', sql.NVarChar, PlanillaID);
-    request.input('ConvenioID', sql.Decimal(9, 5), 902.00001);
+    // request.input('ConvenioID', sql.Decimal(9, 5), 902.00001);
+    request.input('ConvenioID', sql.Decimal(9, 5), principalID == null ? 902.00001 : principalID);
     request.input('WebID', sql.Int, paramsOrden.Pedido.id);
     request.input('ValorPedido', sql.Decimal(9, 5), paramsOrden.Pedido.total_paid);
     request.input('PrecioPedido', sql.Decimal(9, 5), paramsOrden.Pedido.total_paid);
@@ -1068,7 +1145,7 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
           const requestConvenio = new sql.Request(transaction);
           const queryConvenio = `select * from tablageneral where Abreviatura = @Convenio and floor(PrincipalID) = '902' `;
           // console.log("Este es el cupon abreviatura ",cuponParsed[0].name);
-          requestConvenio.input('Convenio', sql.NVarChar,cuponParsed[0].name);
+          requestConvenio.input('Convenio', sql.NVarChar, cuponParsed[0].name);
 
           const resultadoConvenio = await requestConvenio.query(queryConvenio);
           const convenioActivo = resultadoConvenio.recordset.length > 0 ? resultadoConvenio.recordset[0] : null;
@@ -1404,27 +1481,45 @@ async function procesarOrdenPrestashop() {
             if (DatosDeOrden.SerieDePedido.company === '' || DatosDeOrden.SerieDePedido.company == '00000000' || DatosDeOrden.SerieDePedido.company == '00000000000') {
               cliente = await buscarClientePorDNI('00000001');
               if (cliente) {
-                await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID);
+                await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID ,DatosDeOrden.OrderDetails_cart_rules !== null && DatosDeOrden.OrderDetails_cart_rules.active == 1 ? DatosDeOrden.OrderDetails_cart_rules : null);
               }
             } else {
               if (DatosDeOrden.SerieDePedido.company.length === 8 || DatosDeOrden.SerieDePedido.company.length === 11) {
                 cliente = await buscarClientePorDNI(DatosDeOrden.SerieDePedido.company);
+                // Si el cliente no se encontro pasa a crearlo y buscarlo en en RENIEC O SUNAT
                 if (cliente === null) {
                   const razonSocial = await buscarRazonSocialPorDNIRUC(DatosDeOrden.SerieDePedido.company);
                   if (razonSocial !== 'Número no encontrado') {
-                    await crearCliente(razonSocial, DatosDeOrden.Customer, DatosDeOrden.OrderDetails_cart_rules !== null && DatosDeOrden.OrderDetails_cart_rules.active == 1 ? DatosDeOrden.OrderDetails_cart_rules : null);
+                    await crearCliente(razonSocial, DatosDeOrden.Customer);
                     cliente = await buscarClientePorDNI(DatosDeOrden.SerieDePedido.company);
                   } else {
                     cliente = await buscarClientePorDNI('00000001');
                   }
                 }
+                // si el cliente si se encontro pasa a crear el pedido
                 if (cliente) {
-                  await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID);
+                  // Se verifica los datos del cliente con los nuevos datos de la orden y con lo que ya cuenta.
+                  const updateResult = await updateCliente(DatosDeOrden, cliente);
+                  
+                  if (!updateResult.success) {
+                    throw new Error(updateResult.message);
+                  }
+                
+                  // Después de actualizar, se busca el cliente nuevamente para obtener los datos actualizados.
+                  cliente = await buscarClientePorDNI(DatosDeOrden.SerieDePedido.company);
+                  
+                  if (!cliente) {
+                    throw new Error('No se pudo encontrar el cliente después de la actualización.');
+                  }
+                
+                  // Se procede a crear el pedido con los datos actualizados del cliente.
+                  await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID, DatosDeOrden.OrderDetails_cart_rules !== null && DatosDeOrden.OrderDetails_cart_rules.active == 1 ? DatosDeOrden.OrderDetails_cart_rules : null);
                 }
+                
               } else {
                 cliente = await buscarClientePorDNI('00000001');
                 if (cliente) {
-                  await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID);
+                  await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID, DatosDeOrden.OrderDetails_cart_rules !== null && DatosDeOrden.OrderDetails_cart_rules.active == 1 ? DatosDeOrden.OrderDetails_cart_rules : null);
                 }
               }
             }
@@ -1501,7 +1596,6 @@ async function Inicializador() {
     console.log(await procesarOrdenPrestashop());
   } else {
     // console.log("no se tiene una planilla habilitada");
-
     if (orden0.some(elemento => elemento.estado === '9')) {
       // console.log("La planilla esta para apertura");
       const ordenApertura = orden0.find(elemento => elemento.estado === '9');
@@ -1517,7 +1611,7 @@ async function Inicializador() {
       if (ulimaPlanilla) {
         // console.log("Procedemos a cerrar la planilla de caja con estado N o S");
         // await CierreCaja(variablesSesion.OficinaAlmacenID, variablesSesion.UsuarioID, SeriePlanilla, ulimaPlanilla.PlanillaID, ulimaPlanilla.FechaCreacion);
-        await UpdatePlanilla(variablesSesion.EmpresaID, variablesSesion.OficinaAlmacenID, ulimaPlanilla.PlanillaID, 2)
+        await UpdatePlanilla(variablesSesion.EmpresaID, variablesSesion.OficinaAlmacenID, ulimaPlanilla.PlanillaID, 2);
       } else {
         // console.log("No se encontró ninguna planilla de caja.");
       }

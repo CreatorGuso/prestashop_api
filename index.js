@@ -938,6 +938,10 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
         seriePedido = 103.00001; // Factura
       }
     }
+    
+    console.log("datos de orden",paramsOrden);
+    console.log("Estamos en el pedido",paramsOrden.Pedido.id);
+    console.log("Asi esta entrando el convenio ",Convenio);
 
     if (Convenio !== null) {
       const queryFindPrincipalID = `
@@ -946,15 +950,17 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
         WHERE PrincipalID LIKE '902.%' AND Abreviatura = @Convenio AND Estado = 1;
         `;
       const requestConvenio = new sql.Request(transaction);
-      requestConvenio.input('Convenio', sql.NVarChar, Convenio.name);
+      requestConvenio.input('Convenio', sql.NVarChar, Convenio[0].name);
       resultConvenio = await requestConvenio.query(queryFindPrincipalID);
+      console.log("este es el result del conveio", resultConvenio);
       if (resultConvenio.recordset.length > 0) {
         principalID = resultConvenio.recordset[0].PrincipalID;
-
       } else {
         principalID = null;
       }
     }
+
+    console.log("Este es el principalID del convenio", principalID);
 
     //Extraccion de numero de serie
     const queryDocRelativo = `
@@ -1481,7 +1487,7 @@ async function procesarOrdenPrestashop() {
             if (DatosDeOrden.SerieDePedido.company === '' || DatosDeOrden.SerieDePedido.company == '00000000' || DatosDeOrden.SerieDePedido.company == '00000000000') {
               cliente = await buscarClientePorDNI('00000001');
               if (cliente) {
-                await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID ,DatosDeOrden.OrderDetails_cart_rules !== null && DatosDeOrden.OrderDetails_cart_rules.active == 1 ? DatosDeOrden.OrderDetails_cart_rules : null);
+                await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID ,DatosDeOrden.OrderDetails_cart_rules !== null && DatosDeOrden.cart_rules[0].active == 1 ? DatosDeOrden.OrderDetails_cart_rules : null);
               }
             } else {
               if (DatosDeOrden.SerieDePedido.company.length === 8 || DatosDeOrden.SerieDePedido.company.length === 11) {
@@ -1513,13 +1519,13 @@ async function procesarOrdenPrestashop() {
                   }
                 
                   // Se procede a crear el pedido con los datos actualizados del cliente.
-                  await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID, DatosDeOrden.OrderDetails_cart_rules !== null && DatosDeOrden.OrderDetails_cart_rules.active == 1 ? DatosDeOrden.OrderDetails_cart_rules : null);
+                  await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID, DatosDeOrden.OrderDetails_cart_rules !== null && DatosDeOrden.cart_rules[0].active == 1 ? DatosDeOrden.OrderDetails_cart_rules : null);
                 }
                 
               } else {
                 cliente = await buscarClientePorDNI('00000001');
                 if (cliente) {
-                  await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID, DatosDeOrden.OrderDetails_cart_rules !== null && DatosDeOrden.OrderDetails_cart_rules.active == 1 ? DatosDeOrden.OrderDetails_cart_rules : null);
+                  await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID, DatosDeOrden.OrderDetails_cart_rules !== null && DatosDeOrden.cart_rules[0].active == 1 ? DatosDeOrden.OrderDetails_cart_rules : null);
                 }
               }
             }

@@ -13,7 +13,7 @@ const config = {
   user: "kuky",
   password: "Kf123456",
   server: "3.144.237.208",
-  database: "kflor", //prueba_
+  database: "prueba_kflor", //prueba_
   options: {
     encrypt: false, // Si estás utilizando Azure, establece esto en true
   },
@@ -29,7 +29,7 @@ async function ApiOrders() {
         params: {
           display: "full",
           output_format: "XML",
-          limit: 200, // Obtener siempre los últimos 200 pedidos
+          limit: 2000, // Obtener siempre los últimos 200 pedidos
           sort: "[id_DESC]", // Ordenar por ID de forma descendente (los últimos primero)
         },
         headers: {
@@ -49,23 +49,6 @@ async function ApiOrders() {
       });
     });
 
-    const fechaActual = new Date();
-    const dia = fechaActual.getDate() < 10 ? '0' + fechaActual.getDate() : fechaActual.getDate();
-    const mes = (fechaActual.getMonth() + 1) < 10 ? '0' + (fechaActual.getMonth() + 1) : (fechaActual.getMonth() + 1);
-    const fechaFormateada = fechaActual.getFullYear() + '-' + mes + '-' + dia;
-
-    // Obtener la fecha del día anterior
-    const fechaAnterior = new Date(fechaActual);
-    fechaAnterior.setDate(fechaAnterior.getDate() - 1);
-    const diaAnterior = fechaAnterior.getDate() < 10 ? '0' + fechaAnterior.getDate() : fechaAnterior.getDate();
-    const mesAnterior = (fechaAnterior.getMonth() + 1) < 10 ? '0' + (fechaAnterior.getMonth() + 1) : (fechaAnterior.getMonth() + 1);
-    const fechaFormateadaAnterior = fechaAnterior.getFullYear() + '-' + mesAnterior + '-' + diaAnterior;
-
-    // Obtener la hora actual
-    const horaActual = fechaActual.getHours();
-    // const horaActual = 0;
-    // console.log("Hora actual", horaActual);
-
     // Filtrar órdenes por la fecha de hoy y, si es la primera hora del día, también por la fecha de ayer
     const orders = result.prestashop.orders.order.filter(order => {
       const orderDate = new Date(order.date_upd);
@@ -74,7 +57,7 @@ async function ApiOrders() {
       const orderFechaFormateada = orderDate.getFullYear() + '-' + orderMes + '-' + orderDia;
       // return orderFechaFormateada === fechaFormateada || (horaActual === 20 && orderFechaFormateada === fechaFormateadaAnterior); //por horas
       // return orderFechaFormateada === fechaFormateadaAnterior || (horaActual === 20 && orderFechaFormateada === fechaFormateadaAnterior);
-      return orderFechaFormateada === fechaFormateada || orderFechaFormateada === fechaFormateadaAnterior; // trae por 2 dias 
+      return orderFechaFormateada > '2024-09-18'; // trae por 2 dias 
     });
 
     // Mapear las órdenes filtradas
@@ -716,7 +699,7 @@ async function buscarRazonSocialPorDNIRUC(numero) {
       return resultado;
     }
   } catch (error) {
-    console.error("Error Numero de documento SUNAT/RENIEC: " + numero + ' ::: ' + error);
+    console.error("Error Numero de documento: " + numero + ' ::: ' + error);
     return 'Número no encontrado';
   }
 }
@@ -912,7 +895,7 @@ const variablesSesion = {
 let PlanillaID = '';
 
 
-async function createPedido(paramsOrden, ParamsPersona, variablesSesion, PlanillaID, Convenio) {
+async function createPedido(paramsOrden, Convenio) {
   let pool, result, error = '';
   let newPedidoID = 0;
   let transaction;
@@ -920,29 +903,11 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
   let principalID = null;
   try {
     pool = await sql.connect(config);
-    // transaction = await pool.Transaction();
     transaction = new sql.Transaction(pool);
 
     await transaction.begin();
-    const partes = paramsOrden.SerieDePedido.id_adress_Entrega.split("-");
-    // Obtener la primera parte que corresponde al tipo de serie
-    const tipoSerie = partes[0];
-    // console.log("-----------------------------");
-    // console.log("Orden",paramsOrden.Pedido.id);
-    // console.log("Serie enviada",tipoSerie);
-    // console.log("-----------------------------");
-    let seriePedido = 103.00003; // Valor por defecto
-
-    if (ParamsPersona.Estado == '1') {
-      if (tipoSerie == 'FA' && ParamsPersona.NroIdentidad.length == 11) {
-        seriePedido = 103.00001; // Factura
-      }
-    }
-    
-    // console.log("datos de orden",paramsOrden);
-    // console.log("Estamos en el pedido",paramsOrden.Pedido.id);
-    // console.log("Asi esta entrando el convenio ",Convenio);
-
+    // console.log("Datos de ordenes ",paramsOrden);
+    // console.log("Datos de Convenio", Convenio);
     if (Convenio !== null) {
       const queryFindPrincipalID = `
         SELECT PrincipalID
@@ -952,7 +917,6 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
       const requestConvenio = new sql.Request(transaction);
       requestConvenio.input('Convenio', sql.NVarChar, Convenio[0].name);
       resultConvenio = await requestConvenio.query(queryFindPrincipalID);
-      // console.log("este es el result del conveio", resultConvenio);
       if (resultConvenio.recordset.length > 0) {
         principalID = resultConvenio.recordset[0].PrincipalID;
       } else {
@@ -960,332 +924,16 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
       }
     }
 
-    // console.log("Este es el principalID del convenio", principalID);
-
-    //Extraccion de numero de serie
-    const queryDocRelativo = `
-          select * from documentocorrelativo where EmpresaID = ${parseFloat(variablesSesion.EmpresaID)}
-          and OficinaAlmacenID = ${parseFloat(variablesSesion.OficinaAlmacenID)}
-          and TipoDocID = 103.00048 ;`;
-    // const request9 = pool.request();
-    const request9 = new sql.Request(transaction);
-    // request9.transaction = transaction;
-    result_Serie = await request9.query(queryDocRelativo);
-    let SerieCorrelativo = result_Serie.recordset[0].SerieDoc;
-    let ConsecutivoActual = result_Serie.recordset[0].Consecutivo;
-
-    const queryConsecutivoCorrelativo = `
-        UPDATE documentoCorrelativo
-        SET Consecutivo = @Consecutivo
-        WHERE EmpresaID = @Empresa
-        AND OficinaAlmacenID = @OficinaAlmacenID
-        AND TipoDocID = 103.00048 ;`;
-
-    // const requestConsecutivo = pool.request();
-    const requestConsecutivo = new sql.Request(transaction);
-    // requestConsecutivo.transaction = transaction;
-    requestConsecutivo.input('Empresa', sql.Int, variablesSesion.EmpresaID);
-    requestConsecutivo.input('OficinaAlmacenID', sql.Decimal(6, 3), variablesSesion.OficinaAlmacenID);
-    // console.log("Este es el consecutivo actual", (parseInt(ConsecutivoActual) + 1));
-    requestConsecutivo.input('Consecutivo', sql.Int, (parseInt(ConsecutivoActual) + 1));
-    result = await requestConsecutivo.query(queryConsecutivoCorrelativo);
-
-    const query = `
-      INSERT INTO VentaPedidoCabecera
-        (EmpresaID, OficinaAlmacenID, SeriePedido, NumeroPedido, PersoneriaID, DireccionID, VendedorID, CondicionVtaID, MonedaID, ListaPrecioID, Fecha, TipoEntrega, FechaEntrega, DireccionEntrega, OficinaAlmacenEntregaID, Referencia, Observaciones, Cliente, Contacto, Contactotelefono, MotivoID, DeliveryTipoID, DeliveryTurnoID, TipoDocID, ValorPedido, PrecioPedido, TipoCambio, Estado, UsuarioID, FechaCreacion, FechaModificacion, TipoVenta, Gratuita, PlanillaID, ConvenioID, WebID,TookanID
-              ,email)
-        VALUES
-        (1, @OficinaAlmacenID, @SerieCorrelativo, @NumeroPedido, @PersoneriaID, @DireccionID, @Vendedor, @CondicionVtaID, @MonedaID, @ListaPrecioID, CONVERT(datetime,@Fecha, 120), @TipoEntrega, CONVERT(datetime,@FechaEntrega, 120) , @DireccionEntrega, @OficinaAlmacenEntregaID, @Referencia, @Observaciones, @Cliente, @Contacto, @Contactotelefono, @MotivoID, @DeliveryTipoID, @DeliveryTurnoID, @TipoDocID, @ValorPedido, @PrecioPedido, 0.00000, '1', @UsuarioID, GETDATE(), GETDATE(), @TipoVenta, @HabilitarFecha, @IDPlanilla, @ConvenioID, @WebID, null ,@Email);
-      SELECT SCOPE_IDENTITY() AS LastInsertedID;
-      `;
-
-    // const request = pool.request();
-    const request = new sql.Request(transaction);
-    // request.transaction = transaction;
-    request.input('OficinaAlmacenID', sql.Decimal(6, 3), variablesSesion.OficinaAlmacenID);
-    request.input('NumeroPedido', sql.Int, (parseInt(ConsecutivoActual) + 1));
-    request.input('SerieCorrelativo', sql.VarChar, SerieCorrelativo);
-    request.input('PersoneriaID', sql.Int, ParamsPersona.PersoneriaID);
-    request.input('DireccionID', sql.Int, 1);
-    request.input('MonedaID', sql.Decimal(9, 5), 102.00001);
-    request.input('ListaPrecioID', sql.Decimal(9, 5), 108.00001);
-    request.input('TipoEntrega', sql.Int, 2);
-    request.input('FechaEntrega', sql.NVarChar, paramsOrden.Pedido.ddw_order_date);
-    // request.input('FechaCreacion', sql.NVarChar, ); //paramsOrden.Pedido.date_add parametro anterior CONVERT(datetime,@FechaCreacion, 120)
-    // request.input('FechaEdicion', sql.NVarChar, ); // paramsOrden.Pedido.date_upd parametro anterior CONVERT(datetime,@FechaEdicion, 120)
-    request.input('Fecha', sql.NVarChar, paramsOrden.Pedido.date_add);
-    request.input('DireccionEntrega', sql.VarChar, paramsOrden.DireccionEntrega.direccion_1);
-    request.input('OficinaAlmacenEntregaID', sql.Decimal(6, 3), 1);
-    request.input('Referencia', sql.VarChar, paramsOrden.Pedido.gift_message);
-    request.input('Observaciones', sql.VarChar, paramsOrden.DireccionEntrega.Referencia + ', ' + paramsOrden.DireccionEntrega.city + ' , Entro en el siguiente rando de hora ' + paramsOrden.Pedido.ddw_order_time);
-    request.input('Contacto', sql.VarChar, paramsOrden.DireccionEntrega.PesonaEntrega);
-    request.input('Cliente', sql.VarChar, ParamsPersona.Estado == '2' ? paramsOrden.Customer.firstname + ' ' + paramsOrden.Customer.lastname : ''); // si existe ya no se escribe nada 
-    request.input('Contactotelefono', sql.VarChar, paramsOrden.DireccionEntrega.Telefono + ' - ' + paramsOrden.DireccionEntrega.phone_mobile);
-    request.input('MotivoID', sql.Decimal(9, 5), 190.00062);
-    request.input('CondicionVtaID', sql.Decimal(9, 5), 113.00001);
-    request.input('DeliveryTipoID', sql.Decimal(9, 5), 193.00001);
-
-    request.input('Email', sql.NVarChar, ParamsPersona.Estado == '2' ? paramsOrden.Customer.email : ''); // si es 2 significa que es ventasDia y no tiene email pasa el cliente prestashop 
-
-    function obtenerTurno(ddw_order_time) {
-
-      let FechaOrdenada = ddw_order_time.replace(/\s/g, ''); // Eliminar todos los espacios
-      let [inicio, fin] = FechaOrdenada.split('-');
-      inicio = parseInt(inicio.split(':')[0]);
-      fin = parseInt(fin.split(':')[0]);
-
-      const turnos = [
-        { numero: '192.00002', inicio: 9, fin: 14 },
-        { numero: '192.00003', inicio: 14, fin: 18 },
-        { numero: '192.00005', inicio: 17, fin: 20 }
-      ];
-
-      // Calcular la distancia al turno más cercano
-      let distanciaMinima = Number.MAX_SAFE_INTEGER;
-      let turnoCercano = 'No se encontró un turno válido';
-
-      for (let turno of turnos) {
-        let distanciaInicio = Math.abs(inicio - turno.inicio);
-        let distanciaFin = Math.abs(fin - turno.fin);
-        let distancia = distanciaInicio + distanciaFin;
-
-        if (distancia < distanciaMinima) {
-          distanciaMinima = distancia;
-          turnoCercano = turno.numero;
-        }
-      }
-      // Retornar el turno más cercano
-      return turnoCercano;
+    if(principalID !== null){
+        console.log("WebID : "+ paramsOrden.Pedido.id + " " + "Convenio correspondiente : " + principalID);
+    }else{
+        console.log("==");
     }
-
-    request.input('DeliveryTurnoID', sql.Decimal(9, 5), obtenerTurno(paramsOrden.Pedido.ddw_order_time)); //192.00002 iba por defecto
-    request.input('TipoDocID', sql.Decimal(9, 5), seriePedido);
-    request.input('UsuarioID', sql.Int, variablesSesion.UsuarioID);
-    request.input('Vendedor', sql.Int, variablesSesion.UsuarioID);
-    request.input('TipoVenta', sql.Int, 0);
-    request.input('HabilitarFecha', sql.Int, 0);
-    request.input('IDPlanilla', sql.NVarChar, PlanillaID);
-    // request.input('ConvenioID', sql.Decimal(9, 5), 902.00001);
-    request.input('ConvenioID', sql.Decimal(9, 5), principalID == null ? 902.00001 : principalID);
-    request.input('WebID', sql.Int, paramsOrden.Pedido.id);
-    request.input('ValorPedido', sql.Decimal(9, 5), paramsOrden.Pedido.total_paid);
-    request.input('PrecioPedido', sql.Decimal(9, 5), paramsOrden.Pedido.total_paid);
-
-    result = await request.query(query);
-    newPedidoID = result.recordset[0].LastInsertedID;
-    // console.log("Este es mi pedido Id ::::::::::::::::::::::::", newPedidoID);
-    // console.log(params);
-    let ConsecutivoProducto = 0;
-
-    for (let i = 0; i < paramsOrden.ProductosOrden.length; i++) {
-      let producto = paramsOrden.ProductosOrden[i];
-      let productoCategoria = paramsOrden.ProductosCategoriaOrden[i];
-
-      // Consulta de producto
-      const requestPrecio = new sql.Request(transaction);
-      const productoERP = `SELECT * FROM producto WHERE CodigoAlterno = @CodigoAlterno;`;
-
-      if (!producto.product_reference || producto.product_reference.trim() === '') {
-        throw new Error(`Producto no se podrá buscar en ERP: ProductoID ${producto.ProductoID || 'desconocido'} tiene una referencia vacía o no válida.`);
-      }
-
-      const referenciaPura = producto.product_reference.trim();
-      requestPrecio.input('CodigoAlterno', sql.VarChar, referenciaPura);
-
-
-      const resultPrecio = await requestPrecio.query(productoERP);
-
-      const productoData = resultPrecio.recordset[0]; //resultPrecio hace referencia a precio general del producto buscado por referencia
-      const ProductoID = productoData.ProductoID;
-      const UMContenidoID = productoData.UMUnitarioID;
-
-      // Inserción en VentaPedidoDetalle
-      const request2 = new sql.Request(transaction);
-      const query1 = `
-        INSERT INTO VentaPedidoDetalle
-        (EmpresaID, OficinaAlmacenID, PedidoID, Consecutivo, ProductoID, cantidad, valorunitario, preciounitario, PorcentajeDescuento, descuento, FechaEntrega, UMUnitarioID, observaciones, Estado, UsuarioID, FechaCreacion, FechaModificacion)
-        VALUES
-        (1, @OficinaAlmacenID, @PedidoID, @Consecutivo, @ProductoID, @cantidad, 0.0, @preciounitario, @descuento, 0.0, @FechaEntrega, @UMUnitarioID, '', 1, @UsuarioID, GETDATE(), GETDATE());
-      `;
-
-      request2.input('OficinaAlmacenID', sql.Decimal(6, 3), variablesSesion.OficinaAlmacenID);
-      request2.input('PedidoID', sql.Int, newPedidoID);
-      request2.input('Consecutivo', sql.Int, i + 1);
-      ConsecutivoProducto = i + 1;
-      request2.input('ProductoID', sql.Int, ProductoID);
-      request2.input('cantidad', sql.Decimal(12, 4), parseFloat(producto.product_quantity));
-      request2.input('preciounitario', sql.Decimal(18, 9), parseFloat(producto.unit_price_tax_incl));
-
-      let PorcentajeDescuento = 0.00; // Valor por defecto
-
-      // if (paramsOrden.OrderDetails_cart_rules !== null) {
-      //   const cupon = await obtenerCuponesYCategoriaFiltro(paramsOrden.OrderDetails_cart_rules[0].id_cart_rule, productoCategoria);
-      //   const cuponParsed = JSON.parse(cupon);
-
-      //   if (cuponParsed.length > 0) {
-      //     const categorias = cuponParsed[0].categories;
-
-      //     if (typeof categorias === 'string' && categorias === 'No hay categorías asociadas') {
-      //       // Si hay un cupón pero el mensaje indica que no hay categorías
-      //       PorcentajeDescuento = parseFloat(cuponParsed[0].reduction_percent);
-      //     } else if (Array.isArray(categorias) && categorias.length === 0) {
-      //       // Si hay un cupón pero no tiene categorías
-      //       PorcentajeDescuento = 0.00; // No se aplica descuento
-      //     } else {
-      //       // Si hay un cupón y tiene categorías
-      //       PorcentajeDescuento = parseFloat(cuponParsed[0].reduction_percent);
-      //     }
-      //   } else {
-      //     // Si no se encuentra el cupón
-      //     PorcentajeDescuento = 0.00; // Valor por defecto
-      //   }
-      // }
-      if (paramsOrden.OrderDetails_cart_rules !== null) {
-        const cupon = await obtenerCuponesYCategoriaFiltro(paramsOrden.OrderDetails_cart_rules[0].id_cart_rule, productoCategoria);
-        const cuponParsed = JSON.parse(cupon);
-
-        if (cuponParsed.length > 0) {
-          const categorias = cuponParsed[0].categories;
-
-          // Consulta adicional para verificar el convenio
-          const requestConvenio = new sql.Request(transaction);
-          const queryConvenio = `select * from tablageneral where Abreviatura = @Convenio and floor(PrincipalID) = '902' `;
-          // console.log("Este es el cupon abreviatura ",cuponParsed[0].name);
-          requestConvenio.input('Convenio', sql.NVarChar, cuponParsed[0].name);
-
-          const resultadoConvenio = await requestConvenio.query(queryConvenio);
-          const convenioActivo = resultadoConvenio.recordset.length > 0 ? resultadoConvenio.recordset[0] : null;
-          // console.log("Este es el convenio activo ",convenioActivo);
-          if (convenioActivo) {
-            const cuponActivo = cuponParsed[0].active === "Activo"; // Verificar si el cupón está activo
-            const nombreCupon = cuponParsed[0].name; // Extraer el nombre del cupón
-
-            if (typeof categorias === 'string' && categorias === 'No hay categorías asociadas') {
-              PorcentajeDescuento = parseFloat(cuponParsed[0].reduction_percent);
-            } else if (Array.isArray(categorias) && categorias.length === 0) {
-              PorcentajeDescuento = 0.00; // No se aplica descuento
-            } else if (cuponActivo) {
-              PorcentajeDescuento = parseFloat(cuponParsed[0].reduction_percent);
-            } else {
-              PorcentajeDescuento = 0.00; // Cupón no activo
-            }
-
-            // console.log(`Nombre del cupón Activo : ${nombreCupon}, Activo: ${cuponActivo}`);
-          } else {
-            throw new Error("No existe Cupon de Descuento en ERP"); // Lanzar error si no hay convenio
-          }
-        } else {
-          PorcentajeDescuento = 0.00; // Si no se encuentra el cupón
-        }
-      }
-
-      request2.input('descuento', sql.Decimal(18, 9), PorcentajeDescuento);
-      request2.input('FechaEntrega', sql.NVarChar, paramsOrden.Pedido.ddw_order_date);
-      // request2.input('FechaCreacion', sql.NVarChar, paramsOrden.Pedido.date_add);
-      // request2.input('FechaEdicion', sql.NVarChar, paramsOrden.Pedido.date_upd);
-      request2.input('UMUnitarioID', sql.Decimal(9, 5), UMContenidoID);
-      request2.input('UsuarioID', sql.Int, variablesSesion.UsuarioID);
-      await request2.query(query1);
-    }
-
-    // Insertar el delivery como producto
-    const requestPrecioDelivery = new sql.Request(transaction);
-    const productoERPDelivery = `
-        select * from producto WHERE CodigoAlterno = @CodigoAlterno;`;
-    // requestPrecioDelivery.transaction = transaction;
-    requestPrecioDelivery.input('CodigoAlterno', sql.VarChar, paramsOrden.IDEntrega_Direccion.id);
-
-    const resultPrecioDelivery = await requestPrecioDelivery.query(productoERPDelivery);
-    const ProductoIDDelivery = resultPrecioDelivery.recordset[0].ProductoID;
-    const UMContenidoIDDelivery = resultPrecioDelivery.recordset[0].UMUnitarioID;
-
-
-    const request5 = new sql.Request(transaction);;
-    const query5 = `
-                INSERT INTO VentaPedidoDetalle
-                  (EmpresaID, OficinaAlmacenID, PedidoID, Consecutivo, ProductoID, cantidad, valorunitario, preciounitario, PorcentajeDescuento, descuento, FechaEntrega, UMUnitarioID, observaciones, Estado, UsuarioID, FechaCreacion, FechaModificacion)
-                  VALUES
-                  (1, @OficinaAlmacenID, @PedidoID, @Consecutivo, @ProductoID, @cantidad, 0.0, @preciounitario, 0.0, @descuento, CONVERT(datetime,@FechaEntrega, 120), @UMUnitarioID, '', 1, @UsuarioID, GETDATE(), GETDATE());`;
-
-    // request5.transaction = transaction;
-    request5.input('OficinaAlmacenID', sql.Decimal(6, 3), variablesSesion.OficinaAlmacenID);
-    request5.input('PedidoID', sql.Int, newPedidoID);
-    request5.input('Consecutivo', sql.Int, ConsecutivoProducto + 1);
-    request5.input('ProductoID', sql.Int, ProductoIDDelivery);
-    request5.input('cantidad', sql.Decimal(12, 4), 1);
-    request5.input('preciounitario', sql.Decimal(18, 9), paramsOrden.Pedido.total_shipping);
-    request5.input('descuento', sql.Decimal(18, 9), 0.00);
-    request5.input('FechaEntrega', sql.NVarChar, paramsOrden.Pedido.ddw_order_date);
-    // request5.input('FechaCreacion', sql.NVarChar, paramsOrden.Pedido.date_add);
-    // request5.input('FechaEdicion', sql.NVarChar, paramsOrden.Pedido.date_upd);
-    request5.input('UMUnitarioID', sql.Decimal(9, 5), UMContenidoIDDelivery);
-    request5.input('UsuarioID', sql.Int, variablesSesion.UsuarioID);
-    await request5.query(query5);
-
-    // Fin de insersion de el Delivery como producto
-
-    // Insertar información de TablaEmpresa
-    const requestMPago = new sql.Request(transaction);
-    // console.log(paramsOrden.Pedido);
-    // console.log("Este es mi modulo", paramsOrden.Pedido['módulo']);
-    const queryMPago = `
-                SELECT * FROM TablaEmpresa WHERE Abreviatura = @referencia;`;
-    // requestMPago.transaction = transaction;
-    requestMPago.input('referencia', sql.VarChar, paramsOrden.Pedido['módulo']);
-    const resultMPago = await requestMPago.query(queryMPago);
-    // console.log("Este es mi resul medio pago");
-    // console.log(resultMPago);
-    if (resultMPago.recordset.length > 0) {
-      // console.log("Entramos al registro del medio de pago");
-      const tablaEmpresaInfo = resultMPago.recordset[0];
-      // const request4 = pool.request();
-      const request4 = new sql.Request(transaction);
-      const query4 = `
-                  INSERT INTO VentaPedidoPago
-                    (EmpresaID, OficinaAlmacenID, PedidoID, FormaPagoID, MontoPago, UsuarioID, FechaCreacion, FechaModificacion, NroOperacion, PlanillaID)
-                    VALUES
-                    (1, @OficinaAlmacenID, @PedidoID, @FormaPagoID, @MontoPago, @UsuarioID, GETDATE(), GETDATE(), @NroOperacion, @PlanillaID);`;
-
-      // request4.transaction = transaction;
-      request4.input('OficinaAlmacenID', sql.Decimal(6, 3), variablesSesion.OficinaAlmacenID);
-      request4.input('PedidoID', sql.Int, newPedidoID);
-      request4.input('FormaPagoID', sql.Decimal(9, 5), tablaEmpresaInfo.CodigoID);
-      request4.input('MontoPago', sql.Decimal(12, 2), paramsOrden.Pedido.total_paid);
-      request4.input('UsuarioID', sql.Int, variablesSesion.UsuarioID);
-      request4.input('NroOperacion', sql.NVarChar, ''); //paramsOrden.Pedido.reference
-      request4.input('PlanillaID', sql.NVarChar, PlanillaID);
-      await request4.query(query4);
-    } else {
-      console.log("No entra al if y no se agregaron los medios de pago");
-    }
-
-    // Fin de Insertar los medios de pago
-
-
-    // Procediiento de facturacion de pedido
-    // console.log("Ejecutamos el procedimiento de facturacion");
-
-    const query2 = `
-          EXEC spPyOPedidoGeneraComprobante @Empresa, @OficinaAlmacenID, @PedidoID, @tipoDocID,'E';`;
-    // const request3 = pool.request();
-    const request3 = new sql.Request(transaction);
-    request3.input('Empresa', sql.Int, variablesSesion.EmpresaID);
-    request3.input('OficinaAlmacenID', sql.Decimal(6, 3), variablesSesion.OficinaAlmacenID);
-    // console.log("Esta es la OficinaAlmacen :", variablesSesion.OficinaAlmacenID)
-    // console.log("Este es mi newPedidoID para el procedimiento:: ", newPedidoID);
-    request3.input('PedidoID', sql.Int, newPedidoID);
-    request3.input('tipoDocID', sql.Decimal(9, 5), seriePedido);
-    result = await request3.query(query2);
-    //Fin de ejecucion de procedimiento de facturacion 
     await transaction.commit();
-
   } catch (err) {
-    // await transaction.rollback();
-    // error = err.toString();
     console.error(`Error en la transacción de crear pedido con orden :${paramsOrden.Pedido.id}`, err);
     await transaction.rollback();
     error = err.toString() + ' - Rollback realizado';
-    // logStream.write(`Error en la transacción de crear pedido con orden :${paramsOrden.Pedido.id}`, err)
   } finally {
     if (pool) {
       pool.close();
@@ -1449,86 +1097,51 @@ async function obtenerSeriePlanilla(orden) {
 
 async function procesarOrdenPrestashop() {
   try {
-    const ordenes = await ApiOrders();
-    const ordersInfo = ordenes;
-    // console.log("Datos de las órdenes:", ordersInfo);
+    let ordersInfo = [  
+      "101167", "101172", "101175", "101184", 
+      "101192", "101194", "101200", "101216", 
+      "101217", "101218", "101220", "101221", 
+      "101234", "101283", "101350", "101406", 
+      "101418", "101424", "101450", "101457"
+  ];
+  
+    console.log("Datos de las órdenes:", ordersInfo);
 
     for (let i = 0; i < ordersInfo.length; i++) {
-      const orden = ordersInfo[i].Orden;
+      const orden = ordersInfo[i];
       let resultadoOrdenes;
 
-      try {
-        resultadoOrdenes = await BuscarOrden(orden);
-      } catch (error) {
-        console.error(`Error al buscar la orden ${orden}:`, error);
-        continue; // Continua con la siguiente orden en caso de error
-      }
+      // try {
+      //   resultadoOrdenes = await BuscarOrden(orden);
+      // } catch (error) {
+      //   console.error(`Error al buscar la orden ${orden}:`, error);
+      //   continue; // Continúa con la siguiente orden en caso de error
+      // }
 
       if (resultadoOrdenes) {
-        // console.log(`Orden ${orden} encontrada:`, resultadoOrdenes);
+        console.log(`Orden ${orden} encontrada:`, resultadoOrdenes);
       } else {
-        // console.log(`Orden ${orden} no encontrada`);
         let DatosDeOrden;
 
         try {
           DatosDeOrden = await BuscarOrdenPorID(orden);
         } catch (error) {
           console.error(`Error al buscar la orden por ID ${orden}:`, error);
-          continue; // Continua con la siguiente orden en caso de error
+          continue; // Continúa con la siguiente orden en caso de error
         }
 
         if (DatosDeOrden) {
           // console.log("Estos son los datos de orden", DatosDeOrden);
           const EstadoOrden = await HistorialOrden(orden);
-          const VerificacionEstado = EstadoOrden;
-
-          if (VerificacionEstado == '2') {
-            let cliente = null;
-            if (DatosDeOrden.SerieDePedido.company === '' || DatosDeOrden.SerieDePedido.company == '00000000' || DatosDeOrden.SerieDePedido.company == '00000000000') {
-              cliente = await buscarClientePorDNI('00000001');
-              if (cliente) {
-                await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID ,DatosDeOrden.OrderDetails_cart_rules !== null && DatosDeOrden.cart_rules[0].active == 1 ? DatosDeOrden.OrderDetails_cart_rules : null);
-              }
-            } else {
-              if (DatosDeOrden.SerieDePedido.company.length === 8 || DatosDeOrden.SerieDePedido.company.length === 11) {
-                cliente = await buscarClientePorDNI(DatosDeOrden.SerieDePedido.company);
-                // Si el cliente no se encontro pasa a crearlo y buscarlo en en RENIEC O SUNAT
-                if (cliente === null) {
-                  const razonSocial = await buscarRazonSocialPorDNIRUC(DatosDeOrden.SerieDePedido.company);
-                  if (razonSocial !== 'Número no encontrado') {
-                    await crearCliente(razonSocial, DatosDeOrden.Customer);
-                    cliente = await buscarClientePorDNI(DatosDeOrden.SerieDePedido.company);
-                  } else {
-                    cliente = await buscarClientePorDNI('00000001');
-                  }
-                }
-                // si el cliente si se encontro pasa a crear el pedido
-                if (cliente && cliente.Estado == '1') {
-                  // Se verifica los datos del cliente con los nuevos datos de la orden y con lo que ya cuenta.
-                  const updateResult = await updateCliente(DatosDeOrden, cliente);
-                  
-                  if (!updateResult.success) {
-                    throw new Error(updateResult.message);
-                  }
-                
-                  // Después de actualizar, se busca el cliente nuevamente para obtener los datos actualizados.
-                  cliente = await buscarClientePorDNI(DatosDeOrden.SerieDePedido.company);
-                  
-                  if (!cliente) {
-                    throw new Error('No se pudo encontrar el cliente después de la actualización.');
-                  }
-                
-                  // Se procede a crear el pedido con los datos actualizados del cliente.
-                  await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID, DatosDeOrden.OrderDetails_cart_rules !== null && DatosDeOrden.cart_rules[0].active == 1 ? DatosDeOrden.OrderDetails_cart_rules : null);
-                }
-              } else {
-                cliente = await buscarClientePorDNI('00000001');
-                if (cliente) {
-                  await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID, DatosDeOrden.OrderDetails_cart_rules !== null && DatosDeOrden.cart_rules[0].active == 1 ? DatosDeOrden.OrderDetails_cart_rules : null);
-                }
-              }
-            }
+          
+          if (EstadoOrden == '2') {
+            await createPedido(DatosDeOrden, 
+              DatosDeOrden.OrderDetails_cart_rules !== null && 
+              DatosDeOrden.cart_rules[0].active == 1 ? 
+              DatosDeOrden.OrderDetails_cart_rules : null
+            );
           }
+
         } else {
           console.log(`No se pudo obtener la información de la orden ${orden}`);
         }

@@ -1495,6 +1495,7 @@ async function procesarOrdenPrestashop() {
                 // Si el cliente no se encontro pasa a crearlo y buscarlo en en RENIEC O SUNAT
                 if (cliente === null) {
                   const razonSocial = await buscarRazonSocialPorDNIRUC(DatosDeOrden.SerieDePedido.company);
+                  // console.log(razonSocial);
                   if (razonSocial !== 'Número no encontrado') {
                     await crearCliente(razonSocial, DatosDeOrden.Customer);
                     cliente = await buscarClientePorDNI(DatosDeOrden.SerieDePedido.company);
@@ -1519,6 +1520,8 @@ async function procesarOrdenPrestashop() {
                   }
                 
                   // Se procede a crear el pedido con los datos actualizados del cliente.
+                  await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID, DatosDeOrden.OrderDetails_cart_rules !== null && DatosDeOrden.cart_rules[0].active == 1 ? DatosDeOrden.OrderDetails_cart_rules : null);
+                }else if (cliente.Estado == '2') {
                   await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID, DatosDeOrden.OrderDetails_cart_rules !== null && DatosDeOrden.cart_rules[0].active == 1 ? DatosDeOrden.OrderDetails_cart_rules : null);
                 }
               } else {

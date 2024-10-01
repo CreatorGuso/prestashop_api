@@ -1016,7 +1016,7 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
     request.input('Fecha', sql.NVarChar, paramsOrden.Pedido.date_add);
     request.input('DireccionEntrega', sql.VarChar, paramsOrden.DireccionEntrega.direccion_1);
     request.input('OficinaAlmacenEntregaID', sql.Decimal(6, 3), 1);
-    request.input('Referencia', sql.VarChar, paramsOrden.Pedido.gift_message);
+    request.input('Referencia', sql.NVarChar, paramsOrden.Pedido.gift_message);
     request.input('Observaciones', sql.VarChar, paramsOrden.DireccionEntrega.Referencia + ', ' + paramsOrden.DireccionEntrega.city + ' , Entro en el siguiente rando de hora ' + paramsOrden.Pedido.ddw_order_time);
     request.input('Contacto', sql.VarChar, paramsOrden.DireccionEntrega.PesonaEntrega);
     request.input('Cliente', sql.VarChar, ParamsPersona.Estado == '2' ? paramsOrden.Customer.firstname + ' ' + paramsOrden.Customer.lastname : ''); // si existe ya no se escribe nada 

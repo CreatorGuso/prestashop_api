@@ -13,7 +13,7 @@ const config = {
   user: "kuky",
   password: "Kf123456",
   server: "3.144.237.208",
-  database: "kflor", //prueba_
+  database: "prueba_kflor", //prueba_
   options: {
     encrypt: false, // Si estás utilizando Azure, establece esto en true
   },
@@ -266,6 +266,7 @@ async function BuscarOrdenPorID(orderId) {
         phone_mobile: direccionEntrega.address.phone_mobile,
         PesonaEntrega: direccionEntrega.address.firstname + ' ' + direccionEntrega.address.lastname,
         Telefono: direccionEntrega.address.phone,
+        Cordenadas: direccionEntrega.address.other,
       };
     });
 
@@ -993,9 +994,12 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
     const query = `
       INSERT INTO VentaPedidoCabecera
         (EmpresaID, OficinaAlmacenID, SeriePedido, NumeroPedido, PersoneriaID, DireccionID, VendedorID, CondicionVtaID, MonedaID, ListaPrecioID, Fecha, TipoEntrega, FechaEntrega, DireccionEntrega, OficinaAlmacenEntregaID, Referencia, Observaciones, Cliente, Contacto, Contactotelefono, MotivoID, DeliveryTipoID, DeliveryTurnoID, TipoDocID, ValorPedido, PrecioPedido, TipoCambio, Estado, UsuarioID, FechaCreacion, FechaModificacion, TipoVenta, Gratuita, PlanillaID, ConvenioID, WebID,TookanID
-              ,email)
+              ,email,longitud,latitud)
         VALUES
-        (1, @OficinaAlmacenID, @SerieCorrelativo, @NumeroPedido, @PersoneriaID, @DireccionID, @Vendedor, @CondicionVtaID, @MonedaID, @ListaPrecioID, CONVERT(datetime,@Fecha, 120), @TipoEntrega, CONVERT(datetime,@FechaEntrega, 120) , @DireccionEntrega, @OficinaAlmacenEntregaID, @Referencia, @Observaciones, @Cliente, @Contacto, @Contactotelefono, @MotivoID, @DeliveryTipoID, @DeliveryTurnoID, @TipoDocID, @ValorPedido, @PrecioPedido, 0.00000, '1', @UsuarioID, GETDATE(), GETDATE(), @TipoVenta, @HabilitarFecha, @IDPlanilla, @ConvenioID, @WebID, null ,@Email);
+        (1, @OficinaAlmacenID, @SerieCorrelativo, @NumeroPedido, @PersoneriaID, @DireccionID, @Vendedor, @CondicionVtaID, @MonedaID, @ListaPrecioID, CONVERT(datetime,@Fecha, 120), @TipoEntrega, 
+        CONVERT(datetime,@FechaEntrega, 120) , @DireccionEntrega, @OficinaAlmacenEntregaID, @Referencia, @Observaciones, @Cliente, @Contacto, @Contactotelefono, @MotivoID, @DeliveryTipoID, 
+        @DeliveryTurnoID, @TipoDocID, @ValorPedido, @PrecioPedido, 0.00000, '1', @UsuarioID, GETDATE(), GETDATE(), @TipoVenta, 
+        @HabilitarFecha, @IDPlanilla, @ConvenioID, @WebID, null ,@Email, @longitud, @latitud);
       SELECT SCOPE_IDENTITY() AS LastInsertedID;
       `;
 
@@ -1026,6 +1030,22 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
     request.input('DeliveryTipoID', sql.Decimal(9, 5), 193.00001);
 
     request.input('Email', sql.NVarChar, ParamsPersona.Estado == '2' ? paramsOrden.Customer.email : ''); // si es 2 significa que es ventasDia y no tiene email pasa el cliente prestashop 
+
+    // nos aseguramos que  de que paramsOrden y DireccionEntrega existen
+      var coordenadas = paramsOrden.DireccionEntrega && paramsOrden.DireccionEntrega.Cordenadas
+          ? paramsOrden.DireccionEntrega.Cordenadas.split(',')
+          : [];
+
+      // Extraemos la latitud y longitud, estableciendo 0.0 como valor por defecto
+      var latitud = coordenadas.length > 0 ? parseFloat(coordenadas[0]) : 0.0;
+      var longitud = coordenadas.length > 1 ? parseFloat(coordenadas[1]) : 0.0;
+
+      // Asegúrate de que las conversiones a número son seguras orden de llegada es latitud y longitud
+      latitud = isNaN(latitud) ? 0.0 : latitud;
+      longitud = isNaN(longitud) ? 0.0 : longitud;
+    console.log("Estas son mis cordenadas en la orden",paramsOrden.Pedido.id,latitud, longitud);
+    request.input('latitud', sql.Decimal(20, 8), latitud);
+    request.input('longitud', sql.Decimal(20, 8), longitud);
 
     function obtenerTurno(ddw_order_time) {
 

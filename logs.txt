@@ -5318,3 +5318,73 @@ TypeError: Cannot read properties of undefined (reading 'ProductoID')
 2024-10-29 06:59:01.867 - 0
 2024-10-29 06:59:01.867 - 0
 2024-10-29 06:59:02.936 - undefined
+2024-11-07 01:37:40.510 - Estas son mis cordenadas en la orden
+2024-11-07 01:37:40.510 - 101928
+2024-11-07 01:37:40.510 - 0
+2024-11-07 01:37:40.510 - 0
+2024-11-07 01:37:55.776 - Estas son mis cordenadas en la orden
+2024-11-07 01:37:55.776 - 101954
+2024-11-07 01:37:55.776 - 0
+2024-11-07 01:37:55.776 - 0
+2024-11-07 01:38:05.030 - Estas son mis cordenadas en la orden
+2024-11-07 01:38:05.030 - 101959
+2024-11-07 01:38:05.030 - 0
+2024-11-07 01:38:05.030 - 0
+2024-11-07 01:38:05.272 - ERROR: Error en la transacción de crear pedido con orden :101959
+2024-11-07 01:38:05.272 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-11-07 01:38:05.272 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1119:39)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1510:17)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1624:17)
+2024-11-07 01:38:12.859 - Estas son mis cordenadas en la orden
+2024-11-07 01:38:12.859 - 101962
+2024-11-07 01:38:12.859 - 0
+2024-11-07 01:38:12.859 - 0
+2024-11-07 01:38:15.742 - ERROR: Request failed with status code 404
+2024-11-07 01:38:15.742 - STACK TRACE:
+AxiosError: Request failed with status code 404
+    at settle (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\node_modules\axios\dist\node\axios.cjs:1966:12)
+    at IncomingMessage.handleStreamEnd (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\node_modules\axios\dist\node\axios.cjs:3065:11)
+    at IncomingMessage.emit (node:events:531:35)
+    at endReadableNT (node:internal/streams/readable:1696:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:82:21)
+    at Axios.request (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\node_modules\axios\dist\node\axios.cjs:3876:41)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async BuscarOrdenPorID (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:274:36)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1494:26)
+    at async Inicializador (C:\Users\gudeh\OneDrive\Documentos\TrabajoAGILEXSistenmasEmpresariales\prestashop_api\index.js:1624:17)
+2024-11-07 01:38:15.753 - No se pudo obtener la información de la orden 101966
+2024-11-07 01:38:25.727 - Estas son mis cordenadas en la orden
+2024-11-07 01:38:25.727 - 101968
+2024-11-07 01:38:25.727 - 0
+2024-11-07 01:38:25.727 - 0
+2024-11-07 01:38:40.410 - Estas son mis cordenadas en la orden
+2024-11-07 01:38:40.410 - 101975
+2024-11-07 01:38:40.410 - 0
+2024-11-07 01:38:40.410 - 0
+2024-11-07 01:38:48.906 - Estas son mis cordenadas en la orden
+2024-11-07 01:38:48.906 - 101977
+2024-11-07 01:38:48.906 - 0
+2024-11-07 01:38:48.906 - 0
+2024-11-07 01:39:03.444 - Estas son mis cordenadas en la orden
+2024-11-07 01:39:03.444 - 101978
+2024-11-07 01:39:03.444 - -12.0626058
+2024-11-07 01:39:03.444 - -77.0926181
+2024-11-07 01:39:20.036 - Estas son mis cordenadas en la orden
+2024-11-07 01:39:20.036 - 101979
+2024-11-07 01:39:20.036 - 0
+2024-11-07 01:39:20.036 - 0
+2024-11-07 01:39:35.963 - Estas son mis cordenadas en la orden
+2024-11-07 01:39:35.963 - 101980
+2024-11-07 01:39:35.963 - 0
+2024-11-07 01:39:35.963 - 0
+2024-11-07 01:39:47.893 - Estas son mis cordenadas en la orden
+2024-11-07 01:39:47.893 - 101981
+2024-11-07 01:39:47.893 - 0
+2024-11-07 01:39:47.893 - 0
+2024-11-07 01:39:56.542 - Estas son mis cordenadas en la orden
+2024-11-07 01:39:56.542 - 101982
+2024-11-07 01:39:56.542 - 0
+2024-11-07 01:39:56.542 - 0

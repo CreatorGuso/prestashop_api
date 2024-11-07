@@ -13,7 +13,7 @@ const config = {
   user: "kuky",
   password: "Kf123456",
   server: "3.144.237.208",
-  database: "prueba_kflor", //prueba_
+  database: "kflor", //prueba_
   options: {
     encrypt: false, // Si estás utilizando Azure, establece esto en true
   },
@@ -1043,7 +1043,7 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
       // Asegúrate de que las conversiones a número son seguras orden de llegada es latitud y longitud
       latitud = isNaN(latitud) ? 0.0 : latitud;
       longitud = isNaN(longitud) ? 0.0 : longitud;
-    console.log("Estas son mis cordenadas en la orden",paramsOrden.Pedido.id,latitud, longitud);
+    // console.log("Estas son mis cordenadas en la orden",paramsOrden.Pedido.id,latitud, longitud);
     request.input('latitud', sql.Decimal(20, 8), latitud);
     request.input('longitud', sql.Decimal(20, 8), longitud);
 

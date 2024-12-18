@@ -749,7 +749,7 @@ async function crearCliente(params, paramsAPI) {
     request.input('Domiciliado', sql.NVarChar, '1');
     request.input('TipoContribuyente', sql.NVarChar, '1');
     request.input('FamiliaID', sql.Decimal(9, 5), 143.00000);
-    request.input('NegocioID', sql.Decimal(9, 5), 179.00000);
+    request.input('NegocioID', sql.Decimal(9, 5), 179.00001); //se cambio el negocio a  179.00001
     request.input('CtaDetraccion', sql.NVarChar, '');
     request.input('Codigo', sql.NVarChar, '');
     request.input('Referencia', sql.VarChar, '');

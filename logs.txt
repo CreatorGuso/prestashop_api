@@ -6714,3 +6714,35 @@ AxiosError: Request failed with status code 404
   "latitud": 0
 }
 2024-12-06 14:17:46.367 - undefined
+2024-12-19 22:28:34.118 - ERROR: Error en la transacción de crear pedido con orden :102723
+2024-12-19 22:28:34.118 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-12-19 22:28:34.118 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\Documents\sistemasEmpresarialesAgilex\prestashop_api\index.js:1123:39)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\Documents\sistemasEmpresarialesAgilex\prestashop_api\index.js:1547:19)
+    at async Inicializador (C:\Users\gudeh\Documents\sistemasEmpresarialesAgilex\prestashop_api\index.js:1628:17)
+2024-12-19 22:29:32.438 - ERROR: Error en la transacción de crear pedido con orden :102730
+2024-12-19 22:29:32.438 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-12-19 22:29:32.438 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\Documents\sistemasEmpresarialesAgilex\prestashop_api\index.js:1123:39)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\Documents\sistemasEmpresarialesAgilex\prestashop_api\index.js:1547:19)
+    at async Inicializador (C:\Users\gudeh\Documents\sistemasEmpresarialesAgilex\prestashop_api\index.js:1628:17)
+2024-12-19 22:29:46.519 - ERROR: Error en la transacción de crear pedido con orden :102731
+2024-12-19 22:29:46.519 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-12-19 22:29:46.519 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\Documents\sistemasEmpresarialesAgilex\prestashop_api\index.js:1123:39)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\Documents\sistemasEmpresarialesAgilex\prestashop_api\index.js:1547:19)
+    at async Inicializador (C:\Users\gudeh\Documents\sistemasEmpresarialesAgilex\prestashop_api\index.js:1628:17)
+2024-12-19 22:30:36.617 - ERROR: Error en la transacción de crear pedido con orden :102736
+2024-12-19 22:30:36.617 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2024-12-19 22:30:36.617 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\Documents\sistemasEmpresarialesAgilex\prestashop_api\index.js:1123:39)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\Documents\sistemasEmpresarialesAgilex\prestashop_api\index.js:1547:19)
+    at async Inicializador (C:\Users\gudeh\Documents\sistemasEmpresarialesAgilex\prestashop_api\index.js:1628:17)

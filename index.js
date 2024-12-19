@@ -13,7 +13,8 @@ const config = {
   user: "kuky",
   password: "Kf123456",
   server: "3.144.237.208",
-  database: "kflor", //prueba_
+  database: "kflor",
+  // database: "prueba_kflor", //prueba_
   options: {
     encrypt: false, // Si estás utilizando Azure, establece esto en true
   },
@@ -935,7 +936,10 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
     let seriePedido = 103.00003; // Valor por defecto
 
     if (ParamsPersona.Estado == '1') {
-      if (tipoSerie == 'FA' && ParamsPersona.NroIdentidad.length == 11) {
+      // if (tipoSerie == 'FA' && ParamsPersona.NroIdentidad.length == 11) {
+      //   seriePedido = 103.00001; // Factura
+      // }
+      if (ParamsPersona.TipoIdentidadID == 203.00002) { //203.00002 es RUC
         seriePedido = 103.00001; // Factura
       }
     }

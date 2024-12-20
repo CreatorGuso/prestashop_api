@@ -1188,6 +1188,7 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
               PorcentajeDescuento = parseFloat(cuponParsed[0].reduction_percent);
             } else if (Array.isArray(categorias) && categorias.length === 0) {
               PorcentajeDescuento = 0.00; // No se aplica descuento
+              throw new Error(`No hay categorias asociadas al cupon con el ID ORDER : ${paramsOrden.Pedido.id} y el ID CUPON : ${paramsOrden.OrderDetails_cart_rules[0].id_cart_rule} y Con Categoria : ${productoCategoria}`);
             } else if (cuponActivo) {
               PorcentajeDescuento = parseFloat(cuponParsed[0].reduction_percent);
             } else {

@@ -589,30 +589,6 @@ async function BuscarOrdenPorID(orderId) {
   }
 }
 
-// async function obtenerCuponesYCategoriaFiltro(idCupon, idCategoria) {
-//   try {
-//     const response = await axios.get(
-//       `https://www.kukyflor.com/devs/json_cupones.php?token=ZBR3Q8MEZ3KC16C7Z5CMYYD9V1VFCT3T`
-//     );
-
-//     const cupones = response.data;
-
-//     // Filtrar cupones por ID
-//     const cuponFiltrado = cupones.filter(cupon => cupon.id_cart_rule == idCupon);
-
-//     // Filtrar categorías en cada cupón
-//     const cuponConCategoriaFiltrada = cuponFiltrado.map(cupon => {
-//       return {
-//         ...cupon,
-//         categories: cupon.categories.filter(cat => cat.id_category == idCategoria)
-//       };
-//     });
-
-//     return JSON.stringify(cuponConCategoriaFiltrada, null, 2);
-//   } catch (err) {
-//     console.error(`Error al obtener o filtrar cupones:`, err);
-//   }
-// }
 async function obtenerCuponesYCategoriaFiltro(idCupon, idCategoria) {
   try {
     const response = await axios.get(
@@ -1100,7 +1076,7 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
     // console.log("Este es mi pedido Id ::::::::::::::::::::::::", newPedidoID);
     // console.log(params);
     let ConsecutivoProducto = 0;
-    let HistorialDescuento = false;
+    let HistorialDescuento = 0;
 
     for (let i = 0; i < paramsOrden.ProductosOrden.length; i++) {
       let producto = paramsOrden.ProductosOrden[i];
@@ -1172,7 +1148,7 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
               PorcentajeDescuento = 0.00; // No se aplica descuento
             } else if (cuponActivo) {
               PorcentajeDescuento = parseFloat(cuponParsed[0].reduction_percent);
-              HistorialDescuento = true;
+              HistorialDescuento += parseFloat(((parseFloat(producto.unit_price_tax_incl) * parseFloat(producto.product_quantity)) * (parseFloat(cuponParsed[0].reduction_percent)/100)).toFixed(2));
             } else {
               PorcentajeDescuento = 0.00; // Cupón no activo
             }
@@ -1195,7 +1171,9 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
       await request2.query(query1);
     }
 
-    if(HistorialDescuento == false && paramsOrden.Pedido.total_discounts > 0){
+    // console.log("Este es el descuento acumulado", HistorialDescuento);
+    // console.log("Este es el descuento de la orden", paramsOrden.Pedido.total_discounts);
+    if(HistorialDescuento != parseFloat(paramsOrden.Pedido.total_discounts)){
       throw new Error(`Orden sin Descuento en los productos y el ID CUPON : ${paramsOrden.OrderDetails_cart_rules[0].id_cart_rule}`);
     }
 

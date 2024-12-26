@@ -213,7 +213,7 @@ async function BuscarOrdenPorID(orderId) {
         // gift: order.gift,
         gift_message: order.gift_message,
         // mobile_theme: order.mobile_theme,
-        // total_discounts: order.total_discounts,
+        total_discounts: order.total_discounts,
         // total_discounts_tax_incl: order.total_discounts_tax_incl,
         // total_discounts_tax_excl: order.total_discounts_tax_excl,
         total_paid: order.total_paid,
@@ -1100,6 +1100,7 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
     // console.log("Este es mi pedido Id ::::::::::::::::::::::::", newPedidoID);
     // console.log(params);
     let ConsecutivoProducto = 0;
+    let HistorialDescuento = false;
 
     for (let i = 0; i < paramsOrden.ProductosOrden.length; i++) {
       let producto = paramsOrden.ProductosOrden[i];
@@ -1142,29 +1143,10 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
 
       let PorcentajeDescuento = 0.00; // Valor por defecto
 
-      // if (paramsOrden.OrderDetails_cart_rules !== null) {
-      //   const cupon = await obtenerCuponesYCategoriaFiltro(paramsOrden.OrderDetails_cart_rules[0].id_cart_rule, productoCategoria);
-      //   const cuponParsed = JSON.parse(cupon);
 
-      //   if (cuponParsed.length > 0) {
-      //     const categorias = cuponParsed[0].categories;
-
-      //     if (typeof categorias === 'string' && categorias === 'No hay categorías asociadas') {
-      //       // Si hay un cupón pero el mensaje indica que no hay categorías
-      //       PorcentajeDescuento = parseFloat(cuponParsed[0].reduction_percent);
-      //     } else if (Array.isArray(categorias) && categorias.length === 0) {
-      //       // Si hay un cupón pero no tiene categorías
-      //       PorcentajeDescuento = 0.00; // No se aplica descuento
-      //     } else {
-      //       // Si hay un cupón y tiene categorías
-      //       PorcentajeDescuento = parseFloat(cuponParsed[0].reduction_percent);
-      //     }
-      //   } else {
-      //     // Si no se encuentra el cupón
-      //     PorcentajeDescuento = 0.00; // Valor por defecto
-      //   }
-      // }
       if (paramsOrden.OrderDetails_cart_rules !== null) {
+        // console.log("Estos son los datos de orden ",paramsOrden.Pedido.id);
+        // console.log("Estos son los datos de orden ",paramsOrden.OrderDetails_cart_rules[0].id_cart_rule, productoCategoria);
         const cupon = await obtenerCuponesYCategoriaFiltro(paramsOrden.OrderDetails_cart_rules[0].id_cart_rule, productoCategoria);
         const cuponParsed = JSON.parse(cupon);
 
@@ -1188,9 +1170,9 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
               PorcentajeDescuento = parseFloat(cuponParsed[0].reduction_percent);
             } else if (Array.isArray(categorias) && categorias.length === 0) {
               PorcentajeDescuento = 0.00; // No se aplica descuento
-              throw new Error(`No hay categorias asociadas al cupon con el ID ORDER : ${paramsOrden.Pedido.id} y el ID CUPON : ${paramsOrden.OrderDetails_cart_rules[0].id_cart_rule} y Con Categoria : ${productoCategoria}`);
             } else if (cuponActivo) {
               PorcentajeDescuento = parseFloat(cuponParsed[0].reduction_percent);
+              HistorialDescuento = true;
             } else {
               PorcentajeDescuento = 0.00; // Cupón no activo
             }
@@ -1211,6 +1193,10 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
       request2.input('UMUnitarioID', sql.Decimal(9, 5), UMContenidoID);
       request2.input('UsuarioID', sql.Int, variablesSesion.UsuarioID);
       await request2.query(query1);
+    }
+
+    if(HistorialDescuento == false && paramsOrden.Pedido.total_discounts > 0){
+      throw new Error(`Orden sin Descuento en los productos y el ID CUPON : ${paramsOrden.OrderDetails_cart_rules[0].id_cart_rule}`);
     }
 
     // Insertar el delivery como producto

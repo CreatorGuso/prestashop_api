@@ -408,19 +408,27 @@ async function BuscarOrdenPorID(orderId) {
     }
 
     function obtenerCategoriaOrden(IDproducto) {
-      // Realizar la petición a la API para obtener los datos de la orden
       return axios.get(
-        `https://ZBR3Q8MEZ3KC16C7Z5CMYYD9V1VFCT3T@www.kukyflor.com/api/products/${IDproducto}`
-      )
+          `https://ZBR3Q8MEZ3KC16C7Z5CMYYD9V1VFCT3T@www.kukyflor.com/api/products/${IDproducto}`
+        )
         .then(responseOrder => {
+          // Convertir la respuesta XML a JSON
           return parser.parseStringPromise(responseOrder.data);
         })
         .then(result => {
-          const Producto = result.prestashop.product.id_category_default._;
-          return Producto;
+          // Extraer las categorías asociadas desde associations.categories
+          const categories = result.prestashop.product.associations.categories || [];
+          // Mapear los IDs de las categorías a un array
+          const categoryIds = categories.category.map(cat => cat.id);
+          return categoryIds;
         })
         .catch(err => {
-          console.error(`Error al obtener las categorias o parsear la orden ${orderId}:`, err);
+          // Manejo de errores
+          console.error(
+            `Error al obtener las categorías asociadas del producto con ID ${IDproducto}:`,
+            err
+          );
+          return []; // Devuelve un array vacío en caso de error
         });
     }
 
@@ -600,12 +608,18 @@ async function obtenerCuponesYCategoriaFiltro(idCupon, idCategoria) {
     // Filtrar cupones por ID
     const cuponFiltrado = cupones.filter(cupon => cupon.id_cart_rule == idCupon);
 
-    // Filtrar categorías en cada cupón
     const cuponConCategoriaFiltrada = cuponFiltrado.map(cupon => {
-      const categorias = cupon.categories == 'No hay categorías asociadas'
-        ? 'No hay categorías asociadas'
-        : cupon.categories.filter(cat => cat.id_category == idCategoria);
+      let categorias = 'No hay categorías asociadas';
 
+      if (cupon.categories && cupon.categories !== 'No hay categorías asociadas') {
+        // Verificar si al menos una categoría coincide
+        const categoriasFiltradas = cupon.categories.filter(cat =>
+          idCategoria.some(idCat => idCat == cat.id_category)
+        );
+        if (categoriasFiltradas.length > 0) {
+          categorias = categoriasFiltradas;
+        }
+      }
       return {
         ...cupon,
         categories: categorias

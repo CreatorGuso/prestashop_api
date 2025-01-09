@@ -675,7 +675,7 @@ async function buscarRazonSocialPorDNIRUC(numero) {
     let headers = {};
     if (numero.length === 8) {
       tipoConsulta = 'dni';
-    } else if (numero.length >= 11) {
+    } else if (numero.length === 11) {
       tipoConsulta = 'ruc';
     } else {
       throw new Error('Número no válido');
@@ -732,11 +732,37 @@ async function crearCliente(params, paramsAPI) {
       `;
 
     const request = new sql.Request(transaction);
-    request.input('TipoIdentidadID', sql.Decimal(9, 5), params.tipoDocumento == '1' ? 203.00001 : 203.00002);//Funcionalidad para dni o ruc
+
+    let NombrePersoneria = '';
+    let TipoDocumento = 203.00001;
+
+    // Caso cuando `nombres`, `apellidoPaterno` y `apellidoMaterno` están vacíos
+    if (params.nombres === '' && params.apellidoPaterno === '' && params.apellidoMaterno === '') {
+      if (params.tipoDocumento == '1') { // DNI, pero sin nombres
+        NombrePersoneria = paramsAPI.firstname + ' ' + paramsAPI.lastname;
+        TipoDocumento = 203.00006; 
+      } else if (params.tipoDocumento == '2') { // RUC
+        NombrePersoneria = params.razonSocial;
+        TipoDocumento = 203.00002; 
+      }
+    } else { // Caso cuando `nombres`, `apellidoPaterno` y `apellidoMaterno` están presentes
+      if (params.tipoDocumento == '1') { // DNI
+        NombrePersoneria = `${params.nombres} ${params.apellidoPaterno} ${params.apellidoMaterno}`;
+        TipoDocumento = 203.00001; 
+      } else if (params.tipoDocumento == '2') { // RUC
+        NombrePersoneria = params.razonSocial;
+        TipoDocumento = 203.00002; 
+      }
+    }
+
+    // lastname: customer.customer.lastname,
+    // 203.00006 carnet de extrangeria
+    // firstname: customer.customer.firstname,
+    request.input('TipoIdentidadID', sql.Decimal(9, 5),TipoDocumento);//Funcionalidad para dni o ruc
     request.input('NroIdentidad', sql.NVarChar, params.numeroDocumento);
     request.input('GrupoPersoneria', sql.NVarChar, '1');
-    request.input('Personeria', sql.NVarChar, params.tipoDocumento == '1' ? (params.nombres + ' ' + params.apellidoPaterno + ' ' + params.apellidoMaterno) : params.razonSocial);
-    request.input('NombreComercial', sql.NVarChar, params.tipoDocumento == '1' ? (params.nombres + ' ' + params.apellidoPaterno + ' ' + params.apellidoMaterno) : params.razonSocial);
+    request.input('Personeria', sql.NVarChar, NombrePersoneria);
+    request.input('NombreComercial', sql.NVarChar, NombrePersoneria);
     request.input('Domiciliado', sql.NVarChar, '1');
     request.input('TipoContribuyente', sql.NVarChar, '1');
     request.input('FamiliaID', sql.Decimal(9, 5), 143.00000);
@@ -1499,7 +1525,7 @@ async function procesarOrdenPrestashop() {
                 if (cliente === null) {
                   const razonSocial = await buscarRazonSocialPorDNIRUC(DatosDeOrden.SerieDePedido.company);
                   // console.log(razonSocial);
-                  if (razonSocial !== 'Número no encontrado') {
+                  if (razonSocial !== 'Número no encontrado' || DatosDeOrden.Customer.lastname == '' && DatosDeOrden.Customer.firstname == '') {
                     await crearCliente(razonSocial, DatosDeOrden.Customer);
                     cliente = await buscarClientePorDNI(DatosDeOrden.SerieDePedido.company);
                   } else {

@@ -1011,6 +1011,84 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
     requestConsecutivo.input('Consecutivo', sql.Int, (parseInt(ConsecutivoActual) + 1));
     result = await requestConsecutivo.query(queryConsecutivoCorrelativo);
 
+
+    // Obtendremos los turnos con una nueva consulta
+    const queryTurno = `
+        SELECT * FROM TablaEmpresa
+         WHERE CodigoID LIKE '192.%' AND CodigoID <> '192.00000';
+    `;
+
+    const requestTurno = new sql.Request(transaction); 
+    const turnosPrestashop = await requestTurno.query(queryTurno);
+    const DatosTurnos = turnosPrestashop.recordset; 
+
+
+    
+    // function obtenerTurno(ddw_order_time) {
+
+    //   let FechaOrdenada = ddw_order_time.replace(/\s/g, ''); // Eliminar todos los espacios
+    //   let [inicio, fin] = FechaOrdenada.split('-');
+    //   inicio = parseInt(inicio.split(':')[0]);
+    //   fin = parseInt(fin.split(':')[0]);
+
+    //   const turnos = DatosTurnos.map((registro) => ({
+    //     numero: registro.CodigoID,
+    //     inicio: registro.ValorAdicional,
+    //     fin: registro.ValorNum,
+    //   }));
+
+    //   console.log("Este es el turno", turnos);
+    //   // Calcular la distancia al turno más cercano
+    //   let distanciaMinima = Number.MAX_SAFE_INTEGER;
+    //   let turnoCercano = 'No se encontró un turno válido';
+
+    //   for (let turno of turnos) {
+    //     let distanciaInicio = Math.abs(inicio - turno.inicio);
+    //     let distanciaFin = Math.abs(fin - turno.fin);
+    //     let distancia = distanciaInicio + distanciaFin;
+
+    //     if (distancia < distanciaMinima) {
+    //       distanciaMinima = distancia;
+    //       turnoCercano = turno.numero;
+    //     }
+    //   }
+    //   // Retornar el turno más cercano
+    //   return turnoCercano;
+    // }
+    
+    function obtenerTurno(ddw_order_time) {
+      let FechaOrdenada = ddw_order_time.replace(/\s/g, ''); // Eliminar todos los espacios
+      let [inicio, fin] = FechaOrdenada.split('-');
+      inicio = parseInt(inicio.split(':')[0]);
+      fin = parseInt(fin.split(':')[0]);
+    
+      const turnos = DatosTurnos.map((registro) => ({
+        numero: registro.CodigoID,
+        inicio: registro.ValorAdicional,
+        fin: registro.ValorNum,
+      }));
+    
+      // Calcular la distancia al turno más cercano
+      let distanciaMinima = Number.MAX_SAFE_INTEGER;
+      let turnoCercano = null;
+    
+      for (let turno of turnos) {
+        let distanciaInicio = Math.abs(inicio - turno.inicio);
+        let distanciaFin = Math.abs(fin - turno.fin);
+        let distancia = distanciaInicio + distanciaFin;
+    
+        if (distancia < distanciaMinima) {
+          distanciaMinima = distancia;
+          turnoCercano = turno; // Asignar todo el objeto del turno
+        }
+      }
+      // Retornar el turno más cercano
+      return turnoCercano;
+    }
+
+    let datosTurno = obtenerTurno(paramsOrden.Pedido.ddw_order_time);
+    // console.log("Este es el turno seleccionado", datosTurno);
+
     const query = `
       INSERT INTO VentaPedidoCabecera
         (EmpresaID, OficinaAlmacenID, SeriePedido, NumeroPedido, PersoneriaID, DireccionID, VendedorID, CondicionVtaID, MonedaID, ListaPrecioID, Fecha, TipoEntrega, FechaEntrega, DireccionEntrega, OficinaAlmacenEntregaID, Referencia, Observaciones, Cliente, Contacto, Contactotelefono, MotivoID, DeliveryTipoID, DeliveryTurnoID, TipoDocID, ValorPedido, PrecioPedido, TipoCambio, Estado, UsuarioID, FechaCreacion, FechaModificacion, TipoVenta, Gratuita, PlanillaID, ConvenioID, WebID,TookanID
@@ -1034,7 +1112,7 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
     request.input('MonedaID', sql.Decimal(9, 5), 102.00001);
     request.input('ListaPrecioID', sql.Decimal(9, 5), 108.00001);
     request.input('TipoEntrega', sql.Int, 2);
-    request.input('FechaEntrega', sql.NVarChar, paramsOrden.Pedido.ddw_order_date);
+    request.input('FechaEntrega', sql.NVarChar, paramsOrden.Pedido.ddw_order_date.split(' ')[0] + ' ' + datosTurno.fin + ':00:00');
     // request.input('FechaCreacion', sql.NVarChar, ); //paramsOrden.Pedido.date_add parametro anterior CONVERT(datetime,@FechaCreacion, 120)
     // request.input('FechaEdicion', sql.NVarChar, ); // paramsOrden.Pedido.date_upd parametro anterior CONVERT(datetime,@FechaEdicion, 120)
     request.input('Fecha', sql.NVarChar, paramsOrden.Pedido.date_add);
@@ -1067,38 +1145,7 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
     request.input('latitud', sql.Decimal(20, 8), latitud);
     request.input('longitud', sql.Decimal(20, 8), longitud);
 
-    function obtenerTurno(ddw_order_time) {
-
-      let FechaOrdenada = ddw_order_time.replace(/\s/g, ''); // Eliminar todos los espacios
-      let [inicio, fin] = FechaOrdenada.split('-');
-      inicio = parseInt(inicio.split(':')[0]);
-      fin = parseInt(fin.split(':')[0]);
-
-      const turnos = [
-        { numero: '192.00002', inicio: 9, fin: 14 },
-        { numero: '192.00003', inicio: 14, fin: 18 },
-        { numero: '192.00005', inicio: 17, fin: 20 }
-      ];
-
-      // Calcular la distancia al turno más cercano
-      let distanciaMinima = Number.MAX_SAFE_INTEGER;
-      let turnoCercano = 'No se encontró un turno válido';
-
-      for (let turno of turnos) {
-        let distanciaInicio = Math.abs(inicio - turno.inicio);
-        let distanciaFin = Math.abs(fin - turno.fin);
-        let distancia = distanciaInicio + distanciaFin;
-
-        if (distancia < distanciaMinima) {
-          distanciaMinima = distancia;
-          turnoCercano = turno.numero;
-        }
-      }
-      // Retornar el turno más cercano
-      return turnoCercano;
-    }
-
-    request.input('DeliveryTurnoID', sql.Decimal(9, 5), obtenerTurno(paramsOrden.Pedido.ddw_order_time)); //192.00002 iba por defecto
+    request.input('DeliveryTurnoID', sql.Decimal(9, 5), datosTurno.numero); //192.00002 iba por defecto
     request.input('TipoDocID', sql.Decimal(9, 5), seriePedido);
     request.input('UsuarioID', sql.Int, variablesSesion.UsuarioID);
     request.input('Vendedor', sql.Int, variablesSesion.UsuarioID);

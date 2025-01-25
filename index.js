@@ -741,7 +741,7 @@ async function crearCliente(params, paramsAPI) {
       if (params.tipoDocumento == '1') { // DNI, pero sin nombres
         NombrePersoneria = paramsAPI.firstname + ' ' + paramsAPI.lastname;
         TipoDocumento = 203.00006; 
-      } else if (params.tipoDocumento == '2') { // RUC
+      } else if (params.tipoDocumento == '6') { // RUC
         NombrePersoneria = params.razonSocial;
         TipoDocumento = 203.00002; 
       }
@@ -749,7 +749,7 @@ async function crearCliente(params, paramsAPI) {
       if (params.tipoDocumento == '1') { // DNI
         NombrePersoneria = `${params.nombres} ${params.apellidoPaterno} ${params.apellidoMaterno}`;
         TipoDocumento = 203.00001; 
-      } else if (params.tipoDocumento == '2') { // RUC
+      } else if (params.tipoDocumento == '6') { // RUC
         NombrePersoneria = params.razonSocial;
         TipoDocumento = 203.00002; 
       }

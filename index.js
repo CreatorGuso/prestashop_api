@@ -169,6 +169,7 @@ async function HistorialOrden(orderId) {
 }
 
 async function BuscarOrdenPorID(orderId) {
+  // console.log("esta es la orden de turno", orderId);
   try {
     const response = await axios.get(
       `https://ZBR3Q8MEZ3KC16C7Z5CMYYD9V1VFCT3T@www.kukyflor.com/api/orders/${orderId}`
@@ -1212,7 +1213,7 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
         // console.log("Estos son los datos de orden ",paramsOrden.OrderDetails_cart_rules[0].id_cart_rule, productoCategoria);
         const cupon = await obtenerCuponesYCategoriaFiltro(paramsOrden.OrderDetails_cart_rules[0].id_cart_rule, productoCategoria);
         const cuponParsed = JSON.parse(cupon);
-
+        // console.log("Este es el cupon",cuponParsed);
         if (cuponParsed.length > 0) {
           const categorias = cuponParsed[0].categories;
 
@@ -1260,6 +1261,7 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
 
     // console.log("Este es el descuento acumulado", HistorialDescuento);
     // console.log("Este es el descuento de la orden", paramsOrden.Pedido.total_discounts);
+    // console.log("Este es el descuento",HistorialDescuento);
     if(HistorialDescuento != parseFloat(paramsOrden.Pedido.total_discounts)){
       throw new Error(`Orden sin Descuento en los productos y el ID CUPON : ${paramsOrden.OrderDetails_cart_rules[0].id_cart_rule}`);
     }
@@ -1318,9 +1320,9 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
       const request4 = new sql.Request(transaction);
       const query4 = `
                   INSERT INTO VentaPedidoPago
-                    (EmpresaID, OficinaAlmacenID, PedidoID, FormaPagoID, MontoPago, UsuarioID, FechaCreacion, FechaModificacion, NroOperacion, PlanillaID,DocumentoID)
+                    (EmpresaID, OficinaAlmacenID, PedidoID, FormaPagoID, MontoPago, UsuarioID, FechaCreacion, FechaModificacion, NroOperacion, PlanillaID,DocumentoID,ReciboID,Consecutivo)
                     VALUES
-                    (1, @OficinaAlmacenID, @PedidoID, @FormaPagoID, @MontoPago, @UsuarioID, GETDATE(), GETDATE(), @NroOperacion, @PlanillaID,0);`;
+                    (1, @OficinaAlmacenID, @PedidoID, @FormaPagoID, @MontoPago, @UsuarioID, GETDATE(), GETDATE(), @NroOperacion, @PlanillaID,0,-1,@Consecutivo);`;
 
       // request4.transaction = transaction;
       request4.input('OficinaAlmacenID', sql.Decimal(6, 3), variablesSesion.OficinaAlmacenID);
@@ -1330,6 +1332,7 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
       request4.input('UsuarioID', sql.Int, variablesSesion.UsuarioID);
       request4.input('NroOperacion', sql.NVarChar, ''); //paramsOrden.Pedido.reference
       request4.input('PlanillaID', sql.NVarChar, PlanillaID);
+      request4.input('Consecutivo', sql.Int, 1);
       await request4.query(query4);
     } else {
       console.log("No entra al if y no se agregaron los medios de pago");

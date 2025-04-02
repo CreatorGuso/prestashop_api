@@ -325,7 +325,7 @@ async function BuscarOrdenPorID(orderId) {
       SerieDePedido = {
         id_address_invoice: SeriedeFacturaEnvoice2.address.id,
         id_adress_Entrega: SeriedeFacturaEnvoice2.address.alias,
-        company: SeriedeFacturaEnvoice2.address.company,
+        company: SeriedeFacturaEnvoice2.address.company.trim(),//le quitamos los espacios
         phone: SeriedeFacturaEnvoice2.address.phone,
       };
     });
@@ -1530,6 +1530,7 @@ async function procesarOrdenPrestashop() {
   try {
     const ordenes = await ApiOrders();
     const ordersInfo = ordenes;
+    // const ordersInfo = ordenes.filter(order => order.OrdenDeRegistro === 104605); //para buscar ordenes especificas
     // console.log("Datos de las órdenes:", ordersInfo);
 
     for (let i = 0; i < ordersInfo.length; i++) {
@@ -1570,11 +1571,13 @@ async function procesarOrdenPrestashop() {
               }
             } else {
               if (DatosDeOrden.SerieDePedido.company.length === 8 || DatosDeOrden.SerieDePedido.company.length === 11) {
+                // console.log("_____________________________________________________________________________________________________________");
                 cliente = await buscarClientePorDNI(DatosDeOrden.SerieDePedido.company);
+                // console.log("este es el cliente",cliente);
                 // Si el cliente no se encontro pasa a crearlo y buscarlo en en RENIEC O SUNAT
                 if (cliente === null) {
                   const razonSocial = await buscarRazonSocialPorDNIRUC(DatosDeOrden.SerieDePedido.company);
-                  // console.log(razonSocial);
+                  // console.log("Este es el DNI",razonSocial);
                   if (razonSocial !== 'Número no encontrado' || DatosDeOrden.Customer.lastname == '' && DatosDeOrden.Customer.firstname == '') {
                     await crearCliente(razonSocial, DatosDeOrden.Customer);
                     cliente = await buscarClientePorDNI(DatosDeOrden.SerieDePedido.company);
@@ -1597,7 +1600,7 @@ async function procesarOrdenPrestashop() {
                   if (!cliente) {
                     throw new Error('No se pudo encontrar el cliente después de la actualización.');
                   }
-                
+                  // console.log("creamos datos con este cliente--------------");
                   // Se procede a crear el pedido con los datos actualizados del cliente.
                   await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID, DatosDeOrden.OrderDetails_cart_rules !== null && DatosDeOrden.cart_rules[0].active == 1 ? DatosDeOrden.OrderDetails_cart_rules : null);
                 }else if (cliente.Estado == '2') {

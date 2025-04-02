@@ -32667,3 +32667,2902 @@ TypeError: categories.category.map is not a function
     at async Inicializador (C:\Users\gudeh\Documents\sistemasEmpresarialesAgilex\prestashop_api\index.js:1685:17)
 2025-03-14 13:25:42.082 - ERROR: Error Numero de documento SUNAT/RENIEC: 19371926 ::: AxiosError: Request failed with status code 404
 2025-03-14 13:26:39.797 - undefined
+2025-04-02 15:41:21.298 - Datos de las órdenes:
+2025-04-02 15:41:21.299 - Datos de las órdenes:
+2025-04-02 15:41:21.299 - Datos de las órdenes:
+2025-04-02 15:41:21.299 - [
+  {
+    "Orden": "104413",
+    "OrdenDeRegistro": 104413,
+    "PersoneriaID": {
+      "_": "28492",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/28492"
+      }
+    },
+    "FechadeOrden": "2025-04-01 15:16:23"
+  },
+  {
+    "Orden": "104502",
+    "OrdenDeRegistro": 104502,
+    "PersoneriaID": {
+      "_": "96389",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/96389"
+      }
+    },
+    "FechadeOrden": "2025-04-02 07:52:01"
+  },
+  {
+    "Orden": "104506",
+    "OrdenDeRegistro": 104506,
+    "PersoneriaID": {
+      "_": "96389",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/96389"
+      }
+    },
+    "FechadeOrden": "2025-04-02 07:52:05"
+  },
+  {
+    "Orden": "104507",
+    "OrdenDeRegistro": 104507,
+    "PersoneriaID": {
+      "_": "96389",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/96389"
+      }
+    },
+    "FechadeOrden": "2025-04-02 07:52:05"
+  },
+  {
+    "Orden": "104521",
+    "OrdenDeRegistro": 104521,
+    "PersoneriaID": {
+      "_": "99881",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99881"
+      }
+    },
+    "FechadeOrden": "2025-04-02 09:29:18"
+  },
+  {
+    "Orden": "104522",
+    "OrdenDeRegistro": 104522,
+    "PersoneriaID": {
+      "_": "96389",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/96389"
+      }
+    },
+    "FechadeOrden": "2025-04-02 07:52:07"
+  },
+  {
+    "Orden": "104541",
+    "OrdenDeRegistro": 104541,
+    "PersoneriaID": {
+      "_": "24925",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/24925"
+      }
+    },
+    "FechadeOrden": "2025-04-01 20:25:48"
+  },
+  {
+    "Orden": "104545",
+    "OrdenDeRegistro": 104545,
+    "PersoneriaID": {
+      "_": "99886",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99886"
+      }
+    },
+    "FechadeOrden": "2025-04-01 15:16:23"
+  },
+  {
+    "Orden": "104555",
+    "OrdenDeRegistro": 104555,
+    "PersoneriaID": {
+      "_": "99913",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99913"
+      }
+    },
+    "FechadeOrden": "2025-04-02 09:29:44"
+  },
+  {
+    "Orden": "104573",
+    "OrdenDeRegistro": 104573,
+    "PersoneriaID": {
+      "_": "74772",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/74772"
+      }
+    },
+    "FechadeOrden": "2025-04-01 15:16:23"
+  },
+  {
+    "Orden": "104577",
+    "OrdenDeRegistro": 104577,
+    "PersoneriaID": {
+      "_": "98370",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/98370"
+      }
+    },
+    "FechadeOrden": "2025-04-02 09:30:21"
+  },
+  {
+    "Orden": "104578",
+    "OrdenDeRegistro": 104578,
+    "PersoneriaID": {
+      "_": "11197",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/11197"
+      }
+    },
+    "FechadeOrden": "2025-04-02 09:31:08"
+  },
+  {
+    "Orden": "104580",
+    "OrdenDeRegistro": 104580,
+    "PersoneriaID": {
+      "_": "8986",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/8986"
+      }
+    },
+    "FechadeOrden": "2025-04-01 20:10:06"
+  },
+  {
+    "Orden": "104581",
+    "OrdenDeRegistro": 104581,
+    "PersoneriaID": {
+      "_": "99937",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99937"
+      }
+    },
+    "FechadeOrden": "2025-04-01 07:11:00"
+  },
+  {
+    "Orden": "104582",
+    "OrdenDeRegistro": 104582,
+    "PersoneriaID": {
+      "_": "21063",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/21063"
+      }
+    },
+    "FechadeOrden": "2025-04-01 20:25:48"
+  },
+  {
+    "Orden": "104583",
+    "OrdenDeRegistro": 104583,
+    "PersoneriaID": {
+      "_": "33783",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/33783"
+      }
+    },
+    "FechadeOrden": "2025-04-01 15:16:23"
+  },
+  {
+    "Orden": "104584",
+    "OrdenDeRegistro": 104584,
+    "PersoneriaID": {
+      "_": "6545",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/6545"
+      }
+    },
+    "FechadeOrden": "2025-04-01 20:25:48"
+  },
+  {
+    "Orden": "104585",
+    "OrdenDeRegistro": 104585,
+    "PersoneriaID": {
+      "_": "32559",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/32559"
+      }
+    },
+    "FechadeOrden": "2025-04-01 20:25:48"
+  },
+  {
+    "Orden": "104586",
+    "OrdenDeRegistro": 104586,
+    "PersoneriaID": {
+      "_": "99940",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99940"
+      }
+    },
+    "FechadeOrden": "2025-04-01 20:25:48"
+  },
+  {
+    "Orden": "104587",
+    "OrdenDeRegistro": 104587,
+    "PersoneriaID": {
+      "_": "99942",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99942"
+      }
+    },
+    "FechadeOrden": "2025-04-01 20:25:47"
+  },
+  {
+    "Orden": "104588",
+    "OrdenDeRegistro": 104588,
+    "PersoneriaID": {
+      "_": "99941",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99941"
+      }
+    },
+    "FechadeOrden": "2025-04-01 10:01:25"
+  },
+  {
+    "Orden": "104589",
+    "OrdenDeRegistro": 104589,
+    "PersoneriaID": {
+      "_": "99941",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99941"
+      }
+    },
+    "FechadeOrden": "2025-04-01 20:25:47"
+  },
+  {
+    "Orden": "104590",
+    "OrdenDeRegistro": 104590,
+    "PersoneriaID": {
+      "_": "28129",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/28129"
+      }
+    },
+    "FechadeOrden": "2025-04-01 20:25:47"
+  },
+  {
+    "Orden": "104591",
+    "OrdenDeRegistro": 104591,
+    "PersoneriaID": {
+      "_": "99943",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99943"
+      }
+    },
+    "FechadeOrden": "2025-04-01 10:51:21"
+  },
+  {
+    "Orden": "104592",
+    "OrdenDeRegistro": 104592,
+    "PersoneriaID": {
+      "_": "99946",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99946"
+      }
+    },
+    "FechadeOrden": "2025-04-02 09:31:44"
+  },
+  {
+    "Orden": "104593",
+    "OrdenDeRegistro": 104593,
+    "PersoneriaID": {
+      "_": "99949",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99949"
+      }
+    },
+    "FechadeOrden": "2025-04-02 09:32:22"
+  },
+  {
+    "Orden": "104594",
+    "OrdenDeRegistro": 104594,
+    "PersoneriaID": {
+      "_": "99948",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99948"
+      }
+    },
+    "FechadeOrden": "2025-04-01 20:25:47"
+  },
+  {
+    "Orden": "104595",
+    "OrdenDeRegistro": 104595,
+    "PersoneriaID": {
+      "_": "41657",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/41657"
+      }
+    },
+    "FechadeOrden": "2025-04-01 20:25:46"
+  },
+  {
+    "Orden": "104596",
+    "OrdenDeRegistro": 104596,
+    "PersoneriaID": {
+      "_": "99950",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99950"
+      }
+    },
+    "FechadeOrden": "2025-04-01 15:22:40"
+  },
+  {
+    "Orden": "104597",
+    "OrdenDeRegistro": 104597,
+    "PersoneriaID": {
+      "_": "99951",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99951"
+      }
+    },
+    "FechadeOrden": "2025-04-01 16:58:52"
+  },
+  {
+    "Orden": "104598",
+    "OrdenDeRegistro": 104598,
+    "PersoneriaID": {
+      "_": "63470",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/63470"
+      }
+    },
+    "FechadeOrden": "2025-04-02 09:32:54"
+  },
+  {
+    "Orden": "104599",
+    "OrdenDeRegistro": 104599,
+    "PersoneriaID": {
+      "_": "99953",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99953"
+      }
+    },
+    "FechadeOrden": "2025-04-02 09:33:25"
+  },
+  {
+    "Orden": "104600",
+    "OrdenDeRegistro": 104600,
+    "PersoneriaID": {
+      "_": "99954",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99954"
+      }
+    },
+    "FechadeOrden": "2025-04-02 09:33:50"
+  },
+  {
+    "Orden": "104601",
+    "OrdenDeRegistro": 104601,
+    "PersoneriaID": {
+      "_": "63659",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/63659"
+      }
+    },
+    "FechadeOrden": "2025-04-01 20:23:35"
+  },
+  {
+    "Orden": "104602",
+    "OrdenDeRegistro": 104602,
+    "PersoneriaID": {
+      "_": "99956",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99956"
+      }
+    },
+    "FechadeOrden": "2025-04-02 07:36:41"
+  },
+  {
+    "Orden": "104603",
+    "OrdenDeRegistro": 104603,
+    "PersoneriaID": {
+      "_": "86573",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/86573"
+      }
+    },
+    "FechadeOrden": "2025-04-02 09:34:15"
+  },
+  {
+    "Orden": "104604",
+    "OrdenDeRegistro": 104604,
+    "PersoneriaID": {
+      "_": "2738",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/2738"
+      }
+    },
+    "FechadeOrden": "2025-04-02 08:41:47"
+  },
+  {
+    "Orden": "104605",
+    "OrdenDeRegistro": 104605,
+    "PersoneriaID": {
+      "_": "99952",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99952"
+      }
+    },
+    "FechadeOrden": "2025-04-02 10:05:59"
+  },
+  {
+    "Orden": "104606",
+    "OrdenDeRegistro": 104606,
+    "PersoneriaID": {
+      "_": "98279",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/98279"
+      }
+    },
+    "FechadeOrden": "2025-04-02 10:12:38"
+  }
+]
+2025-04-02 15:41:21.298 - [
+  {
+    "Orden": "104413",
+    "OrdenDeRegistro": 104413,
+    "PersoneriaID": {
+      "_": "28492",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/28492"
+      }
+    },
+    "FechadeOrden": "2025-04-01 15:16:23"
+  },
+  {
+    "Orden": "104502",
+    "OrdenDeRegistro": 104502,
+    "PersoneriaID": {
+      "_": "96389",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/96389"
+      }
+    },
+    "FechadeOrden": "2025-04-02 07:52:01"
+  },
+  {
+    "Orden": "104506",
+    "OrdenDeRegistro": 104506,
+    "PersoneriaID": {
+      "_": "96389",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/96389"
+      }
+    },
+    "FechadeOrden": "2025-04-02 07:52:05"
+  },
+  {
+    "Orden": "104507",
+    "OrdenDeRegistro": 104507,
+    "PersoneriaID": {
+      "_": "96389",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/96389"
+      }
+    },
+    "FechadeOrden": "2025-04-02 07:52:05"
+  },
+  {
+    "Orden": "104521",
+    "OrdenDeRegistro": 104521,
+    "PersoneriaID": {
+      "_": "99881",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99881"
+      }
+    },
+    "FechadeOrden": "2025-04-02 09:29:18"
+  },
+  {
+    "Orden": "104522",
+    "OrdenDeRegistro": 104522,
+    "PersoneriaID": {
+      "_": "96389",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/96389"
+      }
+    },
+    "FechadeOrden": "2025-04-02 07:52:07"
+  },
+  {
+    "Orden": "104541",
+    "OrdenDeRegistro": 104541,
+    "PersoneriaID": {
+      "_": "24925",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/24925"
+      }
+    },
+    "FechadeOrden": "2025-04-01 20:25:48"
+  },
+  {
+    "Orden": "104545",
+    "OrdenDeRegistro": 104545,
+    "PersoneriaID": {
+      "_": "99886",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99886"
+      }
+    },
+    "FechadeOrden": "2025-04-01 15:16:23"
+  },
+  {
+    "Orden": "104555",
+    "OrdenDeRegistro": 104555,
+    "PersoneriaID": {
+      "_": "99913",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99913"
+      }
+    },
+    "FechadeOrden": "2025-04-02 09:29:44"
+  },
+  {
+    "Orden": "104573",
+    "OrdenDeRegistro": 104573,
+    "PersoneriaID": {
+      "_": "74772",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/74772"
+      }
+    },
+    "FechadeOrden": "2025-04-01 15:16:23"
+  },
+  {
+    "Orden": "104577",
+    "OrdenDeRegistro": 104577,
+    "PersoneriaID": {
+      "_": "98370",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/98370"
+      }
+    },
+    "FechadeOrden": "2025-04-02 09:30:21"
+  },
+  {
+    "Orden": "104578",
+    "OrdenDeRegistro": 104578,
+    "PersoneriaID": {
+      "_": "11197",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/11197"
+      }
+    },
+    "FechadeOrden": "2025-04-02 09:31:08"
+  },
+  {
+    "Orden": "104580",
+    "OrdenDeRegistro": 104580,
+    "PersoneriaID": {
+      "_": "8986",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/8986"
+      }
+    },
+    "FechadeOrden": "2025-04-01 20:10:06"
+  },
+  {
+    "Orden": "104581",
+    "OrdenDeRegistro": 104581,
+    "PersoneriaID": {
+      "_": "99937",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99937"
+      }
+    },
+    "FechadeOrden": "2025-04-01 07:11:00"
+  },
+  {
+    "Orden": "104582",
+    "OrdenDeRegistro": 104582,
+    "PersoneriaID": {
+      "_": "21063",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/21063"
+      }
+    },
+    "FechadeOrden": "2025-04-01 20:25:48"
+  },
+  {
+    "Orden": "104583",
+    "OrdenDeRegistro": 104583,
+    "PersoneriaID": {
+      "_": "33783",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/33783"
+      }
+    },
+    "FechadeOrden": "2025-04-01 15:16:23"
+  },
+  {
+    "Orden": "104584",
+    "OrdenDeRegistro": 104584,
+    "PersoneriaID": {
+      "_": "6545",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/6545"
+      }
+    },
+    "FechadeOrden": "2025-04-01 20:25:48"
+  },
+  {
+    "Orden": "104585",
+    "OrdenDeRegistro": 104585,
+    "PersoneriaID": {
+      "_": "32559",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/32559"
+      }
+    },
+    "FechadeOrden": "2025-04-01 20:25:48"
+  },
+  {
+    "Orden": "104586",
+    "OrdenDeRegistro": 104586,
+    "PersoneriaID": {
+      "_": "99940",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99940"
+      }
+    },
+    "FechadeOrden": "2025-04-01 20:25:48"
+  },
+  {
+    "Orden": "104587",
+    "OrdenDeRegistro": 104587,
+    "PersoneriaID": {
+      "_": "99942",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99942"
+      }
+    },
+    "FechadeOrden": "2025-04-01 20:25:47"
+  },
+  {
+    "Orden": "104588",
+    "OrdenDeRegistro": 104588,
+    "PersoneriaID": {
+      "_": "99941",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99941"
+      }
+    },
+    "FechadeOrden": "2025-04-01 10:01:25"
+  },
+  {
+    "Orden": "104589",
+    "OrdenDeRegistro": 104589,
+    "PersoneriaID": {
+      "_": "99941",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99941"
+      }
+    },
+    "FechadeOrden": "2025-04-01 20:25:47"
+  },
+  {
+    "Orden": "104590",
+    "OrdenDeRegistro": 104590,
+    "PersoneriaID": {
+      "_": "28129",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/28129"
+      }
+    },
+    "FechadeOrden": "2025-04-01 20:25:47"
+  },
+  {
+    "Orden": "104591",
+    "OrdenDeRegistro": 104591,
+    "PersoneriaID": {
+      "_": "99943",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99943"
+      }
+    },
+    "FechadeOrden": "2025-04-01 10:51:21"
+  },
+  {
+    "Orden": "104592",
+    "OrdenDeRegistro": 104592,
+    "PersoneriaID": {
+      "_": "99946",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99946"
+      }
+    },
+    "FechadeOrden": "2025-04-02 09:31:44"
+  },
+  {
+    "Orden": "104593",
+    "OrdenDeRegistro": 104593,
+    "PersoneriaID": {
+      "_": "99949",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99949"
+      }
+    },
+    "FechadeOrden": "2025-04-02 09:32:22"
+  },
+  {
+    "Orden": "104594",
+    "OrdenDeRegistro": 104594,
+    "PersoneriaID": {
+      "_": "99948",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99948"
+      }
+    },
+    "FechadeOrden": "2025-04-01 20:25:47"
+  },
+  {
+    "Orden": "104595",
+    "OrdenDeRegistro": 104595,
+    "PersoneriaID": {
+      "_": "41657",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/41657"
+      }
+    },
+    "FechadeOrden": "2025-04-01 20:25:46"
+  },
+  {
+    "Orden": "104596",
+    "OrdenDeRegistro": 104596,
+    "PersoneriaID": {
+      "_": "99950",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99950"
+      }
+    },
+    "FechadeOrden": "2025-04-01 15:22:40"
+  },
+  {
+    "Orden": "104597",
+    "OrdenDeRegistro": 104597,
+    "PersoneriaID": {
+      "_": "99951",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99951"
+      }
+    },
+    "FechadeOrden": "2025-04-01 16:58:52"
+  },
+  {
+    "Orden": "104598",
+    "OrdenDeRegistro": 104598,
+    "PersoneriaID": {
+      "_": "63470",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/63470"
+      }
+    },
+    "FechadeOrden": "2025-04-02 09:32:54"
+  },
+  {
+    "Orden": "104599",
+    "OrdenDeRegistro": 104599,
+    "PersoneriaID": {
+      "_": "99953",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99953"
+      }
+    },
+    "FechadeOrden": "2025-04-02 09:33:25"
+  },
+  {
+    "Orden": "104600",
+    "OrdenDeRegistro": 104600,
+    "PersoneriaID": {
+      "_": "99954",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99954"
+      }
+    },
+    "FechadeOrden": "2025-04-02 09:33:50"
+  },
+  {
+    "Orden": "104601",
+    "OrdenDeRegistro": 104601,
+    "PersoneriaID": {
+      "_": "63659",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/63659"
+      }
+    },
+    "FechadeOrden": "2025-04-01 20:23:35"
+  },
+  {
+    "Orden": "104602",
+    "OrdenDeRegistro": 104602,
+    "PersoneriaID": {
+      "_": "99956",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99956"
+      }
+    },
+    "FechadeOrden": "2025-04-02 07:36:41"
+  },
+  {
+    "Orden": "104603",
+    "OrdenDeRegistro": 104603,
+    "PersoneriaID": {
+      "_": "86573",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/86573"
+      }
+    },
+    "FechadeOrden": "2025-04-02 09:34:15"
+  },
+  {
+    "Orden": "104604",
+    "OrdenDeRegistro": 104604,
+    "PersoneriaID": {
+      "_": "2738",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/2738"
+      }
+    },
+    "FechadeOrden": "2025-04-02 08:41:47"
+  },
+  {
+    "Orden": "104605",
+    "OrdenDeRegistro": 104605,
+    "PersoneriaID": {
+      "_": "99952",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99952"
+      }
+    },
+    "FechadeOrden": "2025-04-02 10:05:59"
+  },
+  {
+    "Orden": "104606",
+    "OrdenDeRegistro": 104606,
+    "PersoneriaID": {
+      "_": "98279",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/98279"
+      }
+    },
+    "FechadeOrden": "2025-04-02 10:12:38"
+  }
+]
+2025-04-02 15:41:21.299 - [
+  {
+    "Orden": "104413",
+    "OrdenDeRegistro": 104413,
+    "PersoneriaID": {
+      "_": "28492",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/28492"
+      }
+    },
+    "FechadeOrden": "2025-04-01 15:16:23"
+  },
+  {
+    "Orden": "104502",
+    "OrdenDeRegistro": 104502,
+    "PersoneriaID": {
+      "_": "96389",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/96389"
+      }
+    },
+    "FechadeOrden": "2025-04-02 07:52:01"
+  },
+  {
+    "Orden": "104506",
+    "OrdenDeRegistro": 104506,
+    "PersoneriaID": {
+      "_": "96389",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/96389"
+      }
+    },
+    "FechadeOrden": "2025-04-02 07:52:05"
+  },
+  {
+    "Orden": "104507",
+    "OrdenDeRegistro": 104507,
+    "PersoneriaID": {
+      "_": "96389",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/96389"
+      }
+    },
+    "FechadeOrden": "2025-04-02 07:52:05"
+  },
+  {
+    "Orden": "104521",
+    "OrdenDeRegistro": 104521,
+    "PersoneriaID": {
+      "_": "99881",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99881"
+      }
+    },
+    "FechadeOrden": "2025-04-02 09:29:18"
+  },
+  {
+    "Orden": "104522",
+    "OrdenDeRegistro": 104522,
+    "PersoneriaID": {
+      "_": "96389",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/96389"
+      }
+    },
+    "FechadeOrden": "2025-04-02 07:52:07"
+  },
+  {
+    "Orden": "104541",
+    "OrdenDeRegistro": 104541,
+    "PersoneriaID": {
+      "_": "24925",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/24925"
+      }
+    },
+    "FechadeOrden": "2025-04-01 20:25:48"
+  },
+  {
+    "Orden": "104545",
+    "OrdenDeRegistro": 104545,
+    "PersoneriaID": {
+      "_": "99886",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99886"
+      }
+    },
+    "FechadeOrden": "2025-04-01 15:16:23"
+  },
+  {
+    "Orden": "104555",
+    "OrdenDeRegistro": 104555,
+    "PersoneriaID": {
+      "_": "99913",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99913"
+      }
+    },
+    "FechadeOrden": "2025-04-02 09:29:44"
+  },
+  {
+    "Orden": "104573",
+    "OrdenDeRegistro": 104573,
+    "PersoneriaID": {
+      "_": "74772",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/74772"
+      }
+    },
+    "FechadeOrden": "2025-04-01 15:16:23"
+  },
+  {
+    "Orden": "104577",
+    "OrdenDeRegistro": 104577,
+    "PersoneriaID": {
+      "_": "98370",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/98370"
+      }
+    },
+    "FechadeOrden": "2025-04-02 09:30:21"
+  },
+  {
+    "Orden": "104578",
+    "OrdenDeRegistro": 104578,
+    "PersoneriaID": {
+      "_": "11197",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/11197"
+      }
+    },
+    "FechadeOrden": "2025-04-02 09:31:08"
+  },
+  {
+    "Orden": "104580",
+    "OrdenDeRegistro": 104580,
+    "PersoneriaID": {
+      "_": "8986",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/8986"
+      }
+    },
+    "FechadeOrden": "2025-04-01 20:10:06"
+  },
+  {
+    "Orden": "104581",
+    "OrdenDeRegistro": 104581,
+    "PersoneriaID": {
+      "_": "99937",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99937"
+      }
+    },
+    "FechadeOrden": "2025-04-01 07:11:00"
+  },
+  {
+    "Orden": "104582",
+    "OrdenDeRegistro": 104582,
+    "PersoneriaID": {
+      "_": "21063",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/21063"
+      }
+    },
+    "FechadeOrden": "2025-04-01 20:25:48"
+  },
+  {
+    "Orden": "104583",
+    "OrdenDeRegistro": 104583,
+    "PersoneriaID": {
+      "_": "33783",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/33783"
+      }
+    },
+    "FechadeOrden": "2025-04-01 15:16:23"
+  },
+  {
+    "Orden": "104584",
+    "OrdenDeRegistro": 104584,
+    "PersoneriaID": {
+      "_": "6545",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/6545"
+      }
+    },
+    "FechadeOrden": "2025-04-01 20:25:48"
+  },
+  {
+    "Orden": "104585",
+    "OrdenDeRegistro": 104585,
+    "PersoneriaID": {
+      "_": "32559",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/32559"
+      }
+    },
+    "FechadeOrden": "2025-04-01 20:25:48"
+  },
+  {
+    "Orden": "104586",
+    "OrdenDeRegistro": 104586,
+    "PersoneriaID": {
+      "_": "99940",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99940"
+      }
+    },
+    "FechadeOrden": "2025-04-01 20:25:48"
+  },
+  {
+    "Orden": "104587",
+    "OrdenDeRegistro": 104587,
+    "PersoneriaID": {
+      "_": "99942",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99942"
+      }
+    },
+    "FechadeOrden": "2025-04-01 20:25:47"
+  },
+  {
+    "Orden": "104588",
+    "OrdenDeRegistro": 104588,
+    "PersoneriaID": {
+      "_": "99941",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99941"
+      }
+    },
+    "FechadeOrden": "2025-04-01 10:01:25"
+  },
+  {
+    "Orden": "104589",
+    "OrdenDeRegistro": 104589,
+    "PersoneriaID": {
+      "_": "99941",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99941"
+      }
+    },
+    "FechadeOrden": "2025-04-01 20:25:47"
+  },
+  {
+    "Orden": "104590",
+    "OrdenDeRegistro": 104590,
+    "PersoneriaID": {
+      "_": "28129",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/28129"
+      }
+    },
+    "FechadeOrden": "2025-04-01 20:25:47"
+  },
+  {
+    "Orden": "104591",
+    "OrdenDeRegistro": 104591,
+    "PersoneriaID": {
+      "_": "99943",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99943"
+      }
+    },
+    "FechadeOrden": "2025-04-01 10:51:21"
+  },
+  {
+    "Orden": "104592",
+    "OrdenDeRegistro": 104592,
+    "PersoneriaID": {
+      "_": "99946",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99946"
+      }
+    },
+    "FechadeOrden": "2025-04-02 09:31:44"
+  },
+  {
+    "Orden": "104593",
+    "OrdenDeRegistro": 104593,
+    "PersoneriaID": {
+      "_": "99949",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99949"
+      }
+    },
+    "FechadeOrden": "2025-04-02 09:32:22"
+  },
+  {
+    "Orden": "104594",
+    "OrdenDeRegistro": 104594,
+    "PersoneriaID": {
+      "_": "99948",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99948"
+      }
+    },
+    "FechadeOrden": "2025-04-01 20:25:47"
+  },
+  {
+    "Orden": "104595",
+    "OrdenDeRegistro": 104595,
+    "PersoneriaID": {
+      "_": "41657",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/41657"
+      }
+    },
+    "FechadeOrden": "2025-04-01 20:25:46"
+  },
+  {
+    "Orden": "104596",
+    "OrdenDeRegistro": 104596,
+    "PersoneriaID": {
+      "_": "99950",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99950"
+      }
+    },
+    "FechadeOrden": "2025-04-01 15:22:40"
+  },
+  {
+    "Orden": "104597",
+    "OrdenDeRegistro": 104597,
+    "PersoneriaID": {
+      "_": "99951",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99951"
+      }
+    },
+    "FechadeOrden": "2025-04-01 16:58:52"
+  },
+  {
+    "Orden": "104598",
+    "OrdenDeRegistro": 104598,
+    "PersoneriaID": {
+      "_": "63470",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/63470"
+      }
+    },
+    "FechadeOrden": "2025-04-02 09:32:54"
+  },
+  {
+    "Orden": "104599",
+    "OrdenDeRegistro": 104599,
+    "PersoneriaID": {
+      "_": "99953",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99953"
+      }
+    },
+    "FechadeOrden": "2025-04-02 09:33:25"
+  },
+  {
+    "Orden": "104600",
+    "OrdenDeRegistro": 104600,
+    "PersoneriaID": {
+      "_": "99954",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99954"
+      }
+    },
+    "FechadeOrden": "2025-04-02 09:33:50"
+  },
+  {
+    "Orden": "104601",
+    "OrdenDeRegistro": 104601,
+    "PersoneriaID": {
+      "_": "63659",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/63659"
+      }
+    },
+    "FechadeOrden": "2025-04-01 20:23:35"
+  },
+  {
+    "Orden": "104602",
+    "OrdenDeRegistro": 104602,
+    "PersoneriaID": {
+      "_": "99956",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99956"
+      }
+    },
+    "FechadeOrden": "2025-04-02 07:36:41"
+  },
+  {
+    "Orden": "104603",
+    "OrdenDeRegistro": 104603,
+    "PersoneriaID": {
+      "_": "86573",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/86573"
+      }
+    },
+    "FechadeOrden": "2025-04-02 09:34:15"
+  },
+  {
+    "Orden": "104604",
+    "OrdenDeRegistro": 104604,
+    "PersoneriaID": {
+      "_": "2738",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/2738"
+      }
+    },
+    "FechadeOrden": "2025-04-02 08:41:47"
+  },
+  {
+    "Orden": "104605",
+    "OrdenDeRegistro": 104605,
+    "PersoneriaID": {
+      "_": "99952",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99952"
+      }
+    },
+    "FechadeOrden": "2025-04-02 10:05:59"
+  },
+  {
+    "Orden": "104606",
+    "OrdenDeRegistro": 104606,
+    "PersoneriaID": {
+      "_": "98279",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/98279"
+      }
+    },
+    "FechadeOrden": "2025-04-02 10:12:38"
+  }
+]
+2025-04-02 15:43:00.420 - ERROR: Error al obtener las categorías asociadas del producto con ID 1564:
+2025-04-02 15:43:00.421 - ERROR: Error al obtener las categorías asociadas del producto con ID 1564:
+2025-04-02 15:43:00.422 - ERROR: Error al obtener las categorías asociadas del producto con ID 1564:
+2025-04-02 15:43:00.420 - ERROR: categories.category.map is not a function
+2025-04-02 15:43:00.420 - STACK TRACE:
+TypeError: categories.category.map is not a function
+    at C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:423:51
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Promise.all (index 0)
+    at async Promise.all (index 1)
+    at async BuscarOrdenPorID (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:453:41)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1553:26)
+    at async Inicializador (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1683:17)
+    at async Inicializador (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1691:7)
+    at async Inicializador (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1705:7)
+2025-04-02 15:43:00.421 - ERROR: categories.category.map is not a function
+2025-04-02 15:43:00.421 - STACK TRACE:
+TypeError: categories.category.map is not a function
+    at C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:423:51
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Promise.all (index 0)
+    at async Promise.all (index 1)
+    at async BuscarOrdenPorID (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:453:41)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1553:26)
+    at async Inicializador (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1683:17)
+    at async Inicializador (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1691:7)
+    at async Inicializador (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1705:7)
+2025-04-02 15:43:00.422 - ERROR: categories.category.map is not a function
+2025-04-02 15:43:00.422 - STACK TRACE:
+TypeError: categories.category.map is not a function
+    at C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:423:51
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Promise.all (index 0)
+    at async Promise.all (index 1)
+    at async BuscarOrdenPorID (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:453:41)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1553:26)
+    at async Inicializador (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1683:17)
+    at async Inicializador (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1691:7)
+    at async Inicializador (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1705:7)
+2025-04-02 15:45:41.418 - ERROR: Error en la transacción de crear pedido con orden :104586
+2025-04-02 15:45:41.419 - ERROR: Error en la transacción de crear pedido con orden :104586
+2025-04-02 15:45:41.419 - ERROR: Error en la transacción de crear pedido con orden :104586
+2025-04-02 15:45:41.418 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2025-04-02 15:45:41.418 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1188:39)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1569:17)
+    at async Inicializador (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1683:17)
+    at async Inicializador (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1691:7)
+    at async Inicializador (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1705:7)
+2025-04-02 15:45:41.419 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2025-04-02 15:45:41.419 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1188:39)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1569:17)
+    at async Inicializador (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1683:17)
+    at async Inicializador (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1691:7)
+    at async Inicializador (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1705:7)
+2025-04-02 15:45:41.419 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2025-04-02 15:45:41.419 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1188:39)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1569:17)
+    at async Inicializador (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1683:17)
+    at async Inicializador (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1691:7)
+    at async Inicializador (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1705:7)
+2025-04-02 15:47:54.868 - ERROR: Error en la transacción de crear pedido con orden :104595
+2025-04-02 15:47:54.869 - ERROR: Error en la transacción de crear pedido con orden :104595
+2025-04-02 15:47:54.869 - ERROR: Error en la transacción de crear pedido con orden :104595
+2025-04-02 15:47:54.868 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2025-04-02 15:47:54.868 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1188:39)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1569:17)
+    at async Inicializador (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1683:17)
+    at async Inicializador (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1691:7)
+    at async Inicializador (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1705:7)
+2025-04-02 15:47:54.869 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2025-04-02 15:47:54.869 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1188:39)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1569:17)
+    at async Inicializador (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1683:17)
+    at async Inicializador (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1691:7)
+    at async Inicializador (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1705:7)
+2025-04-02 15:47:54.869 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2025-04-02 15:47:54.869 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1188:39)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1569:17)
+    at async Inicializador (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1683:17)
+    at async Inicializador (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1691:7)
+    at async Inicializador (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1705:7)
+2025-04-02 15:51:10.128 - undefined
+2025-04-02 15:51:10.128 - undefined
+2025-04-02 15:51:10.128 - undefined
+2025-04-02 20:53:07.697 - Datos de las órdenes:
+2025-04-02 20:53:07.697 - [
+  {
+    "Orden": "104413",
+    "OrdenDeRegistro": 104413,
+    "PersoneriaID": {
+      "_": "28492",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/28492"
+      }
+    },
+    "FechadeOrden": "2025-04-01 15:16:23"
+  },
+  {
+    "Orden": "104502",
+    "OrdenDeRegistro": 104502,
+    "PersoneriaID": {
+      "_": "96389",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/96389"
+      }
+    },
+    "FechadeOrden": "2025-04-02 07:52:01"
+  },
+  {
+    "Orden": "104506",
+    "OrdenDeRegistro": 104506,
+    "PersoneriaID": {
+      "_": "96389",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/96389"
+      }
+    },
+    "FechadeOrden": "2025-04-02 07:52:05"
+  },
+  {
+    "Orden": "104507",
+    "OrdenDeRegistro": 104507,
+    "PersoneriaID": {
+      "_": "96389",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/96389"
+      }
+    },
+    "FechadeOrden": "2025-04-02 07:52:05"
+  },
+  {
+    "Orden": "104521",
+    "OrdenDeRegistro": 104521,
+    "PersoneriaID": {
+      "_": "99881",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99881"
+      }
+    },
+    "FechadeOrden": "2025-04-02 13:37:58"
+  },
+  {
+    "Orden": "104522",
+    "OrdenDeRegistro": 104522,
+    "PersoneriaID": {
+      "_": "96389",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/96389"
+      }
+    },
+    "FechadeOrden": "2025-04-02 07:52:07"
+  },
+  {
+    "Orden": "104541",
+    "OrdenDeRegistro": 104541,
+    "PersoneriaID": {
+      "_": "24925",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/24925"
+      }
+    },
+    "FechadeOrden": "2025-04-01 20:25:48"
+  },
+  {
+    "Orden": "104545",
+    "OrdenDeRegistro": 104545,
+    "PersoneriaID": {
+      "_": "99886",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99886"
+      }
+    },
+    "FechadeOrden": "2025-04-01 15:16:23"
+  },
+  {
+    "Orden": "104555",
+    "OrdenDeRegistro": 104555,
+    "PersoneriaID": {
+      "_": "99913",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99913"
+      }
+    },
+    "FechadeOrden": "2025-04-02 13:37:58"
+  },
+  {
+    "Orden": "104573",
+    "OrdenDeRegistro": 104573,
+    "PersoneriaID": {
+      "_": "74772",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/74772"
+      }
+    },
+    "FechadeOrden": "2025-04-01 15:16:23"
+  },
+  {
+    "Orden": "104574",
+    "OrdenDeRegistro": 104574,
+    "PersoneriaID": {
+      "_": "99933",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99933"
+      }
+    },
+    "FechadeOrden": "2025-04-02 15:48:57"
+  },
+  {
+    "Orden": "104577",
+    "OrdenDeRegistro": 104577,
+    "PersoneriaID": {
+      "_": "98370",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/98370"
+      }
+    },
+    "FechadeOrden": "2025-04-02 13:37:58"
+  },
+  {
+    "Orden": "104578",
+    "OrdenDeRegistro": 104578,
+    "PersoneriaID": {
+      "_": "11197",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/11197"
+      }
+    },
+    "FechadeOrden": "2025-04-02 15:40:58"
+  },
+  {
+    "Orden": "104580",
+    "OrdenDeRegistro": 104580,
+    "PersoneriaID": {
+      "_": "8986",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/8986"
+      }
+    },
+    "FechadeOrden": "2025-04-01 20:10:06"
+  },
+  {
+    "Orden": "104581",
+    "OrdenDeRegistro": 104581,
+    "PersoneriaID": {
+      "_": "99937",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99937"
+      }
+    },
+    "FechadeOrden": "2025-04-01 07:11:00"
+  },
+  {
+    "Orden": "104582",
+    "OrdenDeRegistro": 104582,
+    "PersoneriaID": {
+      "_": "21063",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/21063"
+      }
+    },
+    "FechadeOrden": "2025-04-01 20:25:48"
+  },
+  {
+    "Orden": "104583",
+    "OrdenDeRegistro": 104583,
+    "PersoneriaID": {
+      "_": "33783",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/33783"
+      }
+    },
+    "FechadeOrden": "2025-04-01 15:16:23"
+  },
+  {
+    "Orden": "104584",
+    "OrdenDeRegistro": 104584,
+    "PersoneriaID": {
+      "_": "6545",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/6545"
+      }
+    },
+    "FechadeOrden": "2025-04-01 20:25:48"
+  },
+  {
+    "Orden": "104585",
+    "OrdenDeRegistro": 104585,
+    "PersoneriaID": {
+      "_": "32559",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/32559"
+      }
+    },
+    "FechadeOrden": "2025-04-01 20:25:48"
+  },
+  {
+    "Orden": "104586",
+    "OrdenDeRegistro": 104586,
+    "PersoneriaID": {
+      "_": "99940",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99940"
+      }
+    },
+    "FechadeOrden": "2025-04-01 20:25:48"
+  },
+  {
+    "Orden": "104587",
+    "OrdenDeRegistro": 104587,
+    "PersoneriaID": {
+      "_": "99942",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99942"
+      }
+    },
+    "FechadeOrden": "2025-04-01 20:25:47"
+  },
+  {
+    "Orden": "104588",
+    "OrdenDeRegistro": 104588,
+    "PersoneriaID": {
+      "_": "99941",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99941"
+      }
+    },
+    "FechadeOrden": "2025-04-01 10:01:25"
+  },
+  {
+    "Orden": "104589",
+    "OrdenDeRegistro": 104589,
+    "PersoneriaID": {
+      "_": "99941",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99941"
+      }
+    },
+    "FechadeOrden": "2025-04-01 20:25:47"
+  },
+  {
+    "Orden": "104590",
+    "OrdenDeRegistro": 104590,
+    "PersoneriaID": {
+      "_": "28129",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/28129"
+      }
+    },
+    "FechadeOrden": "2025-04-01 20:25:47"
+  },
+  {
+    "Orden": "104591",
+    "OrdenDeRegistro": 104591,
+    "PersoneriaID": {
+      "_": "99943",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99943"
+      }
+    },
+    "FechadeOrden": "2025-04-01 10:51:21"
+  },
+  {
+    "Orden": "104592",
+    "OrdenDeRegistro": 104592,
+    "PersoneriaID": {
+      "_": "99946",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99946"
+      }
+    },
+    "FechadeOrden": "2025-04-02 13:37:58"
+  },
+  {
+    "Orden": "104593",
+    "OrdenDeRegistro": 104593,
+    "PersoneriaID": {
+      "_": "99949",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99949"
+      }
+    },
+    "FechadeOrden": "2025-04-02 13:37:58"
+  },
+  {
+    "Orden": "104594",
+    "OrdenDeRegistro": 104594,
+    "PersoneriaID": {
+      "_": "99948",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99948"
+      }
+    },
+    "FechadeOrden": "2025-04-01 20:25:47"
+  },
+  {
+    "Orden": "104595",
+    "OrdenDeRegistro": 104595,
+    "PersoneriaID": {
+      "_": "41657",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/41657"
+      }
+    },
+    "FechadeOrden": "2025-04-01 20:25:46"
+  },
+  {
+    "Orden": "104596",
+    "OrdenDeRegistro": 104596,
+    "PersoneriaID": {
+      "_": "99950",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99950"
+      }
+    },
+    "FechadeOrden": "2025-04-01 15:22:40"
+  },
+  {
+    "Orden": "104597",
+    "OrdenDeRegistro": 104597,
+    "PersoneriaID": {
+      "_": "99951",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99951"
+      }
+    },
+    "FechadeOrden": "2025-04-01 16:58:52"
+  },
+  {
+    "Orden": "104598",
+    "OrdenDeRegistro": 104598,
+    "PersoneriaID": {
+      "_": "63470",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/63470"
+      }
+    },
+    "FechadeOrden": "2025-04-02 13:37:58"
+  },
+  {
+    "Orden": "104599",
+    "OrdenDeRegistro": 104599,
+    "PersoneriaID": {
+      "_": "99953",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99953"
+      }
+    },
+    "FechadeOrden": "2025-04-02 13:37:57"
+  },
+  {
+    "Orden": "104600",
+    "OrdenDeRegistro": 104600,
+    "PersoneriaID": {
+      "_": "99954",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99954"
+      }
+    },
+    "FechadeOrden": "2025-04-02 13:37:57"
+  },
+  {
+    "Orden": "104601",
+    "OrdenDeRegistro": 104601,
+    "PersoneriaID": {
+      "_": "63659",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/63659"
+      }
+    },
+    "FechadeOrden": "2025-04-01 20:23:35"
+  },
+  {
+    "Orden": "104602",
+    "OrdenDeRegistro": 104602,
+    "PersoneriaID": {
+      "_": "99956",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99956"
+      }
+    },
+    "FechadeOrden": "2025-04-02 07:36:41"
+  },
+  {
+    "Orden": "104603",
+    "OrdenDeRegistro": 104603,
+    "PersoneriaID": {
+      "_": "86573",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/86573"
+      }
+    },
+    "FechadeOrden": "2025-04-02 13:37:57"
+  },
+  {
+    "Orden": "104604",
+    "OrdenDeRegistro": 104604,
+    "PersoneriaID": {
+      "_": "2738",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/2738"
+      }
+    },
+    "FechadeOrden": "2025-04-02 08:41:47"
+  },
+  {
+    "Orden": "104605",
+    "OrdenDeRegistro": 104605,
+    "PersoneriaID": {
+      "_": "99952",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99952"
+      }
+    },
+    "FechadeOrden": "2025-04-02 15:44:06"
+  },
+  {
+    "Orden": "104606",
+    "OrdenDeRegistro": 104606,
+    "PersoneriaID": {
+      "_": "98279",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/98279"
+      }
+    },
+    "FechadeOrden": "2025-04-02 15:43:24"
+  },
+  {
+    "Orden": "104607",
+    "OrdenDeRegistro": 104607,
+    "PersoneriaID": {
+      "_": "99963",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99963"
+      }
+    },
+    "FechadeOrden": "2025-04-02 15:42:48"
+  },
+  {
+    "Orden": "104608",
+    "OrdenDeRegistro": 104608,
+    "PersoneriaID": {
+      "_": "99837",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99837"
+      }
+    },
+    "FechadeOrden": "2025-04-02 15:41:32"
+  },
+  {
+    "Orden": "104609",
+    "OrdenDeRegistro": 104609,
+    "PersoneriaID": {
+      "_": "13180",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/13180"
+      }
+    },
+    "FechadeOrden": "2025-04-02 14:58:33"
+  },
+  {
+    "Orden": "104610",
+    "OrdenDeRegistro": 104610,
+    "PersoneriaID": {
+      "_": "99965",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99965"
+      }
+    },
+    "FechadeOrden": "2025-04-02 15:22:20"
+  },
+  {
+    "Orden": "104611",
+    "OrdenDeRegistro": 104611,
+    "PersoneriaID": {
+      "_": "95559",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/95559"
+      }
+    },
+    "FechadeOrden": "2025-04-02 15:49:27"
+  }
+]
+2025-04-02 20:54:21.509 - ERROR: Error en la transacción de crear pedido con orden :104586
+2025-04-02 20:54:21.509 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2025-04-02 20:54:21.509 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1188:39)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1569:17)
+    at async Inicializador (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1683:17)
+2025-04-02 20:54:47.960 - ERROR: Error en la transacción de crear pedido con orden :104595
+2025-04-02 20:54:47.960 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2025-04-02 20:54:47.960 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1188:39)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1569:17)
+    at async Inicializador (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1683:17)
+2025-04-02 20:56:20.823 - undefined
+2025-04-02 21:05:32.440 - Datos de las órdenes:
+2025-04-02 21:05:32.440 - [
+  {
+    "Orden": "104605",
+    "OrdenDeRegistro": 104605,
+    "PersoneriaID": {
+      "_": "99952",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99952"
+      }
+    },
+    "FechadeOrden": "2025-04-02 15:44:06"
+  }
+]
+2025-04-02 21:05:36.478 - Estos son los datos de orden
+2025-04-02 21:05:36.478 - {
+  "Estado": {
+    "id": "4",
+    "Estado": [
+      {
+        "_": "Enviado",
+        "$": {
+          "id": "1",
+          "xlink:href": "https://www.kukyflor.com/api/languages/1"
+        }
+      },
+      {
+        "_": "Shipped",
+        "$": {
+          "id": "3",
+          "xlink:href": "https://www.kukyflor.com/api/languages/3"
+        }
+      }
+    ]
+  },
+  "SerieDePedido": {
+    "id_address_invoice": "153398",
+    "id_adress_Entrega": "FA-219",
+    "company": "20553519536",
+    "phone": "954 170 047"
+  },
+  "DireccionFacturacion": {
+    "id_adress_Entrega": "153385"
+  },
+  "DireccionEntrega": {
+    "id_adress_Entrega": "153385",
+    "id_direccion": "360",
+    "direccion_1": "Castilla 254, Magdalena del Mar 15086, Perú",
+    "city": " - ",
+    "Referencia": "Edificio Ferrara piso 2 dpto 205",
+    "phone_mobile": "",
+    "PesonaEntrega": "Pilar Gonzales",
+    "Telefono": "993895431",
+    "Cordenadas": "-12.0946122,-77.07493889999999"
+  },
+  "IDEntrega_Direccion": {
+    "id": "360",
+    "iso_code": "lena",
+    "name": "Magdalena-Lima",
+    "active": "1"
+  },
+  "Card": {
+    "id": "314288"
+  },
+  "Customer": {
+    "id": "99952",
+    "documentoIdentidad": "74064203",
+    "lastname": "PANTA CASTILLO",
+    "firstname": "JESSENIA MERCEDES",
+    "email": "jessenia.panta@epta-latam.com"
+  },
+  "Pedido": {
+    "id": "104605",
+    "módulo": "niubiz",
+    "delivery_number": "79754",
+    "delivery_date": "2025-04-02 15:44:06",
+    "valid": "1",
+    "date_add": "2025-04-02 09:59:41",
+    "date_upd": "2025-04-02 15:44:06",
+    "ddw_order_date": "2025-04-02 00:00:00",
+    "ddw_order_time": "14:00 - 18:00",
+    "payment": "Niubiz",
+    "gift_message": "Querida Pilar,\r\n\r\nTe enviamos todas nuestras energías positivas deseamos una pronta recuperación.\r\n\r\nCon mucho cariño y fuerza, todo tu equipo de EPTA está contigo ❤.",
+    "total_discounts": "0.000000",
+    "total_paid": "114.000000",
+    "total_paid_tax_incl": "114.000000",
+    "total_products_wt": "99.000000",
+    "total_shipping": "15.000000",
+    "total_shipping_tax_incl": "15.000000",
+    "total_shipping_tax_excl": "15.000000",
+    "productos": {
+      "order_rows": {
+        "$": {
+          "nodeType": "order_row",
+          "virtualEntity": "true"
+        },
+        "order_row": {
+          "id": "123740",
+          "product_id": {
+            "_": "2409",
+            "$": {
+              "xlink:href": "https://www.kukyflor.com/api/products/2409"
+            }
+          },
+          "product_attribute_id": "0",
+          "product_quantity": "1",
+          "product_name": "Cartera de rosas con mini rosas",
+          "product_reference": "DMU-25-5",
+          "product_ean13": "",
+          "product_isbn": "",
+          "product_upc": "",
+          "product_price": "83.898305",
+          "id_customization": {
+            "_": "0",
+            "$": {
+              "xlink:href": "https://www.kukyflor.com/api/customizations/0"
+            }
+          },
+          "unit_price_tax_incl": "99.000000",
+          "unit_price_tax_excl": "83.898305"
+        }
+      }
+    },
+    "address_delivery": "153385",
+    "address_invoice": "153398",
+    "cart": "314288",
+    "currency": "1",
+    "lang": "1",
+    "customer": "99952",
+    "carrier": "474",
+    "state": "4"
+  },
+  "OrderDetails_cart_rules": null,
+  "cart_rules": null,
+  "ProductosOrden": [
+    {
+      "id": "123740",
+      "id_order": {
+        "_": "104605",
+        "$": {
+          "xlink:href": "https://www.kukyflor.com/api/orders/104605"
+        }
+      },
+      "product_id": {
+        "_": "2409",
+        "$": {
+          "xlink:href": "https://www.kukyflor.com/api/products/2409"
+        }
+      },
+      "product_attribute_id": {
+        "_": "0",
+        "$": {
+          "xlink:href": "https://www.kukyflor.com/api/combinations/0"
+        }
+      },
+      "product_quantity_reinjected": "0",
+      "group_reduction": "0.00",
+      "discount_quantity_applied": "0",
+      "download_hash": "",
+      "download_deadline": "0000-00-00 00:00:00",
+      "id_order_invoice": "0",
+      "id_warehouse": "0",
+      "id_shop": "1",
+      "id_customization": "0",
+      "product_name": "Cartera de rosas con mini rosas",
+      "product_quantity": "1",
+      "product_quantity_in_stock": "1",
+      "product_quantity_return": "0",
+      "product_quantity_refunded": "0",
+      "product_price": "83.898305",
+      "reduction_percent": "0.00",
+      "reduction_amount": "0.000000",
+      "reduction_amount_tax_incl": "0.000000",
+      "reduction_amount_tax_excl": "0.000000",
+      "product_quantity_discount": "0.000000",
+      "product_ean13": "",
+      "product_isbn": "",
+      "product_upc": "",
+      "product_mpn": "",
+      "product_reference": "DMU-25-5",
+      "product_supplier_reference": "",
+      "product_weight": "0.000000",
+      "tax_computation_method": "0",
+      "id_tax_rules_group": "6",
+      "ecotax": "0.000000",
+      "ecotax_tax_rate": "0.000",
+      "download_nb": "0",
+      "unit_price_tax_incl": "99.000000",
+      "unit_price_tax_excl": "83.898305",
+      "total_price_tax_incl": "99.000000",
+      "total_price_tax_excl": "83.900000",
+      "total_shipping_price_tax_excl": "0.000000",
+      "total_shipping_price_tax_incl": "0.000000",
+      "purchase_supplier_price": "0.000000",
+      "original_product_price": "83.898305",
+      "original_wholesale_price": "0.000000",
+      "total_refunded_tax_excl": "0.000000",
+      "total_refunded_tax_incl": "0.000000",
+      "associations": {
+        "taxes": {
+          "$": {
+            "nodeType": "tax",
+            "api": "taxes"
+          },
+          "tax": {
+            "$": {
+              "xlink:href": "https://www.kukyflor.com/api/taxes/1"
+            },
+            "id": "1"
+          }
+        }
+      }
+    }
+  ],
+  "ProductosCategoriaOrden": [
+    [
+      "2",
+      "36",
+      "38",
+      "89",
+      "90",
+      "93",
+      "102",
+      "182"
+    ]
+  ]
+}
+2025-04-02 21:05:44.878 - undefined
+2025-04-02 21:07:31.428 - Datos de las órdenes:
+2025-04-02 21:07:31.428 - [
+  {
+    "Orden": "104605",
+    "OrdenDeRegistro": 104605,
+    "PersoneriaID": {
+      "_": "99952",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99952"
+      }
+    },
+    "FechadeOrden": "2025-04-02 15:44:06"
+  }
+]
+2025-04-02 21:07:37.388 - Estos son los datos de orden
+2025-04-02 21:07:37.388 - {
+  "Estado": {
+    "id": "4",
+    "Estado": [
+      {
+        "_": "Enviado",
+        "$": {
+          "id": "1",
+          "xlink:href": "https://www.kukyflor.com/api/languages/1"
+        }
+      },
+      {
+        "_": "Shipped",
+        "$": {
+          "id": "3",
+          "xlink:href": "https://www.kukyflor.com/api/languages/3"
+        }
+      }
+    ]
+  },
+  "SerieDePedido": {
+    "id_address_invoice": "153398",
+    "id_adress_Entrega": "FA-219",
+    "company": "20553519536",
+    "phone": "954 170 047"
+  },
+  "DireccionFacturacion": {
+    "id_adress_Entrega": "153385"
+  },
+  "DireccionEntrega": {
+    "id_adress_Entrega": "153385",
+    "id_direccion": "360",
+    "direccion_1": "Castilla 254, Magdalena del Mar 15086, Perú",
+    "city": " - ",
+    "Referencia": "Edificio Ferrara piso 2 dpto 205",
+    "phone_mobile": "",
+    "PesonaEntrega": "Pilar Gonzales",
+    "Telefono": "993895431",
+    "Cordenadas": "-12.0946122,-77.07493889999999"
+  },
+  "IDEntrega_Direccion": {
+    "id": "360",
+    "iso_code": "lena",
+    "name": "Magdalena-Lima",
+    "active": "1"
+  },
+  "Card": {
+    "id": "314288"
+  },
+  "Customer": {
+    "id": "99952",
+    "documentoIdentidad": "74064203",
+    "lastname": "PANTA CASTILLO",
+    "firstname": "JESSENIA MERCEDES",
+    "email": "jessenia.panta@epta-latam.com"
+  },
+  "Pedido": {
+    "id": "104605",
+    "módulo": "niubiz",
+    "delivery_number": "79754",
+    "delivery_date": "2025-04-02 15:44:06",
+    "valid": "1",
+    "date_add": "2025-04-02 09:59:41",
+    "date_upd": "2025-04-02 15:44:06",
+    "ddw_order_date": "2025-04-02 00:00:00",
+    "ddw_order_time": "14:00 - 18:00",
+    "payment": "Niubiz",
+    "gift_message": "Querida Pilar,\r\n\r\nTe enviamos todas nuestras energías positivas deseamos una pronta recuperación.\r\n\r\nCon mucho cariño y fuerza, todo tu equipo de EPTA está contigo ❤.",
+    "total_discounts": "0.000000",
+    "total_paid": "114.000000",
+    "total_paid_tax_incl": "114.000000",
+    "total_products_wt": "99.000000",
+    "total_shipping": "15.000000",
+    "total_shipping_tax_incl": "15.000000",
+    "total_shipping_tax_excl": "15.000000",
+    "productos": {
+      "order_rows": {
+        "$": {
+          "nodeType": "order_row",
+          "virtualEntity": "true"
+        },
+        "order_row": {
+          "id": "123740",
+          "product_id": {
+            "_": "2409",
+            "$": {
+              "xlink:href": "https://www.kukyflor.com/api/products/2409"
+            }
+          },
+          "product_attribute_id": "0",
+          "product_quantity": "1",
+          "product_name": "Cartera de rosas con mini rosas",
+          "product_reference": "DMU-25-5",
+          "product_ean13": "",
+          "product_isbn": "",
+          "product_upc": "",
+          "product_price": "83.898305",
+          "id_customization": {
+            "_": "0",
+            "$": {
+              "xlink:href": "https://www.kukyflor.com/api/customizations/0"
+            }
+          },
+          "unit_price_tax_incl": "99.000000",
+          "unit_price_tax_excl": "83.898305"
+        }
+      }
+    },
+    "address_delivery": "153385",
+    "address_invoice": "153398",
+    "cart": "314288",
+    "currency": "1",
+    "lang": "1",
+    "customer": "99952",
+    "carrier": "474",
+    "state": "4"
+  },
+  "OrderDetails_cart_rules": null,
+  "cart_rules": null,
+  "ProductosOrden": [
+    {
+      "id": "123740",
+      "id_order": {
+        "_": "104605",
+        "$": {
+          "xlink:href": "https://www.kukyflor.com/api/orders/104605"
+        }
+      },
+      "product_id": {
+        "_": "2409",
+        "$": {
+          "xlink:href": "https://www.kukyflor.com/api/products/2409"
+        }
+      },
+      "product_attribute_id": {
+        "_": "0",
+        "$": {
+          "xlink:href": "https://www.kukyflor.com/api/combinations/0"
+        }
+      },
+      "product_quantity_reinjected": "0",
+      "group_reduction": "0.00",
+      "discount_quantity_applied": "0",
+      "download_hash": "",
+      "download_deadline": "0000-00-00 00:00:00",
+      "id_order_invoice": "0",
+      "id_warehouse": "0",
+      "id_shop": "1",
+      "id_customization": "0",
+      "product_name": "Cartera de rosas con mini rosas",
+      "product_quantity": "1",
+      "product_quantity_in_stock": "1",
+      "product_quantity_return": "0",
+      "product_quantity_refunded": "0",
+      "product_price": "83.898305",
+      "reduction_percent": "0.00",
+      "reduction_amount": "0.000000",
+      "reduction_amount_tax_incl": "0.000000",
+      "reduction_amount_tax_excl": "0.000000",
+      "product_quantity_discount": "0.000000",
+      "product_ean13": "",
+      "product_isbn": "",
+      "product_upc": "",
+      "product_mpn": "",
+      "product_reference": "DMU-25-5",
+      "product_supplier_reference": "",
+      "product_weight": "0.000000",
+      "tax_computation_method": "0",
+      "id_tax_rules_group": "6",
+      "ecotax": "0.000000",
+      "ecotax_tax_rate": "0.000",
+      "download_nb": "0",
+      "unit_price_tax_incl": "99.000000",
+      "unit_price_tax_excl": "83.898305",
+      "total_price_tax_incl": "99.000000",
+      "total_price_tax_excl": "83.900000",
+      "total_shipping_price_tax_excl": "0.000000",
+      "total_shipping_price_tax_incl": "0.000000",
+      "purchase_supplier_price": "0.000000",
+      "original_product_price": "83.898305",
+      "original_wholesale_price": "0.000000",
+      "total_refunded_tax_excl": "0.000000",
+      "total_refunded_tax_incl": "0.000000",
+      "associations": {
+        "taxes": {
+          "$": {
+            "nodeType": "tax",
+            "api": "taxes"
+          },
+          "tax": {
+            "$": {
+              "xlink:href": "https://www.kukyflor.com/api/taxes/1"
+            },
+            "id": "1"
+          }
+        }
+      }
+    }
+  ],
+  "ProductosCategoriaOrden": [
+    [
+      "2",
+      "36",
+      "38",
+      "89",
+      "90",
+      "93",
+      "102",
+      "182"
+    ]
+  ]
+}
+2025-04-02 21:07:38.971 - _____________________________________________________________________________________________________________
+2025-04-02 21:07:46.763 - undefined
+2025-04-02 21:08:21.463 - Datos de las órdenes:
+2025-04-02 21:08:21.463 - [
+  {
+    "Orden": "104605",
+    "OrdenDeRegistro": 104605,
+    "PersoneriaID": {
+      "_": "99952",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99952"
+      }
+    },
+    "FechadeOrden": "2025-04-02 15:44:06"
+  }
+]
+2025-04-02 21:08:26.827 - Estos son los datos de orden
+2025-04-02 21:08:26.827 - {
+  "Estado": {
+    "id": "4",
+    "Estado": [
+      {
+        "_": "Enviado",
+        "$": {
+          "id": "1",
+          "xlink:href": "https://www.kukyflor.com/api/languages/1"
+        }
+      },
+      {
+        "_": "Shipped",
+        "$": {
+          "id": "3",
+          "xlink:href": "https://www.kukyflor.com/api/languages/3"
+        }
+      }
+    ]
+  },
+  "SerieDePedido": {
+    "id_address_invoice": "153398",
+    "id_adress_Entrega": "FA-219",
+    "company": "20553519536",
+    "phone": "954 170 047"
+  },
+  "DireccionFacturacion": {
+    "id_adress_Entrega": "153385"
+  },
+  "DireccionEntrega": {
+    "id_adress_Entrega": "153385",
+    "id_direccion": "360",
+    "direccion_1": "Castilla 254, Magdalena del Mar 15086, Perú",
+    "city": " - ",
+    "Referencia": "Edificio Ferrara piso 2 dpto 205",
+    "phone_mobile": "",
+    "PesonaEntrega": "Pilar Gonzales",
+    "Telefono": "993895431",
+    "Cordenadas": "-12.0946122,-77.07493889999999"
+  },
+  "IDEntrega_Direccion": {
+    "id": "360",
+    "iso_code": "lena",
+    "name": "Magdalena-Lima",
+    "active": "1"
+  },
+  "Card": {
+    "id": "314288"
+  },
+  "Customer": {
+    "id": "99952",
+    "documentoIdentidad": "74064203",
+    "lastname": "PANTA CASTILLO",
+    "firstname": "JESSENIA MERCEDES",
+    "email": "jessenia.panta@epta-latam.com"
+  },
+  "Pedido": {
+    "id": "104605",
+    "módulo": "niubiz",
+    "delivery_number": "79754",
+    "delivery_date": "2025-04-02 15:44:06",
+    "valid": "1",
+    "date_add": "2025-04-02 09:59:41",
+    "date_upd": "2025-04-02 15:44:06",
+    "ddw_order_date": "2025-04-02 00:00:00",
+    "ddw_order_time": "14:00 - 18:00",
+    "payment": "Niubiz",
+    "gift_message": "Querida Pilar,\r\n\r\nTe enviamos todas nuestras energías positivas deseamos una pronta recuperación.\r\n\r\nCon mucho cariño y fuerza, todo tu equipo de EPTA está contigo ❤.",
+    "total_discounts": "0.000000",
+    "total_paid": "114.000000",
+    "total_paid_tax_incl": "114.000000",
+    "total_products_wt": "99.000000",
+    "total_shipping": "15.000000",
+    "total_shipping_tax_incl": "15.000000",
+    "total_shipping_tax_excl": "15.000000",
+    "productos": {
+      "order_rows": {
+        "$": {
+          "nodeType": "order_row",
+          "virtualEntity": "true"
+        },
+        "order_row": {
+          "id": "123740",
+          "product_id": {
+            "_": "2409",
+            "$": {
+              "xlink:href": "https://www.kukyflor.com/api/products/2409"
+            }
+          },
+          "product_attribute_id": "0",
+          "product_quantity": "1",
+          "product_name": "Cartera de rosas con mini rosas",
+          "product_reference": "DMU-25-5",
+          "product_ean13": "",
+          "product_isbn": "",
+          "product_upc": "",
+          "product_price": "83.898305",
+          "id_customization": {
+            "_": "0",
+            "$": {
+              "xlink:href": "https://www.kukyflor.com/api/customizations/0"
+            }
+          },
+          "unit_price_tax_incl": "99.000000",
+          "unit_price_tax_excl": "83.898305"
+        }
+      }
+    },
+    "address_delivery": "153385",
+    "address_invoice": "153398",
+    "cart": "314288",
+    "currency": "1",
+    "lang": "1",
+    "customer": "99952",
+    "carrier": "474",
+    "state": "4"
+  },
+  "OrderDetails_cart_rules": null,
+  "cart_rules": null,
+  "ProductosOrden": [
+    {
+      "id": "123740",
+      "id_order": {
+        "_": "104605",
+        "$": {
+          "xlink:href": "https://www.kukyflor.com/api/orders/104605"
+        }
+      },
+      "product_id": {
+        "_": "2409",
+        "$": {
+          "xlink:href": "https://www.kukyflor.com/api/products/2409"
+        }
+      },
+      "product_attribute_id": {
+        "_": "0",
+        "$": {
+          "xlink:href": "https://www.kukyflor.com/api/combinations/0"
+        }
+      },
+      "product_quantity_reinjected": "0",
+      "group_reduction": "0.00",
+      "discount_quantity_applied": "0",
+      "download_hash": "",
+      "download_deadline": "0000-00-00 00:00:00",
+      "id_order_invoice": "0",
+      "id_warehouse": "0",
+      "id_shop": "1",
+      "id_customization": "0",
+      "product_name": "Cartera de rosas con mini rosas",
+      "product_quantity": "1",
+      "product_quantity_in_stock": "1",
+      "product_quantity_return": "0",
+      "product_quantity_refunded": "0",
+      "product_price": "83.898305",
+      "reduction_percent": "0.00",
+      "reduction_amount": "0.000000",
+      "reduction_amount_tax_incl": "0.000000",
+      "reduction_amount_tax_excl": "0.000000",
+      "product_quantity_discount": "0.000000",
+      "product_ean13": "",
+      "product_isbn": "",
+      "product_upc": "",
+      "product_mpn": "",
+      "product_reference": "DMU-25-5",
+      "product_supplier_reference": "",
+      "product_weight": "0.000000",
+      "tax_computation_method": "0",
+      "id_tax_rules_group": "6",
+      "ecotax": "0.000000",
+      "ecotax_tax_rate": "0.000",
+      "download_nb": "0",
+      "unit_price_tax_incl": "99.000000",
+      "unit_price_tax_excl": "83.898305",
+      "total_price_tax_incl": "99.000000",
+      "total_price_tax_excl": "83.900000",
+      "total_shipping_price_tax_excl": "0.000000",
+      "total_shipping_price_tax_incl": "0.000000",
+      "purchase_supplier_price": "0.000000",
+      "original_product_price": "83.898305",
+      "original_wholesale_price": "0.000000",
+      "total_refunded_tax_excl": "0.000000",
+      "total_refunded_tax_incl": "0.000000",
+      "associations": {
+        "taxes": {
+          "$": {
+            "nodeType": "tax",
+            "api": "taxes"
+          },
+          "tax": {
+            "$": {
+              "xlink:href": "https://www.kukyflor.com/api/taxes/1"
+            },
+            "id": "1"
+          }
+        }
+      }
+    }
+  ],
+  "ProductosCategoriaOrden": [
+    [
+      "2",
+      "36",
+      "38",
+      "89",
+      "90",
+      "93",
+      "102",
+      "182"
+    ]
+  ]
+}
+2025-04-02 21:08:28.241 - _____________________________________________________________________________________________________________
+2025-04-02 21:08:29.513 - este es el cliente
+2025-04-02 21:08:29.513 - {
+  "PersoneriaID": "24932",
+  "TipoIdentidadID": 203.00002,
+  "NroIdentidad": "20553519536",
+  "GrupoPersoneria": "1         ",
+  "Personeria": "EPTA PERU S.A.C.",
+  "NombreComercial": "EPTA PERU S.A.C.",
+  "Domiciliado": 1,
+  "TipoContribuyente": "1  ",
+  "FamiliaID": 143,
+  "NegocioID": 179.00001,
+  "CtaDetraccion": "",
+  "Codigo": "",
+  "Estado": "1",
+  "UsuarioID": 1,
+  "FechaCreacion": "2025-04-02T15:55:08.700Z",
+  "FechaModificacion": "2025-04-02T15:55:08.700Z",
+  "ConvenioID": 902.00001,
+  "MedioRegistroID": 900.00001,
+  "MedioInformacionID": 901.00001,
+  "Referencia": "",
+  "Telefonos": "954 170 047",
+  "email": "jessenia.panta@epta-latam.com",
+  "fechanacimiento": null,
+  "universidadid": null,
+  "fechacolegiatura": null,
+  "vitalicio": null,
+  "Foto": null,
+  "libro": null,
+  "Genero": null,
+  "FechaDefuncion": null,
+  "Password": null,
+  "EstadoCivil": null
+}
+2025-04-02 21:08:35.376 - undefined
+2025-04-02 21:11:13.484 - Datos de las órdenes:
+2025-04-02 21:11:13.484 - [
+  {
+    "Orden": "104605",
+    "OrdenDeRegistro": 104605,
+    "PersoneriaID": {
+      "_": "99952",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99952"
+      }
+    },
+    "FechadeOrden": "2025-04-02 15:44:06"
+  }
+]
+2025-04-02 21:11:18.890 - Estos son los datos de orden
+2025-04-02 21:11:18.890 - {
+  "Estado": {
+    "id": "4",
+    "Estado": [
+      {
+        "_": "Enviado",
+        "$": {
+          "id": "1",
+          "xlink:href": "https://www.kukyflor.com/api/languages/1"
+        }
+      },
+      {
+        "_": "Shipped",
+        "$": {
+          "id": "3",
+          "xlink:href": "https://www.kukyflor.com/api/languages/3"
+        }
+      }
+    ]
+  },
+  "SerieDePedido": {
+    "id_address_invoice": "153398",
+    "id_adress_Entrega": "FA-219",
+    "company": "20553519536",
+    "phone": "954 170 047"
+  },
+  "DireccionFacturacion": {
+    "id_adress_Entrega": "153385"
+  },
+  "DireccionEntrega": {
+    "id_adress_Entrega": "153385",
+    "id_direccion": "360",
+    "direccion_1": "Castilla 254, Magdalena del Mar 15086, Perú",
+    "city": " - ",
+    "Referencia": "Edificio Ferrara piso 2 dpto 205",
+    "phone_mobile": "",
+    "PesonaEntrega": "Pilar Gonzales",
+    "Telefono": "993895431",
+    "Cordenadas": "-12.0946122,-77.07493889999999"
+  },
+  "IDEntrega_Direccion": {
+    "id": "360",
+    "iso_code": "lena",
+    "name": "Magdalena-Lima",
+    "active": "1"
+  },
+  "Card": {
+    "id": "314288"
+  },
+  "Customer": {
+    "id": "99952",
+    "documentoIdentidad": "74064203",
+    "lastname": "PANTA CASTILLO",
+    "firstname": "JESSENIA MERCEDES",
+    "email": "jessenia.panta@epta-latam.com"
+  },
+  "Pedido": {
+    "id": "104605",
+    "módulo": "niubiz",
+    "delivery_number": "79754",
+    "delivery_date": "2025-04-02 15:44:06",
+    "valid": "1",
+    "date_add": "2025-04-02 09:59:41",
+    "date_upd": "2025-04-02 15:44:06",
+    "ddw_order_date": "2025-04-02 00:00:00",
+    "ddw_order_time": "14:00 - 18:00",
+    "payment": "Niubiz",
+    "gift_message": "Querida Pilar,\r\n\r\nTe enviamos todas nuestras energías positivas deseamos una pronta recuperación.\r\n\r\nCon mucho cariño y fuerza, todo tu equipo de EPTA está contigo ❤.",
+    "total_discounts": "0.000000",
+    "total_paid": "114.000000",
+    "total_paid_tax_incl": "114.000000",
+    "total_products_wt": "99.000000",
+    "total_shipping": "15.000000",
+    "total_shipping_tax_incl": "15.000000",
+    "total_shipping_tax_excl": "15.000000",
+    "productos": {
+      "order_rows": {
+        "$": {
+          "nodeType": "order_row",
+          "virtualEntity": "true"
+        },
+        "order_row": {
+          "id": "123740",
+          "product_id": {
+            "_": "2409",
+            "$": {
+              "xlink:href": "https://www.kukyflor.com/api/products/2409"
+            }
+          },
+          "product_attribute_id": "0",
+          "product_quantity": "1",
+          "product_name": "Cartera de rosas con mini rosas",
+          "product_reference": "DMU-25-5",
+          "product_ean13": "",
+          "product_isbn": "",
+          "product_upc": "",
+          "product_price": "83.898305",
+          "id_customization": {
+            "_": "0",
+            "$": {
+              "xlink:href": "https://www.kukyflor.com/api/customizations/0"
+            }
+          },
+          "unit_price_tax_incl": "99.000000",
+          "unit_price_tax_excl": "83.898305"
+        }
+      }
+    },
+    "address_delivery": "153385",
+    "address_invoice": "153398",
+    "cart": "314288",
+    "currency": "1",
+    "lang": "1",
+    "customer": "99952",
+    "carrier": "474",
+    "state": "4"
+  },
+  "OrderDetails_cart_rules": null,
+  "cart_rules": null,
+  "ProductosOrden": [
+    {
+      "id": "123740",
+      "id_order": {
+        "_": "104605",
+        "$": {
+          "xlink:href": "https://www.kukyflor.com/api/orders/104605"
+        }
+      },
+      "product_id": {
+        "_": "2409",
+        "$": {
+          "xlink:href": "https://www.kukyflor.com/api/products/2409"
+        }
+      },
+      "product_attribute_id": {
+        "_": "0",
+        "$": {
+          "xlink:href": "https://www.kukyflor.com/api/combinations/0"
+        }
+      },
+      "product_quantity_reinjected": "0",
+      "group_reduction": "0.00",
+      "discount_quantity_applied": "0",
+      "download_hash": "",
+      "download_deadline": "0000-00-00 00:00:00",
+      "id_order_invoice": "0",
+      "id_warehouse": "0",
+      "id_shop": "1",
+      "id_customization": "0",
+      "product_name": "Cartera de rosas con mini rosas",
+      "product_quantity": "1",
+      "product_quantity_in_stock": "1",
+      "product_quantity_return": "0",
+      "product_quantity_refunded": "0",
+      "product_price": "83.898305",
+      "reduction_percent": "0.00",
+      "reduction_amount": "0.000000",
+      "reduction_amount_tax_incl": "0.000000",
+      "reduction_amount_tax_excl": "0.000000",
+      "product_quantity_discount": "0.000000",
+      "product_ean13": "",
+      "product_isbn": "",
+      "product_upc": "",
+      "product_mpn": "",
+      "product_reference": "DMU-25-5",
+      "product_supplier_reference": "",
+      "product_weight": "0.000000",
+      "tax_computation_method": "0",
+      "id_tax_rules_group": "6",
+      "ecotax": "0.000000",
+      "ecotax_tax_rate": "0.000",
+      "download_nb": "0",
+      "unit_price_tax_incl": "99.000000",
+      "unit_price_tax_excl": "83.898305",
+      "total_price_tax_incl": "99.000000",
+      "total_price_tax_excl": "83.900000",
+      "total_shipping_price_tax_excl": "0.000000",
+      "total_shipping_price_tax_incl": "0.000000",
+      "purchase_supplier_price": "0.000000",
+      "original_product_price": "83.898305",
+      "original_wholesale_price": "0.000000",
+      "total_refunded_tax_excl": "0.000000",
+      "total_refunded_tax_incl": "0.000000",
+      "associations": {
+        "taxes": {
+          "$": {
+            "nodeType": "tax",
+            "api": "taxes"
+          },
+          "tax": {
+            "$": {
+              "xlink:href": "https://www.kukyflor.com/api/taxes/1"
+            },
+            "id": "1"
+          }
+        }
+      }
+    }
+  ],
+  "ProductosCategoriaOrden": [
+    [
+      "2",
+      "36",
+      "38",
+      "89",
+      "90",
+      "93",
+      "102",
+      "182"
+    ]
+  ]
+}
+2025-04-02 21:11:20.256 - _____________________________________________________________________________________________________________
+2025-04-02 21:11:21.514 - este es el cliente
+2025-04-02 21:11:21.514 - {
+  "PersoneriaID": "24932",
+  "TipoIdentidadID": 203.00002,
+  "NroIdentidad": "20553519536",
+  "GrupoPersoneria": "1         ",
+  "Personeria": "EPTA PERU S.A.C.",
+  "NombreComercial": "EPTA PERU S.A.C.",
+  "Domiciliado": 1,
+  "TipoContribuyente": "1  ",
+  "FamiliaID": 143,
+  "NegocioID": 179.00001,
+  "CtaDetraccion": "",
+  "Codigo": "",
+  "Estado": "1",
+  "UsuarioID": 1,
+  "FechaCreacion": "2025-04-02T15:55:08.700Z",
+  "FechaModificacion": "2025-04-02T15:55:08.700Z",
+  "ConvenioID": 902.00001,
+  "MedioRegistroID": 900.00001,
+  "MedioInformacionID": 901.00001,
+  "Referencia": "",
+  "Telefonos": "954 170 047",
+  "email": "jessenia.panta@epta-latam.com",
+  "fechanacimiento": null,
+  "universidadid": null,
+  "fechacolegiatura": null,
+  "vitalicio": null,
+  "Foto": null,
+  "libro": null,
+  "Genero": null,
+  "FechaDefuncion": null,
+  "Password": null,
+  "EstadoCivil": null
+}
+2025-04-02 21:11:24.412 - creamos datos con este cliente--------------
+2025-04-02 21:11:27.385 - undefined

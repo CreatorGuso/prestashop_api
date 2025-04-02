@@ -61,7 +61,7 @@ async function buscarRazonSocialPorDNIRUC(numero) {
   // Ejemplo de uso
   // buscarRazonSocialPorDNIRUC('20508195584'); // Reemplaza con el DNI o RUC que desees consultar
   
-  buscarRazonSocialPorDNIRUC('20508195584'); // Reemplaza con el DNI o RUC que desees consultar
+  buscarRazonSocialPorDNIRUC('20553519536 '); // Reemplaza con el DNI o RUC que desees consultar
 
 
   

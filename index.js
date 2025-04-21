@@ -384,6 +384,7 @@ async function BuscarOrdenPorID(orderId) {
         lastname: customer.customer.lastname,
         firstname: customer.customer.firstname,
         email: customer.customer.email,
+        birthday: customer.customer.birthday,
       };
     });
 
@@ -391,7 +392,7 @@ async function BuscarOrdenPorID(orderId) {
     var ProductosOrden;
     var ProductosCategoriaOrden;
 
-    function obtenerDetallesOrden(IDproducto) {
+    async function obtenerDetallesOrden(IDproducto) {
       // Realizar la petición a la API para obtener los datos de la orden
       return axios.get(
         `https://ZBR3Q8MEZ3KC16C7Z5CMYYD9V1VFCT3T@www.kukyflor.com/api/order_details/${IDproducto}`
@@ -408,10 +409,11 @@ async function BuscarOrdenPorID(orderId) {
         });
     }
 
-    function obtenerCategoriaOrden(IDproducto) {
+
+    async function obtenerCategoriaOrden(IDproducto) {
       return axios.get(
-          `https://ZBR3Q8MEZ3KC16C7Z5CMYYD9V1VFCT3T@www.kukyflor.com/api/products/${IDproducto}`
-        )
+        `https://ZBR3Q8MEZ3KC16C7Z5CMYYD9V1VFCT3T@www.kukyflor.com/api/products/${IDproducto}`
+      )
         .then(responseOrder => {
           // Convertir la respuesta XML a JSON
           return parser.parseStringPromise(responseOrder.data);
@@ -741,25 +743,25 @@ async function crearCliente(params, paramsAPI) {
     if (params.nombres === '' && params.apellidoPaterno === '' && params.apellidoMaterno === '') {
       if (params.tipoDocumento == '1') { // DNI, pero sin nombres
         NombrePersoneria = paramsAPI.firstname + ' ' + paramsAPI.lastname;
-        TipoDocumento = 203.00006; 
+        TipoDocumento = 203.00006;
       } else if (params.tipoDocumento == '6') { // RUC
         NombrePersoneria = params.razonSocial;
-        TipoDocumento = 203.00002; 
+        TipoDocumento = 203.00002;
       }
     } else { // Caso cuando `nombres`, `apellidoPaterno` y `apellidoMaterno` están presentes
       if (params.tipoDocumento == '1') { // DNI
         NombrePersoneria = `${params.nombres} ${params.apellidoPaterno} ${params.apellidoMaterno}`;
-        TipoDocumento = 203.00001; 
+        TipoDocumento = 203.00001;
       } else if (params.tipoDocumento == '6') { // RUC
         NombrePersoneria = params.razonSocial;
-        TipoDocumento = 203.00002; 
+        TipoDocumento = 203.00002;
       }
     }
 
     // lastname: customer.customer.lastname,
     // 203.00006 carnet de extrangeria
     // firstname: customer.customer.firstname,
-    request.input('TipoIdentidadID', sql.Decimal(9, 5),TipoDocumento);//Funcionalidad para dni o ruc
+    request.input('TipoIdentidadID', sql.Decimal(9, 5), TipoDocumento);//Funcionalidad para dni o ruc
     request.input('NroIdentidad', sql.NVarChar, params.numeroDocumento);
     request.input('GrupoPersoneria', sql.NVarChar, '1');
     request.input('Personeria', sql.NVarChar, NombrePersoneria);
@@ -775,7 +777,7 @@ async function crearCliente(params, paramsAPI) {
     request.input('UsuarioID', sql.Int, 1);
     // request.input('ConvenioID', sql.Decimal(9, 5), 902.00001);
     // request.input('ConvenioID', sql.Decimal(9, 5), principalID == null ? 902.00001 : principalID);
-    request.input('ConvenioID', sql.Decimal(9, 5), 902.00001 );
+    request.input('ConvenioID', sql.Decimal(9, 5), 902.00001);
     request.input('MedioRegistroID', sql.Decimal(9, 5), 900.00001);
     request.input('MedioInformacionID', sql.Decimal(9, 5), 901.00001);
     request.input('Telefonos', sql.NVarChar, '');
@@ -858,7 +860,7 @@ async function updateCliente(DatosOrden, Cliente) {
 
     // Consulta para obtener el ID del cliente que se va a actualizar
     const queryFindClienteID = `
-      SELECT PersoneriaID, Email, Telefonos
+      SELECT PersoneriaID, Email, Telefonos, fechanacimiento
       FROM dbo.Personeria
       WHERE PersoneriaID = @PersoneriaID;
     `;
@@ -874,20 +876,64 @@ async function updateCliente(DatosOrden, Cliente) {
     const personeriaID = resultFind.recordset[0].PersoneriaID;
     const currentEmail = resultFind.recordset[0].email;
     const currentTelefonos = resultFind.recordset[0].Telefonos;
+    const rawFecha = resultFind.recordset[0].fechanacimiento;
+    const fechanacimiento = (!rawFecha || rawFecha === 0) ? '' : rawFecha.toString().slice(0, 10);
+
 
     // Nuevos datos desde DatosOrden
     const newEmail = DatosOrden.Customer.email;
-    var  newPhone; // Asumiendo que `phone` está en `SerieDePedido` 
-    if(DatosOrden.SerieDePedido.id_address_invoice == DatosOrden.DireccionEntrega.id_adress_Entrega){
-        newPhone = DatosOrden.DireccionEntrega.Telefono || ''
-    }else{
+    const newNacimiento = DatosOrden.Customer.birthday;
+    var newPhone; // Asumiendo que `phone` está en `SerieDePedido` 
+    if (DatosOrden.SerieDePedido.id_address_invoice == DatosOrden.DireccionEntrega.id_adress_Entrega) {
+      newPhone = DatosOrden.DireccionEntrega.Telefono || ''
+    } else {
       newPhone = DatosOrden.SerieDePedido.phone || ''
     }
     // Verificar si es necesario actualizar
     const shouldUpdateEmail = newEmail && newEmail !== currentEmail;
     const shouldUpdatePhone = newPhone && newPhone !== currentTelefonos;
 
-    if (!shouldUpdateEmail && !shouldUpdatePhone) {
+    // Función para procesar la fecha de nacimiento
+    function procesarNacimiento(fechaActual, nuevaFecha) {
+      const esInvalida = (f) => !f || f === '' || f === '0' || f === '0000-00-00';
+
+      // Si la nueva fecha es inválida, no se actualiza
+      if (esInvalida(nuevaFecha)) {
+        return fechaActual;  // Retorna la fecha actual si la nueva es inválida
+      }
+
+      // Si la nueva fecha es '0000-00-00', la convertimos a null
+      if (nuevaFecha === '0000-00-00') {
+        return null;  // Retorna null si la nueva fecha es '0000-00-00'
+      }
+
+      // Si la actual es null y nueva es válida, se actualiza
+      if (fechaActual === null) {
+        return nuevaFecha;
+      }
+
+      // Si ambas son válidas pero distintas, se actualiza
+      if (fechaActual !== nuevaFecha) {
+        return nuevaFecha;
+      }
+
+      // En todos los otros casos, se mantiene la actual
+      return fechaActual;
+    }
+    
+    function formatFecha(fechaStr) {
+      try {
+        const fecha = new Date(fechaStr);
+        if (isNaN(fecha)) return null; // si la fecha es inválida
+        const isoDate = fecha.toISOString().split('T')[0]; // YYYY-MM-DD
+        return isoDate;
+      } catch (e) {
+        return null;
+      }
+    }
+
+    if (!shouldUpdateEmail && !shouldUpdatePhone && !shouldUpdateNacimiento) {
+      // console.log('No se requieren actualizaciones.');
       return { success: true, message: 'No se requieren actualizaciones.' };
     }
 
@@ -895,13 +941,20 @@ async function updateCliente(DatosOrden, Cliente) {
     const queryUpdate = `
       UPDATE dbo.Personeria
       SET Email = @Email,
-          Telefonos = @Telefonos 
+          Telefonos = @Telefonos,
+          fechanacimiento = @fechanacimiento 
       WHERE PersoneriaID = @PersoneriaID;
     `;
 
     const requestUpdate = new sql.Request(transaction);
     requestUpdate.input('Email', sql.NVarChar, shouldUpdateEmail ? newEmail : currentEmail);
     requestUpdate.input('Telefonos', sql.NVarChar, shouldUpdatePhone ? newPhone : currentTelefonos);
+    // Procesa la fecha y maneja el caso '0000-00-00'
+    const fechaProcesada = procesarNacimiento(fechanacimiento, newNacimiento);
+    // console.log('Fecha procesada:', formatFecha(fechaProcesada),'Orden: ', DatosOrden.Pedido.id);
+
+    // Asigna el valor procesado de fecha
+    requestUpdate.input('fechanacimiento', sql.Date, fechaProcesada ? formatFecha(fechaProcesada) : null);
     requestUpdate.input('PersoneriaID', sql.Int, personeriaID);
 
     await requestUpdate.query(queryUpdate);
@@ -960,7 +1013,7 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
         seriePedido = 103.00001; // Factura
       }
     }
-    
+
     // console.log("datos de orden",paramsOrden);
     // console.log("Estamos en el pedido",paramsOrden.Pedido.id);
     // console.log("Asi esta entrando el convenio ",Convenio);
@@ -1019,12 +1072,12 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
          WHERE CodigoID LIKE '192.%' AND CodigoID <> '192.00000';
     `;
 
-    const requestTurno = new sql.Request(transaction); 
+    const requestTurno = new sql.Request(transaction);
     const turnosPrestashop = await requestTurno.query(queryTurno);
-    const DatosTurnos = turnosPrestashop.recordset; 
+    const DatosTurnos = turnosPrestashop.recordset;
 
 
-    
+
     // function obtenerTurno(ddw_order_time) {
 
     //   let FechaOrdenada = ddw_order_time.replace(/\s/g, ''); // Eliminar todos los espacios
@@ -1056,28 +1109,28 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
     //   // Retornar el turno más cercano
     //   return turnoCercano;
     // }
-    
+
     function obtenerTurno(ddw_order_time) {
       let FechaOrdenada = ddw_order_time.replace(/\s/g, ''); // Eliminar todos los espacios
       let [inicio, fin] = FechaOrdenada.split('-');
       inicio = parseInt(inicio.split(':')[0]);
       fin = parseInt(fin.split(':')[0]);
-    
+
       const turnos = DatosTurnos.map((registro) => ({
         numero: registro.CodigoID,
         inicio: registro.ValorAdicional,
         fin: registro.ValorNum,
       }));
-    
+
       // Calcular la distancia al turno más cercano
       let distanciaMinima = Number.MAX_SAFE_INTEGER;
       let turnoCercano = null;
-    
+
       for (let turno of turnos) {
         let distanciaInicio = Math.abs(inicio - turno.inicio);
         let distanciaFin = Math.abs(fin - turno.fin);
         let distancia = distanciaInicio + distanciaFin;
-    
+
         if (distancia < distanciaMinima) {
           distanciaMinima = distancia;
           turnoCercano = turno; // Asignar todo el objeto del turno
@@ -1131,17 +1184,17 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
     request.input('Email', sql.NVarChar, ParamsPersona.Estado == '2' ? paramsOrden.Customer.email : ''); // si es 2 significa que es ventasDia y no tiene email pasa el cliente prestashop 
 
     // nos aseguramos que  de que paramsOrden y DireccionEntrega existen
-      var coordenadas = paramsOrden.DireccionEntrega && paramsOrden.DireccionEntrega.Cordenadas
-          ? paramsOrden.DireccionEntrega.Cordenadas.split(',')
-          : [];
+    var coordenadas = paramsOrden.DireccionEntrega && paramsOrden.DireccionEntrega.Cordenadas
+      ? paramsOrden.DireccionEntrega.Cordenadas.split(',')
+      : [];
 
-      // Extraemos la latitud y longitud, estableciendo 0.0 como valor por defecto
-      var latitud = coordenadas.length > 0 ? parseFloat(coordenadas[0]) : 0.0;
-      var longitud = coordenadas.length > 1 ? parseFloat(coordenadas[1]) : 0.0;
+    // Extraemos la latitud y longitud, estableciendo 0.0 como valor por defecto
+    var latitud = coordenadas.length > 0 ? parseFloat(coordenadas[0]) : 0.0;
+    var longitud = coordenadas.length > 1 ? parseFloat(coordenadas[1]) : 0.0;
 
-      // Asegúrate de que las conversiones a número son seguras orden de llegada es latitud y longitud
-      latitud = isNaN(latitud) ? 0.0 : latitud;
-      longitud = isNaN(longitud) ? 0.0 : longitud;
+    // Asegúrate de que las conversiones a número son seguras orden de llegada es latitud y longitud
+    latitud = isNaN(latitud) ? 0.0 : latitud;
+    longitud = isNaN(longitud) ? 0.0 : longitud;
     // console.log("Estas son mis cordenadas en la orden",paramsOrden.Pedido.id,latitud, longitud);
     request.input('latitud', sql.Decimal(20, 8), latitud);
     request.input('longitud', sql.Decimal(20, 8), longitud);
@@ -1167,6 +1220,7 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
     let HistorialDescuento = 0;
 
     for (let i = 0; i < paramsOrden.ProductosOrden.length; i++) {
+      // console.log("-------------------------------------------------------------------------------------------------------------------"+i);
       let producto = paramsOrden.ProductosOrden[i];
       let productoCategoria = paramsOrden.ProductosCategoriaOrden[i];
 
@@ -1213,7 +1267,7 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
         // console.log("Estos son los datos de orden ",paramsOrden.OrderDetails_cart_rules[0].id_cart_rule, productoCategoria);
         const cupon = await obtenerCuponesYCategoriaFiltro(paramsOrden.OrderDetails_cart_rules[0].id_cart_rule, productoCategoria);
         const cuponParsed = JSON.parse(cupon);
-        // console.log("Este es el cupon",cuponParsed);
+        // console.log("Este es el cupon", cuponParsed);
         if (cuponParsed.length > 0) {
           const categorias = cuponParsed[0].categories;
 
@@ -1231,12 +1285,12 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
             const nombreCupon = cuponParsed[0].name; // Extraer el nombre del cupón
 
             if (typeof categorias === 'string' && categorias === 'No hay categorías asociadas') {
-              PorcentajeDescuento = parseFloat(cuponParsed[0].reduction_percent);
+              PorcentajeDescuento = 0.00;
             } else if (Array.isArray(categorias) && categorias.length === 0) {
               PorcentajeDescuento = 0.00; // No se aplica descuento
             } else if (cuponActivo) {
               PorcentajeDescuento = parseFloat(cuponParsed[0].reduction_percent);
-              HistorialDescuento += parseFloat(((parseFloat(producto.unit_price_tax_incl) * parseFloat(producto.product_quantity)) * (parseFloat(cuponParsed[0].reduction_percent)/100)).toFixed(2));
+              HistorialDescuento += parseFloat(((parseFloat(producto.unit_price_tax_incl) * parseFloat(producto.product_quantity)) * (parseFloat(cuponParsed[0].reduction_percent) / 100)).toFixed(2));
             } else {
               PorcentajeDescuento = 0.00; // Cupón no activo
             }
@@ -1257,12 +1311,13 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
       request2.input('UMUnitarioID', sql.Decimal(9, 5), UMContenidoID);
       request2.input('UsuarioID', sql.Int, variablesSesion.UsuarioID);
       await request2.query(query1);
+      // console.log("-------------------------------------------------------------------------------------------------------------------"+i);
     }
 
     // console.log("Este es el descuento acumulado", HistorialDescuento);
     // console.log("Este es el descuento de la orden", paramsOrden.Pedido.total_discounts);
     // console.log("Este es el descuento",HistorialDescuento);
-    if(HistorialDescuento != parseFloat(paramsOrden.Pedido.total_discounts)){
+    if (HistorialDescuento != parseFloat(paramsOrden.Pedido.total_discounts)) {
       throw new Error(`Orden sin Descuento en los productos y el ID CUPON : ${paramsOrden.OrderDetails_cart_rules[0].id_cart_rule}`);
     }
 
@@ -1530,7 +1585,7 @@ async function procesarOrdenPrestashop() {
   try {
     const ordenes = await ApiOrders();
     const ordersInfo = ordenes;
-    // const ordersInfo = ordenes.filter(order => order.OrdenDeRegistro === 104605); //para buscar ordenes especificas
+    // const ordersInfo = ordenes.filter(order => order.OrdenDeRegistro === 104791 || order.OrdenDeRegistro === 104819); //para buscar ordenes especificas
     // console.log("Datos de las órdenes:", ordersInfo);
 
     for (let i = 0; i < ordersInfo.length; i++) {
@@ -1567,7 +1622,7 @@ async function procesarOrdenPrestashop() {
             if (DatosDeOrden.SerieDePedido.company === '' || DatosDeOrden.SerieDePedido.company == '00000000' || DatosDeOrden.SerieDePedido.company == '00000000000') {
               cliente = await buscarClientePorDNI('00000001');
               if (cliente) {
-                await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID ,DatosDeOrden.OrderDetails_cart_rules !== null && DatosDeOrden.cart_rules[0].active == 1 ? DatosDeOrden.OrderDetails_cart_rules : null);
+                await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID, DatosDeOrden.OrderDetails_cart_rules !== null && DatosDeOrden.cart_rules[0].active == 1 ? DatosDeOrden.OrderDetails_cart_rules : null);
               }
             } else {
               if (DatosDeOrden.SerieDePedido.company.length === 8 || DatosDeOrden.SerieDePedido.company.length === 11) {
@@ -1589,21 +1644,21 @@ async function procesarOrdenPrestashop() {
                 if (cliente && cliente.Estado == '1') {
                   // Se verifica los datos del cliente con los nuevos datos de la orden y con lo que ya cuenta.
                   const updateResult = await updateCliente(DatosDeOrden, cliente);
-                  
+
                   if (!updateResult.success) {
                     throw new Error(updateResult.message);
                   }
-                
+
                   // Después de actualizar, se busca el cliente nuevamente para obtener los datos actualizados.
                   cliente = await buscarClientePorDNI(DatosDeOrden.SerieDePedido.company);
-                  
+
                   if (!cliente) {
                     throw new Error('No se pudo encontrar el cliente después de la actualización.');
                   }
                   // console.log("creamos datos con este cliente--------------");
                   // Se procede a crear el pedido con los datos actualizados del cliente.
                   await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID, DatosDeOrden.OrderDetails_cart_rules !== null && DatosDeOrden.cart_rules[0].active == 1 ? DatosDeOrden.OrderDetails_cart_rules : null);
-                }else if (cliente.Estado == '2') {
+                } else if (cliente.Estado == '2') {
                   await createPedido(DatosDeOrden, cliente, variablesSesion, PlanillaID, DatosDeOrden.OrderDetails_cart_rules !== null && DatosDeOrden.cart_rules[0].active == 1 ? DatosDeOrden.OrderDetails_cart_rules : null);
                 }
               } else {

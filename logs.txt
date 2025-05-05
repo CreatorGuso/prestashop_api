@@ -1,0 +1,3095 @@
+2025-05-05 14:26:56.473 - Datos de las órdenes:
+2025-05-05 14:26:56.473 - [
+  {
+    "Orden": "105028",
+    "OrdenDeRegistro": 105028,
+    "PersoneriaID": {
+      "_": "95864",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/95864"
+      }
+    },
+    "FechadeOrden": "2025-05-04 14:02:23"
+  },
+  {
+    "Orden": "105033",
+    "OrdenDeRegistro": 105033,
+    "PersoneriaID": {
+      "_": "97488",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/97488"
+      }
+    },
+    "FechadeOrden": "2025-05-04 14:02:23"
+  },
+  {
+    "Orden": "105035",
+    "OrdenDeRegistro": 105035,
+    "PersoneriaID": {
+      "_": "97488",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/97488"
+      }
+    },
+    "FechadeOrden": "2025-05-04 14:02:23"
+  },
+  {
+    "Orden": "105036",
+    "OrdenDeRegistro": 105036,
+    "PersoneriaID": {
+      "_": "98422",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/98422"
+      }
+    },
+    "FechadeOrden": "2025-05-04 14:02:23"
+  },
+  {
+    "Orden": "105046",
+    "OrdenDeRegistro": 105046,
+    "PersoneriaID": {
+      "_": "100463",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/100463"
+      }
+    },
+    "FechadeOrden": "2025-05-04 14:02:23"
+  },
+  {
+    "Orden": "105047",
+    "OrdenDeRegistro": 105047,
+    "PersoneriaID": {
+      "_": "100489",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/100489"
+      }
+    },
+    "FechadeOrden": "2025-05-04 08:44:46"
+  },
+  {
+    "Orden": "105048",
+    "OrdenDeRegistro": 105048,
+    "PersoneriaID": {
+      "_": "35536",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/35536"
+      }
+    },
+    "FechadeOrden": "2025-05-04 08:45:15"
+  },
+  {
+    "Orden": "105049",
+    "OrdenDeRegistro": 105049,
+    "PersoneriaID": {
+      "_": "96407",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/96407"
+      }
+    },
+    "FechadeOrden": "2025-05-04 02:40:39"
+  },
+  {
+    "Orden": "105050",
+    "OrdenDeRegistro": 105050,
+    "PersoneriaID": {
+      "_": "100490",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/100490"
+      }
+    },
+    "FechadeOrden": "2025-05-04 08:46:16"
+  },
+  {
+    "Orden": "105051",
+    "OrdenDeRegistro": 105051,
+    "PersoneriaID": {
+      "_": "8123",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/8123"
+      }
+    },
+    "FechadeOrden": "2025-05-04 08:46:40"
+  },
+  {
+    "Orden": "105052",
+    "OrdenDeRegistro": 105052,
+    "PersoneriaID": {
+      "_": "4286",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/4286"
+      }
+    },
+    "FechadeOrden": "2025-05-04 08:45:42"
+  },
+  {
+    "Orden": "105053",
+    "OrdenDeRegistro": 105053,
+    "PersoneriaID": {
+      "_": "67144",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/67144"
+      }
+    },
+    "FechadeOrden": "2025-05-04 14:02:23"
+  },
+  {
+    "Orden": "105054",
+    "OrdenDeRegistro": 105054,
+    "PersoneriaID": {
+      "_": "95489",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/95489"
+      }
+    },
+    "FechadeOrden": "2025-05-04 09:34:50"
+  },
+  {
+    "Orden": "105055",
+    "OrdenDeRegistro": 105055,
+    "PersoneriaID": {
+      "_": "51034",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/51034"
+      }
+    },
+    "FechadeOrden": "2025-05-04 17:23:46"
+  },
+  {
+    "Orden": "105056",
+    "OrdenDeRegistro": 105056,
+    "PersoneriaID": {
+      "_": "100495",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/100495"
+      }
+    },
+    "FechadeOrden": "2025-05-04 10:10:04"
+  },
+  {
+    "Orden": "105057",
+    "OrdenDeRegistro": 105057,
+    "PersoneriaID": {
+      "_": "75309",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/75309"
+      }
+    },
+    "FechadeOrden": "2025-05-04 17:23:45"
+  },
+  {
+    "Orden": "105058",
+    "OrdenDeRegistro": 105058,
+    "PersoneriaID": {
+      "_": "98095",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/98095"
+      }
+    },
+    "FechadeOrden": "2025-05-04 12:42:54"
+  },
+  {
+    "Orden": "105059",
+    "OrdenDeRegistro": 105059,
+    "PersoneriaID": {
+      "_": "59037",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/59037"
+      }
+    },
+    "FechadeOrden": "2025-05-04 14:10:18"
+  },
+  {
+    "Orden": "105060",
+    "OrdenDeRegistro": 105060,
+    "PersoneriaID": {
+      "_": "59037",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/59037"
+      }
+    },
+    "FechadeOrden": "2025-05-04 13:47:39"
+  },
+  {
+    "Orden": "105061",
+    "OrdenDeRegistro": 105061,
+    "PersoneriaID": {
+      "_": "59037",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/59037"
+      }
+    },
+    "FechadeOrden": "2025-05-04 14:10:43"
+  },
+  {
+    "Orden": "105062",
+    "OrdenDeRegistro": 105062,
+    "PersoneriaID": {
+      "_": "100501",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/100501"
+      }
+    },
+    "FechadeOrden": "2025-05-04 13:56:55"
+  },
+  {
+    "Orden": "105063",
+    "OrdenDeRegistro": 105063,
+    "PersoneriaID": {
+      "_": "75165",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/75165"
+      }
+    },
+    "FechadeOrden": "2025-05-04 14:38:46"
+  },
+  {
+    "Orden": "105064",
+    "OrdenDeRegistro": 105064,
+    "PersoneriaID": {
+      "_": "100503",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/100503"
+      }
+    },
+    "FechadeOrden": "2025-05-04 17:23:03"
+  },
+  {
+    "Orden": "105065",
+    "OrdenDeRegistro": 105065,
+    "PersoneriaID": {
+      "_": "100506",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/100506"
+      }
+    },
+    "FechadeOrden": "2025-05-05 07:25:15"
+  },
+  {
+    "Orden": "105066",
+    "OrdenDeRegistro": 105066,
+    "PersoneriaID": {
+      "_": "100333",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/100333"
+      }
+    },
+    "FechadeOrden": "2025-05-05 08:26:01"
+  },
+  {
+    "Orden": "105067",
+    "OrdenDeRegistro": 105067,
+    "PersoneriaID": {
+      "_": "75165",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/75165"
+      }
+    },
+    "FechadeOrden": "2025-05-05 07:38:01"
+  },
+  {
+    "Orden": "105068",
+    "OrdenDeRegistro": 105068,
+    "PersoneriaID": {
+      "_": "100507",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/100507"
+      }
+    },
+    "FechadeOrden": "2025-05-05 09:08:37"
+  },
+  {
+    "Orden": "105069",
+    "OrdenDeRegistro": 105069,
+    "PersoneriaID": {
+      "_": "100511",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/100511"
+      }
+    },
+    "FechadeOrden": "2025-05-05 09:11:23"
+  },
+  {
+    "Orden": "105070",
+    "OrdenDeRegistro": 105070,
+    "PersoneriaID": {
+      "_": "99427",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/99427"
+      }
+    },
+    "FechadeOrden": "2025-05-05 08:55:18"
+  },
+  {
+    "Orden": "105071",
+    "OrdenDeRegistro": 105071,
+    "PersoneriaID": {
+      "_": "100518",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/100518"
+      }
+    },
+    "FechadeOrden": "2025-05-05 07:46:45"
+  },
+  {
+    "Orden": "105072",
+    "OrdenDeRegistro": 105072,
+    "PersoneriaID": {
+      "_": "97895",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/97895"
+      }
+    },
+    "FechadeOrden": "2025-05-05 08:09:28"
+  },
+  {
+    "Orden": "105073",
+    "OrdenDeRegistro": 105073,
+    "PersoneriaID": {
+      "_": "100519",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/100519"
+      }
+    },
+    "FechadeOrden": "2025-05-05 06:57:23"
+  },
+  {
+    "Orden": "105074",
+    "OrdenDeRegistro": 105074,
+    "PersoneriaID": {
+      "_": "97895",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/97895"
+      }
+    },
+    "FechadeOrden": "2025-05-05 08:09:24"
+  },
+  {
+    "Orden": "105075",
+    "OrdenDeRegistro": 105075,
+    "PersoneriaID": {
+      "_": "100522",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/100522"
+      }
+    },
+    "FechadeOrden": "2025-05-05 08:07:26"
+  },
+  {
+    "Orden": "105076",
+    "OrdenDeRegistro": 105076,
+    "PersoneriaID": {
+      "_": "97895",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/97895"
+      }
+    },
+    "FechadeOrden": "2025-05-05 06:52:15"
+  },
+  {
+    "Orden": "105077",
+    "OrdenDeRegistro": 105077,
+    "PersoneriaID": {
+      "_": "100523",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/100523"
+      }
+    },
+    "FechadeOrden": "2025-05-05 08:07:26"
+  },
+  {
+    "Orden": "105078",
+    "OrdenDeRegistro": 105078,
+    "PersoneriaID": {
+      "_": "97498",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/97498"
+      }
+    },
+    "FechadeOrden": "2025-05-05 08:56:08"
+  },
+  {
+    "Orden": "105079",
+    "OrdenDeRegistro": 105079,
+    "PersoneriaID": {
+      "_": "100525",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/100525"
+      }
+    },
+    "FechadeOrden": "2025-05-05 08:26:05"
+  },
+  {
+    "Orden": "105080",
+    "OrdenDeRegistro": 105080,
+    "PersoneriaID": {
+      "_": "97498",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/97498"
+      }
+    },
+    "FechadeOrden": "2025-05-05 08:58:06"
+  },
+  {
+    "Orden": "105081",
+    "OrdenDeRegistro": 105081,
+    "PersoneriaID": {
+      "_": "59514",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/59514"
+      }
+    },
+    "FechadeOrden": "2025-05-05 09:12:58"
+  },
+  {
+    "Orden": "105082",
+    "OrdenDeRegistro": 105082,
+    "PersoneriaID": {
+      "_": "100527",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/100527"
+      }
+    },
+    "FechadeOrden": "2025-05-05 09:17:08"
+  }
+]
+2025-05-05 14:27:02.954 - ERROR: Error al obtener las categorías asociadas del producto con ID 2273:
+2025-05-05 14:27:02.954 - ERROR: categories.category.map is not a function
+2025-05-05 14:27:02.954 - STACK TRACE:
+TypeError: categories.category.map is not a function
+    at C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:425:51
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Promise.all (index 0)
+    at async Promise.all (index 1)
+    at async BuscarOrdenPorID (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:455:41)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1610:26)
+    at async Inicializador (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1742:17)
+2025-05-05 14:27:03.485 - Estos son los datos de orden
+2025-05-05 14:27:03.485 - {
+  "Estado": {
+    "id": "5",
+    "Estado": [
+      {
+        "_": "Entregado",
+        "$": {
+          "id": "1",
+          "xlink:href": "https://www.kukyflor.com/api/languages/1"
+        }
+      },
+      {
+        "_": "Delivered",
+        "$": {
+          "id": "3",
+          "xlink:href": "https://www.kukyflor.com/api/languages/3"
+        }
+      }
+    ]
+  },
+  "SerieDePedido": {
+    "id_address_invoice": "154479",
+    "id_adress_Entrega": "Mi Dirección",
+    "company": "",
+    "phone": "+51 934 112 629"
+  },
+  "DireccionFacturacion": {
+    "id_adress_Entrega": "154479"
+  },
+  "DireccionEntrega": {
+    "id_adress_Entrega": "154479",
+    "id_direccion": "383",
+    "direccion_1": "Av. Las Nazarenas 303, Santiago de Surco 15039, Peru",
+    "city": " - ",
+    "Referencia": "",
+    "phone_mobile": "",
+    "PesonaEntrega": "Cintia Sanchez Rojas",
+    "Telefono": "+51 934 112 629",
+    "Cordenadas": "-12.131385,-76.9871663"
+  },
+  "IDEntrega_Direccion": {
+    "id": "383",
+    "iso_code": "urco",
+    "name": "Santiago de Surco-Lima",
+    "active": "1"
+  },
+  "Card": {
+    "id": "315064"
+  },
+  "Customer": {
+    "id": "97488",
+    "documentoIdentidad": "",
+    "lastname": "Haberl",
+    "firstname": "Maximilian",
+    "email": "maxihaberl@web.de",
+    "birthday": "0000-00-00"
+  },
+  "Pedido": {
+    "id": "105033",
+    "módulo": "ps_payu",
+    "delivery_number": "80105",
+    "delivery_date": "2025-05-04 14:02:23",
+    "valid": "1",
+    "date_add": "2025-05-03 10:01:23",
+    "date_upd": "2025-05-04 14:02:23",
+    "ddw_order_date": "2025-05-04 00:00:00",
+    "ddw_order_time": "09:00 - 14:00",
+    "payment": "PayU",
+    "gift_message": "",
+    "total_discounts": "0.000000",
+    "total_paid": "150.000000",
+    "total_paid_tax_incl": "150.000000",
+    "total_products_wt": "125.000000",
+    "total_shipping": "25.000000",
+    "total_shipping_tax_incl": "25.000000",
+    "total_shipping_tax_excl": "25.000000",
+    "productos": {
+      "order_rows": {
+        "$": {
+          "nodeType": "order_row",
+          "virtualEntity": "true"
+        },
+        "order_row": {
+          "id": "124233",
+          "product_id": {
+            "_": "2273",
+            "$": {
+              "xlink:href": "https://www.kukyflor.com/api/products/2273"
+            }
+          },
+          "product_attribute_id": "0",
+          "product_quantity": "1",
+          "product_name": "Ramo de 10 Tulipanes D",
+          "product_reference": "rapre10tulva",
+          "product_ean13": "",
+          "product_isbn": "",
+          "product_upc": "",
+          "product_price": "105.932203",
+          "id_customization": {
+            "_": "0",
+            "$": {
+              "xlink:href": "https://www.kukyflor.com/api/customizations/0"
+            }
+          },
+          "unit_price_tax_incl": "125.000000",
+          "unit_price_tax_excl": "105.932203"
+        }
+      }
+    },
+    "address_delivery": "154479",
+    "address_invoice": "154479",
+    "cart": "315064",
+    "currency": "1",
+    "lang": "1",
+    "customer": "97488",
+    "carrier": "492",
+    "state": "5"
+  },
+  "OrderDetails_cart_rules": null,
+  "cart_rules": null,
+  "ProductosOrden": [
+    {
+      "id": "124233",
+      "id_order": {
+        "_": "105033",
+        "$": {
+          "xlink:href": "https://www.kukyflor.com/api/orders/105033"
+        }
+      },
+      "product_id": {
+        "_": "2273",
+        "$": {
+          "xlink:href": "https://www.kukyflor.com/api/products/2273"
+        }
+      },
+      "product_attribute_id": {
+        "_": "0",
+        "$": {
+          "xlink:href": "https://www.kukyflor.com/api/combinations/0"
+        }
+      },
+      "product_quantity_reinjected": "0",
+      "group_reduction": "0.00",
+      "discount_quantity_applied": "0",
+      "download_hash": "",
+      "download_deadline": "0000-00-00 00:00:00",
+      "id_order_invoice": "0",
+      "id_warehouse": "0",
+      "id_shop": "1",
+      "id_customization": "0",
+      "product_name": "Ramo de 10 Tulipanes D",
+      "product_quantity": "1",
+      "product_quantity_in_stock": "1",
+      "product_quantity_return": "0",
+      "product_quantity_refunded": "0",
+      "product_price": "105.932203",
+      "reduction_percent": "0.00",
+      "reduction_amount": "0.000000",
+      "reduction_amount_tax_incl": "0.000000",
+      "reduction_amount_tax_excl": "0.000000",
+      "product_quantity_discount": "0.000000",
+      "product_ean13": "",
+      "product_isbn": "",
+      "product_upc": "",
+      "product_mpn": "",
+      "product_reference": "rapre10tulva",
+      "product_supplier_reference": "",
+      "product_weight": "0.000000",
+      "tax_computation_method": "0",
+      "id_tax_rules_group": "6",
+      "ecotax": "0.000000",
+      "ecotax_tax_rate": "0.000",
+      "download_nb": "0",
+      "unit_price_tax_incl": "125.000000",
+      "unit_price_tax_excl": "105.932203",
+      "total_price_tax_incl": "125.000000",
+      "total_price_tax_excl": "105.930000",
+      "total_shipping_price_tax_excl": "0.000000",
+      "total_shipping_price_tax_incl": "0.000000",
+      "purchase_supplier_price": "0.000000",
+      "original_product_price": "105.932203",
+      "original_wholesale_price": "0.000000",
+      "total_refunded_tax_excl": "0.000000",
+      "total_refunded_tax_incl": "0.000000",
+      "associations": {
+        "taxes": {
+          "$": {
+            "nodeType": "tax",
+            "api": "taxes"
+          },
+          "tax": {
+            "$": {
+              "xlink:href": "https://www.kukyflor.com/api/taxes/1"
+            },
+            "id": "1"
+          }
+        }
+      }
+    }
+  ],
+  "ProductosCategoriaOrden": [
+    []
+  ]
+}
+2025-05-05 14:27:09.405 - ERROR: Error en la transacción de crear pedido con orden :105033
+2025-05-05 14:27:09.405 - ERROR: Cannot read properties of undefined (reading 'ProductoID')
+2025-05-05 14:27:09.405 - STACK TRACE:
+TypeError: Cannot read properties of undefined (reading 'ProductoID')
+    at createPedido (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1243:39)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1626:17)
+    at async Inicializador (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1742:17)
+2025-05-05 14:27:22.067 - Estos son los datos de orden
+2025-05-05 14:27:22.067 - {
+  "Estado": {
+    "id": "8",
+    "Estado": [
+      {
+        "_": "Error en pago",
+        "$": {
+          "id": "1",
+          "xlink:href": "https://www.kukyflor.com/api/languages/1"
+        }
+      },
+      {
+        "_": "Payment error",
+        "$": {
+          "id": "3",
+          "xlink:href": "https://www.kukyflor.com/api/languages/3"
+        }
+      }
+    ]
+  },
+  "SerieDePedido": {
+    "id_address_invoice": "154508",
+    "id_adress_Entrega": "96407",
+    "company": "",
+    "phone": "998456565"
+  },
+  "DireccionFacturacion": {
+    "id_adress_Entrega": "154509"
+  },
+  "DireccionEntrega": {
+    "id_adress_Entrega": "154509",
+    "id_direccion": "380",
+    "direccion_1": "la paz 1147. dpto 402",
+    "city": "San Miguel",
+    "Referencia": "Frente al hospital",
+    "phone_mobile": "",
+    "PesonaEntrega": "Adriana Cespedes",
+    "Telefono": "999467979",
+    "Cordenadas": ""
+  },
+  "IDEntrega_Direccion": {
+    "id": "380",
+    "iso_code": "guel",
+    "name": "San Miguel-Lima",
+    "active": "1"
+  },
+  "Card": {
+    "id": "315087"
+  },
+  "Customer": {
+    "id": "96407",
+    "documentoIdentidad": "42411175",
+    "lastname": "ODAR MAZZA",
+    "firstname": "HARRY",
+    "email": "harryodar@gmail.com",
+    "birthday": "0000-00-00"
+  },
+  "Pedido": {
+    "id": "105049",
+    "módulo": "niubiz",
+    "delivery_number": "0",
+    "delivery_date": "0000-00-00 00:00:00",
+    "valid": "0",
+    "date_add": "2025-05-04 02:40:39",
+    "date_upd": "2025-05-04 02:40:39",
+    "ddw_order_date": "1970-01-01 00:00:00",
+    "ddw_order_time": "",
+    "payment": "Niubiz",
+    "gift_message": "\"|||2025-05-04 00:00:00|||14:00 - 18:00\"",
+    "total_discounts": "0.000000",
+    "total_paid": "320.000000",
+    "total_paid_tax_incl": "320.000000",
+    "total_products_wt": "295.000000",
+    "total_shipping": "25.000000",
+    "total_shipping_tax_incl": "25.000000",
+    "total_shipping_tax_excl": "25.000000",
+    "productos": {
+      "order_rows": {
+        "$": {
+          "nodeType": "order_row",
+          "virtualEntity": "true"
+        },
+        "order_row": {
+          "id": "124249",
+          "product_id": {
+            "_": "893",
+            "$": {
+              "xlink:href": "https://www.kukyflor.com/api/products/893"
+            }
+          },
+          "product_attribute_id": "4265",
+          "product_quantity": "1",
+          "product_name": "Arreglo de 20 Tulipanes - Elige el color de tu flor: : Rojo",
+          "product_reference": "\tpec20tulro",
+          "product_ean13": "",
+          "product_isbn": "",
+          "product_upc": "",
+          "product_price": "250.000000",
+          "id_customization": {
+            "_": "0",
+            "$": {
+              "xlink:href": "https://www.kukyflor.com/api/customizations/0"
+            }
+          },
+          "unit_price_tax_incl": "295.000000",
+          "unit_price_tax_excl": "250.000000"
+        }
+      }
+    },
+    "address_delivery": "154509",
+    "address_invoice": "154508",
+    "cart": "315087",
+    "currency": "1",
+    "lang": "1",
+    "customer": "96407",
+    "carrier": "494",
+    "state": "8"
+  },
+  "OrderDetails_cart_rules": null,
+  "cart_rules": null,
+  "ProductosOrden": [
+    {
+      "id": "124249",
+      "id_order": {
+        "_": "105049",
+        "$": {
+          "xlink:href": "https://www.kukyflor.com/api/orders/105049"
+        }
+      },
+      "product_id": {
+        "_": "893",
+        "$": {
+          "xlink:href": "https://www.kukyflor.com/api/products/893"
+        }
+      },
+      "product_attribute_id": {
+        "_": "4265",
+        "$": {
+          "xlink:href": "https://www.kukyflor.com/api/combinations/4265"
+        }
+      },
+      "product_quantity_reinjected": "0",
+      "group_reduction": "0.00",
+      "discount_quantity_applied": "0",
+      "download_hash": "",
+      "download_deadline": "0000-00-00 00:00:00",
+      "id_order_invoice": "0",
+      "id_warehouse": "0",
+      "id_shop": "1",
+      "id_customization": "0",
+      "product_name": "Arreglo de 20 Tulipanes - Elige el color de tu flor: : Rojo",
+      "product_quantity": "1",
+      "product_quantity_in_stock": "1",
+      "product_quantity_return": "0",
+      "product_quantity_refunded": "0",
+      "product_price": "250.000000",
+      "reduction_percent": "0.00",
+      "reduction_amount": "0.000000",
+      "reduction_amount_tax_incl": "0.000000",
+      "reduction_amount_tax_excl": "0.000000",
+      "product_quantity_discount": "0.000000",
+      "product_ean13": "",
+      "product_isbn": "",
+      "product_upc": "",
+      "product_mpn": "",
+      "product_reference": "\tpec20tulro",
+      "product_supplier_reference": "",
+      "product_weight": "0.000000",
+      "tax_computation_method": "0",
+      "id_tax_rules_group": "6",
+      "ecotax": "0.000000",
+      "ecotax_tax_rate": "0.000",
+      "download_nb": "0",
+      "unit_price_tax_incl": "295.000000",
+      "unit_price_tax_excl": "250.000000",
+      "total_price_tax_incl": "295.000000",
+      "total_price_tax_excl": "250.000000",
+      "total_shipping_price_tax_excl": "0.000000",
+      "total_shipping_price_tax_incl": "0.000000",
+      "purchase_supplier_price": "0.000000",
+      "original_product_price": "250.000000",
+      "original_wholesale_price": "0.000000",
+      "total_refunded_tax_excl": "0.000000",
+      "total_refunded_tax_incl": "0.000000",
+      "associations": {
+        "taxes": {
+          "$": {
+            "nodeType": "tax",
+            "api": "taxes"
+          },
+          "tax": {
+            "$": {
+              "xlink:href": "https://www.kukyflor.com/api/taxes/1"
+            },
+            "id": "1"
+          }
+        }
+      }
+    }
+  ],
+  "ProductosCategoriaOrden": [
+    [
+      "2",
+      "33",
+      "36",
+      "89",
+      "91",
+      "141",
+      "194",
+      "195"
+    ]
+  ]
+}
+2025-05-05 14:27:33.107 - ERROR: Error al obtener las categorías asociadas del producto con ID 2294:
+2025-05-05 14:27:33.107 - ERROR: categories.category.map is not a function
+2025-05-05 14:27:33.107 - STACK TRACE:
+TypeError: categories.category.map is not a function
+    at C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:425:51
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Promise.all (index 0)
+    at async Promise.all (index 1)
+    at async BuscarOrdenPorID (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:455:41)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1610:26)
+    at async Inicializador (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1742:17)
+2025-05-05 14:27:33.560 - Estos son los datos de orden
+2025-05-05 14:27:33.560 - {
+  "Estado": {
+    "id": "5",
+    "Estado": [
+      {
+        "_": "Entregado",
+        "$": {
+          "id": "1",
+          "xlink:href": "https://www.kukyflor.com/api/languages/1"
+        }
+      },
+      {
+        "_": "Delivered",
+        "$": {
+          "id": "3",
+          "xlink:href": "https://www.kukyflor.com/api/languages/3"
+        }
+      }
+    ]
+  },
+  "SerieDePedido": {
+    "id_address_invoice": "154518",
+    "id_adress_Entrega": "Mi Dirección",
+    "company": "",
+    "phone": "955874580"
+  },
+  "DireccionFacturacion": {
+    "id_adress_Entrega": "154518"
+  },
+  "DireccionEntrega": {
+    "id_adress_Entrega": "154518",
+    "id_direccion": "380",
+    "direccion_1": "Matarani 145, Lima 15088, Perú",
+    "city": " - ",
+    "Referencia": "San Miguel ",
+    "phone_mobile": "",
+    "PesonaEntrega": "Ana Villar",
+    "Telefono": "955874580",
+    "Cordenadas": "-12.070241,-77.102587"
+  },
+  "IDEntrega_Direccion": {
+    "id": "380",
+    "iso_code": "guel",
+    "name": "San Miguel-Lima",
+    "active": "1"
+  },
+  "Card": {
+    "id": "315092"
+  },
+  "Customer": {
+    "id": "67144",
+    "documentoIdentidad": "",
+    "lastname": "Villar",
+    "firstname": "Erika",
+    "email": "erika.villar@gmail.com",
+    "birthday": "1981-07-01"
+  },
+  "Pedido": {
+    "id": "105053",
+    "módulo": "ps_payu",
+    "delivery_number": "80101",
+    "delivery_date": "2025-05-04 14:02:23",
+    "valid": "1",
+    "date_add": "2025-05-04 07:44:21",
+    "date_upd": "2025-05-04 14:02:23",
+    "ddw_order_date": "2025-05-04 00:00:00",
+    "ddw_order_time": "09:00 - 14:00",
+    "payment": "PayU",
+    "gift_message": "Feliz cumpleaños Johana, te queremos mucho y te extrañamos mucho más.\r\nTe mandamos muchos besos Vany, Philippe, Sacha y Philippito ♥️.",
+    "total_discounts": "0.000000",
+    "total_paid": "95.000000",
+    "total_paid_tax_incl": "95.000000",
+    "total_products_wt": "75.000000",
+    "total_shipping": "20.000000",
+    "total_shipping_tax_incl": "20.000000",
+    "total_shipping_tax_excl": "20.000000",
+    "productos": {
+      "order_rows": {
+        "$": {
+          "nodeType": "order_row",
+          "virtualEntity": "true"
+        },
+        "order_row": {
+          "id": "124253",
+          "product_id": {
+            "_": "2294",
+            "$": {
+              "xlink:href": "https://www.kukyflor.com/api/products/2294"
+            }
+          },
+          "product_attribute_id": "6184",
+          "product_quantity": "1",
+          "product_name": "Ramo de 12 rosas D - Elige el color de tu flor: : Pasteles",
+          "product_reference": "",
+          "product_ean13": "",
+          "product_isbn": "",
+          "product_upc": "",
+          "product_price": "63.559322",
+          "id_customization": {
+            "_": "0",
+            "$": {
+              "xlink:href": "https://www.kukyflor.com/api/customizations/0"
+            }
+          },
+          "unit_price_tax_incl": "75.000000",
+          "unit_price_tax_excl": "63.559322"
+        }
+      }
+    },
+    "address_delivery": "154518",
+    "address_invoice": "154518",
+    "cart": "315092",
+    "currency": "1",
+    "lang": "1",
+    "customer": "67144",
+    "carrier": "500",
+    "state": "5"
+  },
+  "OrderDetails_cart_rules": null,
+  "cart_rules": null,
+  "ProductosOrden": [
+    {
+      "id": "124253",
+      "id_order": {
+        "_": "105053",
+        "$": {
+          "xlink:href": "https://www.kukyflor.com/api/orders/105053"
+        }
+      },
+      "product_id": {
+        "_": "2294",
+        "$": {
+          "xlink:href": "https://www.kukyflor.com/api/products/2294"
+        }
+      },
+      "product_attribute_id": {
+        "_": "6184",
+        "$": {
+          "xlink:href": "https://www.kukyflor.com/api/combinations/6184"
+        }
+      },
+      "product_quantity_reinjected": "0",
+      "group_reduction": "0.00",
+      "discount_quantity_applied": "0",
+      "download_hash": "",
+      "download_deadline": "0000-00-00 00:00:00",
+      "id_order_invoice": "0",
+      "id_warehouse": "0",
+      "id_shop": "1",
+      "id_customization": "0",
+      "product_name": "Ramo de 12 rosas D - Elige el color de tu flor: : Pasteles",
+      "product_quantity": "1",
+      "product_quantity_in_stock": "1",
+      "product_quantity_return": "0",
+      "product_quantity_refunded": "0",
+      "product_price": "63.559322",
+      "reduction_percent": "0.00",
+      "reduction_amount": "0.000000",
+      "reduction_amount_tax_incl": "0.000000",
+      "reduction_amount_tax_excl": "0.000000",
+      "product_quantity_discount": "0.000000",
+      "product_ean13": "",
+      "product_isbn": "",
+      "product_upc": "",
+      "product_mpn": "",
+      "product_reference": "",
+      "product_supplier_reference": "",
+      "product_weight": "0.000000",
+      "tax_computation_method": "0",
+      "id_tax_rules_group": "6",
+      "ecotax": "0.000000",
+      "ecotax_tax_rate": "0.000",
+      "download_nb": "0",
+      "unit_price_tax_incl": "75.000000",
+      "unit_price_tax_excl": "63.559322",
+      "total_price_tax_incl": "75.000000",
+      "total_price_tax_excl": "63.560000",
+      "total_shipping_price_tax_excl": "0.000000",
+      "total_shipping_price_tax_incl": "0.000000",
+      "purchase_supplier_price": "37.410000",
+      "original_product_price": "63.559322",
+      "original_wholesale_price": "37.410000",
+      "total_refunded_tax_excl": "0.000000",
+      "total_refunded_tax_incl": "0.000000",
+      "associations": {
+        "taxes": {
+          "$": {
+            "nodeType": "tax",
+            "api": "taxes"
+          },
+          "tax": {
+            "$": {
+              "xlink:href": "https://www.kukyflor.com/api/taxes/1"
+            },
+            "id": "1"
+          }
+        }
+      }
+    }
+  ],
+  "ProductosCategoriaOrden": [
+    []
+  ]
+}
+2025-05-05 14:27:39.564 - ERROR: Error en la transacción de crear pedido con orden :105053
+2025-05-05 14:27:39.564 - ERROR: Producto no se podrá buscar en ERP: ProductoID desconocido tiene una referencia vacía o no válida.
+2025-05-05 14:27:39.564 - STACK TRACE:
+Error: Producto no se podrá buscar en ERP: ProductoID desconocido tiene una referencia vacía o no válida.
+    at createPedido (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1233:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1626:17)
+    at async Inicializador (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1742:17)
+2025-05-05 14:27:53.307 - Estos son los datos de orden
+2025-05-05 14:27:53.307 - {
+  "Estado": {
+    "id": "6",
+    "Estado": [
+      {
+        "_": "Cancelado",
+        "$": {
+          "id": "1",
+          "xlink:href": "https://www.kukyflor.com/api/languages/1"
+        }
+      },
+      {
+        "_": "Canceled",
+        "$": {
+          "id": "3",
+          "xlink:href": "https://www.kukyflor.com/api/languages/3"
+        }
+      }
+    ]
+  },
+  "SerieDePedido": {
+    "id_address_invoice": "154541",
+    "id_adress_Entrega": "Nelly",
+    "company": "",
+    "phone": "984713829"
+  },
+  "DireccionFacturacion": {
+    "id_adress_Entrega": "154541"
+  },
+  "DireccionEntrega": {
+    "id_adress_Entrega": "154541",
+    "id_direccion": "370",
+    "direccion_1": "Infante de la Torre 164, San Borja 15021, Peru",
+    "city": " - ",
+    "Referencia": "",
+    "phone_mobile": "",
+    "PesonaEntrega": "Nelly De Gregori",
+    "Telefono": "984713829",
+    "Cordenadas": "-12.0849518,-76.99078999999999"
+  },
+  "IDEntrega_Direccion": {
+    "id": "370",
+    "iso_code": "0",
+    "name": "San Borja -Lima",
+    "active": "1"
+  },
+  "Card": {
+    "id": "315106"
+  },
+  "Customer": {
+    "id": "59037",
+    "documentoIdentidad": "",
+    "lastname": "Anaya",
+    "firstname": "Alexandr",
+    "email": "alexandr.anaya@gmail.com",
+    "birthday": "1972-01-15"
+  },
+  "Pedido": {
+    "id": "105060",
+    "módulo": "niubiz",
+    "delivery_number": "0",
+    "delivery_date": "0000-00-00 00:00:00",
+    "valid": "0",
+    "date_add": "2025-05-04 13:47:39",
+    "date_upd": "2025-05-04 13:47:39",
+    "ddw_order_date": "2025-05-11 00:00:00",
+    "ddw_order_time": "08:00 - 15:00",
+    "payment": "Niubiz",
+    "gift_message": "Feliz día, Mami! Muchos saludos de Abril y Alex!\r\n\r\n-Carolina",
+    "total_discounts": "0.000000",
+    "total_paid": "143.000000",
+    "total_paid_tax_incl": "143.000000",
+    "total_products_wt": "118.000000",
+    "total_shipping": "25.000000",
+    "total_shipping_tax_incl": "25.000000",
+    "total_shipping_tax_excl": "25.000000",
+    "productos": {
+      "order_rows": {
+        "$": {
+          "nodeType": "order_row",
+          "virtualEntity": "true"
+        },
+        "order_row": {
+          "id": "124261",
+          "product_id": {
+            "_": "2468",
+            "$": {
+              "xlink:href": "https://www.kukyflor.com/api/products/2468"
+            }
+          },
+          "product_attribute_id": "0",
+          "product_quantity": "1",
+          "product_name": "Ramo de 12 rosas rojas",
+          "product_reference": "DMA25-3",
+          "product_ean13": "",
+          "product_isbn": "",
+          "product_upc": "",
+          "product_price": "100.000000",
+          "id_customization": {
+            "_": "0",
+            "$": {
+              "xlink:href": "https://www.kukyflor.com/api/customizations/0"
+            }
+          },
+          "unit_price_tax_incl": "118.000000",
+          "unit_price_tax_excl": "100.000000"
+        }
+      }
+    },
+    "address_delivery": "154541",
+    "address_invoice": "154541",
+    "cart": "315106",
+    "currency": "1",
+    "lang": "1",
+    "customer": "59037",
+    "carrier": "492",
+    "state": "6"
+  },
+  "OrderDetails_cart_rules": null,
+  "cart_rules": null,
+  "ProductosOrden": [
+    {
+      "id": "124261",
+      "id_order": {
+        "_": "105060",
+        "$": {
+          "xlink:href": "https://www.kukyflor.com/api/orders/105060"
+        }
+      },
+      "product_id": {
+        "_": "2468",
+        "$": {
+          "xlink:href": "https://www.kukyflor.com/api/products/2468"
+        }
+      },
+      "product_attribute_id": {
+        "_": "0",
+        "$": {
+          "xlink:href": "https://www.kukyflor.com/api/combinations/0"
+        }
+      },
+      "product_quantity_reinjected": "0",
+      "group_reduction": "0.00",
+      "discount_quantity_applied": "0",
+      "download_hash": "",
+      "download_deadline": "0000-00-00 00:00:00",
+      "id_order_invoice": "0",
+      "id_warehouse": "0",
+      "id_shop": "1",
+      "id_customization": "0",
+      "product_name": "Ramo de 12 rosas rojas",
+      "product_quantity": "1",
+      "product_quantity_in_stock": "1",
+      "product_quantity_return": "0",
+      "product_quantity_refunded": "0",
+      "product_price": "100.000000",
+      "reduction_percent": "0.00",
+      "reduction_amount": "0.000000",
+      "reduction_amount_tax_incl": "0.000000",
+      "reduction_amount_tax_excl": "0.000000",
+      "product_quantity_discount": "0.000000",
+      "product_ean13": "",
+      "product_isbn": "",
+      "product_upc": "",
+      "product_mpn": "",
+      "product_reference": "DMA25-3",
+      "product_supplier_reference": "",
+      "product_weight": "0.000000",
+      "tax_computation_method": "0",
+      "id_tax_rules_group": "6",
+      "ecotax": "0.000000",
+      "ecotax_tax_rate": "0.000",
+      "download_nb": "0",
+      "unit_price_tax_incl": "118.000000",
+      "unit_price_tax_excl": "100.000000",
+      "total_price_tax_incl": "118.000000",
+      "total_price_tax_excl": "100.000000",
+      "total_shipping_price_tax_excl": "0.000000",
+      "total_shipping_price_tax_incl": "0.000000",
+      "purchase_supplier_price": "0.000000",
+      "original_product_price": "100.000000",
+      "original_wholesale_price": "0.000000",
+      "total_refunded_tax_excl": "0.000000",
+      "total_refunded_tax_incl": "0.000000",
+      "associations": {
+        "taxes": {
+          "$": {
+            "nodeType": "tax",
+            "api": "taxes"
+          },
+          "tax": {
+            "$": {
+              "xlink:href": "https://www.kukyflor.com/api/taxes/1"
+            },
+            "id": "1"
+          }
+        }
+      }
+    }
+  ],
+  "ProductosCategoriaOrden": [
+    [
+      "2",
+      "131"
+    ]
+  ]
+}
+2025-05-05 14:28:00.619 - ERROR: Error al obtener las categorías asociadas del producto con ID 2484:
+2025-05-05 14:28:00.619 - ERROR: categories.category.map is not a function
+2025-05-05 14:28:00.619 - STACK TRACE:
+TypeError: categories.category.map is not a function
+    at C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:425:51
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Promise.all (index 0)
+    at async Promise.all (index 1)
+    at async BuscarOrdenPorID (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:455:41)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1610:26)
+    at async Inicializador (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1742:17)
+2025-05-05 14:28:00.963 - Estos son los datos de orden
+2025-05-05 14:28:00.963 - {
+  "Estado": {
+    "id": "6",
+    "Estado": [
+      {
+        "_": "Cancelado",
+        "$": {
+          "id": "1",
+          "xlink:href": "https://www.kukyflor.com/api/languages/1"
+        }
+      },
+      {
+        "_": "Canceled",
+        "$": {
+          "id": "3",
+          "xlink:href": "https://www.kukyflor.com/api/languages/3"
+        }
+      }
+    ]
+  },
+  "SerieDePedido": {
+    "id_address_invoice": "154544",
+    "id_adress_Entrega": "BO-579",
+    "company": "73264075",
+    "phone": "933378237"
+  },
+  "DireccionFacturacion": {
+    "id_adress_Entrega": "154543"
+  },
+  "DireccionEntrega": {
+    "id_adress_Entrega": "154543",
+    "id_direccion": "383",
+    "direccion_1": "C. Henraud Leger 140, Santiago de Surco 15038, Perú",
+    "city": " - ",
+    "Referencia": "por mokamo motors",
+    "phone_mobile": "",
+    "PesonaEntrega": "PIERO VICENTE CANO ANDIA",
+    "Telefono": "933378237",
+    "Cordenadas": "-12.1232865,-76.99761869999999"
+  },
+  "IDEntrega_Direccion": {
+    "id": "383",
+    "iso_code": "urco",
+    "name": "Santiago de Surco-Lima",
+    "active": "1"
+  },
+  "Card": {
+    "id": "315103"
+  },
+  "Customer": {
+    "id": "100501",
+    "documentoIdentidad": "73264075",
+    "lastname": "CANO ANDIA",
+    "firstname": "PIERO VICENTE",
+    "email": "nadiabuqele@gmail.com",
+    "birthday": "0000-00-00"
+  },
+  "Pedido": {
+    "id": "105062",
+    "módulo": "ps_payu",
+    "delivery_number": "0",
+    "delivery_date": "0000-00-00 00:00:00",
+    "valid": "0",
+    "date_add": "2025-05-04 13:55:51",
+    "date_upd": "2025-05-04 13:56:55",
+    "ddw_order_date": "2025-05-04 00:00:00",
+    "ddw_order_time": "15:30 - 18:00",
+    "payment": "PayU",
+    "gift_message": "",
+    "total_discounts": "0.000000",
+    "total_paid": "240.000000",
+    "total_paid_tax_incl": "240.000000",
+    "total_products_wt": "215.000000",
+    "total_shipping": "25.000000",
+    "total_shipping_tax_incl": "25.000000",
+    "total_shipping_tax_excl": "25.000000",
+    "productos": {
+      "order_rows": {
+        "$": {
+          "nodeType": "order_row",
+          "virtualEntity": "true"
+        },
+        "order_row": {
+          "id": "124263",
+          "product_id": {
+            "_": "2484",
+            "$": {
+              "xlink:href": "https://www.kukyflor.com/api/products/2484"
+            }
+          },
+          "product_attribute_id": "6182",
+          "product_quantity": "1",
+          "product_name": "Dreamer-D - Choose combination: : mini pastel roses",
+          "product_reference": "\tsoñadoraminirospas",
+          "product_ean13": "",
+          "product_isbn": "",
+          "product_upc": "",
+          "product_price": "182.203390",
+          "id_customization": {
+            "_": "0",
+            "$": {
+              "xlink:href": "https://www.kukyflor.com/api/customizations/0"
+            }
+          },
+          "unit_price_tax_incl": "215.000000",
+          "unit_price_tax_excl": "182.203390"
+        }
+      }
+    },
+    "address_delivery": "154543",
+    "address_invoice": "154544",
+    "cart": "315103",
+    "currency": "1",
+    "lang": "3",
+    "customer": "100501",
+    "carrier": "501",
+    "state": "6"
+  },
+  "OrderDetails_cart_rules": null,
+  "cart_rules": null,
+  "ProductosOrden": [
+    {
+      "id": "124263",
+      "id_order": {
+        "_": "105062",
+        "$": {
+          "xlink:href": "https://www.kukyflor.com/api/orders/105062"
+        }
+      },
+      "product_id": {
+        "_": "2484",
+        "$": {
+          "xlink:href": "https://www.kukyflor.com/api/products/2484"
+        }
+      },
+      "product_attribute_id": {
+        "_": "6182",
+        "$": {
+          "xlink:href": "https://www.kukyflor.com/api/combinations/6182"
+        }
+      },
+      "product_quantity_reinjected": "0",
+      "group_reduction": "0.00",
+      "discount_quantity_applied": "0",
+      "download_hash": "",
+      "download_deadline": "0000-00-00 00:00:00",
+      "id_order_invoice": "0",
+      "id_warehouse": "0",
+      "id_shop": "1",
+      "id_customization": "0",
+      "product_name": "Dreamer-D - Choose combination: : mini pastel roses",
+      "product_quantity": "1",
+      "product_quantity_in_stock": "1",
+      "product_quantity_return": "0",
+      "product_quantity_refunded": "0",
+      "product_price": "182.203390",
+      "reduction_percent": "0.00",
+      "reduction_amount": "0.000000",
+      "reduction_amount_tax_incl": "0.000000",
+      "reduction_amount_tax_excl": "0.000000",
+      "product_quantity_discount": "0.000000",
+      "product_ean13": "",
+      "product_isbn": "",
+      "product_upc": "",
+      "product_mpn": "",
+      "product_reference": "\tsoñadoraminirospas",
+      "product_supplier_reference": "",
+      "product_weight": "0.000000",
+      "tax_computation_method": "0",
+      "id_tax_rules_group": "6",
+      "ecotax": "0.000000",
+      "ecotax_tax_rate": "0.000",
+      "download_nb": "0",
+      "unit_price_tax_incl": "215.000000",
+      "unit_price_tax_excl": "182.203390",
+      "total_price_tax_incl": "215.000000",
+      "total_price_tax_excl": "182.200000",
+      "total_shipping_price_tax_excl": "0.000000",
+      "total_shipping_price_tax_incl": "0.000000",
+      "purchase_supplier_price": "0.000000",
+      "original_product_price": "182.203390",
+      "original_wholesale_price": "0.000000",
+      "total_refunded_tax_excl": "0.000000",
+      "total_refunded_tax_incl": "0.000000",
+      "associations": {
+        "taxes": {
+          "$": {
+            "nodeType": "tax",
+            "api": "taxes"
+          },
+          "tax": {
+            "$": {
+              "xlink:href": "https://www.kukyflor.com/api/taxes/1"
+            },
+            "id": "1"
+          }
+        }
+      }
+    }
+  ],
+  "ProductosCategoriaOrden": [
+    []
+  ]
+}
+2025-05-05 14:28:09.065 - Estos son los datos de orden
+2025-05-05 14:28:09.065 - {
+  "Estado": {
+    "id": "6",
+    "Estado": [
+      {
+        "_": "Cancelado",
+        "$": {
+          "id": "1",
+          "xlink:href": "https://www.kukyflor.com/api/languages/1"
+        }
+      },
+      {
+        "_": "Canceled",
+        "$": {
+          "id": "3",
+          "xlink:href": "https://www.kukyflor.com/api/languages/3"
+        }
+      }
+    ]
+  },
+  "SerieDePedido": {
+    "id_address_invoice": "139445",
+    "id_adress_Entrega": "Mi Dirección",
+    "company": "",
+    "phone": "+51939669255"
+  },
+  "DireccionFacturacion": {
+    "id_adress_Entrega": "139445"
+  },
+  "DireccionEntrega": {
+    "id_adress_Entrega": "139445",
+    "id_direccion": "383",
+    "direccion_1": "Jr.Cerro Azul 715",
+    "city": " - ",
+    "Referencia": "",
+    "phone_mobile": "",
+    "PesonaEntrega": "Luz Acuña",
+    "Telefono": "+51939669255",
+    "Cordenadas": ""
+  },
+  "IDEntrega_Direccion": {
+    "id": "383",
+    "iso_code": "urco",
+    "name": "Santiago de Surco-Lima",
+    "active": "1"
+  },
+  "Card": {
+    "id": "315108"
+  },
+  "Customer": {
+    "id": "75165",
+    "documentoIdentidad": "",
+    "lastname": "Lorincz",
+    "firstname": "Geza",
+    "email": "geyza9@gmail.com",
+    "birthday": "1998-04-04"
+  },
+  "Pedido": {
+    "id": "105063",
+    "módulo": "niubiz",
+    "delivery_number": "0",
+    "delivery_date": "0000-00-00 00:00:00",
+    "valid": "0",
+    "date_add": "2025-05-04 14:38:46",
+    "date_upd": "2025-05-04 14:38:46",
+    "ddw_order_date": "2025-05-05 00:00:00",
+    "ddw_order_time": "09:00 - 14:00",
+    "payment": "Niubiz",
+    "gift_message": "",
+    "total_discounts": "12.000000",
+    "total_paid": "133.000000",
+    "total_paid_tax_incl": "133.000000",
+    "total_products_wt": "120.000000",
+    "total_shipping": "25.000000",
+    "total_shipping_tax_incl": "25.000000",
+    "total_shipping_tax_excl": "25.000000",
+    "productos": {
+      "order_rows": {
+        "$": {
+          "nodeType": "order_row",
+          "virtualEntity": "true"
+        },
+        "order_row": {
+          "id": "124264",
+          "product_id": {
+            "_": "2016",
+            "$": {
+              "xlink:href": "https://www.kukyflor.com/api/products/2016"
+            }
+          },
+          "product_attribute_id": "0",
+          "product_quantity": "1",
+          "product_name": "Ramo de 6 Minirosas, 3 Rosas de Jardín y Lirio",
+          "product_reference": "rapinkexplilmin",
+          "product_ean13": "",
+          "product_isbn": "",
+          "product_upc": "",
+          "product_price": "101.694915",
+          "id_customization": {
+            "_": "0",
+            "$": {
+              "xlink:href": "https://www.kukyflor.com/api/customizations/0"
+            }
+          },
+          "unit_price_tax_incl": "120.000000",
+          "unit_price_tax_excl": "101.694915"
+        }
+      }
+    },
+    "address_delivery": "139445",
+    "address_invoice": "139445",
+    "cart": "315108",
+    "currency": "1",
+    "lang": "1",
+    "customer": "75165",
+    "carrier": "492",
+    "state": "6"
+  },
+  "OrderDetails_cart_rules": [
+    {
+      "id": "6953",
+      "id_cart_rule": "511",
+      "id_order_invoice": "0",
+      "name": "KUKYFLOR1024",
+      "value": "12.000000",
+      "value_tax_excl": "10.169000",
+      "free_shipping": "0",
+      "deleted": "0"
+    }
+  ],
+  "cart_rules": [
+    {
+      "id": "511",
+      "id_customer": "0",
+      "date_from": "2024-08-22 12:00:00",
+      "date_to": "2030-12-31 23:59:00",
+      "description": "Descuento por aniversario Kukyflor",
+      "quantity": "725",
+      "quantity_per_user": "1",
+      "priority": "1",
+      "partial_use": "1",
+      "code": "KUKYFLOR1024",
+      "minimum_amount": "70.000000",
+      "minimum_amount_tax": "1",
+      "minimum_amount_currency": "1",
+      "minimum_amount_shipping": "0",
+      "country_restriction": "0",
+      "carrier_restriction": "0",
+      "group_restriction": "0",
+      "cart_rule_restriction": "0",
+      "product_restriction": "1",
+      "shop_restriction": "0",
+      "free_shipping": "0",
+      "reduction_percent": "10.00",
+      "reduction_amount": "0.000000",
+      "reduction_tax": "0",
+      "reduction_currency": "1",
+      "reduction_product": "-2",
+      "reduction_exclude_special": "0",
+      "gift_product": "0",
+      "gift_product_attribute": "0",
+      "highlight": "0",
+      "active": "1",
+      "date_add": "2024-08-22 13:04:10",
+      "date_upd": "2025-05-04 19:01:45"
+    }
+  ],
+  "ProductosOrden": [
+    {
+      "id": "124264",
+      "id_order": {
+        "_": "105063",
+        "$": {
+          "xlink:href": "https://www.kukyflor.com/api/orders/105063"
+        }
+      },
+      "product_id": {
+        "_": "2016",
+        "$": {
+          "xlink:href": "https://www.kukyflor.com/api/products/2016"
+        }
+      },
+      "product_attribute_id": {
+        "_": "0",
+        "$": {
+          "xlink:href": "https://www.kukyflor.com/api/combinations/0"
+        }
+      },
+      "product_quantity_reinjected": "0",
+      "group_reduction": "0.00",
+      "discount_quantity_applied": "0",
+      "download_hash": "",
+      "download_deadline": "0000-00-00 00:00:00",
+      "id_order_invoice": "0",
+      "id_warehouse": "0",
+      "id_shop": "1",
+      "id_customization": "0",
+      "product_name": "Ramo de 6 Minirosas, 3 Rosas de Jardín y Lirio",
+      "product_quantity": "1",
+      "product_quantity_in_stock": "1",
+      "product_quantity_return": "0",
+      "product_quantity_refunded": "0",
+      "product_price": "101.694915",
+      "reduction_percent": "0.00",
+      "reduction_amount": "0.000000",
+      "reduction_amount_tax_incl": "0.000000",
+      "reduction_amount_tax_excl": "0.000000",
+      "product_quantity_discount": "0.000000",
+      "product_ean13": "",
+      "product_isbn": "",
+      "product_upc": "",
+      "product_mpn": "",
+      "product_reference": "rapinkexplilmin",
+      "product_supplier_reference": "",
+      "product_weight": "0.000000",
+      "tax_computation_method": "0",
+      "id_tax_rules_group": "6",
+      "ecotax": "0.000000",
+      "ecotax_tax_rate": "0.000",
+      "download_nb": "0",
+      "unit_price_tax_incl": "120.000000",
+      "unit_price_tax_excl": "101.694915",
+      "total_price_tax_incl": "120.000000",
+      "total_price_tax_excl": "101.690000",
+      "total_shipping_price_tax_excl": "0.000000",
+      "total_shipping_price_tax_incl": "0.000000",
+      "purchase_supplier_price": "0.000000",
+      "original_product_price": "101.694915",
+      "original_wholesale_price": "0.000000",
+      "total_refunded_tax_excl": "0.000000",
+      "total_refunded_tax_incl": "0.000000",
+      "associations": {
+        "taxes": {
+          "$": {
+            "nodeType": "tax",
+            "api": "taxes"
+          },
+          "tax": {
+            "$": {
+              "xlink:href": "https://www.kukyflor.com/api/taxes/1"
+            },
+            "id": "1"
+          }
+        }
+      }
+    }
+  ],
+  "ProductosCategoriaOrden": [
+    [
+      "19",
+      "36",
+      "39",
+      "102",
+      "115",
+      "117",
+      "162",
+      "194",
+      "198",
+      "199"
+    ]
+  ]
+}
+2025-05-05 14:28:20.136 - ERROR: Error al obtener las categorías asociadas del producto con ID 2478:
+2025-05-05 14:28:20.136 - ERROR: categories.category.map is not a function
+2025-05-05 14:28:20.136 - STACK TRACE:
+TypeError: categories.category.map is not a function
+    at C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:425:51
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Promise.all (index 0)
+    at async Promise.all (index 1)
+    at async BuscarOrdenPorID (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:455:41)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1610:26)
+    at async Inicializador (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1742:17)
+2025-05-05 14:28:21.196 - Estos son los datos de orden
+2025-05-05 14:28:21.196 - {
+  "Estado": {
+    "id": "2",
+    "Estado": [
+      {
+        "_": "Pago aceptado",
+        "$": {
+          "id": "1",
+          "xlink:href": "https://www.kukyflor.com/api/languages/1"
+        }
+      },
+      {
+        "_": "Payment accepted",
+        "$": {
+          "id": "3",
+          "xlink:href": "https://www.kukyflor.com/api/languages/3"
+        }
+      }
+    ]
+  },
+  "SerieDePedido": {
+    "id_address_invoice": "154560",
+    "id_adress_Entrega": "BO-790",
+    "company": "70429589",
+    "phone": "993344704"
+  },
+  "DireccionFacturacion": {
+    "id_adress_Entrega": "154559"
+  },
+  "DireccionEntrega": {
+    "id_adress_Entrega": "154559",
+    "id_direccion": "360",
+    "direccion_1": "Tomás Ramsey 725, Magdalena del Mar 15076, Perú",
+    "city": " - ",
+    "Referencia": "Espalda cuadra 7 de Av. Javier Prado Oeste",
+    "phone_mobile": "",
+    "PesonaEntrega": "Clara Guzman",
+    "Telefono": "998376114",
+    "Cordenadas": "-12.0915109,-77.0611991"
+  },
+  "IDEntrega_Direccion": {
+    "id": "360",
+    "iso_code": "lena",
+    "name": "Magdalena-Lima",
+    "active": "1"
+  },
+  "Card": {
+    "id": "315113"
+  },
+  "Customer": {
+    "id": "100507",
+    "documentoIdentidad": "70429589",
+    "lastname": "EDUARDO TENORIO GUZMAN",
+    "firstname": "GONZALO",
+    "email": "gonzalotenoriog@gmail.com",
+    "birthday": "1993-02-22"
+  },
+  "Pedido": {
+    "id": "105068",
+    "módulo": "niubiz",
+    "delivery_number": "0",
+    "delivery_date": "0000-00-00 00:00:00",
+    "valid": "1",
+    "date_add": "2025-05-04 18:40:14",
+    "date_upd": "2025-05-05 09:08:37",
+    "ddw_order_date": "2025-05-11 00:00:00",
+    "ddw_order_time": "08:00 - 15:00",
+    "payment": "Niubiz",
+    "gift_message": "Querida Mamá,\r\n\r\nFeliz día de la madre, esperamos que lo pases súper bonito.\r\nTe mandamos muchos abrazos y besos en tu día.\r\nTe tenemos preparado un regalito que te daremos en Chicago.\r\n\r\nYa nos vemos pronto.\r\n\r\nTe queremos mucho,\r\nMariale, Gonzalo y Adolfo",
+    "total_discounts": "17.000000",
+    "total_paid": "168.000000",
+    "total_paid_tax_incl": "168.000000",
+    "total_products_wt": "170.000000",
+    "total_shipping": "15.000000",
+    "total_shipping_tax_incl": "15.000000",
+    "total_shipping_tax_excl": "15.000000",
+    "productos": {
+      "order_rows": {
+        "$": {
+          "nodeType": "order_row",
+          "virtualEntity": "true"
+        },
+        "order_row": {
+          "id": "124269",
+          "product_id": {
+            "_": "2478",
+            "$": {
+              "xlink:href": "https://www.kukyflor.com/api/products/2478"
+            }
+          },
+          "product_attribute_id": "0",
+          "product_quantity": "1",
+          "product_name": "Florero de 10 tulipanes multicolor",
+          "product_reference": "DMA25-16",
+          "product_ean13": "",
+          "product_isbn": "",
+          "product_upc": "",
+          "product_price": "144.067797",
+          "id_customization": {
+            "_": "0",
+            "$": {
+              "xlink:href": "https://www.kukyflor.com/api/customizations/0"
+            }
+          },
+          "unit_price_tax_incl": "170.000000",
+          "unit_price_tax_excl": "144.067797"
+        }
+      }
+    },
+    "address_delivery": "154559",
+    "address_invoice": "154560",
+    "cart": "315113",
+    "currency": "1",
+    "lang": "1",
+    "customer": "100507",
+    "carrier": "474",
+    "state": "2"
+  },
+  "OrderDetails_cart_rules": [
+    {
+      "id": "6955",
+      "id_cart_rule": "511",
+      "id_order_invoice": "0",
+      "name": "KUKYFLOR1024",
+      "value": "17.000000",
+      "value_tax_excl": "14.407000",
+      "free_shipping": "0",
+      "deleted": "0"
+    }
+  ],
+  "cart_rules": [
+    {
+      "id": "511",
+      "id_customer": "0",
+      "date_from": "2024-08-22 12:00:00",
+      "date_to": "2030-12-31 23:59:00",
+      "description": "Descuento por aniversario Kukyflor",
+      "quantity": "725",
+      "quantity_per_user": "1",
+      "priority": "1",
+      "partial_use": "1",
+      "code": "KUKYFLOR1024",
+      "minimum_amount": "70.000000",
+      "minimum_amount_tax": "1",
+      "minimum_amount_currency": "1",
+      "minimum_amount_shipping": "0",
+      "country_restriction": "0",
+      "carrier_restriction": "0",
+      "group_restriction": "0",
+      "cart_rule_restriction": "0",
+      "product_restriction": "1",
+      "shop_restriction": "0",
+      "free_shipping": "0",
+      "reduction_percent": "10.00",
+      "reduction_amount": "0.000000",
+      "reduction_tax": "0",
+      "reduction_currency": "1",
+      "reduction_product": "-2",
+      "reduction_exclude_special": "0",
+      "gift_product": "0",
+      "gift_product_attribute": "0",
+      "highlight": "0",
+      "active": "1",
+      "date_add": "2024-08-22 13:04:10",
+      "date_upd": "2025-05-04 19:01:45"
+    }
+  ],
+  "ProductosOrden": [
+    {
+      "id": "124269",
+      "id_order": {
+        "_": "105068",
+        "$": {
+          "xlink:href": "https://www.kukyflor.com/api/orders/105068"
+        }
+      },
+      "product_id": {
+        "_": "2478",
+        "$": {
+          "xlink:href": "https://www.kukyflor.com/api/products/2478"
+        }
+      },
+      "product_attribute_id": {
+        "_": "0",
+        "$": {
+          "xlink:href": "https://www.kukyflor.com/api/combinations/0"
+        }
+      },
+      "product_quantity_reinjected": "0",
+      "group_reduction": "0.00",
+      "discount_quantity_applied": "0",
+      "download_hash": "",
+      "download_deadline": "0000-00-00 00:00:00",
+      "id_order_invoice": "0",
+      "id_warehouse": "0",
+      "id_shop": "1",
+      "id_customization": "0",
+      "product_name": "Florero de 10 tulipanes multicolor",
+      "product_quantity": "1",
+      "product_quantity_in_stock": "1",
+      "product_quantity_return": "0",
+      "product_quantity_refunded": "0",
+      "product_price": "144.067797",
+      "reduction_percent": "0.00",
+      "reduction_amount": "0.000000",
+      "reduction_amount_tax_incl": "0.000000",
+      "reduction_amount_tax_excl": "0.000000",
+      "product_quantity_discount": "0.000000",
+      "product_ean13": "",
+      "product_isbn": "",
+      "product_upc": "",
+      "product_mpn": "",
+      "product_reference": "DMA25-16",
+      "product_supplier_reference": "",
+      "product_weight": "0.000000",
+      "tax_computation_method": "0",
+      "id_tax_rules_group": "6",
+      "ecotax": "0.000000",
+      "ecotax_tax_rate": "0.000",
+      "download_nb": "0",
+      "unit_price_tax_incl": "170.000000",
+      "unit_price_tax_excl": "144.067797",
+      "total_price_tax_incl": "170.000000",
+      "total_price_tax_excl": "144.070000",
+      "total_shipping_price_tax_excl": "0.000000",
+      "total_shipping_price_tax_incl": "0.000000",
+      "purchase_supplier_price": "0.000000",
+      "original_product_price": "144.067797",
+      "original_wholesale_price": "0.000000",
+      "total_refunded_tax_excl": "0.000000",
+      "total_refunded_tax_incl": "0.000000",
+      "associations": {
+        "taxes": {
+          "$": {
+            "nodeType": "tax",
+            "api": "taxes"
+          },
+          "tax": {
+            "$": {
+              "xlink:href": "https://www.kukyflor.com/api/taxes/1"
+            },
+            "id": "1"
+          }
+        }
+      }
+    }
+  ],
+  "ProductosCategoriaOrden": [
+    []
+  ]
+}
+2025-05-05 14:28:28.841 - estas son las categorias
+2025-05-05 14:28:28.841 - 511
+2025-05-05 14:28:28.841 - []
+2025-05-05 14:28:30.442 - ERROR: Error en la transacción de crear pedido con orden :105068
+2025-05-05 14:28:30.442 - ERROR: Orden sin Descuento en los productos y el ID CUPON : 511
+2025-05-05 14:28:30.442 - STACK TRACE:
+Error: Orden sin Descuento en los productos y el ID CUPON : 511
+    at createPedido (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1322:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1661:19)
+    at async Inicializador (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1742:17)
+2025-05-05 14:28:40.872 - Estos son los datos de orden
+2025-05-05 14:28:40.872 - {
+  "Estado": {
+    "id": "6",
+    "Estado": [
+      {
+        "_": "Cancelado",
+        "$": {
+          "id": "1",
+          "xlink:href": "https://www.kukyflor.com/api/languages/1"
+        }
+      },
+      {
+        "_": "Canceled",
+        "$": {
+          "id": "3",
+          "xlink:href": "https://www.kukyflor.com/api/languages/3"
+        }
+      }
+    ]
+  },
+  "SerieDePedido": {
+    "id_address_invoice": "149444",
+    "id_adress_Entrega": "Mi Dirección",
+    "company": "",
+    "phone": "976017727"
+  },
+  "DireccionFacturacion": {
+    "id_adress_Entrega": "149444"
+  },
+  "DireccionEntrega": {
+    "id_adress_Entrega": "149444",
+    "id_direccion": "383",
+    "direccion_1": "El Polo 434, Santiago de Surco 15023, Lima, Perú",
+    "city": " - ",
+    "Referencia": "Santiago de Surco ",
+    "phone_mobile": "",
+    "PesonaEntrega": "Manuel Heredia Balladares ",
+    "Telefono": "976017727",
+    "Cordenadas": "-12.10486,-76.9728655"
+  },
+  "IDEntrega_Direccion": {
+    "id": "383",
+    "iso_code": "urco",
+    "name": "Santiago de Surco-Lima",
+    "active": "1"
+  },
+  "Card": {
+    "id": "314424"
+  },
+  "Customer": {
+    "id": "97895",
+    "documentoIdentidad": "49006568",
+    "lastname": "SANCHEZ MENDOZA",
+    "firstname": "DAVID ERNESTO",
+    "email": "dsanchez0911@gmail.com",
+    "birthday": "0000-00-00"
+  },
+  "Pedido": {
+    "id": "105072",
+    "módulo": "ps_payu",
+    "delivery_number": "0",
+    "delivery_date": "0000-00-00 00:00:00",
+    "valid": "0",
+    "date_add": "2025-05-05 02:02:11",
+    "date_upd": "2025-05-05 08:09:28",
+    "ddw_order_date": "2025-05-05 00:00:00",
+    "ddw_order_time": "14:00 - 18:00",
+    "payment": "PayU",
+    "gift_message": "Mi amor bello... Estás 12 rosas de color pastel representa cada mes que disfruto de tus dulces conversaciones, de tus profundas miradas, de tus deseos mas profundos y de una sonrisa cautivadora. Me llenas de color mis días... Quien te ama David.",
+    "total_discounts": "0.000000",
+    "total_paid": "100.000000",
+    "total_paid_tax_incl": "100.000000",
+    "total_products_wt": "75.000000",
+    "total_shipping": "25.000000",
+    "total_shipping_tax_incl": "25.000000",
+    "total_shipping_tax_excl": "25.000000",
+    "productos": {
+      "order_rows": {
+        "$": {
+          "nodeType": "order_row",
+          "virtualEntity": "true"
+        },
+        "order_row": {
+          "id": "124273",
+          "product_id": {
+            "_": "141",
+            "$": {
+              "xlink:href": "https://www.kukyflor.com/api/products/141"
+            }
+          },
+          "product_attribute_id": "2430",
+          "product_quantity": "1",
+          "product_name": "Ramo de 12 Rosas - Elige el color de tu flor: : Pasteles",
+          "product_reference": "\traprepast",
+          "product_ean13": "",
+          "product_isbn": "",
+          "product_upc": "",
+          "product_price": "63.559322",
+          "id_customization": {
+            "_": "0",
+            "$": {
+              "xlink:href": "https://www.kukyflor.com/api/customizations/0"
+            }
+          },
+          "unit_price_tax_incl": "75.000000",
+          "unit_price_tax_excl": "63.559322"
+        }
+      }
+    },
+    "address_delivery": "149444",
+    "address_invoice": "149444",
+    "cart": "314424",
+    "currency": "1",
+    "lang": "1",
+    "customer": "97895",
+    "carrier": "492",
+    "state": "6"
+  },
+  "OrderDetails_cart_rules": null,
+  "cart_rules": null,
+  "ProductosOrden": [
+    {
+      "id": "124273",
+      "id_order": {
+        "_": "105072",
+        "$": {
+          "xlink:href": "https://www.kukyflor.com/api/orders/105072"
+        }
+      },
+      "product_id": {
+        "_": "141",
+        "$": {
+          "xlink:href": "https://www.kukyflor.com/api/products/141"
+        }
+      },
+      "product_attribute_id": {
+        "_": "2430",
+        "$": {
+          "xlink:href": "https://www.kukyflor.com/api/combinations/2430"
+        }
+      },
+      "product_quantity_reinjected": "0",
+      "group_reduction": "0.00",
+      "discount_quantity_applied": "0",
+      "download_hash": "",
+      "download_deadline": "0000-00-00 00:00:00",
+      "id_order_invoice": "0",
+      "id_warehouse": "0",
+      "id_shop": "1",
+      "id_customization": "0",
+      "product_name": "Ramo de 12 Rosas - Elige el color de tu flor: : Pasteles",
+      "product_quantity": "1",
+      "product_quantity_in_stock": "1",
+      "product_quantity_return": "0",
+      "product_quantity_refunded": "0",
+      "product_price": "63.559322",
+      "reduction_percent": "0.00",
+      "reduction_amount": "0.000000",
+      "reduction_amount_tax_incl": "0.000000",
+      "reduction_amount_tax_excl": "0.000000",
+      "product_quantity_discount": "0.000000",
+      "product_ean13": "",
+      "product_isbn": "",
+      "product_upc": "",
+      "product_mpn": "",
+      "product_reference": "\traprepast",
+      "product_supplier_reference": "",
+      "product_weight": "0.000000",
+      "tax_computation_method": "0",
+      "id_tax_rules_group": "6",
+      "ecotax": "0.000000",
+      "ecotax_tax_rate": "0.000",
+      "download_nb": "0",
+      "unit_price_tax_incl": "75.000000",
+      "unit_price_tax_excl": "63.559322",
+      "total_price_tax_incl": "75.000000",
+      "total_price_tax_excl": "63.560000",
+      "total_shipping_price_tax_excl": "0.000000",
+      "total_shipping_price_tax_incl": "0.000000",
+      "purchase_supplier_price": "37.410000",
+      "original_product_price": "63.559322",
+      "original_wholesale_price": "37.410000",
+      "total_refunded_tax_excl": "0.000000",
+      "total_refunded_tax_incl": "0.000000",
+      "associations": {
+        "taxes": {
+          "$": {
+            "nodeType": "tax",
+            "api": "taxes"
+          },
+          "tax": {
+            "$": {
+              "xlink:href": "https://www.kukyflor.com/api/taxes/1"
+            },
+            "id": "1"
+          }
+        }
+      }
+    }
+  ],
+  "ProductosCategoriaOrden": [
+    [
+      "2",
+      "3",
+      "11",
+      "19",
+      "36",
+      "38",
+      "194",
+      "196"
+    ]
+  ]
+}
+2025-05-05 14:28:49.073 - Estos son los datos de orden
+2025-05-05 14:28:49.073 - {
+  "Estado": {
+    "id": "6",
+    "Estado": [
+      {
+        "_": "Cancelado",
+        "$": {
+          "id": "1",
+          "xlink:href": "https://www.kukyflor.com/api/languages/1"
+        }
+      },
+      {
+        "_": "Canceled",
+        "$": {
+          "id": "3",
+          "xlink:href": "https://www.kukyflor.com/api/languages/3"
+        }
+      }
+    ]
+  },
+  "SerieDePedido": {
+    "id_address_invoice": "149444",
+    "id_adress_Entrega": "Mi Dirección",
+    "company": "",
+    "phone": "976017727"
+  },
+  "DireccionFacturacion": {
+    "id_adress_Entrega": "149444"
+  },
+  "DireccionEntrega": {
+    "id_adress_Entrega": "149444",
+    "id_direccion": "383",
+    "direccion_1": "El Polo 434, Santiago de Surco 15023, Lima, Perú",
+    "city": " - ",
+    "Referencia": "Santiago de Surco ",
+    "phone_mobile": "",
+    "PesonaEntrega": "Manuel Heredia Balladares ",
+    "Telefono": "976017727",
+    "Cordenadas": "-12.10486,-76.9728655"
+  },
+  "IDEntrega_Direccion": {
+    "id": "383",
+    "iso_code": "urco",
+    "name": "Santiago de Surco-Lima",
+    "active": "1"
+  },
+  "Card": {
+    "id": "315129"
+  },
+  "Customer": {
+    "id": "97895",
+    "documentoIdentidad": "49006568",
+    "lastname": "SANCHEZ MENDOZA",
+    "firstname": "DAVID ERNESTO",
+    "email": "dsanchez0911@gmail.com",
+    "birthday": "0000-00-00"
+  },
+  "Pedido": {
+    "id": "105074",
+    "módulo": "ps_payu",
+    "delivery_number": "0",
+    "delivery_date": "0000-00-00 00:00:00",
+    "valid": "0",
+    "date_add": "2025-05-05 02:44:36",
+    "date_upd": "2025-05-05 08:09:24",
+    "ddw_order_date": "2025-05-05 00:00:00",
+    "ddw_order_time": "14:00 - 18:00",
+    "payment": "PayU",
+    "gift_message": "Mi amor bello... Estás 12 rosas de color pastel representa cada mes que disfruto de tus dulces conversaciones, de tus profundas miradas, de tus deseos mas profundos y de una sonrisa cautivadora. Me llenas de color mis días... Quien te ama David.",
+    "total_discounts": "0.000000",
+    "total_paid": "100.000000",
+    "total_paid_tax_incl": "100.000000",
+    "total_products_wt": "75.000000",
+    "total_shipping": "25.000000",
+    "total_shipping_tax_incl": "25.000000",
+    "total_shipping_tax_excl": "25.000000",
+    "productos": {
+      "order_rows": {
+        "$": {
+          "nodeType": "order_row",
+          "virtualEntity": "true"
+        },
+        "order_row": {
+          "id": "124275",
+          "product_id": {
+            "_": "141",
+            "$": {
+              "xlink:href": "https://www.kukyflor.com/api/products/141"
+            }
+          },
+          "product_attribute_id": "2430",
+          "product_quantity": "1",
+          "product_name": "Ramo de 12 Rosas - Elige el color de tu flor: : Pasteles",
+          "product_reference": "\traprepast",
+          "product_ean13": "",
+          "product_isbn": "",
+          "product_upc": "",
+          "product_price": "63.559322",
+          "id_customization": {
+            "_": "0",
+            "$": {
+              "xlink:href": "https://www.kukyflor.com/api/customizations/0"
+            }
+          },
+          "unit_price_tax_incl": "75.000000",
+          "unit_price_tax_excl": "63.559322"
+        }
+      }
+    },
+    "address_delivery": "149444",
+    "address_invoice": "149444",
+    "cart": "315129",
+    "currency": "1",
+    "lang": "1",
+    "customer": "97895",
+    "carrier": "492",
+    "state": "6"
+  },
+  "OrderDetails_cart_rules": null,
+  "cart_rules": null,
+  "ProductosOrden": [
+    {
+      "id": "124275",
+      "id_order": {
+        "_": "105074",
+        "$": {
+          "xlink:href": "https://www.kukyflor.com/api/orders/105074"
+        }
+      },
+      "product_id": {
+        "_": "141",
+        "$": {
+          "xlink:href": "https://www.kukyflor.com/api/products/141"
+        }
+      },
+      "product_attribute_id": {
+        "_": "2430",
+        "$": {
+          "xlink:href": "https://www.kukyflor.com/api/combinations/2430"
+        }
+      },
+      "product_quantity_reinjected": "0",
+      "group_reduction": "0.00",
+      "discount_quantity_applied": "0",
+      "download_hash": "",
+      "download_deadline": "0000-00-00 00:00:00",
+      "id_order_invoice": "0",
+      "id_warehouse": "0",
+      "id_shop": "1",
+      "id_customization": "0",
+      "product_name": "Ramo de 12 Rosas - Elige el color de tu flor: : Pasteles",
+      "product_quantity": "1",
+      "product_quantity_in_stock": "1",
+      "product_quantity_return": "0",
+      "product_quantity_refunded": "0",
+      "product_price": "63.559322",
+      "reduction_percent": "0.00",
+      "reduction_amount": "0.000000",
+      "reduction_amount_tax_incl": "0.000000",
+      "reduction_amount_tax_excl": "0.000000",
+      "product_quantity_discount": "0.000000",
+      "product_ean13": "",
+      "product_isbn": "",
+      "product_upc": "",
+      "product_mpn": "",
+      "product_reference": "\traprepast",
+      "product_supplier_reference": "",
+      "product_weight": "0.000000",
+      "tax_computation_method": "0",
+      "id_tax_rules_group": "6",
+      "ecotax": "0.000000",
+      "ecotax_tax_rate": "0.000",
+      "download_nb": "0",
+      "unit_price_tax_incl": "75.000000",
+      "unit_price_tax_excl": "63.559322",
+      "total_price_tax_incl": "75.000000",
+      "total_price_tax_excl": "63.560000",
+      "total_shipping_price_tax_excl": "0.000000",
+      "total_shipping_price_tax_incl": "0.000000",
+      "purchase_supplier_price": "37.410000",
+      "original_product_price": "63.559322",
+      "original_wholesale_price": "37.410000",
+      "total_refunded_tax_excl": "0.000000",
+      "total_refunded_tax_incl": "0.000000",
+      "associations": {
+        "taxes": {
+          "$": {
+            "nodeType": "tax",
+            "api": "taxes"
+          },
+          "tax": {
+            "$": {
+              "xlink:href": "https://www.kukyflor.com/api/taxes/1"
+            },
+            "id": "1"
+          }
+        }
+      }
+    }
+  ],
+  "ProductosCategoriaOrden": [
+    [
+      "2",
+      "3",
+      "11",
+      "19",
+      "36",
+      "38",
+      "194",
+      "196"
+    ]
+  ]
+}
+2025-05-05 14:29:00.612 - undefined
+2025-05-05 14:35:42.242 - Datos de las órdenes:
+2025-05-05 14:35:42.242 - [
+  {
+    "Orden": "105068",
+    "OrdenDeRegistro": 105068,
+    "PersoneriaID": {
+      "_": "100507",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/100507"
+      }
+    },
+    "FechadeOrden": "2025-05-05 09:08:37"
+  }
+]
+2025-05-05 14:35:48.185 - Estas son las categorias
+2025-05-05 14:35:48.185 - {
+  "$": {
+    "nodeType": "category",
+    "api": "categories"
+  },
+  "category": {
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/categories/131"
+    },
+    "id": "131"
+  }
+}
+2025-05-05 14:35:48.186 - ERROR: Error al obtener las categorías asociadas del producto con ID 2478:
+2025-05-05 14:35:48.186 - ERROR: categories.category.map is not a function
+2025-05-05 14:35:48.186 - STACK TRACE:
+TypeError: categories.category.map is not a function
+    at C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:426:51
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Promise.all (index 0)
+    at async Promise.all (index 1)
+    at async BuscarOrdenPorID (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:456:41)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1611:26)
+    at async Inicializador (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1743:17)
+2025-05-05 14:35:49.303 - Estos son los datos de orden
+2025-05-05 14:35:49.303 - {
+  "Estado": {
+    "id": "2",
+    "Estado": [
+      {
+        "_": "Pago aceptado",
+        "$": {
+          "id": "1",
+          "xlink:href": "https://www.kukyflor.com/api/languages/1"
+        }
+      },
+      {
+        "_": "Payment accepted",
+        "$": {
+          "id": "3",
+          "xlink:href": "https://www.kukyflor.com/api/languages/3"
+        }
+      }
+    ]
+  },
+  "SerieDePedido": {
+    "id_address_invoice": "154560",
+    "id_adress_Entrega": "BO-790",
+    "company": "70429589",
+    "phone": "993344704"
+  },
+  "DireccionFacturacion": {
+    "id_adress_Entrega": "154559"
+  },
+  "DireccionEntrega": {
+    "id_adress_Entrega": "154559",
+    "id_direccion": "360",
+    "direccion_1": "Tomás Ramsey 725, Magdalena del Mar 15076, Perú",
+    "city": " - ",
+    "Referencia": "Espalda cuadra 7 de Av. Javier Prado Oeste",
+    "phone_mobile": "",
+    "PesonaEntrega": "Clara Guzman",
+    "Telefono": "998376114",
+    "Cordenadas": "-12.0915109,-77.0611991"
+  },
+  "IDEntrega_Direccion": {
+    "id": "360",
+    "iso_code": "lena",
+    "name": "Magdalena-Lima",
+    "active": "1"
+  },
+  "Card": {
+    "id": "315113"
+  },
+  "Customer": {
+    "id": "100507",
+    "documentoIdentidad": "70429589",
+    "lastname": "EDUARDO TENORIO GUZMAN",
+    "firstname": "GONZALO",
+    "email": "gonzalotenoriog@gmail.com",
+    "birthday": "1993-02-22"
+  },
+  "Pedido": {
+    "id": "105068",
+    "módulo": "niubiz",
+    "delivery_number": "0",
+    "delivery_date": "0000-00-00 00:00:00",
+    "valid": "1",
+    "date_add": "2025-05-04 18:40:14",
+    "date_upd": "2025-05-05 09:08:37",
+    "ddw_order_date": "2025-05-11 00:00:00",
+    "ddw_order_time": "08:00 - 15:00",
+    "payment": "Niubiz",
+    "gift_message": "Querida Mamá,\r\n\r\nFeliz día de la madre, esperamos que lo pases súper bonito.\r\nTe mandamos muchos abrazos y besos en tu día.\r\nTe tenemos preparado un regalito que te daremos en Chicago.\r\n\r\nYa nos vemos pronto.\r\n\r\nTe queremos mucho,\r\nMariale, Gonzalo y Adolfo",
+    "total_discounts": "17.000000",
+    "total_paid": "168.000000",
+    "total_paid_tax_incl": "168.000000",
+    "total_products_wt": "170.000000",
+    "total_shipping": "15.000000",
+    "total_shipping_tax_incl": "15.000000",
+    "total_shipping_tax_excl": "15.000000",
+    "productos": {
+      "order_rows": {
+        "$": {
+          "nodeType": "order_row",
+          "virtualEntity": "true"
+        },
+        "order_row": {
+          "id": "124269",
+          "product_id": {
+            "_": "2478",
+            "$": {
+              "xlink:href": "https://www.kukyflor.com/api/products/2478"
+            }
+          },
+          "product_attribute_id": "0",
+          "product_quantity": "1",
+          "product_name": "Florero de 10 tulipanes multicolor",
+          "product_reference": "DMA25-16",
+          "product_ean13": "",
+          "product_isbn": "",
+          "product_upc": "",
+          "product_price": "144.067797",
+          "id_customization": {
+            "_": "0",
+            "$": {
+              "xlink:href": "https://www.kukyflor.com/api/customizations/0"
+            }
+          },
+          "unit_price_tax_incl": "170.000000",
+          "unit_price_tax_excl": "144.067797"
+        }
+      }
+    },
+    "address_delivery": "154559",
+    "address_invoice": "154560",
+    "cart": "315113",
+    "currency": "1",
+    "lang": "1",
+    "customer": "100507",
+    "carrier": "474",
+    "state": "2"
+  },
+  "OrderDetails_cart_rules": [
+    {
+      "id": "6955",
+      "id_cart_rule": "511",
+      "id_order_invoice": "0",
+      "name": "KUKYFLOR1024",
+      "value": "17.000000",
+      "value_tax_excl": "14.407000",
+      "free_shipping": "0",
+      "deleted": "0"
+    }
+  ],
+  "cart_rules": [
+    {
+      "id": "511",
+      "id_customer": "0",
+      "date_from": "2024-08-22 12:00:00",
+      "date_to": "2030-12-31 23:59:00",
+      "description": "Descuento por aniversario Kukyflor",
+      "quantity": "725",
+      "quantity_per_user": "1",
+      "priority": "1",
+      "partial_use": "1",
+      "code": "KUKYFLOR1024",
+      "minimum_amount": "70.000000",
+      "minimum_amount_tax": "1",
+      "minimum_amount_currency": "1",
+      "minimum_amount_shipping": "0",
+      "country_restriction": "0",
+      "carrier_restriction": "0",
+      "group_restriction": "0",
+      "cart_rule_restriction": "0",
+      "product_restriction": "1",
+      "shop_restriction": "0",
+      "free_shipping": "0",
+      "reduction_percent": "10.00",
+      "reduction_amount": "0.000000",
+      "reduction_tax": "0",
+      "reduction_currency": "1",
+      "reduction_product": "-2",
+      "reduction_exclude_special": "0",
+      "gift_product": "0",
+      "gift_product_attribute": "0",
+      "highlight": "0",
+      "active": "1",
+      "date_add": "2024-08-22 13:04:10",
+      "date_upd": "2025-05-04 19:01:45"
+    }
+  ],
+  "ProductosOrden": [
+    {
+      "id": "124269",
+      "id_order": {
+        "_": "105068",
+        "$": {
+          "xlink:href": "https://www.kukyflor.com/api/orders/105068"
+        }
+      },
+      "product_id": {
+        "_": "2478",
+        "$": {
+          "xlink:href": "https://www.kukyflor.com/api/products/2478"
+        }
+      },
+      "product_attribute_id": {
+        "_": "0",
+        "$": {
+          "xlink:href": "https://www.kukyflor.com/api/combinations/0"
+        }
+      },
+      "product_quantity_reinjected": "0",
+      "group_reduction": "0.00",
+      "discount_quantity_applied": "0",
+      "download_hash": "",
+      "download_deadline": "0000-00-00 00:00:00",
+      "id_order_invoice": "0",
+      "id_warehouse": "0",
+      "id_shop": "1",
+      "id_customization": "0",
+      "product_name": "Florero de 10 tulipanes multicolor",
+      "product_quantity": "1",
+      "product_quantity_in_stock": "1",
+      "product_quantity_return": "0",
+      "product_quantity_refunded": "0",
+      "product_price": "144.067797",
+      "reduction_percent": "0.00",
+      "reduction_amount": "0.000000",
+      "reduction_amount_tax_incl": "0.000000",
+      "reduction_amount_tax_excl": "0.000000",
+      "product_quantity_discount": "0.000000",
+      "product_ean13": "",
+      "product_isbn": "",
+      "product_upc": "",
+      "product_mpn": "",
+      "product_reference": "DMA25-16",
+      "product_supplier_reference": "",
+      "product_weight": "0.000000",
+      "tax_computation_method": "0",
+      "id_tax_rules_group": "6",
+      "ecotax": "0.000000",
+      "ecotax_tax_rate": "0.000",
+      "download_nb": "0",
+      "unit_price_tax_incl": "170.000000",
+      "unit_price_tax_excl": "144.067797",
+      "total_price_tax_incl": "170.000000",
+      "total_price_tax_excl": "144.070000",
+      "total_shipping_price_tax_excl": "0.000000",
+      "total_shipping_price_tax_incl": "0.000000",
+      "purchase_supplier_price": "0.000000",
+      "original_product_price": "144.067797",
+      "original_wholesale_price": "0.000000",
+      "total_refunded_tax_excl": "0.000000",
+      "total_refunded_tax_incl": "0.000000",
+      "associations": {
+        "taxes": {
+          "$": {
+            "nodeType": "tax",
+            "api": "taxes"
+          },
+          "tax": {
+            "$": {
+              "xlink:href": "https://www.kukyflor.com/api/taxes/1"
+            },
+            "id": "1"
+          }
+        }
+      }
+    }
+  ],
+  "ProductosCategoriaOrden": [
+    []
+  ]
+}
+2025-05-05 14:35:57.049 - estas son las categorias
+2025-05-05 14:35:57.049 - 511
+2025-05-05 14:35:57.049 - []
+2025-05-05 14:35:58.613 - ERROR: Error en la transacción de crear pedido con orden :105068
+2025-05-05 14:35:58.613 - ERROR: Orden sin Descuento en los productos y el ID CUPON : 511
+2025-05-05 14:35:58.613 - STACK TRACE:
+Error: Orden sin Descuento en los productos y el ID CUPON : 511
+    at createPedido (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1323:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1662:19)
+    at async Inicializador (C:\Users\gudeh\Documents\SistemasEmpresarialesAgilex\prestashop_api\index.js:1743:17)
+2025-05-05 14:35:58.745 - undefined
+2025-05-05 14:41:08.331 - Datos de las órdenes:
+2025-05-05 14:41:08.331 - [
+  {
+    "Orden": "105068",
+    "OrdenDeRegistro": 105068,
+    "PersoneriaID": {
+      "_": "100507",
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/customers/100507"
+      }
+    },
+    "FechadeOrden": "2025-05-05 09:08:37"
+  }
+]
+2025-05-05 14:41:14.255 - Estas son las categorias
+2025-05-05 14:41:14.255 - {
+  "$": {
+    "nodeType": "category",
+    "api": "categories"
+  },
+  "category": {
+    "$": {
+      "xlink:href": "https://www.kukyflor.com/api/categories/131"
+    },
+    "id": "131"
+  }
+}
+2025-05-05 14:41:15.516 - Estos son los datos de orden
+2025-05-05 14:41:15.516 - {
+  "Estado": {
+    "id": "2",
+    "Estado": [
+      {
+        "_": "Pago aceptado",
+        "$": {
+          "id": "1",
+          "xlink:href": "https://www.kukyflor.com/api/languages/1"
+        }
+      },
+      {
+        "_": "Payment accepted",
+        "$": {
+          "id": "3",
+          "xlink:href": "https://www.kukyflor.com/api/languages/3"
+        }
+      }
+    ]
+  },
+  "SerieDePedido": {
+    "id_address_invoice": "154560",
+    "id_adress_Entrega": "BO-790",
+    "company": "70429589",
+    "phone": "993344704"
+  },
+  "DireccionFacturacion": {
+    "id_adress_Entrega": "154559"
+  },
+  "DireccionEntrega": {
+    "id_adress_Entrega": "154559",
+    "id_direccion": "360",
+    "direccion_1": "Tomás Ramsey 725, Magdalena del Mar 15076, Perú",
+    "city": " - ",
+    "Referencia": "Espalda cuadra 7 de Av. Javier Prado Oeste",
+    "phone_mobile": "",
+    "PesonaEntrega": "Clara Guzman",
+    "Telefono": "998376114",
+    "Cordenadas": "-12.0915109,-77.0611991"
+  },
+  "IDEntrega_Direccion": {
+    "id": "360",
+    "iso_code": "lena",
+    "name": "Magdalena-Lima",
+    "active": "1"
+  },
+  "Card": {
+    "id": "315113"
+  },
+  "Customer": {
+    "id": "100507",
+    "documentoIdentidad": "70429589",
+    "lastname": "EDUARDO TENORIO GUZMAN",
+    "firstname": "GONZALO",
+    "email": "gonzalotenoriog@gmail.com",
+    "birthday": "1993-02-22"
+  },
+  "Pedido": {
+    "id": "105068",
+    "módulo": "niubiz",
+    "delivery_number": "0",
+    "delivery_date": "0000-00-00 00:00:00",
+    "valid": "1",
+    "date_add": "2025-05-04 18:40:14",
+    "date_upd": "2025-05-05 09:08:37",
+    "ddw_order_date": "2025-05-11 00:00:00",
+    "ddw_order_time": "08:00 - 15:00",
+    "payment": "Niubiz",
+    "gift_message": "Querida Mamá,\r\n\r\nFeliz día de la madre, esperamos que lo pases súper bonito.\r\nTe mandamos muchos abrazos y besos en tu día.\r\nTe tenemos preparado un regalito que te daremos en Chicago.\r\n\r\nYa nos vemos pronto.\r\n\r\nTe queremos mucho,\r\nMariale, Gonzalo y Adolfo",
+    "total_discounts": "17.000000",
+    "total_paid": "168.000000",
+    "total_paid_tax_incl": "168.000000",
+    "total_products_wt": "170.000000",
+    "total_shipping": "15.000000",
+    "total_shipping_tax_incl": "15.000000",
+    "total_shipping_tax_excl": "15.000000",
+    "productos": {
+      "order_rows": {
+        "$": {
+          "nodeType": "order_row",
+          "virtualEntity": "true"
+        },
+        "order_row": {
+          "id": "124269",
+          "product_id": {
+            "_": "2478",
+            "$": {
+              "xlink:href": "https://www.kukyflor.com/api/products/2478"
+            }
+          },
+          "product_attribute_id": "0",
+          "product_quantity": "1",
+          "product_name": "Florero de 10 tulipanes multicolor",
+          "product_reference": "DMA25-16",
+          "product_ean13": "",
+          "product_isbn": "",
+          "product_upc": "",
+          "product_price": "144.067797",
+          "id_customization": {
+            "_": "0",
+            "$": {
+              "xlink:href": "https://www.kukyflor.com/api/customizations/0"
+            }
+          },
+          "unit_price_tax_incl": "170.000000",
+          "unit_price_tax_excl": "144.067797"
+        }
+      }
+    },
+    "address_delivery": "154559",
+    "address_invoice": "154560",
+    "cart": "315113",
+    "currency": "1",
+    "lang": "1",
+    "customer": "100507",
+    "carrier": "474",
+    "state": "2"
+  },
+  "OrderDetails_cart_rules": [
+    {
+      "id": "6955",
+      "id_cart_rule": "511",
+      "id_order_invoice": "0",
+      "name": "KUKYFLOR1024",
+      "value": "17.000000",
+      "value_tax_excl": "14.407000",
+      "free_shipping": "0",
+      "deleted": "0"
+    }
+  ],
+  "cart_rules": [
+    {
+      "id": "511",
+      "id_customer": "0",
+      "date_from": "2024-08-22 12:00:00",
+      "date_to": "2030-12-31 23:59:00",
+      "description": "Descuento por aniversario Kukyflor",
+      "quantity": "725",
+      "quantity_per_user": "1",
+      "priority": "1",
+      "partial_use": "1",
+      "code": "KUKYFLOR1024",
+      "minimum_amount": "70.000000",
+      "minimum_amount_tax": "1",
+      "minimum_amount_currency": "1",
+      "minimum_amount_shipping": "0",
+      "country_restriction": "0",
+      "carrier_restriction": "0",
+      "group_restriction": "0",
+      "cart_rule_restriction": "0",
+      "product_restriction": "1",
+      "shop_restriction": "0",
+      "free_shipping": "0",
+      "reduction_percent": "10.00",
+      "reduction_amount": "0.000000",
+      "reduction_tax": "0",
+      "reduction_currency": "1",
+      "reduction_product": "-2",
+      "reduction_exclude_special": "0",
+      "gift_product": "0",
+      "gift_product_attribute": "0",
+      "highlight": "0",
+      "active": "1",
+      "date_add": "2024-08-22 13:04:10",
+      "date_upd": "2025-05-04 19:01:45"
+    }
+  ],
+  "ProductosOrden": [
+    {
+      "id": "124269",
+      "id_order": {
+        "_": "105068",
+        "$": {
+          "xlink:href": "https://www.kukyflor.com/api/orders/105068"
+        }
+      },
+      "product_id": {
+        "_": "2478",
+        "$": {
+          "xlink:href": "https://www.kukyflor.com/api/products/2478"
+        }
+      },
+      "product_attribute_id": {
+        "_": "0",
+        "$": {
+          "xlink:href": "https://www.kukyflor.com/api/combinations/0"
+        }
+      },
+      "product_quantity_reinjected": "0",
+      "group_reduction": "0.00",
+      "discount_quantity_applied": "0",
+      "download_hash": "",
+      "download_deadline": "0000-00-00 00:00:00",
+      "id_order_invoice": "0",
+      "id_warehouse": "0",
+      "id_shop": "1",
+      "id_customization": "0",
+      "product_name": "Florero de 10 tulipanes multicolor",
+      "product_quantity": "1",
+      "product_quantity_in_stock": "1",
+      "product_quantity_return": "0",
+      "product_quantity_refunded": "0",
+      "product_price": "144.067797",
+      "reduction_percent": "0.00",
+      "reduction_amount": "0.000000",
+      "reduction_amount_tax_incl": "0.000000",
+      "reduction_amount_tax_excl": "0.000000",
+      "product_quantity_discount": "0.000000",
+      "product_ean13": "",
+      "product_isbn": "",
+      "product_upc": "",
+      "product_mpn": "",
+      "product_reference": "DMA25-16",
+      "product_supplier_reference": "",
+      "product_weight": "0.000000",
+      "tax_computation_method": "0",
+      "id_tax_rules_group": "6",
+      "ecotax": "0.000000",
+      "ecotax_tax_rate": "0.000",
+      "download_nb": "0",
+      "unit_price_tax_incl": "170.000000",
+      "unit_price_tax_excl": "144.067797",
+      "total_price_tax_incl": "170.000000",
+      "total_price_tax_excl": "144.070000",
+      "total_shipping_price_tax_excl": "0.000000",
+      "total_shipping_price_tax_incl": "0.000000",
+      "purchase_supplier_price": "0.000000",
+      "original_product_price": "144.067797",
+      "original_wholesale_price": "0.000000",
+      "total_refunded_tax_excl": "0.000000",
+      "total_refunded_tax_incl": "0.000000",
+      "associations": {
+        "taxes": {
+          "$": {
+            "nodeType": "tax",
+            "api": "taxes"
+          },
+          "tax": {
+            "$": {
+              "xlink:href": "https://www.kukyflor.com/api/taxes/1"
+            },
+            "id": "1"
+          }
+        }
+      }
+    }
+  ],
+  "ProductosCategoriaOrden": [
+    [
+      "131"
+    ]
+  ]
+}
+2025-05-05 14:41:23.541 - estas son las categorias
+2025-05-05 14:41:23.541 - 511
+2025-05-05 14:41:23.541 - [
+  "131"
+]
+2025-05-05 14:41:26.487 - undefined

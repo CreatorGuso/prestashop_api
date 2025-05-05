@@ -411,27 +411,30 @@ async function BuscarOrdenPorID(orderId) {
 
 
     async function obtenerCategoriaOrden(IDproducto) {
-      return axios.get(
-        `https://ZBR3Q8MEZ3KC16C7Z5CMYYD9V1VFCT3T@www.kukyflor.com/api/products/${IDproducto}`
-      )
+      return axios
+        .get(
+          `https://ZBR3Q8MEZ3KC16C7Z5CMYYD9V1VFCT3T@www.kukyflor.com/api/products/${IDproducto}`
+        )
         .then(responseOrder => {
-          // Convertir la respuesta XML a JSON
           return parser.parseStringPromise(responseOrder.data);
         })
         .then(result => {
-          // Extraer las categorías asociadas desde associations.categories
           const categories = result.prestashop.product.associations.categories || [];
-          // Mapear los IDs de las categorías a un array
-          const categoryIds = categories.category.map(cat => cat.id);
+          console.log("Estas son las categorias", categories);
+
+          const categoryData = categories.category;
+          if (!categoryData) return [];
+
+          const categoryArray = Array.isArray(categoryData) ? categoryData : [categoryData];
+          const categoryIds = categoryArray.map(cat => cat.id);
           return categoryIds;
         })
         .catch(err => {
-          // Manejo de errores
           console.error(
             `Error al obtener las categorías asociadas del producto con ID ${IDproducto}:`,
             err
           );
-          return []; // Devuelve un array vacío en caso de error
+          return [];
         });
     }
 
@@ -601,6 +604,7 @@ async function BuscarOrdenPorID(orderId) {
 }
 
 async function obtenerCuponesYCategoriaFiltro(idCupon, idCategoria) {
+  // console.log("estas son las categorias", idCupon, idCategoria);
   try {
     const response = await axios.get(
       `https://www.kukyflor.com/devs/json_cupones.php?token=ZBR3Q8MEZ3KC16C7Z5CMYYD9V1VFCT3T`
@@ -1585,7 +1589,7 @@ async function procesarOrdenPrestashop() {
   try {
     const ordenes = await ApiOrders();
     const ordersInfo = ordenes;
-    // const ordersInfo = ordenes.filter(order => order.OrdenDeRegistro === 104791 || order.OrdenDeRegistro === 104819); //para buscar ordenes especificas
+    // const ordersInfo = ordenes.filter(order => order.OrdenDeRegistro === 105068); //para buscar ordenes especificas
     // console.log("Datos de las órdenes:", ordersInfo);
 
     for (let i = 0; i < ordersInfo.length; i++) {

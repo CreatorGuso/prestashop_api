@@ -675,50 +675,111 @@ async function BuscarOrden(Orden) {
   }
 }
 
+// async function buscarRazonSocialPorDNIRUC(numero) {
+//   try {
+//     let apiUrl = '';
+//     let tipoConsulta = '';
+//     let headers = {};
+//     if (numero.length === 8) {
+//       tipoConsulta = 'dni';
+//     } else if (numero.length === 11) {
+//       tipoConsulta = 'ruc';
+//     } else {
+//       throw new Error('Número no válido');
+//     }
+//     if (tipoConsulta === 'dni') {
+//       const tokenDNI = 'apis-token-4761.8i-67B5lTexuXTijVwxpPqh-hjNAYJLn';
+//       apiUrl = `https://api.apis.net.pe/v2/reniec/dni?numero=${numero}`;
+//       headers = {
+//         'Authorization': `Bearer ${tokenDNI}`
+//       };
+//     } else if (tipoConsulta === 'ruc') {
+//       const tokenRUC = 'apis-token-4761.8i-67B5lTexuXTijVwxpPqh-hjNAYJLn';
+//       apiUrl = `https://api.apis.net.pe/v2/sunat/ruc?numero=${numero}`;
+//       headers = {
+//         'Referer': 'http://apis.net.pe/api-ruc',
+//         'Authorization': `Bearer ${tokenRUC}`
+//       };
+//     } else {
+//       throw new Error('Tipo de consulta no válido');
+//     }
+//     const response = await axios.get(apiUrl, { headers });
+//     const resultado = response.data;
+
+//     if (tipoConsulta === 'dni') {
+//       // resultado.nombres + ' ' + resultado.apellidoPaterno + ' ' + resultado.apellidoMaterno
+//       return resultado
+//     } else if (tipoConsulta === 'ruc') {
+//       // return resultado.razonSocial;
+//       // Personalizar reestructuracion de archivos-
+//       return resultado;
+//     }
+//   } catch (error) {
+//     console.error("Error Numero de documento SUNAT/RENIEC: " + numero + ' ::: ' + error);
+//     return 'Número no encontrado';
+//   }
+// }
+
 async function buscarRazonSocialPorDNIRUC(numero) {
   try {
-    let apiUrl = '';
     let tipoConsulta = '';
     let headers = {};
+    const token = `apis-token-10146.-iP93tkFs1uyuG-L7y08xzNiqHhWwxlL`;
+
+    if (!/^\d+$/.test(numero)) throw new Error('Número no válido');
+
     if (numero.length === 8) {
       tipoConsulta = 'dni';
+      headers = {
+        'Authorization': `Bearer ${token}`
+      };
     } else if (numero.length === 11) {
       tipoConsulta = 'ruc';
+      headers = {
+        'Referer': 'http://apis.net.pe/api-ruc',
+        'Authorization': `Bearer ${token}`
+      };
     } else {
       throw new Error('Número no válido');
     }
-    if (tipoConsulta === 'dni') {
-      const tokenDNI = 'apis-token-4761.8i-67B5lTexuXTijVwxpPqh-hjNAYJLn';
-      apiUrl = `https://api.apis.net.pe/v2/reniec/dni?numero=${numero}`;
-      headers = {
-        'Authorization': `Bearer ${tokenDNI}`
-      };
-    } else if (tipoConsulta === 'ruc') {
-      const tokenRUC = 'apis-token-4761.8i-67B5lTexuXTijVwxpPqh-hjNAYJLn';
-      apiUrl = `https://api.apis.net.pe/v2/sunat/ruc?numero=${numero}`;
-      headers = {
-        'Referer': 'http://apis.net.pe/api-ruc',
-        'Authorization': `Bearer ${tokenRUC}`
-      };
-    } else {
-      throw new Error('Tipo de consulta no válido');
-    }
-    const response = await axios.get(apiUrl, { headers });
-    const resultado = response.data;
 
-    if (tipoConsulta === 'dni') {
-      // resultado.nombres + ' ' + resultado.apellidoPaterno + ' ' + resultado.apellidoMaterno
-      return resultado
-    } else if (tipoConsulta === 'ruc') {
-      // return resultado.razonSocial;
-      // Personalizar reestructuracion de archivos-
-      return resultado;
+    let resultado;
+
+    try {
+      // Primer intento con API v2
+      const urlV2 = tipoConsulta === 'dni'
+        ? `https://api.apis.net.pe/v2/reniec/dni?numero=${numero}`
+        : `https://api.apis.net.pe/v2/sunat/ruc?numero=${numero}`;
+      const responseV2 = await axios.get(urlV2, { headers });
+      resultado = responseV2.data;
+    } catch (errorV2) {
+      console.warn(`⚠️ No encontrado en API v2 para ${numero}, probando API v1...`);
+      try {
+        // Fallback a API v1
+        const urlV1 = tipoConsulta === 'dni'
+          ? `https://api.apis.net.pe/v1/dni?numero=${numero}`
+          : `https://api.apis.net.pe/v1/ruc?numero=${numero}`;
+        const responseV1 = await axios.get(urlV1, { headers });
+        resultado = responseV1.data;
+      } catch (errorV1) {
+        console.error(`❌ No encontrado en ninguna API (${tipoConsulta}) para: ${numero}`);
+        return 'Número no encontrado';
+      }
     }
+
+    // Devolver el resultado según tipo
+    if (tipoConsulta === 'dni') {
+      return resultado; // puedes usar resultado.nombres + resultado.apellidoPaterno + resultado.apellidoMaterno si prefieres solo el nombre completo
+    } else if (tipoConsulta === 'ruc') {
+      return resultado; // puedes usar resultado.razonSocial si solo necesitas el nombre de empresa
+    }
+
   } catch (error) {
-    console.error("Error Numero de documento SUNAT/RENIEC: " + numero + ' ::: ' + error);
+    console.error(`❌ Error en buscarRazonSocialPorDNIRUC: ${error.message}`);
     return 'Número no encontrado';
   }
 }
+
 
 async function crearCliente(params, paramsAPI) {
   // console.log("Estos son mis parametros de lciente",params);

@@ -720,62 +720,144 @@ async function BuscarOrden(Orden) {
 //   }
 // }
 
+// async function buscarRazonSocialPorDNIRUC(numero) {
+//   try {
+//     let tipoConsulta = '';
+//     let headers = {};
+//     // const token = `apis-token-10146.-iP93tkFs1uyuG-L7y08xzNiqHhWwxlL`;
+//     const token = `sk_4905.2wHKOvXmkXjFozbpdiulp1vjch2NLpF1`;
+
+//     if (!/^\d+$/.test(numero)) throw new Error('Número no válido');
+
+//     if (numero.length === 8) {
+//       tipoConsulta = 'dni';
+//       headers = {
+//         'Authorization': `Bearer ${token}`
+//       };
+//     } else if (numero.length === 11) {
+//       tipoConsulta = 'ruc';
+//       headers = {
+//         'Referer': 'http://apis.net.pe/api-ruc',
+//         'Authorization': `Bearer ${token}`
+//       };
+//     } else {
+//       throw new Error('Número no válido');
+//     }
+
+//     let resultado;
+
+//     try {
+//       // Primer intento con API v2
+//       const urlV2 = tipoConsulta === 'dni'
+//         // ? `https://api.apis.net.pe/v2/reniec/dni?numero=${numero}`
+//         ? `https://api.decolecta.com/v1/reniec/dni?numero=${numero}`
+//         : `https://api.decolecta.com/v1/sunat/ruc?numero=${numero}`;
+//       const responseV2 = await axios.get(urlV2, { headers });
+//       resultado = responseV2.data;
+//     } catch (errorV2) {
+//       console.warn(`⚠️ No encontrado en API v2 para ${numero}, probando API v1...`);
+//       try {
+//         // Fallback a API v1
+//         const urlV1 = tipoConsulta === 'dni'
+//           ? `https://api.apis.net.pe/v1/dni?numero=${numero}`
+//           : `https://api.apis.net.pe/v1/ruc?numero=${numero}`;
+//         const responseV1 = await axios.get(urlV1, { headers });
+//         resultado = responseV1.data;
+//       } catch (errorV1) {
+//         console.error(`❌ No encontrado en ninguna API (${tipoConsulta}) para: ${numero}`);
+//         return 'Número no encontrado';
+//       }
+//     }
+
+//     // Devolver el resultado según tipo
+//     if (tipoConsulta === 'dni') {
+//       return resultado; // puedes usar resultado.nombres + resultado.apellidoPaterno + resultado.apellidoMaterno si prefieres solo el nombre completo
+//     } else if (tipoConsulta === 'ruc') {
+//       return resultado; // puedes usar resultado.razonSocial si solo necesitas el nombre de empresa
+//     }
+
+//   } catch (error) {
+//     console.error(`❌ Error en buscarRazonSocialPorDNIRUC: ${error.message}`);
+//     return 'Número no encontrado';
+//   }
+// }
+
 async function buscarRazonSocialPorDNIRUC(numero) {
   try {
-    let tipoConsulta = '';
-    let headers = {};
-    const token = `apis-token-10146.-iP93tkFs1uyuG-L7y08xzNiqHhWwxlL`;
-
     if (!/^\d+$/.test(numero)) throw new Error('Número no válido');
 
-    if (numero.length === 8) {
-      tipoConsulta = 'dni';
-      headers = {
-        'Authorization': `Bearer ${token}`
-      };
-    } else if (numero.length === 11) {
-      tipoConsulta = 'ruc';
-      headers = {
-        'Referer': 'http://apis.net.pe/api-ruc',
-        'Authorization': `Bearer ${token}`
-      };
-    } else {
-      throw new Error('Número no válido');
-    }
+    let tipoConsulta = numero.length === 8 ? 'dni' : numero.length === 11 ? 'ruc' : null;
+    if (!tipoConsulta) throw new Error('Número no válido');
 
-    let resultado;
+    const token = `sk_4905.2wHKOvXmkXjFozbpdiulp1vjch2NLpF1`;
+    let resultado = null;
 
+    // --------- 1° Intento con DECOLECTA ----------
     try {
-      // Primer intento con API v2
-      const urlV2 = tipoConsulta === 'dni'
-        ? `https://api.apis.net.pe/v2/reniec/dni?numero=${numero}`
-        : `https://api.apis.net.pe/v2/sunat/ruc?numero=${numero}`;
-      const responseV2 = await axios.get(urlV2, { headers });
-      resultado = responseV2.data;
-    } catch (errorV2) {
-      console.warn(`⚠️ No encontrado en API v2 para ${numero}, probando API v1...`);
-      try {
-        // Fallback a API v1
-        const urlV1 = tipoConsulta === 'dni'
-          ? `https://api.apis.net.pe/v1/dni?numero=${numero}`
-          : `https://api.apis.net.pe/v1/ruc?numero=${numero}`;
-        const responseV1 = await axios.get(urlV1, { headers });
-        resultado = responseV1.data;
-      } catch (errorV1) {
-        console.error(`❌ No encontrado en ninguna API (${tipoConsulta}) para: ${numero}`);
-        return 'Número no encontrado';
+      const urlDecolecta = tipoConsulta === 'dni'
+        ? `https://api.decolecta.com/v1/reniec/dni?numero=${numero}&token=${token}`
+        : `https://api.decolecta.com/v1/sunat/ruc?numero=${numero}&token=${token}`;
+
+      const { data } = await axios.get(urlDecolecta);
+
+      if (tipoConsulta === 'dni') {
+        resultado = {
+          tipoDocumento: '1',
+          numeroDocumento: data.document_number,
+          nombres: data.first_name || '',
+          apellidoPaterno: data.first_last_name || '',
+          apellidoMaterno: data.second_last_name || '',
+          nombreCompleto: data.full_name || `${data.first_last_name} ${data.second_last_name} ${data.first_name}`
+        };
+      } else {
+        resultado = {
+          tipoDocumento: '6',
+          numeroDocumento: data.numero_documento,
+          razonSocial: data.razon_social,
+          estado: data.estado,
+          condicion: data.condicion,
+          direccion: data.direccion || '',
+          ubigeo: data.ubigeo || ''
+        };
+      }
+    } catch (errDeco) {
+      console.warn("⚠️ Decolecta falló, probando con apis.net.pe...");
+      // --------- 2° Intento con APIS.NET.PE ----------
+      const urlApis = tipoConsulta === 'dni'
+        ? `https://api.apis.net.pe/v1/dni?numero=${numero}`
+        : `https://api.apis.net.pe/v1/ruc?numero=${numero}`;
+
+      const { data } = await axios.get(urlApis, {
+        headers: { Authorization: `Bearer ${token}` }
+      });
+
+      if (tipoConsulta === 'dni') {
+        resultado = {
+          tipoDocumento: '1',
+          numeroDocumento: data.numeroDocumento,
+          nombres: data.nombres || '',
+          apellidoPaterno: data.apellidoPaterno || '',
+          apellidoMaterno: data.apellidoMaterno || '',
+          nombreCompleto: data.nombre || `${data.apellidoPaterno} ${data.apellidoMaterno} ${data.nombres}`
+        };
+      } else {
+        resultado = {
+          tipoDocumento: '6',
+          numeroDocumento: data.numeroDocumento,
+          razonSocial: data.nombre,
+          estado: data.estado,
+          condicion: data.condicion,
+          direccion: data.direccion || '',
+          ubigeo: data.ubigeo || ''
+        };
       }
     }
-
-    // Devolver el resultado según tipo
-    if (tipoConsulta === 'dni') {
-      return resultado; // puedes usar resultado.nombres + resultado.apellidoPaterno + resultado.apellidoMaterno si prefieres solo el nombre completo
-    } else if (tipoConsulta === 'ruc') {
-      return resultado; // puedes usar resultado.razonSocial si solo necesitas el nombre de empresa
-    }
+    // console.log("::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::");
+    // console.log("buscarRazonSocialPorDNIRUC ~ resultado:", resultado);
+    return resultado || 'Número no encontrado';
 
   } catch (error) {
-    console.error(`❌ Error en buscarRazonSocialPorDNIRUC: ${error.message}`);
+    console.error("❌ Error en buscarPersona:", error.message);
     return 'Número no encontrado';
   }
 }

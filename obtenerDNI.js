@@ -128,7 +128,7 @@ async function buscarRazonSocialPorDNIRUC(numero) {
 }
 
 // 🧪 Ejemplo de uso
-buscarRazonSocialPorDNIRUC('20454443765').then((resultado) => {
+buscarRazonSocialPorDNIRUC('77433498').then((resultado) => {
   console.log('Resultado final:', resultado);
 });
 

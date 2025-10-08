@@ -1464,7 +1464,7 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
     // console.log("Este es el descuento acumulado", HistorialDescuento);
     // console.log("Este es el descuento de la orden", paramsOrden.Pedido.total_discounts);
     // console.log("Este es el descuento",HistorialDescuento);
-    if (HistorialDescuento != parseFloat(paramsOrden.Pedido.total_discounts)) {
+    if (HistorialDescuento.toFixed(2) != parseFloat(paramsOrden.Pedido.total_discounts)) {
       throw new Error(`Orden sin Descuento en los productos y el ID CUPON : ${paramsOrden.OrderDetails_cart_rules[0].id_cart_rule}`);
     }
 

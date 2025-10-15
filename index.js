@@ -889,7 +889,7 @@ async function crearCliente(params, paramsAPI) {
     // Caso cuando `nombres`, `apellidoPaterno` y `apellidoMaterno` están vacíos
     if (params.nombres === '' && params.apellidoPaterno === '' && params.apellidoMaterno === '') {
       if (params.tipoDocumento == '1') { // DNI, pero sin nombres
-        NombrePersoneria = paramsAPI.firstname + ' ' + paramsAPI.lastname;
+        NombrePersoneria = paramsAPI.lastname +' '+ paramsAPI.firstname;
         TipoDocumento = 203.00006;
       } else if (params.tipoDocumento == '6') { // RUC
         NombrePersoneria = params.razonSocial;
@@ -897,7 +897,7 @@ async function crearCliente(params, paramsAPI) {
       }
     } else { // Caso cuando `nombres`, `apellidoPaterno` y `apellidoMaterno` están presentes
       if (params.tipoDocumento == '1') { // DNI
-        NombrePersoneria = `${params.nombres} ${params.apellidoPaterno} ${params.apellidoMaterno}`;
+        NombrePersoneria = `${params.apellidoPaterno} ${params.apellidoMaterno} ${params.nombres}`;
         TipoDocumento = 203.00001;
       } else if (params.tipoDocumento == '6') { // RUC
         NombrePersoneria = params.razonSocial;

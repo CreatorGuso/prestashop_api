@@ -1165,6 +1165,17 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
     // console.log("Estamos en el pedido",paramsOrden.Pedido.id);
     // console.log("Asi esta entrando el convenio ",Convenio);
 
+    // validacion que la orden no exista ya en la base de datos
+    const queryFindPedido = `
+      select * from VentaPedidoCabecera where WebID = @OrdenPrestashop AND EmpresaID = 1
+      `;
+    const requestFindPedido = new sql.Request(transaction);
+    requestFindPedido.input('OrdenPrestashop', sql.Int,paramsOrden.Pedido.id);
+    result = await requestFindPedido.query(queryFindPedido);
+    if (result.recordset.length > 0) {
+      throw new Error(`La orden ${paramsOrden.Pedido.id} ya existe en la base de datos`);
+    }
+
     if (Convenio !== null) {
       const queryFindPrincipalID = `
         SELECT PrincipalID

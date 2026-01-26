@@ -213,7 +213,7 @@ async function BuscarOrdenPorID(orderId) {
         // recyclable: order.recyclable,
         // gift: order.gift,
         gift_message: order.gift_message,
-        // mobile_theme: order.mobile_theme,
+        mobile_theme: order.mobile_theme,
         total_discounts: order.total_discounts,
         // total_discounts_tax_incl: order.total_discounts_tax_incl,
         // total_discounts_tax_excl: order.total_discounts_tax_excl,
@@ -675,112 +675,6 @@ async function BuscarOrden(Orden) {
   }
 }
 
-// async function buscarRazonSocialPorDNIRUC(numero) {
-//   try {
-//     let apiUrl = '';
-//     let tipoConsulta = '';
-//     let headers = {};
-//     if (numero.length === 8) {
-//       tipoConsulta = 'dni';
-//     } else if (numero.length === 11) {
-//       tipoConsulta = 'ruc';
-//     } else {
-//       throw new Error('Número no válido');
-//     }
-//     if (tipoConsulta === 'dni') {
-//       const tokenDNI = 'apis-token-4761.8i-67B5lTexuXTijVwxpPqh-hjNAYJLn';
-//       apiUrl = `https://api.apis.net.pe/v2/reniec/dni?numero=${numero}`;
-//       headers = {
-//         'Authorization': `Bearer ${tokenDNI}`
-//       };
-//     } else if (tipoConsulta === 'ruc') {
-//       const tokenRUC = 'apis-token-4761.8i-67B5lTexuXTijVwxpPqh-hjNAYJLn';
-//       apiUrl = `https://api.apis.net.pe/v2/sunat/ruc?numero=${numero}`;
-//       headers = {
-//         'Referer': 'http://apis.net.pe/api-ruc',
-//         'Authorization': `Bearer ${tokenRUC}`
-//       };
-//     } else {
-//       throw new Error('Tipo de consulta no válido');
-//     }
-//     const response = await axios.get(apiUrl, { headers });
-//     const resultado = response.data;
-
-//     if (tipoConsulta === 'dni') {
-//       // resultado.nombres + ' ' + resultado.apellidoPaterno + ' ' + resultado.apellidoMaterno
-//       return resultado
-//     } else if (tipoConsulta === 'ruc') {
-//       // return resultado.razonSocial;
-//       // Personalizar reestructuracion de archivos-
-//       return resultado;
-//     }
-//   } catch (error) {
-//     console.error("Error Numero de documento SUNAT/RENIEC: " + numero + ' ::: ' + error);
-//     return 'Número no encontrado';
-//   }
-// }
-
-// async function buscarRazonSocialPorDNIRUC(numero) {
-//   try {
-//     let tipoConsulta = '';
-//     let headers = {};
-//     // const token = `apis-token-10146.-iP93tkFs1uyuG-L7y08xzNiqHhWwxlL`;
-//     const token = `sk_4905.2wHKOvXmkXjFozbpdiulp1vjch2NLpF1`;
-
-//     if (!/^\d+$/.test(numero)) throw new Error('Número no válido');
-
-//     if (numero.length === 8) {
-//       tipoConsulta = 'dni';
-//       headers = {
-//         'Authorization': `Bearer ${token}`
-//       };
-//     } else if (numero.length === 11) {
-//       tipoConsulta = 'ruc';
-//       headers = {
-//         'Referer': 'http://apis.net.pe/api-ruc',
-//         'Authorization': `Bearer ${token}`
-//       };
-//     } else {
-//       throw new Error('Número no válido');
-//     }
-
-//     let resultado;
-
-//     try {
-//       // Primer intento con API v2
-//       const urlV2 = tipoConsulta === 'dni'
-//         // ? `https://api.apis.net.pe/v2/reniec/dni?numero=${numero}`
-//         ? `https://api.decolecta.com/v1/reniec/dni?numero=${numero}`
-//         : `https://api.decolecta.com/v1/sunat/ruc?numero=${numero}`;
-//       const responseV2 = await axios.get(urlV2, { headers });
-//       resultado = responseV2.data;
-//     } catch (errorV2) {
-//       console.warn(`⚠️ No encontrado en API v2 para ${numero}, probando API v1...`);
-//       try {
-//         // Fallback a API v1
-//         const urlV1 = tipoConsulta === 'dni'
-//           ? `https://api.apis.net.pe/v1/dni?numero=${numero}`
-//           : `https://api.apis.net.pe/v1/ruc?numero=${numero}`;
-//         const responseV1 = await axios.get(urlV1, { headers });
-//         resultado = responseV1.data;
-//       } catch (errorV1) {
-//         console.error(`❌ No encontrado en ninguna API (${tipoConsulta}) para: ${numero}`);
-//         return 'Número no encontrado';
-//       }
-//     }
-
-//     // Devolver el resultado según tipo
-//     if (tipoConsulta === 'dni') {
-//       return resultado; // puedes usar resultado.nombres + resultado.apellidoPaterno + resultado.apellidoMaterno si prefieres solo el nombre completo
-//     } else if (tipoConsulta === 'ruc') {
-//       return resultado; // puedes usar resultado.razonSocial si solo necesitas el nombre de empresa
-//     }
-
-//   } catch (error) {
-//     console.error(`❌ Error en buscarRazonSocialPorDNIRUC: ${error.message}`);
-//     return 'Número no encontrado';
-//   }
-// }
 
 async function buscarRazonSocialPorDNIRUC(numero) {
   try {
@@ -1128,6 +1022,7 @@ const variablesSesion = {
   OficinaAlmacenID: 17,
 };
 
+const mobileUsuarioID = 91;
 let PlanillaID = '';
 
 
@@ -1360,7 +1255,7 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
     request.input('DeliveryTurnoID', sql.Decimal(9, 5), datosTurno.numero); //192.00002 iba por defecto
     request.input('TipoDocID', sql.Decimal(9, 5), seriePedido);
     request.input('UsuarioID', sql.Int, variablesSesion.UsuarioID);
-    request.input('Vendedor', sql.Int, variablesSesion.UsuarioID);
+    request.input('Vendedor', sql.Int, paramsOrden.Pedido.mobile_theme == 1 ? mobileUsuarioID : variablesSesion.UsuarioID);
     request.input('TipoVenta', sql.Int, 0);
     request.input('HabilitarFecha', sql.Int, 0);
     request.input('IDPlanilla', sql.NVarChar, PlanillaID);

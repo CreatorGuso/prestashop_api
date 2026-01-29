@@ -1199,12 +1199,12 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
     const query = `
       INSERT INTO VentaPedidoCabecera
         (EmpresaID, OficinaAlmacenID, SeriePedido, NumeroPedido, PersoneriaID, DireccionID, VendedorID, CondicionVtaID, MonedaID, ListaPrecioID, Fecha, TipoEntrega, FechaEntrega, DireccionEntrega, OficinaAlmacenEntregaID, Referencia, Observaciones, Cliente, Contacto, Contactotelefono, MotivoID, DeliveryTipoID, DeliveryTurnoID, TipoDocID, ValorPedido, PrecioPedido, TipoCambio, Estado, UsuarioID, FechaCreacion, FechaModificacion, TipoVenta, Gratuita, PlanillaID, ConvenioID, WebID,TookanID
-              ,email,longitud,latitud)
+              ,email,longitud,latitud,telefono)
         VALUES
         (1, @OficinaAlmacenID, @SerieCorrelativo, @NumeroPedido, @PersoneriaID, @DireccionID, @Vendedor, @CondicionVtaID, @MonedaID, @ListaPrecioID, CONVERT(datetime,@Fecha, 120), @TipoEntrega, 
         CONVERT(datetime,@FechaEntrega, 120) , @DireccionEntrega, @OficinaAlmacenEntregaID, @Referencia, @Observaciones, @Cliente, @Contacto, @Contactotelefono, @MotivoID, @DeliveryTipoID, 
         @DeliveryTurnoID, @TipoDocID, @ValorPedido, @PrecioPedido, 0.00000, '1', @UsuarioID, GETDATE(), GETDATE(), @TipoVenta, 
-        @HabilitarFecha, @IDPlanilla, @ConvenioID, @WebID, null ,@Email, @longitud, @latitud);
+        @HabilitarFecha, @IDPlanilla, @ConvenioID, @WebID, null ,@Email, @longitud, @latitud,'');
       SELECT SCOPE_IDENTITY() AS LastInsertedID;
       `;
 

@@ -1301,7 +1301,7 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
         INSERT INTO VentaPedidoDetalle
         (EmpresaID, OficinaAlmacenID, PedidoID, Consecutivo, ProductoID, cantidad, valorunitario, preciounitario, PorcentajeDescuento, descuento, FechaEntrega, UMUnitarioID, observaciones, Estado, UsuarioID, FechaCreacion, FechaModificacion)
         VALUES
-        (1, @OficinaAlmacenID, @PedidoID, @Consecutivo, @ProductoID, @cantidad, 0.0, @preciounitario, @descuento, 0.0, @FechaEntrega, @UMUnitarioID, '', 1, @UsuarioID, GETDATE(), GETDATE());
+        (1, @OficinaAlmacenID, @PedidoID, @Consecutivo, @ProductoID, @cantidad, 0.0, @preciounitario, @descuento, 0.0, @FechaEntrega, @UMUnitarioID, '', 1, @UsuarioID, GETDATE(), GETDATE(),0);
       `;
 
       request2.input('OficinaAlmacenID', sql.Decimal(6, 3), variablesSesion.OficinaAlmacenID);

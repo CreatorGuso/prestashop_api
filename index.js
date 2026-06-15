@@ -1299,7 +1299,7 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
       const request2 = new sql.Request(transaction);
       const query1 = `
         INSERT INTO VentaPedidoDetalle
-        (EmpresaID, OficinaAlmacenID, PedidoID, Consecutivo, ProductoID, cantidad, valorunitario, preciounitario, PorcentajeDescuento, descuento, FechaEntrega, UMUnitarioID, observaciones, Estado, UsuarioID, FechaCreacion, FechaModificacion)
+        (EmpresaID, OficinaAlmacenID, PedidoID, Consecutivo, ProductoID, cantidad, valorunitario, preciounitario, PorcentajeDescuento, descuento, FechaEntrega, UMUnitarioID, observaciones, Estado, UsuarioID, FechaCreacion, FechaModificacion,CampaniaID)
         VALUES
         (1, @OficinaAlmacenID, @PedidoID, @Consecutivo, @ProductoID, @cantidad, 0.0, @preciounitario, @descuento, 0.0, @FechaEntrega, @UMUnitarioID, '', 1, @UsuarioID, GETDATE(), GETDATE(),0);
       `;
@@ -1389,9 +1389,9 @@ async function createPedido(paramsOrden, ParamsPersona, variablesSesion, Planill
     const request5 = new sql.Request(transaction);;
     const query5 = `
                 INSERT INTO VentaPedidoDetalle
-                  (EmpresaID, OficinaAlmacenID, PedidoID, Consecutivo, ProductoID, cantidad, valorunitario, preciounitario, PorcentajeDescuento, descuento, FechaEntrega, UMUnitarioID, observaciones, Estado, UsuarioID, FechaCreacion, FechaModificacion)
+                  (EmpresaID, OficinaAlmacenID, PedidoID, Consecutivo, ProductoID, cantidad, valorunitario, preciounitario, PorcentajeDescuento, descuento, FechaEntrega, UMUnitarioID, observaciones, Estado, UsuarioID, FechaCreacion, FechaModificacion,CampaniaID)
                   VALUES
-                  (1, @OficinaAlmacenID, @PedidoID, @Consecutivo, @ProductoID, @cantidad, 0.0, @preciounitario, 0.0, @descuento, CONVERT(datetime,@FechaEntrega, 120), @UMUnitarioID, '', 1, @UsuarioID, GETDATE(), GETDATE());`;
+                  (1, @OficinaAlmacenID, @PedidoID, @Consecutivo, @ProductoID, @cantidad, 0.0, @preciounitario, 0.0, @descuento, CONVERT(datetime,@FechaEntrega, 120), @UMUnitarioID, '', 1, @UsuarioID, GETDATE(), GETDATE(),0);`;
 
     // request5.transaction = transaction;
     request5.input('OficinaAlmacenID', sql.Decimal(6, 3), variablesSesion.OficinaAlmacenID);

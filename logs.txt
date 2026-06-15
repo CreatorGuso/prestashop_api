@@ -1066,3 +1066,345 @@
     }
   ]
 }
+2026-06-04 13:45:10.171 - Estas son las categorias
+2026-06-04 13:45:10.171 - {
+  "$": {
+    "nodeType": "category",
+    "api": "categories"
+  },
+  "category": [
+    {
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/categories/2"
+      },
+      "id": "2"
+    },
+    {
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/categories/36"
+      },
+      "id": "36"
+    },
+    {
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/categories/89"
+      },
+      "id": "89"
+    },
+    {
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/categories/93"
+      },
+      "id": "93"
+    },
+    {
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/categories/102"
+      },
+      "id": "102"
+    },
+    {
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/categories/198"
+      },
+      "id": "198"
+    }
+  ]
+}
+2026-06-04 13:45:18.295 - Estas son las categorias
+2026-06-04 13:45:18.295 - {
+  "$": {
+    "nodeType": "category",
+    "api": "categories"
+  },
+  "category": [
+    {
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/categories/6"
+      },
+      "id": "6"
+    },
+    {
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/categories/183"
+      },
+      "id": "183"
+    },
+    {
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/categories/194"
+      },
+      "id": "194"
+    }
+  ]
+}
+2026-06-04 13:46:37.205 - Estas son las categorias
+2026-06-04 13:46:37.205 - {
+  "$": {
+    "nodeType": "category",
+    "api": "categories"
+  },
+  "category": [
+    {
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/categories/2"
+      },
+      "id": "2"
+    },
+    {
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/categories/36"
+      },
+      "id": "36"
+    },
+    {
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/categories/89"
+      },
+      "id": "89"
+    },
+    {
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/categories/93"
+      },
+      "id": "93"
+    },
+    {
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/categories/102"
+      },
+      "id": "102"
+    },
+    {
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/categories/198"
+      },
+      "id": "198"
+    }
+  ]
+}
+2026-06-04 13:46:45.064 - Estas son las categorias
+2026-06-04 13:46:45.064 - {
+  "$": {
+    "nodeType": "category",
+    "api": "categories"
+  },
+  "category": [
+    {
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/categories/6"
+      },
+      "id": "6"
+    },
+    {
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/categories/183"
+      },
+      "id": "183"
+    },
+    {
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/categories/194"
+      },
+      "id": "194"
+    }
+  ]
+}
+2026-06-04 13:46:58.269 - Estas son las categorias
+2026-06-04 13:46:58.269 - {
+  "$": {
+    "nodeType": "category",
+    "api": "categories"
+  },
+  "category": [
+    {
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/categories/4"
+      },
+      "id": "4"
+    },
+    {
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/categories/8"
+      },
+      "id": "8"
+    },
+    {
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/categories/19"
+      },
+      "id": "19"
+    },
+    {
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/categories/27"
+      },
+      "id": "27"
+    },
+    {
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/categories/33"
+      },
+      "id": "33"
+    },
+    {
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/categories/36"
+      },
+      "id": "36"
+    },
+    {
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/categories/194"
+      },
+      "id": "194"
+    },
+    {
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/categories/195"
+      },
+      "id": "195"
+    },
+    {
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/categories/204"
+      },
+      "id": "204"
+    },
+    {
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/categories/206"
+      },
+      "id": "206"
+    }
+  ]
+}
+2026-06-04 13:47:08.672 - ERROR: Error en la transacción de crear pedido con orden :111584
+2026-06-04 13:47:08.672 - ERROR: Orden sin Descuento en los productos y el ID CUPON : 519
+2026-06-04 13:47:08.672 - STACK TRACE:
+Error: Orden sin Descuento en los productos y el ID CUPON : 519
+    at createPedido (C:\Users\gudeh\Documents\SistemasEmpresariales_AgilexTrabajos\prestashop_api\index.js:1374:13)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async procesarOrdenPrestashop (C:\Users\gudeh\Documents\SistemasEmpresariales_AgilexTrabajos\prestashop_api\index.js:1713:19)
+    at async Inicializador (C:\Users\gudeh\Documents\SistemasEmpresariales_AgilexTrabajos\prestashop_api\index.js:1794:17)
+2026-06-04 13:47:21.342 - Estas son las categorias
+2026-06-04 13:47:21.342 - {
+  "$": {
+    "nodeType": "category",
+    "api": "categories"
+  },
+  "category": [
+    {
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/categories/4"
+      },
+      "id": "4"
+    },
+    {
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/categories/8"
+      },
+      "id": "8"
+    },
+    {
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/categories/19"
+      },
+      "id": "19"
+    },
+    {
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/categories/27"
+      },
+      "id": "27"
+    },
+    {
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/categories/33"
+      },
+      "id": "33"
+    },
+    {
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/categories/36"
+      },
+      "id": "36"
+    },
+    {
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/categories/194"
+      },
+      "id": "194"
+    },
+    {
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/categories/195"
+      },
+      "id": "195"
+    },
+    {
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/categories/204"
+      },
+      "id": "204"
+    },
+    {
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/categories/206"
+      },
+      "id": "206"
+    }
+  ]
+}
+2026-06-04 13:47:40.914 - Estas son las categorias
+2026-06-04 13:47:40.914 - {
+  "$": {
+    "nodeType": "category",
+    "api": "categories"
+  },
+  "category": [
+    {
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/categories/3"
+      },
+      "id": "3"
+    },
+    {
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/categories/11"
+      },
+      "id": "11"
+    },
+    {
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/categories/19"
+      },
+      "id": "19"
+    },
+    {
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/categories/36"
+      },
+      "id": "36"
+    },
+    {
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/categories/38"
+      },
+      "id": "38"
+    },
+    {
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/categories/194"
+      },
+      "id": "194"
+    },
+    {
+      "$": {
+        "xlink:href": "https://www.kukyflor.com/api/categories/196"
+      },
+      "id": "196"
+    }
+  ]
+}
+2026-06-04 13:47:51.730 - undefined
